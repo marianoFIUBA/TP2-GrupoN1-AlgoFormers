@@ -26,15 +26,22 @@ public class MegatronAlterno implements EstadoAlgoFormer {
         this.casillero = casillero;
         this.subEstado = new Inicial(this);
     }
+
     public MegatronAlterno (MegatronHumanoide estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
         this.subEstado = estadoAnterior.obtenerSubEstado();
     }
-    public void atacar(AlgoFormer objetivo) {
+
+    public void prepararAtaque(AlgoFormer objetivo) {
 
         this.subEstado.atacar(objetivo);
+    }
+
+    public void atacar(AlgoFormer objetivo){
+
+        objetivo.recibirAtaqueDeDecepticon(this.puntosDeAtaque);
     }
 
     public void mover(Casillero destino){
@@ -48,7 +55,7 @@ public class MegatronAlterno implements EstadoAlgoFormer {
 
     public void ocuparCasillero(Casillero casillero){
 
-        this.casillero.alojarAlternoPorTierra(this);
+        this.casillero.alojarPorAire(this);
     }
 
     public void recibirAtaque(int ataque){

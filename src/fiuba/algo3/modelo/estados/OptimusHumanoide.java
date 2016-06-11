@@ -33,9 +33,14 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
         this.casillero = estadoAnterior.obtenerCasillero();
         this.subEstado = estadoAnterior.obtenerSubEstado();
     }
-    public void atacar(AlgoFormer objetivo) {
+    public void prepararAtaque(AlgoFormer objetivo) {
 
         this.subEstado.atacar(objetivo);
+    }
+
+    public void atacar(AlgoFormer objetivo){
+
+        objetivo.recibirAtaqueDeAutobot(this.puntosDeAtaque);
     }
 
     public void mover(Casillero destino){

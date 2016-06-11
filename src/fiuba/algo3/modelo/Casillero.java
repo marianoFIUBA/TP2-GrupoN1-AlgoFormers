@@ -8,7 +8,7 @@ public class Casillero {
     private int posicionX;
     private int posicionY;
     private String bonus;
-    private String aire;
+    private String aire = "tormenta psionica";
     private String tierra;
 
     public void alojarPorTierra(EstadoAlgoFormer estadoAlgoFormer){

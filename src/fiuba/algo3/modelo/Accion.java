@@ -8,10 +8,11 @@ import fiuba.algo3.modelo.Casillero;
  */
 public class Accion {
 
-    public void atacar(AlgoFormer objetivo, Casillero origen, int ataque){
+    public void atacar(AlgoFormer objetivo, EstadoAlgoFormer estado){
 
-        if (this.estaEnRango(objetivo.obtenerCasillero(), origen)){
-            objetivo.recibirAtaqueDeAutobot(ataque);
+        if (this.estaEnRango(objetivo.obtenerCasillero(), estado.obtenerCasillero())){
+            //objetivo.recibirAtaqueDeAutobot(estado.obtenerAtaque());
+            estado.atacar(objetivo);
         } else{
             //lanzar Excepcion de fuera de rango
         }
@@ -33,7 +34,7 @@ public class Accion {
         }
     }
 
-    private Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+    private Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destinfa){
 
         return new Casillero();
     }

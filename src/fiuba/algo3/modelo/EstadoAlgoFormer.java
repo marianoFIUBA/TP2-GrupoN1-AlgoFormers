@@ -5,6 +5,7 @@ package fiuba.algo3.modelo;
  */
 public interface EstadoAlgoFormer {
 
+    void prepararAtaque(AlgoFormer algoFormer);
     void atacar(AlgoFormer algoFormer);
     void mover(Casillero casillero);
     void recibirAtaque(int ataque);

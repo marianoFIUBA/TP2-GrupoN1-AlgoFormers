@@ -23,7 +23,7 @@ public class Inicial implements SubEstadoAlgoFormer {
 
     public void atacar(AlgoFormer objetivo){
 
-        this.accion.atacar(objetivo, this.estado.obtenerCasillero(), this.estado.obtenerAtaque());
+        this.accion.atacar(objetivo, this.estado);
     }
 
 }

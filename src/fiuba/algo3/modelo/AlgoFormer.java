@@ -14,7 +14,7 @@ public abstract class AlgoFormer{
 
     public void atacarA(AlgoFormer algoformer){
 
-        this.estado.atacar(algoformer);
+        this.estado.prepararAtaque(algoformer);
     }
 
     public Casillero obtenerCasillero(){
@@ -30,4 +30,5 @@ public abstract class AlgoFormer{
     public abstract void recibirAtaqueDeDecepticon(int puntosDeAtaque);
 
     public abstract void recibirAtaqueDeAutobot(int puntosDeAtaque);
+
 }
