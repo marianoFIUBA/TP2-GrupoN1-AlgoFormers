@@ -1,0 +1,34 @@
+package fiuba.algo3.modelo;
+
+/**
+ * Created by Mariano on 10/06/2016.
+ */
+public class Casillero {
+
+    private int posicionX;
+    private int posicionY;
+    private String bonus;
+    private String aire;
+    private String tierra;
+
+    public void alojarPorTierra(EstadoAlgoFormer estadoAlgoFormer){
+
+    }
+
+    public void alojarPorAire(EstadoAlgoFormer estadoAlgoFormer){
+
+    }
+
+    public void alojarPorAirePS(EstadoAlgoFormer estadoAlgoFormer){
+
+    }
+
+    public void alojarAlternoPorTierra(EstadoAlgoFormer estadoAlgoFormer){
+
+    }
+
+    public void alojarHumanoidePorTierra(EstadoAlgoFormer estadoAlgoFormer){
+
+    }
+
+}
