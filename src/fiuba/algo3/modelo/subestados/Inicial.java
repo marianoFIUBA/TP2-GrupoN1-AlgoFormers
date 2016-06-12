@@ -34,4 +34,8 @@ public class Inicial implements SubEstadoAlgoFormer {
 
         return this.accion.obtenerSiguienteCasillero(origen, destino);
     }
+
+    public void pasarTurno(){
+
+    }
 }

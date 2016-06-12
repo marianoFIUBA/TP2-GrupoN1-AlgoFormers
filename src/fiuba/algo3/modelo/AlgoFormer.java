@@ -27,6 +27,11 @@ public abstract class AlgoFormer{
         this.estado.transformarse();
     }
 
+    public void pasarTurno(){
+
+        this.estado.pasarTurno();
+    }
+
     public abstract void recibirAtaqueDeDecepticon(int puntosDeAtaque);
 
     public abstract void recibirAtaqueDeAutobot(int puntosDeAtaque);

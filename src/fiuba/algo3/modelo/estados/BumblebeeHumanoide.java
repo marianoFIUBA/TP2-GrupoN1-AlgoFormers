@@ -101,6 +101,11 @@ public class BumblebeeHumanoide implements EstadoAlgoFormer, HumanoideTerrestre 
 
         return new BumblebeeHumanoide(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 
 

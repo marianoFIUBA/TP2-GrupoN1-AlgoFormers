@@ -99,6 +99,11 @@ public class BonecrusherHumanoide implements EstadoAlgoFormer, HumanoideTerrestr
 
         return new BonecrusherHumanoide(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 
 

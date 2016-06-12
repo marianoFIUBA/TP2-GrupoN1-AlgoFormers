@@ -19,6 +19,7 @@ public class Juego {
     private int[] superficiesAire = {1,1,1,1,2,3};
     private Jugador jugador1;
     private Jugador jugador2;
+    private Jugador jugadorActual;
 
     private Juego() {
 
@@ -82,6 +83,7 @@ public class Juego {
 
             this.guardarCasilleros(casilleros);
 
+            this.iniciado = true;
         } else {
             //lanzar excepcion de juego ya iniciado
         }
@@ -144,6 +146,20 @@ public class Juego {
                 break;
         }
         return superficieAire;
+    }
+
+    public void pasarTurno(){
+
+        this.jugadorActual.cambiarEstado();
+
+        if (this.jugadorActual.equals(this.jugador1)) {
+
+            this.jugadorActual =  this.jugador1;
+        } else {
+            this.jugadorActual = this.jugador2;
+        }
+
+        this.jugadorActual.cambiarEstado();
     }
 
 }

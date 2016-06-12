@@ -100,4 +100,8 @@ public class OptimusHumanoide implements EstadoAlgoFormer, HumanoideTerrestre {
         return new OptimusHumanoide(this);
     }
 
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }

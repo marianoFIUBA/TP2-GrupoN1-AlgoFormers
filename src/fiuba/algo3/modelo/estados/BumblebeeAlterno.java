@@ -104,4 +104,9 @@ public class BumblebeeAlterno implements EstadoAlgoFormer, AlternoTerrestre {
 
         return new BumblebeeAlterno(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }

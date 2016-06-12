@@ -99,5 +99,10 @@ public class RatchetHumanoidePS implements EstadoAlgoFormer, HumanoideTerrestre 
 
         return new RatchetHumanoidePS(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 

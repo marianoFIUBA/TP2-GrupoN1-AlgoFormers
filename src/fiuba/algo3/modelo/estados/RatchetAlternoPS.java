@@ -100,5 +100,10 @@ public class RatchetAlternoPS implements EstadoAlgoFormer, AlternoAereo{
 
         return new RatchetAlternoPS(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 

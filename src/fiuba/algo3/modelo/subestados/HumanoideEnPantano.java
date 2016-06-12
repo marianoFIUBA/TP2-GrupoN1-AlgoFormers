@@ -35,4 +35,8 @@ public class HumanoideEnPantano implements SubEstadoAlgoFormer {
 
         return origen;
     }
+
+    public void pasarTurno(){
+
+    }
 }

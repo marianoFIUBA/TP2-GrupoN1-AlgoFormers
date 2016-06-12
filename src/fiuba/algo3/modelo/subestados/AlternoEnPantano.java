@@ -19,7 +19,7 @@ public class AlternoEnPantano implements SubEstadoAlgoFormer {
 
     public void mover(Casillero destino){
 
-        // this.accion.mover(destino, estado);
+        this.accion.mover(destino, estado);
     }
 
     public void atacar(AlgoFormer objetivo){
@@ -29,6 +29,10 @@ public class AlternoEnPantano implements SubEstadoAlgoFormer {
 
     public void volverAEstadoInicial(){
 
+        this.estado.volverASubEstadoInicial();
+    }
+
+    public void pasarTurno(){
 
     }
 

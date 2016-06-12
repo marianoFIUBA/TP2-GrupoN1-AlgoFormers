@@ -9,4 +9,5 @@ public interface SubEstadoAlgoFormer {
     void atacar(AlgoFormer AlgoFormer);
     void volverASubEstadoInicial();
     Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino);
+    void pasarTurno();
 }

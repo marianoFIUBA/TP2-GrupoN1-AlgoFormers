@@ -18,4 +18,5 @@ public interface EstadoAlgoFormer {
     void ocuparCasillero(Casillero casillero);
     int obtenerVelocidad();
     EstadoAlgoFormer cambiarAEstadoPS();
+    void pasarTurno();
 }

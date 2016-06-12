@@ -100,5 +100,10 @@ public class MegatronAlternoPS implements EstadoAlgoFormer, AlternoAereo{
 
         return new MegatronAlternoPS(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 

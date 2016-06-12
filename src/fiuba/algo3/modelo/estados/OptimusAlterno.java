@@ -100,4 +100,9 @@ public class OptimusAlterno implements EstadoAlgoFormer, AlternoTerrestre{
         return new OptimusAlterno(this);
     }
 
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
+
 }

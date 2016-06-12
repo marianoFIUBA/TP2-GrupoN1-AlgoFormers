@@ -101,4 +101,9 @@ public class MegatronHumanoide implements EstadoAlgoFormer, HumanoideTerrestre{
 
         return new MegatronHumanoide(this);
     }
+
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }

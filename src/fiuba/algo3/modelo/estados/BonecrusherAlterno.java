@@ -101,7 +101,10 @@ public class BonecrusherAlterno implements EstadoAlgoFormer, AlternoTerrestre {
         return new BonecrusherAlterno(this);
     }
 
+    public void pasarTurno(){
 
+        this.subEstado.pasarTurno();
+    }
 }
 
 

@@ -15,6 +15,7 @@ public class AtrapadoEnNebulosa implements SubEstadoAlgoFormer {
 
         this.accion = new Accion();
         this.estado = estado;
+        this.turnosPendientes = 3;
     }
 
     public void mover(Casillero destino){
@@ -29,7 +30,16 @@ public class AtrapadoEnNebulosa implements SubEstadoAlgoFormer {
 
     public void volverAEstadoInicial(){
 
+        this.estado.volverASubEstadoInicial();
+    }
 
+    public void pasarTurno(){
+
+        this.turnosPendientes--;
+        if (this.turnosPendientes == 0){
+
+            this.volverASubEstadoInicial();
+        }
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
@@ -41,4 +51,6 @@ public class AtrapadoEnNebulosa implements SubEstadoAlgoFormer {
 
         this.estado.volverASubEstadoInicial();
     }
+
+
 }

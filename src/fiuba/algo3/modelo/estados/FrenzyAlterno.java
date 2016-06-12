@@ -101,6 +101,11 @@ public class FrenzyAlterno implements EstadoAlgoFormer, AlternoTerrestre {
         return new FrenzyAlterno(this);
     }
 
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
+
 }
 
 

@@ -100,5 +100,9 @@ public class FrenzyHumanoide implements EstadoAlgoFormer, HumanoideTerrestre {
         return new FrenzyHumanoide(this);
     }
 
+    public void pasarTurno(){
+
+        this.subEstado.pasarTurno();
+    }
 }
 
