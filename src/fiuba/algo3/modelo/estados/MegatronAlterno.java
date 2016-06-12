@@ -87,4 +87,9 @@ public class MegatronAlterno implements EstadoAlgoFormer {
 
         return this.puntosDevida;
     }
+
+    public int obtenerVelocidad(){
+
+        return this.velocidad;
+    }
 }

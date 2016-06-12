@@ -11,10 +11,6 @@ public class Casillero {
     private String aire = "tormenta psionica";
     private String tierra;
 
-    public void alojarPorTierra(EstadoAlgoFormer estadoAlgoFormer){
-
-    }
-
     public void alojarPorAire(EstadoAlgoFormer estadoAlgoFormer){
 
     }
@@ -31,4 +27,12 @@ public class Casillero {
 
     }
 
+    public int obtenerPosicionX(){
+
+        return posicionX;
+    }
+
+    public int obtenerPosicionY() {
+        return posicionY;
+    }
 }

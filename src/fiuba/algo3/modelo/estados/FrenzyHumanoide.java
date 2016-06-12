@@ -7,32 +7,33 @@ import fiuba.algo3.modelo.SubEstadoAlgoFormer;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
- * Created by Mariano on 10/06/2016.
+ * Created by fedek on 11/6/2016.
  */
-public class OptimusHumanoide implements EstadoAlgoFormer {
+public class FrenzyHumanoide implements EstadoAlgoFormer {
 
     private int puntosDevida;
 
-    private int puntosDeAtaque = 50;
-    private int distanciaDeAtaque = 2;
+    private int puntosDeAtaque = 10;
+    private int distanciaDeAtaque = 5;
     private int velocidad = 2;
 
     private Casillero casillero;
     private SubEstadoAlgoFormer subEstado;
 
-    public OptimusHumanoide(int puntosDeVida, Casillero casillero){
+    public FrenzyHumanoide (int puntosDeVida, Casillero casillero){
 
         this.puntosDevida = puntosDeVida;
         this.casillero = casillero;
         this.subEstado = new Inicial(this);
     }
 
-    public OptimusHumanoide(OptimusAlterno estadoAnterior){
+    public FrenzyHumanoide (FrenzyAlterno estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
         this.subEstado = estadoAnterior.obtenerSubEstado();
     }
+
     public void prepararAtaque(AlgoFormer objetivo) {
 
         this.subEstado.atacar(objetivo);
@@ -40,7 +41,7 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
 
     public void atacar(AlgoFormer objetivo){
 
-        objetivo.recibirAtaqueDeAutobot(this.puntosDeAtaque);
+        objetivo.recibirAtaqueDeDecepticon(this.puntosDeAtaque);
     }
 
     public void mover(Casillero destino){
@@ -49,7 +50,7 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
     }
     public EstadoAlgoFormer transformarse(){
 
-        return new OptimusAlterno(this);
+        return new FrenzyAlterno(this);
     }
 
     public void ocuparCasillero(Casillero casillero){
@@ -57,14 +58,14 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
         this.casillero.alojarHumanoidePorTierra(this);
     }
 
-    public void cambiarSubEstado(SubEstadoAlgoFormer subEstado){
-
-        this.subEstado = subEstado;
-    }
-
     public void recibirAtaque(int ataque){
 
         this.puntosDevida -= ataque;
+    }
+
+    public void cambiarSubEstado(SubEstadoAlgoFormer subEstado){
+
+        this.subEstado = subEstado;
     }
 
     public Casillero obtenerCasillero(){
@@ -89,7 +90,8 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
 
     public int obtenerVelocidad(){
 
-        return velocidad;
-
+        return this.velocidad;
     }
+
 }
+

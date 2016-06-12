@@ -86,4 +86,10 @@ public class OptimusAlterno implements EstadoAlgoFormer{
         return this.puntosDevida;
     }
 
+    public int obtenerVelocidad(){
+
+        return velocidad;
+
+    }
+
 }
