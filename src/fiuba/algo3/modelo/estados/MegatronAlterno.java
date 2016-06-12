@@ -1,16 +1,13 @@
 package fiuba.algo3.modelo.estados;
 
-import fiuba.algo3.modelo.AlgoFormer;
-import fiuba.algo3.modelo.Casillero;
-import fiuba.algo3.modelo.EstadoAlgoFormer;
-import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.*;
 import fiuba.algo3.modelo.subestados.AtrapadoEnNebulosa;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class MegatronAlterno implements EstadoAlgoFormer {
+public class MegatronAlterno implements EstadoAlgoFormer, AlternoAereo {
 
     private int puntosDevida;
 

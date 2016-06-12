@@ -1,9 +1,6 @@
 package fiuba.algo3.modelo.estados;
 
-import fiuba.algo3.modelo.AlgoFormer;
-import fiuba.algo3.modelo.Casillero;
-import fiuba.algo3.modelo.EstadoAlgoFormer;
-import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.*;
 import fiuba.algo3.modelo.subestados.AlternoEnPantano;
 import fiuba.algo3.modelo.subestados.HumanoideEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
@@ -11,7 +8,7 @@ import fiuba.algo3.modelo.subestados.Inicial;
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class MegatronHumanoide implements EstadoAlgoFormer{
+public class MegatronHumanoide implements EstadoAlgoFormer, HumanoideTerrestre{
 
     private int puntosDevida;
 
@@ -95,7 +92,7 @@ public class MegatronHumanoide implements EstadoAlgoFormer{
 
     }
 
-    public void cambiarASubEstadoAlternoEnPantano(){
+    public void cambiarASubEstadoHumanoideEnPantano(){
 
         this.subEstado = new HumanoideEnPantano(this);
     }

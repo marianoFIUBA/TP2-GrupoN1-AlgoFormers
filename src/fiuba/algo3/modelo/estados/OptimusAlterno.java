@@ -1,16 +1,13 @@
 package fiuba.algo3.modelo.estados;
 
-import fiuba.algo3.modelo.AlgoFormer;
-import fiuba.algo3.modelo.Casillero;
-import fiuba.algo3.modelo.EstadoAlgoFormer;
-import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.*;
 import fiuba.algo3.modelo.subestados.AlternoEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class OptimusAlterno implements EstadoAlgoFormer{
+public class OptimusAlterno implements EstadoAlgoFormer, AlternoTerrestre{
 
     private int puntosDevida;
 

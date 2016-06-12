@@ -1,9 +1,6 @@
 package fiuba.algo3.modelo.estados;
 
-import fiuba.algo3.modelo.AlgoFormer;
-import fiuba.algo3.modelo.Casillero;
-import fiuba.algo3.modelo.EstadoAlgoFormer;
-import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.*;
 import fiuba.algo3.modelo.subestados.AlternoEnPantano;
 import fiuba.algo3.modelo.subestados.HumanoideEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
@@ -11,7 +8,7 @@ import fiuba.algo3.modelo.subestados.Inicial;
 /**
  * Created by fedek on 11/6/2016.
  */
-public class BonecrusherHumanoide implements EstadoAlgoFormer {
+public class BonecrusherHumanoide implements EstadoAlgoFormer, HumanoideTerrestre {
 
     private int puntosDevida;
 
