@@ -16,4 +16,5 @@ public interface EstadoAlgoFormer {
     SubEstadoAlgoFormer obtenerSubEstado();
     void cambiarSubEstado(SubEstadoAlgoFormer subEstado);
     void ocuparCasillero(Casillero casillero);
+    int obtenerVelocidad();
 }

@@ -7,27 +7,28 @@ import fiuba.algo3.modelo.SubEstadoAlgoFormer;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
- * Created by Mariano on 10/06/2016.
+ * Created by fedek on 11/6/2016.
  */
-public class OptimusHumanoide implements EstadoAlgoFormer {
+public class BumblebeeHumanoide implements EstadoAlgoFormer {
+
 
     private int puntosDevida;
 
-    private int puntosDeAtaque = 50;
-    private int distanciaDeAtaque = 2;
+    private int puntosDeAtaque = 40;
+    private int distanciaDeAtaque = 1;
     private int velocidad = 2;
 
     private Casillero casillero;
     private SubEstadoAlgoFormer subEstado;
 
-    public OptimusHumanoide(int puntosDeVida, Casillero casillero){
+    public BumblebeeHumanoide(int puntosDeVida, Casillero casillero){
 
         this.puntosDevida = puntosDeVida;
         this.casillero = casillero;
         this.subEstado = new Inicial(this);
     }
 
-    public OptimusHumanoide(OptimusAlterno estadoAnterior){
+    public BumblebeeHumanoide(BumblebeeAlterno estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -49,7 +50,7 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
     }
     public EstadoAlgoFormer transformarse(){
 
-        return new OptimusAlterno(this);
+        return new BumblebeeAlterno(this);
     }
 
     public void ocuparCasillero(Casillero casillero){
@@ -93,3 +94,7 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
 
     }
 }
+
+
+
+
