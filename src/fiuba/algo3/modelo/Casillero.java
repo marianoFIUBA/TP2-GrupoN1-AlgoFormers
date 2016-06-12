@@ -11,6 +11,13 @@ public class Casillero {
     private String aire = "tormenta psionica";
     private String tierra;
 
+    public Casillero(int posicionX, int posicionY, String aire, String tierra){
+
+        this.posicionX = posicionX;
+        this.posicionY = posicionY;
+        this.aire = aire;
+        this.tierra = tierra;
+    }
     public void alojarPorAire(EstadoAlgoFormer estadoAlgoFormer){
 
     }

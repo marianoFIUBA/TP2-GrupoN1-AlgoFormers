@@ -10,7 +10,7 @@ public class Accion {
 
     public void atacar(AlgoFormer objetivo, EstadoAlgoFormer estado){
 
-        if (this.estaEnRango(objetivo.obtenerCasillero(), estado.obtenerCasillero())){
+        if (this.estaEnRango(objetivo.obtenerCasillero(), estado.obtenerCasillero(), estado.obtenerVelocidad())){
             //objetivo.recibirAtaqueDeAutobot(estado.obtenerAtaque());
             estado.atacar(objetivo);
         } else{
@@ -20,7 +20,7 @@ public class Accion {
 
     public void mover(Casillero casilleroDestino, EstadoAlgoFormer estado){
 
-        if (this.estaEnRango(casilleroDestino, estado.obtenerCasillero())){
+        if (this.estaEnRango(casilleroDestino, estado.obtenerCasillero(), estado.obtenerVelocidad())){
 
             Casillero casilleroActual = estado.obtenerCasillero();
 
@@ -34,13 +34,38 @@ public class Accion {
         }
     }
 
-    private Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destinfa){
+    private Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
 
-        return new Casillero();
+        int posicionX = destino.obtenerPosicionX() ;
+        int posicionY = destino.obtenerPosicionY();
+
+        if(origen.obtenerPosicionX() == destino.obtenerPosicionX()){
+            posicionY++;
+        } else if (origen.obtenerPosicionY() == destino.obtenerPosicionY()){
+            posicionX++;
+        } else if (origen.obtenerPosicionX() < destino.obtenerPosicionX()){
+            posicionX++;
+            if (origen.obtenerPosicionY() < destino.obtenerPosicionY()){
+                posicionY++;
+            } else {
+                posicionY--;
+            }
+        } else {
+            posicionX--;
+            if (origen.obtenerPosicionY() < destino.obtenerPosicionY()) {
+                posicionY++;
+            } else {
+                posicionY--;
+            }
+        }
+        return Juego.getInstance().obtenerCasillero(posicionX, posicionY);
     }
 
-    private boolean estaEnRango(Casillero origen, Casillero destino){
+    private boolean estaEnRango(Casillero origen, Casillero destino, int velocidad){
 
-        return true;
+        int distanciaX = Math.abs(origen.obtenerPosicionX() - destino.obtenerPosicionX());
+        int distanciaY = Math.abs(origen.obtenerPosicionY() - destino.obtenerPosicionY());
+
+        return (distanciaX <= velocidad) && (distanciaY <= velocidad);
     }
 }
