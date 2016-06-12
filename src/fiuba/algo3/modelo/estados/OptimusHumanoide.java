@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.HumanoideEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -27,7 +28,7 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public OptimusHumanoide(OptimusAlterno estadoAnterior){
+    public OptimusHumanoide(EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -92,4 +93,14 @@ public class OptimusHumanoide implements EstadoAlgoFormer {
         return velocidad;
 
     }
+
+    public void cambiarASubEstadoHumanoideEnPantano(){
+
+        this.subEstado = new HumanoideEnPantano(this);
+    }
+    public EstadoAlgoFormer cambiarAEstadoPS(){
+
+        return new OptimusHumanoide(this);
+    }
+
 }

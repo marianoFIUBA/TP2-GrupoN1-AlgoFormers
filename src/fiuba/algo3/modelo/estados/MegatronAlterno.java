@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.AtrapadoEnNebulosa;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -27,7 +28,7 @@ public class MegatronAlterno implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public MegatronAlterno (MegatronHumanoide estadoAnterior){
+    public MegatronAlterno (EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -91,5 +92,15 @@ public class MegatronAlterno implements EstadoAlgoFormer {
     public int obtenerVelocidad(){
 
         return this.velocidad;
+    }
+
+    public void cambiarASubEstadoAtrapadoEnNebulosa(){
+
+        this.subEstado = new AtrapadoEnNebulosa(this);
+    }
+
+    public EstadoAlgoFormer cambiarAEstadoPS(){
+
+        return new MegatronAlternoPS(this);
     }
 }

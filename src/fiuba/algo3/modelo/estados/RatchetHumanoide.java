@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.HumanoideEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -27,7 +28,7 @@ public class RatchetHumanoide implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public RatchetHumanoide(RatchetAlterno estadoAnterior){
+    public RatchetHumanoide(EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -91,5 +92,14 @@ public class RatchetHumanoide implements EstadoAlgoFormer {
 
         return velocidad;
 
+    }
+
+    public void cambiarASubEstadoHumanoideEnPantano(){
+
+        this.subEstado = new HumanoideEnPantano(this);
+    }
+    public EstadoAlgoFormer cambiarAEstadoPS(){
+
+        return new RatchetHumanoide(this);
     }
 }

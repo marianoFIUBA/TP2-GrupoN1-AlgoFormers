@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.AlternoEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -27,7 +28,7 @@ public class BonecrusherAlterno implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public BonecrusherAlterno (BonecrusherHumanoide estadoAnterior){
+    public BonecrusherAlterno (EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -91,6 +92,16 @@ public class BonecrusherAlterno implements EstadoAlgoFormer {
     public int obtenerVelocidad(){
 
         return this.velocidad;
+    }
+
+    public void cambiarASubEstadoAlternoEnPantano(){
+
+        this.subEstado = new AlternoEnPantano(this);
+    }
+
+    public EstadoAlgoFormer cambiarAEstadoPS() {
+
+        return new BonecrusherAlterno(this);
     }
 
 

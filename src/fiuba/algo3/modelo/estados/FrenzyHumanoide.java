@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.HumanoideEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -27,7 +28,7 @@ public class FrenzyHumanoide implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public FrenzyHumanoide (FrenzyAlterno estadoAnterior){
+    public FrenzyHumanoide (EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -91,6 +92,15 @@ public class FrenzyHumanoide implements EstadoAlgoFormer {
     public int obtenerVelocidad(){
 
         return this.velocidad;
+    }
+
+    public void cambiarASubEstadoHumanoideEnPantano(){
+
+        this.subEstado = new HumanoideEnPantano(this);
+    }
+    public EstadoAlgoFormer cambiarAEstadoPS(){
+
+        return new FrenzyHumanoide(this);
     }
 
 }

@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.AlgoFormer;
 import fiuba.algo3.modelo.Casillero;
 import fiuba.algo3.modelo.EstadoAlgoFormer;
 import fiuba.algo3.modelo.SubEstadoAlgoFormer;
+import fiuba.algo3.modelo.subestados.AlternoEnPantano;
 import fiuba.algo3.modelo.subestados.Inicial;
 
 /**
@@ -30,7 +31,7 @@ public class BumblebeeAlterno implements EstadoAlgoFormer {
         this.subEstado = new Inicial(this);
     }
 
-    public BumblebeeAlterno (BumblebeeHumanoide estadoAnterior){
+    public BumblebeeAlterno (EstadoAlgoFormer estadoAnterior){
 
         this.puntosDevida = estadoAnterior.obtenerPuntosDeVida();
         this.casillero = estadoAnterior.obtenerCasillero();
@@ -95,5 +96,15 @@ public class BumblebeeAlterno implements EstadoAlgoFormer {
 
         return velocidad;
 
+    }
+
+    public void cambiarASubEstadoAlternoEnPantano(){
+
+        this.subEstado = new AlternoEnPantano(this);
+    }
+
+    public EstadoAlgoFormer cambiarAEstadoPS(){
+
+        return new BumblebeeAlterno(this);
     }
 }
