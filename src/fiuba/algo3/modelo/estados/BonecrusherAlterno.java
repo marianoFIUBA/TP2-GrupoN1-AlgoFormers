@@ -61,9 +61,9 @@ public class BonecrusherAlterno implements EstadoAlgoFormer, AlternoTerrestre {
         this.puntosDevida -= ataque;
     }
 
-    public void cambiarSubEstado(SubEstadoAlgoFormer subEstado){
+    public void volverASubEstadoInicial(){
 
-        this.subEstado = subEstado;
+        this.subEstado = new Inicial(this);
     }
 
     public Casillero obtenerCasillero(){

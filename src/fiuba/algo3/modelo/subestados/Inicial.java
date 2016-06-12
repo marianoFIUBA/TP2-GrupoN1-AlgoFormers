@@ -26,4 +26,12 @@ public class Inicial implements SubEstadoAlgoFormer {
         this.accion.atacar(objetivo, this.estado);
     }
 
+    public void volverASubEstadoInicial(){
+
+    }
+
+    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+
+        return this.accion.obtenerSiguienteCasillero(origen, destino);
+    }
 }

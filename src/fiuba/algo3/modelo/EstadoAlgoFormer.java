@@ -14,7 +14,7 @@ public interface EstadoAlgoFormer {
     int obtenerAtaque();
     int obtenerPuntosDeVida();
     SubEstadoAlgoFormer obtenerSubEstado();
-    void cambiarSubEstado(SubEstadoAlgoFormer subEstado);
+    void volverASubEstadoInicial();
     void ocuparCasillero(Casillero casillero);
     int obtenerVelocidad();
     EstadoAlgoFormer cambiarAEstadoPS();

@@ -56,9 +56,9 @@ public class BonecrusherHumanoide implements EstadoAlgoFormer, HumanoideTerrestr
         this.casillero.alojarHumanoidePorTierra(this);
     }
 
-    public void cambiarSubEstado(SubEstadoAlgoFormer subEstado){
+    public void volverASubEstadoInicial(){
 
-        this.subEstado = subEstado;
+        this.subEstado = new Inicial(this);
     }
 
     public void recibirAtaque(int ataque){

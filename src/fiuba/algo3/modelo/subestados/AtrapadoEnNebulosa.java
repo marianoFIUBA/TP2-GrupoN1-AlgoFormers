@@ -9,6 +9,7 @@ public class AtrapadoEnNebulosa implements SubEstadoAlgoFormer {
 
     private EstadoAlgoFormer estado;
     private Accion accion;
+    private int turnosPendientes;
 
     public AtrapadoEnNebulosa (EstadoAlgoFormer estado){
 
@@ -24,5 +25,20 @@ public class AtrapadoEnNebulosa implements SubEstadoAlgoFormer {
     public void atacar(AlgoFormer objetivo){
 
         // this.accion.atacar(objetivo, this.estado);
+    }
+
+    public void volverAEstadoInicial(){
+
+
+    }
+
+    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+
+        return origen;
+    }
+
+    public void volverASubEstadoInicial(){
+
+        this.estado.volverASubEstadoInicial();
     }
 }

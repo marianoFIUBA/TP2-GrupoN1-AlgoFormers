@@ -23,21 +23,28 @@ public class Accion {
         if (this.estaEnRango(casilleroDestino, estado.obtenerCasillero(), estado.obtenerVelocidad())){
 
             Casillero casilleroActual = estado.obtenerCasillero();
+            int movimientosPendientes = estado.obtenerVelocidad();
 
-            while (!estado.obtenerCasillero().equals(casilleroDestino)){
+            for (int i = 0; i < movimientosPendientes; i++){
+
+                casilleroActual = estado.obtenerSubEstado().obtenerSiguienteCasillero(estado.obtenerCasillero(), casilleroDestino);
+                estado.ocuparCasillero(casilleroActual);
+                i++;
+            }
+          /*  while (!estado.obtenerCasillero().equals(casilleroDestino)){
 
                 casilleroActual = this.obtenerSiguienteCasillero(estado.obtenerCasillero(), casilleroDestino);
                 estado.ocuparCasillero(casilleroActual);
-            }
+            }*/
         } else {
             // lanzar excepcion de fuera de rango
         }
     }
 
-    private Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
 
-        int posicionX = destino.obtenerPosicionX() ;
-        int posicionY = destino.obtenerPosicionY();
+        int posicionX = origen.obtenerPosicionX();
+        int posicionY = origen.obtenerPosicionY();
 
         if(origen.obtenerPosicionX() == destino.obtenerPosicionX()){
             posicionY++;
@@ -67,5 +74,45 @@ public class Accion {
         int distanciaY = Math.abs(origen.obtenerPosicionY() - destino.obtenerPosicionY());
 
         return (distanciaX <= velocidad) && (distanciaY <= velocidad);
+    }
+
+    private Casillero obtenerCasilleroAnterior(Casillero destino, Casillero origen){
+
+        int posicionX = destino.obtenerPosicionX();
+        int posicionY = destino.obtenerPosicionY();
+
+        int distanciaX = Math.abs(origen.obtenerPosicionX() - destino.obtenerPosicionX());
+        int distanciaY = Math.abs(origen.obtenerPosicionY() - destino.obtenerPosicionY());
+
+        if (distanciaX > distanciaY){
+            if(posicionX > origen.obtenerPosicionX()){
+                posicionX--;
+            } else{
+                posicionX++;
+            }
+        } else if(distanciaY > distanciaX){
+            if(posicionY > origen.obtenerPosicionY()){
+                posicionY--;
+            } else{
+                posicionY++;
+            }
+        } else {
+            if(posicionY > origen.obtenerPosicionY()){
+                posicionY--;
+                if(posicionX > origen.obtenerPosicionX()){
+                    posicionX--;
+                } else{
+                    posicionX++;
+                }
+            } else{
+                posicionY++;
+                if(posicionX > origen.obtenerPosicionX()){
+                    posicionX--;
+                } else{
+                    posicionX++;
+                }
+            }
+        }
+        return Juego.getInstance().obtenerCasillero(posicionX, posicionY);
     }
 }

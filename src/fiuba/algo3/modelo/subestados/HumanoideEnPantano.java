@@ -25,4 +25,14 @@ public class HumanoideEnPantano implements SubEstadoAlgoFormer {
 
         // this.accion.atacar(objetivo, this.estado);
     }
+
+    public void volverASubEstadoInicial(){
+
+        this.estado.volverASubEstadoInicial();
+    }
+
+    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+
+        return origen;
+    }
 }
