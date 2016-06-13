@@ -5,6 +5,11 @@ package fiuba.algo3.modelo;
  */
 public class Autobot extends AlgoFormer {
 
+    protected Autobot(String nombre){
+
+        super(nombre);
+    }
+    
     public void recibirAtaqueDeAutobot(int ataque){
 
         //lanzar excepcion

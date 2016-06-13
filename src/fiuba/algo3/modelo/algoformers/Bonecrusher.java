@@ -11,6 +11,7 @@ public class Bonecrusher extends Decepticon {
 
     public Bonecrusher(Casillero casillero){
 
+        super("BONECRUSHER");
         this.estado = new BonecrusherAlterno(200, casillero);
 
     }

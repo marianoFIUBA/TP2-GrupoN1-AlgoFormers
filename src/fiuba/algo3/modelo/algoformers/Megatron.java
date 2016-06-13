@@ -12,6 +12,7 @@ public class Megatron extends Decepticon {
 
     public Megatron(Casillero casillero){
 
+        super("MEGATRON");
         this.estado = new MegatronAlterno(550, casillero);
     }
 }

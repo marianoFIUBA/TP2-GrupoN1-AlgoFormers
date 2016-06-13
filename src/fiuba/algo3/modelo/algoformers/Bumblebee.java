@@ -13,6 +13,7 @@ public class Bumblebee extends Autobot {
 
     public Bumblebee(Casillero casillero){
 
+        super("BUMBLEBEE");
         this.estado = new BumblebeeAlterno(350, casillero);
 
     }

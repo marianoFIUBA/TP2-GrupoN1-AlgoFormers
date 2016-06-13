@@ -13,6 +13,7 @@ public class Frenzy extends Decepticon {
 
     public Frenzy(Casillero casillero){
 
+        super("FRENZY");
         this.estado = new FrenzyAlterno(400, casillero);
 
     }

@@ -24,6 +24,7 @@ public class Juego {
     private Juego() {
 
         this.iniciado = false;
+        this.casilleros = new HashMap<String, Casillero>();
     }
 
     public static Juego getInstance(){
@@ -82,6 +83,8 @@ public class Juego {
             this.jugador2 = new Jugador(autobots);
 
             this.guardarCasilleros(casilleros);
+            this.jugadorActual = this.jugador1;
+            this.jugadorActual.cambiarEstado();
 
             this.iniciado = true;
         } else {
@@ -112,7 +115,7 @@ public class Juego {
 
     private String obtenerSuperficieTierra(int tipo){
 
-        String superficieTierra = "";
+        String superficieTierra = "ROCOSA";
 
         switch(tipo){
 
@@ -131,7 +134,7 @@ public class Juego {
 
     private String obtenerSuperficieAire(int tipo){
 
-        String superficieAire = "";
+        String superficieAire = "NUBE";
 
         switch(tipo){
 
@@ -162,5 +165,14 @@ public class Juego {
         this.jugadorActual.cambiarEstado();
     }
 
+    public Jugador obtenerJugador1(){
+
+        return this.jugador1;
+    }
+
+    public Jugador obtenerJugador2(){
+
+        return this.jugador2;
+    }
 }
 

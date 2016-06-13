@@ -13,7 +13,7 @@ public class JugadorInactivo implements EstadoJugador {
     }
     public EstadoJugador cambiarEstado(){
 
-        return new JugadorInactivo(this.jugador);
+        return new JugadorActivo(this.jugador);
     }
 
     public void seleccionarAlgoFormer(AlgoFormer algoformer){

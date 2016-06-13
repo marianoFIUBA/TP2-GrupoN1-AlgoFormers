@@ -11,8 +11,7 @@ public class Ratchet extends Autobot {
 
     public Ratchet(Casillero casillero){
 
+        super("RATCHET");
         this.estado = new RatchetAlterno(150, casillero);
-
-
     }
 }

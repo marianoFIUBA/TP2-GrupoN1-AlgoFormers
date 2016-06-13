@@ -14,12 +14,15 @@ public class Jugador {
     private AlgoFormer algoformer2;
     private AlgoFormer algoformer3;
 
-    private ArrayList<AlgoFormer> algoformers;
 //    private EstadoTurno estado;
 
     public Jugador(ArrayList<AlgoFormer> algoformers){
 
-        this.algoformers = algoformers;
+        this.algoformer1 = algoformers.get(0);
+        this.algoformer2 = algoformers.get(1);
+        this.algoformer3 = algoformers.get(2);
+
+        this.estado = new JugadorInactivo(this);
     }
 
     public void finalizarTurno(){
@@ -39,5 +42,19 @@ public class Jugador {
     public void cambiarEstado(){
 
         this.estado = this.estado.cambiarEstado();
+    }
+
+    public AlgoFormer obtenerAlgoformer1(){
+
+        return this.algoformer1;
+    }
+
+    public AlgoFormer obtenerAlgoformer2(){
+
+        return this.algoformer2;
+    }
+    public AlgoFormer obtenerAlgoformer3(){
+
+        return this.algoformer3;
     }
 }

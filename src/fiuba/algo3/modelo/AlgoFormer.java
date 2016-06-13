@@ -5,7 +5,13 @@ package fiuba.algo3.modelo;
  */
 public abstract class AlgoFormer{
 
+    protected String nombre;
     protected EstadoAlgoFormer estado;
+
+    protected AlgoFormer(String nombre){
+
+        this.nombre = nombre;
+    }
 
     public void moverA(Casillero casillero) {
 
@@ -35,5 +41,10 @@ public abstract class AlgoFormer{
     public abstract void recibirAtaqueDeDecepticon(int puntosDeAtaque);
 
     public abstract void recibirAtaqueDeAutobot(int puntosDeAtaque);
+
+    public String obtenerNombre(){
+
+        return this.nombre;
+    }
 
 }

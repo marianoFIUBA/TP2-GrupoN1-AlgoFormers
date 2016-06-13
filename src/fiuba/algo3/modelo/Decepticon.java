@@ -5,6 +5,10 @@ package fiuba.algo3.modelo;
  */
 public class Decepticon extends AlgoFormer {
 
+    protected Decepticon(String nombre){
+
+        super(nombre);
+    }
     public void recibirAtaqueDeAutobot(int ataque){
 
         this.estado.recibirAtaque(ataque);

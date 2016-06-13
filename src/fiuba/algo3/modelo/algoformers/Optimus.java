@@ -11,6 +11,7 @@ public class Optimus extends Autobot {
 
     public Optimus(Casillero casillero){
 
+        super("OPTIMUS");
         this.estado = new OptimusAlterno(500, casillero);
     }
 }
