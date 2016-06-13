@@ -2,52 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d15e126c-b2f4-40b0-ba6d-ca6705ea68a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/AlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/AlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Autobot.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Autobot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Decepticon.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Decepticon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/EstadoAlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/EstadoAlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Juego.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Juego.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Jugador.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/Jugador.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/SubEstadoAlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/SubEstadoAlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Bonecrusher.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Bonecrusher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Bumblebee.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Bumblebee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Frenzy.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Frenzy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Megatron.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Megatron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Optimus.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Optimus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Ratchet.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/Ratchet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BonecrusherAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BonecrusherAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BonecrusherHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BonecrusherHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BumblebeeAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BumblebeeAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BumblebeeHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/BumblebeeHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/FrenzyAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/FrenzyAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/FrenzyHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/FrenzyHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronAlternoPS.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronAlternoPS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronHumanoidePS.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/MegatronHumanoidePS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/OptimusAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/OptimusAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/OptimusHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/OptimusHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetAlternoPS.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetAlternoPS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetHumanoidePS.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/estados/RatchetHumanoidePS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/AlternoEnPantano.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/AlternoEnPantano.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/AtrapadoEnNebulosa.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/AtrapadoEnNebulosa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/HumanoideEnPantano.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/HumanoideEnPantano.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/Inicial.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/subestados/Inicial.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Autobot.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Autobot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Decepticon.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Decepticon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Juego.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Juego.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/JugadorInactivo.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/JugadorInactivo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Bonecrusher.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Bonecrusher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Bumblebee.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Bumblebee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Frenzy.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Frenzy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Megatron.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Megatron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Optimus.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Optimus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Ratchet.java" afterPath="$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Ratchet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java" afterPath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java" />
     </list>
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
@@ -70,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="algoformerTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="algoformerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+            <state relative-caret-position="170">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,10 +36,52 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Megatron.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Megatron.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MegatronAlterno.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronAlterno.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Accion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Accion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inicial.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/subestados/Inicial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Jugador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="141">
               <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -94,47 +90,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JugadorInactivo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/JugadorInactivo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HumanoideTerrestre.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/HumanoideTerrestre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Juego.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Juego.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1921#1933#0" expanded="true" />
                 <element signature="e#2359#2371#0" expanded="true" />
                 <element signature="e#3005#3016#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/libs/junit-jar-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -155,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JUnitCore.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/libs/junit-jar-4.11.jar!/org/junit/runner/JUnitCore.class">
+      <file leaf-file-name="AlgoFormer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,16 +136,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
               <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Autobot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Autobot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -832,12 +788,6 @@
     <history-entry file="FooTest - 2016.06.12 at 21h 31m 56s.xml">
       <configuration name="FooTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="algoformerTest - 2016.06.12 at 21h 27m 43s.xml">
-      <configuration name="algoformerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="algoformerTest - 2016.06.12 at 21h 28m 19s.xml">
-      <configuration name="algoformerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="algoformerTest - 2016.06.12 at 21h 29m 27s.xml">
       <configuration name="algoformerTest" configurationId="JUnit" />
     </history-entry>
@@ -857,6 +807,12 @@
       <configuration name="algoformerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="algoformerTest - 2016.06.12 at 21h 39m 56s.xml">
+      <configuration name="algoformerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="algoformerTest - 2016.06.12 at 21h 46m 42s.xml">
+      <configuration name="algoformerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="algoformerTest - 2016.06.12 at 21h 56m 15s.xml">
       <configuration name="algoformerTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -880,7 +836,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37674418" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37674418" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -905,24 +861,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java</url>
-          <line>22</line>
+          <line>24</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java</url>
-          <line>21</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java</url>
-          <line>41</line>
-          <properties class="fiuba.algo3.modelo.Jugador" method="cambiarEstado" />
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronAlterno.java</url>
+          <line>39</line>
+          <properties class="fiuba.algo3.modelo.estados.MegatronAlterno" method="atacar" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java</url>
+          <line>20</line>
+          <properties class="fiuba.algo3.modelo.AlgoFormer" method="atacarA" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronAlterno.java</url>
+          <line>34</line>
+          <properties class="fiuba.algo3.modelo.estados.MegatronAlterno" method="prepararAtaque" />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -981,14 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/subestados/Inicial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1097,14 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronAlterno.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronHumanoidePS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -1142,16 +1100,6 @@
         <state relative-caret-position="1734">
           <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Accion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1203,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Decepticon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1239,14 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Megatron.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1299,16 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/junit-jar-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1339,10 +1261,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        <state relative-caret-position="141">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1351,13 +1273,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="192">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1921#1933#0" expanded="true" />
             <element signature="e#2359#2371#0" expanded="true" />
             <element signature="e#3005#3016#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/algoformers/Megatron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/Accion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/subestados/Inicial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/estados/MegatronAlterno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/modelo/AlgoFormer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/algoformerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

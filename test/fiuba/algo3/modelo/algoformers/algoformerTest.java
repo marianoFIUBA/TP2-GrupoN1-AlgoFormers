@@ -15,11 +15,24 @@ public class algoformerTest {
     @Test
     public void testIntegracion(){
 
-        Juego.getInstance().iniciarJuego(10,10);
+        Juego.getInstance().iniciarJuego(5,5);
 
         Jugador jugador1 = Juego.getInstance().obtenerJugador1();
+        Jugador jugador2 = Juego.getInstance().obtenerJugador2();
+
         AlgoFormer algoformer1 = jugador1.obtenerAlgoformer1();
         algoformer1.obtenerNombre();
         Assert.assertEquals(algoformer1.obtenerNombre(), "MEGATRON");
+
+        AlgoFormer algoformer2 = jugador2.obtenerAlgoformer1();
+
+        algoformer1.atacarA(algoformer2);
+
+        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(3,4);
+
+        algoformer1.moverA(casilleroDestino);
+        Assert.assertEquals(algoformer2.obtenerNombre(), "OPTIMUS");
+
+
     }
 }
