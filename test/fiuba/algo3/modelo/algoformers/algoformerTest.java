@@ -1,9 +1,9 @@
 package fiuba.algo3.modelo.algoformers;
 
-import fiuba.algo3.modelo.AlgoFormer;
-import fiuba.algo3.modelo.Casillero;
-import fiuba.algo3.modelo.Juego;
-import fiuba.algo3.modelo.Jugador;
+import modelo.AlgoFormer;
+import modelo.Casillero;
+import modelo.Juego;
+import modelo.Jugador;
 import org.junit.Assert;
 import org.junit.Test;
 
