@@ -7,11 +7,11 @@ import modelo.Decepticon;
 /**
  * Created by fedek on 11/6/2016.
  */
-public class Frenzy extends Decepticon {
+public abstract class Frenzy extends Decepticon {
 
     public Frenzy(Casillero casillero){
 
-        super("FRENZY");
+        super("FRENZY", casillero);
 //        this.estado = new FrenzyAlterno(400, casillero);
 
     }

@@ -54,10 +54,11 @@ public class Juego {
         return this.casilleros.get(clave);
     }
 
-    public void iniciarJuego(int dimensionX, int dimensionY){
+    public void iniciarJuego(int dimensionX, int dimensionY, boolean generarSuperficiesAleatorias){
 
-        if (!this.iniciado){
-            ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY);
+        /*if (!this.iniciado){
+
+            ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
 
             Optimus optimus = new Optimus(casilleros.get(0));
             Bumblebee bumblebee = new Bumblebee(casilleros.get(1));
@@ -88,29 +89,35 @@ public class Juego {
             this.iniciado = true;
         } else {
             //lanzar excepcion de juego ya iniciado
-        }
+        }*/
     }
 
-    private ArrayList<Casillero> generarCasilleros(int dimesionX, int dimensionY){
+    private ArrayList<Casillero> generarCasilleros(int dimesionX, int dimensionY, boolean generarSuperficiesAleatorias){
 
         ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
         Casillero nuevoCasillero;
 
-        for (int x = 0; x < dimesionX; x++){
-            for (int y = 0; y < dimensionY; y++){
+        for (int x = 0; x <= dimesionX; x++){
+            for (int y = 0; y <= dimensionY; y++){
 
-                int superficieAletoriaTierra = (int)(Math.random()*this.superficiesTierra.length + 1);
-                int superficieAleatoriaAire = (int)(Math.random()*this.superficiesAire.length + 1);
+                String tierra =  "ROCOSA";
+                String aire = "NUBE";
 
-                String tierra = this.obtenerSuperficieTierra(superficieAletoriaTierra);
-                String aire = this.obtenerSuperficieAire(superficieAleatoriaAire);
+                if (generarSuperficiesAleatorias){
 
+                    int superficieAletoriaTierra = (int)(Math.random()*this.superficiesTierra.length + 1);
+                    int superficieAleatoriaAire = (int)(Math.random()*this.superficiesAire.length + 1);
+
+                    tierra = this.obtenerSuperficieTierra(superficieAletoriaTierra);
+                    aire = this.obtenerSuperficieAire(superficieAleatoriaAire);
+                }
                 nuevoCasillero = new Casillero(x,y,aire,tierra);
                 casilleros.add(nuevoCasillero);
             }
         }
         return casilleros;
     }
+
 
     private String obtenerSuperficieTierra(int tipo){
 
@@ -172,6 +179,14 @@ public class Juego {
     public Jugador obtenerJugador2(){
 
         return this.jugador2;
+    }
+
+    public void generarTablero(int dimesionX, int dimensionY, boolean generarSuperficiesAleatorias){
+
+        ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
+
+        casilleros = this.generarCasilleros(dimesionX, dimensionY, generarSuperficiesAleatorias);
+        this.guardarCasilleros(casilleros);
     }
 }
 

@@ -43,7 +43,17 @@ public class Calculos {
 
     public int obtenerDistancia(Casillero origen, Casillero destino) {
 
-        return 0;
+        int distanciaX = Math.abs(origen.obtenerPosicionX() - destino.obtenerPosicionX());
+        int distanciaY = Math.abs(origen.obtenerPosicionY() - destino.obtenerPosicionY());
+
+        int distanciaTotal = distanciaX;
+
+        if (distanciaX < distanciaY){
+
+            distanciaTotal = distanciaY;
+        }
+
+        return distanciaTotal;
     }
 
     public boolean movimientoValido(Casillero origen, Casillero destino, int velocidad){

@@ -6,39 +6,33 @@ package modelo;
 public class EstadoAlterno implements EstadoAlgoFormer {
     private int velocidad;
     private int ataque;
-    private int puntosDeVida;
     private int distanciaDeAtaque;
 
-    private Casillero casillero;
     private EstrategiaDeMovimiento movimiento;
 
-    public EstadoAlterno(int puntosDeVida, Casillero casillero, int velocidad, int ataque, EstrategiaDeMovimiento movimiento){
+    public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
         this.velocidad = velocidad;
-        this.puntosDeVida = puntosDeVida;
-        this.ataque = ataque;
-        this.casillero = casillero;
+        this.ataque= ataque;
         this.movimiento = movimiento;
+        this.distanciaDeAtaque = distanciaAtaque;
     }
 
-    public EstadoAlterno (EstadoAlgoFormer estadoAnterior){
-        this.puntosDeVida = estadoAnterior.obtenerPuntosDeVida();
-        this.casillero = estadoAnterior.obtenerCasillero();
+    public EstadoAlterno (int puntosDeVida){
+        //this.puntosDeVida = puntosDeVida;
+    }
+
+
+
+    @Override
+    public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
+
+        return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 
     @Override
-    public void mover(Casillero casillero) {
-
-    }
-
-    @Override
-    public void recibirAtaque(int ataque) {
-
-    }
-
-    @Override
-    public EstadoAlgoFormer transformarse() {
-        return new EstadoHumanoide(this);
+    public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
+        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 
     @Override
@@ -57,17 +51,30 @@ public class EstadoAlterno implements EstadoAlgoFormer {
     }
 
     @Override
-    public void ocuparCasillero(Casillero casillero) {
+    public void ocuparCasillero(AlgoFormer algoformer, Casillero casillero) {
 
+        this.movimiento.ocuparCasillero(algoformer, casillero);
+    }
+
+    @Override
+    public Casillero obtenerSiguienteCasillero(Casillero actual, Casillero destino){
+
+       return  this.movimiento.obtenerSiguienteCasillero(actual, destino);
     }
 
     @Override
     public int obtenerVelocidad() {
-        return 0;
+        return this.velocidad;
     }
 
     @Override
     public void pasarTurno() {
 
+    }
+
+    @Override
+    public String obtenerEstado(){
+
+        return "ALTERNO";
     }
 }

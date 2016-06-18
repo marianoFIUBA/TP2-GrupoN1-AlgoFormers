@@ -7,11 +7,11 @@ import modelo.Casillero;
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class Bumblebee extends Autobot {
+public abstract class Bumblebee extends Autobot {
 
     public Bumblebee(Casillero casillero){
 
-        super("BUMBLEBEE");
+        super("BUMBLEBEE", casillero);
 //        this.estado = new BumblebeeAlterno(350, casillero);
 
     }

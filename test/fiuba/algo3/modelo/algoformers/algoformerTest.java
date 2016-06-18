@@ -4,35 +4,46 @@ import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
 import modelo.Jugador;
+import modelo.algoformers.Optimus;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Created by Mariano on 12/06/2016.
  */
-public class algoformerTest {
+public class AlgoformerTest {
 
     @Test
-    public void testIntegracion(){
+    public void algoformerSeMueveACasilleroEperado(){
 
-        Juego.getInstance().iniciarJuego(5,5);
+        /*
+            Se genera tablero de 5x5 casilleros. El tercer parámetro indica que no deben generarse
+            terrenos de forma aleatoria. Ésto es, el atributo tierra es "ROCOSO" y el atributo aire
+            es "NUBE" para todos los csilleros del tablero.
+        */
+        Juego.getInstance().generarTablero(5,5,false);
 
-        Jugador jugador1 = Juego.getInstance().obtenerJugador1();
-        Jugador jugador2 = Juego.getInstance().obtenerJugador2();
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(4,5);
 
-        AlgoFormer algoformer1 = jugador1.obtenerAlgoformer1();
-        algoformer1.obtenerNombre();
-        Assert.assertEquals(algoformer1.obtenerNombre(), "MEGATRON");
+        Optimus optimus = new Optimus(casilleroInicial);
+        optimus.moverA(casilleroFinal);
 
-        AlgoFormer algoformer2 = jugador2.obtenerAlgoformer1();
+        Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
+    }
 
-        algoformer1.atacarA(algoformer2);
+    @Test
+    public void algoformerSeTransformaEnAmbasDirecciones(){
 
-        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(3,4);
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Optimus optimus = new Optimus(casilleroInicial);
 
-        algoformer1.moverA(casilleroDestino);
-        Assert.assertEquals(algoformer2.obtenerNombre(), "OPTIMUS");
+        Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
 
+        optimus.transformarseAModoHumanoide();
+        Assert.assertTrue(optimus.obtenerEstado() == "HUMANOIDE");
 
+        optimus.transformarseAModoAlterno();
+        Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
     }
 }

@@ -7,11 +7,11 @@ import modelo.Decepticon;
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class Megatron extends Decepticon {
+public abstract class Megatron extends Decepticon {
 
     public Megatron(Casillero casillero){
 
-            super("MEGATRON");
+            super("MEGATRON", casillero);
 //        this.estado = new MegatronAlterno(550, casillero);
     }
 }

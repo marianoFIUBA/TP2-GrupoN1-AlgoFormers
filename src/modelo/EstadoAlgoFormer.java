@@ -6,14 +6,15 @@ package modelo;
 public interface EstadoAlgoFormer {
 
     //void atacar(AlgoFormer algoFormer);
-    public abstract void mover(Casillero casillero);
 
-    void recibirAtaque(int ataque);
-    EstadoAlgoFormer transformarse();
+    EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad);
+    EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad);
     Casillero obtenerCasillero();
     int obtenerAtaque();
     int obtenerPuntosDeVida();
-    void ocuparCasillero(Casillero casillero);
+    void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero);
     int obtenerVelocidad();
     void pasarTurno();
+    Casillero obtenerSiguienteCasillero(Casillero casilleroActual, Casillero destino);
+    String obtenerEstado();
 }

@@ -3,11 +3,11 @@ package modelo;
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class Autobot extends AlgoFormer {
+public abstract class Autobot extends AlgoFormer {
 
-    protected Autobot(String nombre){
+    protected Autobot(String nombre, Casillero casillero){
 
-        super(nombre);
+        super(nombre, casillero);
     }
     
     public void recibirAtaqueDeAutobot(int ataque){
@@ -17,6 +17,7 @@ public class Autobot extends AlgoFormer {
 
     public void recibirAtaqueDeDecepticon(int ataque){
 
-        this.estado.recibirAtaque(ataque);
+        this.puntosDeVida-=ataque;
     }
+
 }

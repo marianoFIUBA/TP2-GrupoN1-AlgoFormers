@@ -7,11 +7,11 @@ import modelo.Casillero;
 /**
  * Created by Mariano on 10/06/2016.
  */
-public class Ratchet extends Autobot {
+public abstract class Ratchet extends Autobot {
 
     public Ratchet(Casillero casillero){
 
-        super("RATCHET");
+        super("RATCHET", casillero);
 //        this.estado = new RatchetAlterno(150, casillero);
     }
 }
