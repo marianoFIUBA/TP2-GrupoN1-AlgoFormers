@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86e91129-f689-43db-b0b6-eb587354eee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" afterPath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Autobot.java" afterPath="$PROJECT_DIR$/src/modelo/Autobot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Decepticon.java" afterPath="$PROJECT_DIR$/src/modelo/Decepticon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" />
-    </list>
+    <list default="true" id="86e91129-f689-43db-b0b6-eb587354eee8" name="Default" comment="" />
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
