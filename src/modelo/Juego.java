@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.Excepciones.CasilleroNoPerteneceAlTableroException;
 import modelo.algoformers.*;
 
 import java.util.ArrayList;
@@ -51,12 +52,16 @@ public class Juego {
     public Casillero obtenerCasillero(int posicionX, int posicionY){
 
         String clave = String.valueOf(posicionX) + "." + String.valueOf(posicionY);
-        return this.casilleros.get(clave);
+        try{
+            return this.casilleros.get(clave);
+        }catch (NullPointerException ex){
+            throw new CasilleroNoPerteneceAlTableroException();
+        }
     }
 
     public void iniciarJuego(int dimensionX, int dimensionY, boolean generarSuperficiesAleatorias){
 
-        /*if (!this.iniciado){
+        if (!this.iniciado){
 
             ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
 
@@ -89,7 +94,7 @@ public class Juego {
             this.iniciado = true;
         } else {
             //lanzar excepcion de juego ya iniciado
-        }*/
+        }
     }
 
     private ArrayList<Casillero> generarCasilleros(int dimesionX, int dimensionY, boolean generarSuperficiesAleatorias){

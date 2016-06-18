@@ -6,24 +6,28 @@ package modelo;
 public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
 
     private Calculos calculo;
-    private int turnosPendientesEstancado;
+    private boolean empantanado;
 
     public MovimientoAlternoTerrestre(){
 
         this.calculo = new Calculos();
-        this.turnosPendientesEstancado = 0;
+        this.empantanado = false;
     }
 
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
-        casillero.alojarAlternoPorTierra(algoFormer);
+        if (!empantanado){
+            casillero.alojarAlternoPorTierra(algoFormer);
+        } else {
+            this.empantanado = false;
+        }
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){
 
         Casillero siguienteCasillero = actual;
 
-        if (this.turnosPendientesEstancado == 0){
+        if (!this.empantanado){
 
             siguienteCasillero = this.calculo.obtenerSiguienteCasillero(actual, destino);
         }

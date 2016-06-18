@@ -24,20 +24,19 @@ public class Casillero {
     public void alojarAlternoPorAire(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
-    }
-
-    public void alojarPorAirePS(AlgoFormer algoFormer){
-
+        this.aplicarEfectoAire(algoFormer);
     }
 
     public void alojarAlternoPorTierra(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
+        this.aplicarEfectoAlternoPorTierra(algoFormer);
     }
 
     public void alojarHumanoidePorTierra(AlgoFormer algoFormer){
 
-
+        algoFormer.setCasillero(this);
+        this.aplicarEfectoHumanoidePorTierra(algoFormer);
     }
 
     public int obtenerPosicionX(){
@@ -49,7 +48,8 @@ public class Casillero {
         return posicionY;
     }
 
-    public void aplicarDaniosHumanoidePortierra(EstadoAlgoFormer algoFormer){
+
+    private void aplicarEfectoHumanoidePorTierra(AlgoFormer algoFormer){
 
         switch (this.tierra){
 
@@ -57,15 +57,15 @@ public class Casillero {
 
                 break;
             case "PANTANO":
-
+                //algofmer.cambiarAModoEmpantando;
                 break;
             case "ESPINAS":
-
+                //algoformer.recibirDanioDeEspinas
                 break;
         }
     }
 
-    public void aplicarDaniosAlternoPorTierra (EstadoAlgoFormer algoFormer){
+    private void aplicarEfectoAlternoPorTierra (AlgoFormer algoFormer){
 
         switch (this.tierra){
 
@@ -73,15 +73,15 @@ public class Casillero {
 
                 break;
             case "PANTANO":
-
+                //algofmer.cambiarAModoEmpantando;
                 break;
             case "ESPINAS":
-
+                //algoformer.recibirDanioDeEspinas
                 break;
         }
     }
 
-    public void aplicarDaniosAire(EstadoAlgoFormer estadoAlgoFormer){
+    private void aplicarEfectoAire(AlgoFormer algoFormer){
 
         switch (this.aire){
 
@@ -89,11 +89,17 @@ public class Casillero {
 
                 break;
             case "NEBULOSA":
-
+                //algofmer.cambiarAModoAtrapadoEnNebulosa;
                 break;
             case "TORMENTA":
-
+                //algoFormer.cambiarAModoPS;
                 break;
         }
     }
+
+    private void aplicarBonus(){
+
+
+    }
+
 }
