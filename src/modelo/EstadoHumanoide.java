@@ -54,18 +54,9 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     }
 
     @Override
-    public Casillero obtenerCasillero() {
-        return null;
-    }
+    public int obtenerAtaque(){
 
-    @Override
-    public int obtenerAtaque() {
-        return 0;
-    }
-
-    @Override
-    public int obtenerPuntosDeVida() {
-        return 0;
+        return this.ataque;
     }
 
     @Override
@@ -84,7 +75,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
 
     @Override
     public String obtenerEstado(){
-
         return "HUMANOIDE";
     }
 }

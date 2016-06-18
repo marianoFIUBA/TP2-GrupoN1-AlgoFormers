@@ -17,13 +17,6 @@ public class EstadoAlterno implements EstadoAlgoFormer {
         this.movimiento = movimiento;
         this.distanciaDeAtaque = distanciaAtaque;
     }
-
-    public EstadoAlterno (int puntosDeVida){
-        //this.puntosDeVida = puntosDeVida;
-    }
-
-
-
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
 
@@ -35,19 +28,9 @@ public class EstadoAlterno implements EstadoAlgoFormer {
         return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 
-    @Override
-    public Casillero obtenerCasillero() {
-        return null;
-    }
-
-    @Override
+@Override
     public int obtenerAtaque() {
-        return 0;
-    }
-
-    @Override
-    public int obtenerPuntosDeVida() {
-        return 0;
+        return this.ataque;
     }
 
     @Override

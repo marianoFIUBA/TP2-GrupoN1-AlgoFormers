@@ -9,9 +9,7 @@ public interface EstadoAlgoFormer {
 
     EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad);
     EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad);
-    Casillero obtenerCasillero();
     int obtenerAtaque();
-    int obtenerPuntosDeVida();
     void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero);
     int obtenerVelocidad();
     void pasarTurno();

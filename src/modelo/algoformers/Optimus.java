@@ -25,5 +25,4 @@ public class Optimus extends Autobot {
         this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2);
     }
 
-
 }
