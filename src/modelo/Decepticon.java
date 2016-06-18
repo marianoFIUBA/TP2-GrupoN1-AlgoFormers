@@ -1,8 +1,5 @@
 package modelo;
 
-/**
- * Created by Mariano on 10/06/2016.
- */
 public abstract class Decepticon extends AlgoFormer {
 
     protected Decepticon(String nombre, Casillero casillero){
@@ -23,6 +20,13 @@ public abstract class Decepticon extends AlgoFormer {
     public void recibirAtaqueDeDecepticon(int ataque){
 
         //lanzar excepcion
+    }
+
+    public void atacar(AlgoFormer algoformer, int puntosDeAtaque){
+
+        algoformer.recibirAtaqueDeDecepticon(puntosDeAtaque);
+
+
     }
 
 }

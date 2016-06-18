@@ -8,7 +8,7 @@ import modelo.MovimientoAlternoAereo;
 
 public class Megatron extends Decepticon {
 
-    public Megatron(Casillero casillero){
+    public Megatron(Casillero casillero) {
 
         super("MEGATRON", casillero);
         this.puntosDeVida = 550;
@@ -16,13 +16,15 @@ public class Megatron extends Decepticon {
 
     }
 
-    public void transformarseAModoAlterno(){
+    public void transformarseAModoAlterno() {
 
         this.estado = this.estado.transformarseAModoAlterno(55, 2, 8);
     }
 
-    public void transformarseAModoHumanoide(){
+    public void transformarseAModoHumanoide() {
 
         this.estado = this.estado.transformarseAModoHumanoide(10, 3, 1);
     }
+
+
 }

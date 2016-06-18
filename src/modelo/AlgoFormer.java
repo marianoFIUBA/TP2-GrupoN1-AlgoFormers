@@ -21,6 +21,12 @@ public abstract class AlgoFormer {
         this.estado.mover(casillero);
     }*/
 
+
+
+    public int getPuntosDeVida() {
+        return puntosDeVida;
+    }
+
     public void moverA( Casillero destino){
 
         Casillero casilleroActual = this.casillero;
@@ -50,6 +56,17 @@ public abstract class AlgoFormer {
     }
 
     public void atacarA(AlgoFormer algoformer) {
+
+        int puntosDeAtaque = this.estado.obtenerAtaque();
+
+        if (this.calculo.estaEnRango(this.obtenerCasillero(), algoformer.obtenerCasillero(), puntosDeAtaque)){
+
+            this.atacar(algoformer, puntosDeAtaque);
+        }
+
+    }
+
+    public void atacar(AlgoFormer algoformer, int puntosDeAtaque){
 
     }
 
