@@ -3,15 +3,26 @@ package modelo.algoformers;
 
 import modelo.Casillero;
 import modelo.Decepticon;
+import modelo.EstadoAlterno;
+import modelo.MovimientoAlternoAereo;
 
-/**
- * Created by Mariano on 10/06/2016.
- */
-public abstract class Megatron extends Decepticon {
+public class Megatron extends Decepticon {
 
     public Megatron(Casillero casillero){
 
-            super("MEGATRON", casillero);
-//        this.estado = new MegatronAlterno(550, casillero);
+        super("MEGATRON", casillero);
+        this.puntosDeVida = 550;
+        this.estado = new EstadoAlterno(55, 2, 8, new MovimientoAlternoAereo());
+
+    }
+
+    public void transformarseAModoAlterno(){
+
+        this.estado = this.estado.transformarseAModoAlterno(55, 2, 8);
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(10, 3, 1);
     }
 }

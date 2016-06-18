@@ -1,18 +1,27 @@
 package modelo.algoformers;
 
 
-import modelo.Autobot;
-import modelo.Casillero;
+import modelo.*;
 
-/**
- * Created by Mariano on 10/06/2016.
- */
-public abstract class Ratchet extends Autobot {
+
+public class Ratchet extends Autobot {
 
     public Ratchet(Casillero casillero){
 
         super("RATCHET", casillero);
-//        this.estado = new RatchetAlterno(150, casillero);
+        this.puntosDeVida = 150;
+        this.estado = new EstadoAlterno(35,2,8, new MovimientoAlternoAereo());
+
     }
+
+    public void transformarseAModoAlterno(){
+
+        this.estado = this.estado.transformarseAModoAlterno(35, 2, 8);
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(5, 5, 1);
+    }
+
 }
-//

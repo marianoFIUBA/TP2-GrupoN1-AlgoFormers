@@ -1,8 +1,5 @@
 package modelo;
 
-/**
- * Created by Mariano on 10/06/2016.
- */
 public abstract class AlgoFormer {
 
     protected String nombre;

@@ -21,7 +21,7 @@ public class Casillero {
         this.tierra = tierra;
         this.bonus = "";
     }
-    public void alojarPorAire(AlgoFormer algoFormer){
+    public void alojarAlternoPorAire(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
     }

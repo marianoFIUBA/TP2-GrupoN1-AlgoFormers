@@ -2,21 +2,26 @@ package modelo.algoformers;
 
 import modelo.Casillero;
 import modelo.Decepticon;
+import modelo.EstadoAlterno;
+import modelo.MovimientoAlternoTerrestre;
 
-/**
- * Created by fedek on 11/6/2016.
- */
-public abstract class Bonecrusher extends Decepticon {
+public class Bonecrusher extends Decepticon {
 
     public Bonecrusher(Casillero casillero){
 
         super("BONECRUSHER", casillero);
-//        this.estado = new EstadoAlterno(200, casillero);
-
+        this.puntosDeVida = 200;
+        this.estado = new EstadoAlterno(30, 3, 8, new MovimientoAlternoTerrestre());
     }
 
-    public abstract void transformarseAModoAlterno();
+    public void transformarseAModoAlterno(){
 
-    public abstract void transformarseAModoHumanoide();
+        this.estado = this.estado.transformarseAModoAlterno(30, 3, 8);
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(30, 3, 1);
+    }
 
 }

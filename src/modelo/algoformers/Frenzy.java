@@ -3,16 +3,27 @@ package modelo.algoformers;
 
 import modelo.Casillero;
 import modelo.Decepticon;
+import modelo.EstadoAlterno;
+import modelo.MovimientoAlternoTerrestre;
 
-/**
- * Created by fedek on 11/6/2016.
- */
-public abstract class Frenzy extends Decepticon {
+public class Frenzy extends Decepticon {
 
     public Frenzy(Casillero casillero){
 
         super("FRENZY", casillero);
-//        this.estado = new FrenzyAlterno(400, casillero);
+        this.puntosDeVida = 400;
+        this.estado = new EstadoAlterno(25, 2, 6, new MovimientoAlternoTerrestre());
 
     }
+
+    public void transformarseAModoAlterno(){
+
+        this.estado = this.estado.transformarseAModoAlterno(25, 2, 6);
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(10, 5, 2);
+    }
+
 }
