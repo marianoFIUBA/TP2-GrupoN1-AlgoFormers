@@ -18,4 +18,10 @@ public abstract class Autobot extends AlgoFormer {
         this.puntosDeVida-=ataque;
     }
 
+    public void atacar(AlgoFormer algoformer, int puntosDeAtaque){
+
+        algoformer.recibirAtaqueDeAutobot(puntosDeAtaque);
+
+    }
+
 }

@@ -4,6 +4,8 @@ import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
 import modelo.Jugador;
+import modelo.algoformers.Bumblebee;
+import modelo.algoformers.Megatron;
 import modelo.algoformers.Optimus;
 import org.junit.Assert;
 import org.junit.Test;
@@ -44,4 +46,50 @@ public class AlgoformerTest {
         optimus.transformarseAModoAlterno();
         Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
     }
+
+    @Test
+    public void algoFormerAtacaSiEstaEnRango(){
+
+        Juego.getInstance().generarTablero(5,5,false);
+
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(2,2);
+
+        Optimus optimus = new Optimus(casilleroInicial);
+        Megatron megatron = new Megatron(casilleroFinal);
+        optimus.atacarA(megatron);
+
+        Assert.assertTrue(megatron.getPuntosDeVida() == 535);
+    }
+
+    @Test
+    public void algoFormerNoAtacaSiNoEstaEnRango(){
+
+        Juego.getInstance().generarTablero(20,20,false);
+
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(20,20);
+
+        Optimus optimus = new Optimus(casilleroInicial);
+        Megatron megatron = new Megatron(casilleroFinal);
+        optimus.atacarA(megatron);
+
+        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+    }
+
+    @Test
+    public void autobotNoAtacaAotroAutobot(){
+
+        Juego.getInstance().generarTablero(5,5,false);
+
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(2,2);
+
+        Optimus optimus = new Optimus(casilleroInicial);
+        Bumblebee bumblebee = new Bumblebee(casilleroFinal);
+        optimus.atacarA(bumblebee);
+
+        Assert.assertTrue(bumblebee.getPuntosDeVida() == 350);
+    }
+
 }
