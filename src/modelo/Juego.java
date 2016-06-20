@@ -169,9 +169,9 @@ public class Juego {
 
         if (this.jugadorActual.equals(this.jugador1)) {
 
-            this.jugadorActual =  this.jugador1;
+            this.jugadorActual =  this.jugador2;
         } else {
-            this.jugadorActual = this.jugador2;
+            this.jugadorActual = this.jugador1;
         }
 
         this.jugadorActual.cambiarEstado();

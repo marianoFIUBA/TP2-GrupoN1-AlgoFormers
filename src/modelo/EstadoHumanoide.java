@@ -71,6 +71,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     @Override
     public void pasarTurno() {
 
+        this.movimiento.pasarTurno();
     }
 
     @Override

@@ -53,6 +53,7 @@ public class EstadoAlterno implements EstadoAlgoFormer {
     @Override
     public void pasarTurno() {
 
+        this.movimiento.pasarTurno();
     }
 
     @Override

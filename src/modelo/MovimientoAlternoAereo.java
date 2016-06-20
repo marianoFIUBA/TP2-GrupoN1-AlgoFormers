@@ -38,7 +38,7 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     @Override
     public void cambiarAModoAtrapadoEnNebulosa(){
 
-        this.turnosPendientesAtrapado = 3;
+        this.turnosPendientesAtrapado = 4;
     }
 
     @Override
@@ -53,5 +53,12 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
         algoformer.setPuntosDeVida(puntosDeVida);
     }
 
+    @Override
+    public void pasarTurno(){
+
+        if (this.turnosPendientesAtrapado > 0){
+            this.turnosPendientesAtrapado--;
+        }
+    }
 }
 

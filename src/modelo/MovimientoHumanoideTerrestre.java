@@ -47,4 +47,9 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
     public void cambiarAModoPostPsionico(AlgoFormer algoformer){
         //lanzar excepcion
     }
+
+    public void pasarTurno(){
+
+        this.empantanado = false;
+    }
 }

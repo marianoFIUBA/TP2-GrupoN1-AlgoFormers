@@ -31,6 +31,7 @@ public class JugadorActivo implements EstadoJugador {
     public void atacar(AlgoFormer algoformer){
 
         this.algoformerSeleccionado.atacarA(algoformer);
+        this.informarFinDeTurno();
     }
 
     public void mover(Casillero casillero){
