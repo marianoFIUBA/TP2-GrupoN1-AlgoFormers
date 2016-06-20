@@ -33,7 +33,7 @@ public class Aplicacion extends Application{
         @Override
         public void handle(ActionEvent actionEvent) {
 
-            String textoClickeado = "ยก Me han clickeado !";
+            String textoClickeado = "Me han clickeado !";
 
             System.out.println(textoClickeado);
 
