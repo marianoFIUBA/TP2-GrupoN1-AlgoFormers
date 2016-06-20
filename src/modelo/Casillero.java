@@ -102,4 +102,9 @@ public class Casillero {
 
     }
 
+    public String obtenerTierra(){
+
+        return this.tierra;
+    }
+
 }

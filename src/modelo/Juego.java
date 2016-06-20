@@ -205,5 +205,10 @@ public class Juego {
             throw new CasilleroNoPerteneceAlTableroException();
         }
     }
+
+    public HashMap<String, Casillero> obtenerCasilleros(){
+
+        return this.casilleros;
+    }
 }
 
