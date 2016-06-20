@@ -6,6 +6,9 @@ package modelo;
 public interface EstrategiaDeMovimiento {
 
     //void mover(AlgoFormer algoFormer, Casillero destino);
-    void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero);
+    void ocuparCasillero(AlgoFormer algoformer, Casillero casillero);
     Casillero obtenerSiguienteCasillero(Casillero actual, Casillero destino);
+    void cambiarAModoAtrapadoEnNebulosa();
+    void cambiarAModoEmpantanado();
+    void cambiarAModoPostPsionico(AlgoFormer algoformer);
 }

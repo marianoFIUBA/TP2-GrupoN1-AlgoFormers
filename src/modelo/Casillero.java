@@ -57,10 +57,10 @@ public class Casillero {
 
                 break;
             case "PANTANO":
-                //algofmer.cambiarAModoEmpantando;
+                algoFormer.cambiarAModoEmpantanado();
                 break;
             case "ESPINAS":
-                //algoformer.recibirDanioDeEspinas
+                algoFormer.recibirDanioDeEspinas();
                 break;
         }
     }
@@ -73,10 +73,10 @@ public class Casillero {
 
                 break;
             case "PANTANO":
-                //algofmer.cambiarAModoEmpantando;
+                algoFormer.cambiarAModoEmpantanado();
                 break;
             case "ESPINAS":
-                //algoformer.recibirDanioDeEspinas
+                algoFormer.recibirDanioDeEspinas();
                 break;
         }
     }
@@ -89,10 +89,10 @@ public class Casillero {
 
                 break;
             case "NEBULOSA":
-                //algofmer.cambiarAModoAtrapadoEnNebulosa;
+                algoFormer.cambiarAModoAtrapadoEnNebulosa();
                 break;
             case "TORMENTA":
-                //algoFormer.cambiarAModoPS;
+                algoFormer.cambiarAModoPostPsionico();
                 break;
         }
     }

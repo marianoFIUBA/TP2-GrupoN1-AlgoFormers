@@ -1,11 +1,8 @@
 package modelo.algoformers;
 
-import modelo.Casillero;
-import modelo.Decepticon;
-import modelo.EstadoAlterno;
-import modelo.MovimientoAlternoTerrestre;
+import modelo.*;
 
-public class Bonecrusher extends Decepticon {
+public class Bonecrusher extends Decepticon{
 
     public Bonecrusher(Casillero casillero){
 
@@ -24,4 +21,8 @@ public class Bonecrusher extends Decepticon {
         this.estado = this.estado.transformarseAModoHumanoide(30, 3, 1);
     }
 
+    @Override
+    public  void  cambiarAModoPostPsionico(){
+        //lanzar excepcion
+    }
 }

@@ -3,7 +3,7 @@ package modelo;
 /**
  * Created by Franco on 15/6/2016.
  */
-public class MovimientoHumanoideTerrestre {
+public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
 
     private Calculos calculo;
     private boolean empantanado;
@@ -31,5 +31,20 @@ public class MovimientoHumanoideTerrestre {
         }
 
         return siguienteCasillero;
+    }
+
+    @Override
+    public void cambiarAModoAtrapadoEnNebulosa(){
+        //lanzar excepcion
+    }
+
+    @Override
+    public void cambiarAModoEmpantanado(){
+        this.empantanado = true;
+    }
+
+    @Override
+    public void cambiarAModoPostPsionico(AlgoFormer algoformer){
+        //lanzar excepcion
     }
 }

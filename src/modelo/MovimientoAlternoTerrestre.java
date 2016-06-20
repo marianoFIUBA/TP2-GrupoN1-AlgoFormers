@@ -34,4 +34,19 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
 
         return siguienteCasillero;
     }
+
+    @Override
+    public void cambiarAModoAtrapadoEnNebulosa(){
+        //lanzar excepcion
+    }
+
+    @Override
+    public void cambiarAModoEmpantanado(){
+        this.empantanado = true;
+    }
+
+    @Override
+    public void cambiarAModoPostPsionico(AlgoFormer algoformer){
+        //lanzar excepcion
+    }
 }

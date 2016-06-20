@@ -3,7 +3,7 @@ package modelo.algoformers;
 
 import modelo.*;
 
-public class Optimus extends Autobot {
+public class Optimus extends Autobot{
 
     public Optimus(Casillero casillero){
 
@@ -20,6 +20,11 @@ public class Optimus extends Autobot {
     public void transformarseAModoHumanoide(){
 
         this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2);
+    }
+
+    @Override
+    public  void  cambiarAModoPostPsionico(){
+        //lanzar excepcion
     }
 
 }

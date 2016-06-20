@@ -1,12 +1,9 @@
 package modelo.algoformers;
 
 
-import modelo.Autobot;
-import modelo.Casillero;
-import modelo.EstadoAlterno;
-import modelo.MovimientoAlternoTerrestre;
+import modelo.*;
 
-public class Bumblebee extends Autobot {
+public class Bumblebee extends Autobot{
 
     public Bumblebee(Casillero casillero){
 
@@ -26,5 +23,9 @@ public class Bumblebee extends Autobot {
         this.estado = this.estado.transformarseAModoHumanoide(40, 1, 2);
     }
 
+    @Override
+    public  void  cambiarAModoPostPsionico(){
+        //lanzar excepcion
+    }
 
 }

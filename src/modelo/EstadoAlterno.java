@@ -60,4 +60,31 @@ public class EstadoAlterno implements EstadoAlgoFormer {
 
         return "ALTERNO";
     }
+
+    @Override
+    public EstrategiaDeMovimiento obtenerMovimiento(){
+
+        return this.movimiento;
+    }
+
+
+    public void recibirDanioDeEspinas(AlgoFormer algoFormer){
+
+        //lanzar excepcion
+    }
+
+    public void cambiarAModoEmpantanado(){
+
+        this.movimiento.cambiarAModoEmpantanado();
+    }
+
+    public void cambiarAModoPostPsionico(AlgoFormer algoFormer){
+
+        this.movimiento.cambiarAModoPostPsionico(algoFormer);
+    }
+
+    public void cambiarAModoAtrapadoEnNebulosa(){
+
+        this.movimiento.cambiarAModoAtrapadoEnNebulosa();
+    }
 }

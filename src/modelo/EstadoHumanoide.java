@@ -77,4 +77,30 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public String obtenerEstado(){
         return "HUMANOIDE";
     }
+
+    @Override
+    public EstrategiaDeMovimiento obtenerMovimiento(){
+
+        return this.movimiento;
+    }
+    public void recibirDanioDeEspinas(AlgoFormer algoFormer){
+
+        int puntosDeVida =(algoFormer.getPuntosDeVida() - (algoFormer.getPuntosDeVida() * 5) / 100);
+        algoFormer.setPuntosDeVida(puntosDeVida);
+    }
+
+    public void cambiarAModoEmpantanado(){
+
+        this.movimiento.cambiarAModoEmpantanado();
+    }
+
+    public void cambiarAModoPostPsionico(AlgoFormer algoFormer){
+
+        //lanzar excepcion
+    }
+
+    public void cambiarAModoAtrapadoEnNebulosa(){
+
+        this.movimiento.cambiarAModoAtrapadoEnNebulosa();
+    }
 }

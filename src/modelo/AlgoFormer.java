@@ -8,6 +8,7 @@ public abstract class AlgoFormer {
     protected Calculos calculo;
     protected Casillero casillero;
     protected int puntosDeVida;
+    protected boolean modoPostPsionico;
 
     protected AlgoFormer(String nombre, Casillero casillero) {
 
@@ -66,9 +67,7 @@ public abstract class AlgoFormer {
 
     }
 
-    public void atacar(AlgoFormer algoformer, int puntosDeAtaque){
-
-    }
+    public abstract void atacar(AlgoFormer algoformer, int puntosDeAtaque);
 
     public Casillero obtenerCasillero() {
 
@@ -108,4 +107,33 @@ public abstract class AlgoFormer {
     public abstract void transformarseAModoAlterno();
 
     public abstract void transformarseAModoHumanoide();
+
+
+    public void  recibirDanioDeEspinas(){
+
+        this.estado.recibirDanioDeEspinas(this);
+    }
+
+    public void cambiarAModoEmpantanado (){
+
+        this.estado.cambiarAModoEmpantanado();
+    }
+
+    public abstract void  cambiarAModoPostPsionico();
+
+    public void cambiarAModoAtrapadoEnNebulosa(){
+
+        this.estado.cambiarAModoAtrapadoEnNebulosa();
+    }
+
+    public void setPuntosDeVida(int puntosDeVida){
+
+        this.puntosDeVida = puntosDeVida;
+    }
+
+    public void activarModoPostPsionico(){
+
+        this.modoPostPsionico = true;
+    }
+
 }

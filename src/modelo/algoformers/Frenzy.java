@@ -1,12 +1,9 @@
 package modelo.algoformers;
 
 
-import modelo.Casillero;
-import modelo.Decepticon;
-import modelo.EstadoAlterno;
-import modelo.MovimientoAlternoTerrestre;
+import modelo.*;
 
-public class Frenzy extends Decepticon {
+public class Frenzy extends Decepticon{
 
     public Frenzy(Casillero casillero){
 
@@ -24,6 +21,11 @@ public class Frenzy extends Decepticon {
     public void transformarseAModoHumanoide(){
 
         this.estado = this.estado.transformarseAModoHumanoide(10, 5, 2);
+    }
+
+    @Override
+    public  void  cambiarAModoPostPsionico(){
+        //lanzar excepcion
     }
 
 }

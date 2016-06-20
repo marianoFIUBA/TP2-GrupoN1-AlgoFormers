@@ -41,6 +41,7 @@ public class Jugador {
     public void cambiarEstado(){
 
         this.estado = this.estado.cambiarEstado();
+
     }
 
     public AlgoFormer obtenerAlgoformer1(){

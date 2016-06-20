@@ -2,6 +2,7 @@ package modelo;
 
 import modelo.Excepciones.CasilleroNoPerteneceAlTableroException;
 import modelo.algoformers.*;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -192,6 +193,17 @@ public class Juego {
 
         casilleros = this.generarCasilleros(dimesionX, dimensionY, generarSuperficiesAleatorias);
         this.guardarCasilleros(casilleros);
+    }
+
+    public void modificarCasillero(Casillero casillero, int posicionX, int posicionY){
+
+        String clave = String.valueOf(posicionX) + "." + String.valueOf(posicionY);
+        try{
+            this.casilleros.replace(clave, casillero);
+        } catch (NullPointerException ex){
+
+            throw new CasilleroNoPerteneceAlTableroException();
+        }
     }
 }
 

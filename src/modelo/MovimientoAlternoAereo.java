@@ -34,5 +34,24 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
 
         return siguienteCasillero;
     }
+
+    @Override
+    public void cambiarAModoAtrapadoEnNebulosa(){
+
+        this.turnosPendientesAtrapado = 3;
+    }
+
+    @Override
+    public void cambiarAModoEmpantanado(){
+        //lanzarExcepcion
+    }
+
+    @Override
+    public void cambiarAModoPostPsionico(AlgoFormer algoformer){
+        int puntosDeVida = algoformer.getPuntosDeVida() - ((algoformer.getPuntosDeVida() * 40) /100);
+        algoformer.activarModoPostPsionico();
+        algoformer.setPuntosDeVida(puntosDeVida);
+    }
+
 }
 
