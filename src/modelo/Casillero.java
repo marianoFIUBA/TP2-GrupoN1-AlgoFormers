@@ -11,7 +11,7 @@ public class Casillero {
     private String bonus;
     private String aire ;
     private String tierra;
-    private boolean ocupado;
+    private AlgoFormer algoFormer;
 
     public Casillero(int posicionX, int posicionY, String aire, String tierra){
 
@@ -20,22 +20,26 @@ public class Casillero {
         this.aire = aire;
         this.tierra = tierra;
         this.bonus = "";
+        this.algoFormer = null;
     }
     public void alojarAlternoPorAire(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
+        this.algoFormer = algoFormer;
         this.aplicarEfectoAire(algoFormer);
     }
 
     public void alojarAlternoPorTierra(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
+        this.algoFormer = algoFormer;
         this.aplicarEfectoAlternoPorTierra(algoFormer);
     }
 
     public void alojarHumanoidePorTierra(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
+        this.algoFormer = algoFormer;
         this.aplicarEfectoHumanoidePorTierra(algoFormer);
     }
 
@@ -105,6 +109,16 @@ public class Casillero {
     public String obtenerTierra(){
 
         return this.tierra;
+    }
+
+    public void desocupar(){
+
+        this.algoFormer = null;
+    }
+
+    public AlgoFormer obtenerAlgoformer(){
+
+        return this.algoFormer;
     }
 
 }

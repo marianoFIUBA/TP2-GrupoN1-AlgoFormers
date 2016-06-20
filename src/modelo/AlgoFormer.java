@@ -40,6 +40,7 @@ public abstract class AlgoFormer {
             while (distancia > 0 && movimientosDisponibles > 0){
 
                 Casillero casilleroAnterior = this.obtenerCasillero();
+                this.desocuparCasillero();
                 casilleroActual = this.estado.obtenerSiguienteCasillero(casilleroActual, destino);
                 this.estado.ocuparCasillero(this, casilleroActual);
                 movimientosDisponibles--;
@@ -134,6 +135,11 @@ public abstract class AlgoFormer {
     public void activarModoPostPsionico(){
 
         this.modoPostPsionico = true;
+    }
+
+    private void desocuparCasillero(){
+
+        this.casillero.desocupar();
     }
 
 }
