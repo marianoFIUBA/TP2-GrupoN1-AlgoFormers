@@ -2,7 +2,7 @@ package modelo;
 
 import modelo.Excepciones.CasilleroNoPerteneceAlTableroException;
 import modelo.algoformers.*;
-import org.apache.commons.lang3.ObjectUtils;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ public class Juego {
     private static Juego juego;
     private HashMap<String, Casillero> casilleros;
     private boolean iniciado;
-    private int[] superficiesTierra = {1,1,1,1,2,3};
+    private int[] superficiesTierra = {1,2,1,3,1,1};
     private int[] superficiesAire = {1,1,1,1,2,3};
     private Jugador jugador1;
     private Jugador jugador2;
@@ -67,8 +67,13 @@ public class Juego {
             ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
 
             Optimus optimus = new Optimus(casilleros.get(0));
+            optimus.estado.ocuparCasillero(optimus,casilleros.get(0));
+
             Bumblebee bumblebee = new Bumblebee(casilleros.get(1));
+            bumblebee.estado.ocuparCasillero(bumblebee,casilleros.get(1));
+
             Ratchet ratchet = new Ratchet(casilleros.get(2));
+            ratchet.estado.ocuparCasillero(ratchet,casilleros.get(2));
 
             ArrayList<AlgoFormer> autobots = new ArrayList<AlgoFormer>();
             autobots.add(optimus);
@@ -76,8 +81,13 @@ public class Juego {
             autobots.add(ratchet);
 
             Megatron megatron = new Megatron(casilleros.get(casilleros.size()-1));
+            megatron.estado.ocuparCasillero(megatron,casilleros.get(casilleros.size()-1));
+
             Bonecrusher bonecrusher = new Bonecrusher(casilleros.get(casilleros.size()-2));
+            bonecrusher.estado.ocuparCasillero(bonecrusher,casilleros.get(casilleros.size()-2));
+
             Frenzy frenzy = new Frenzy(casilleros.get(casilleros.size()-3));
+            frenzy.estado.ocuparCasillero(frenzy,casilleros.get(casilleros.size()-3));
 
             ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
 
@@ -103,13 +113,13 @@ public class Juego {
         ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
         Casillero nuevoCasillero;
 
-        for (int x = 0; x <= dimesionX; x++){
-            for (int y = 0; y <= dimensionY; y++){
+        for (int x = 1; x <= dimesionX; x++){
+            for (int y = 1; y <= dimensionY; y++){
 
                 String tierra =  "ROCOSA";
                 String aire = "NUBE";
 
-                if (generarSuperficiesAleatorias){
+                if (generarSuperficiesAleatorias && !esCasilleroInicialDeAlgoFormer(x,y,dimesionX,dimensionY)){
 
                     int superficieAletoriaTierra = (int)(Math.random()*this.superficiesTierra.length + 1);
                     int superficieAleatoriaAire = (int)(Math.random()*this.superficiesAire.length + 1);
@@ -121,7 +131,24 @@ public class Juego {
                 casilleros.add(nuevoCasillero);
             }
         }
+
+
         return casilleros;
+    }
+
+
+    private boolean esCasilleroInicialDeAlgoFormer (int posicionX, int posicionY,int dimensionX, int dimensionY){
+
+        boolean algoFormer1 = ((posicionX == 1) && (posicionY == 1));
+        boolean algoFormer2 = ((posicionX == 1) && (posicionY == 2));
+        boolean algoFormer3 = ((posicionX == 1) && (posicionY == 3));
+
+        boolean algoFormer4 = ((posicionX == dimensionX ) && (posicionY == dimensionY ));
+        boolean algoFormer5 = ((posicionX == dimensionX ) && (posicionY == dimensionY - 1 ));
+        boolean algoFormer6 = ((posicionX == dimensionX ) && (posicionY == dimensionY - 2 ));
+
+        return ( algoFormer1 || algoFormer2 || algoFormer3 || algoFormer4 || algoFormer5 || algoFormer6 );
+
     }
 
 
