@@ -2,25 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100fb671-2dd8-438f-b8c5-29315f142586" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" afterPath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Juego.java" afterPath="$PROJECT_DIR$/src/modelo/Juego.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/JugadorActivo.java" afterPath="$PROJECT_DIR$/src/modelo/JugadorActivo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/JugadorActivo.java" afterPath="$PROJECT_DIR$/src/modelo/JugadorActivo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" afterPath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" />
     </list>
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +44,7 @@
       <file leaf-file-name="MovimientoAlternoAereo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="782">
               <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding />
             </state>
@@ -65,7 +64,7 @@
       <file leaf-file-name="MovimientoHumanoideTerrestre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
+            <state relative-caret-position="867">
               <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
               <folding />
             </state>
@@ -85,7 +84,7 @@
       <file leaf-file-name="EstadoAlterno.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="867">
               <caret line="55" column="34" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="34" />
               <folding />
             </state>
@@ -95,18 +94,18 @@
       <file leaf-file-name="EstadoHumanoide.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/EstadoHumanoide.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
+            <state relative-caret-position="1173">
               <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Aplicacion.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Aplicacion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vista/Aplicacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Juego.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Juego.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="453">
-              <caret line="210" column="29" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
+              <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,7 +126,7 @@
       <file leaf-file-name="JugadorActivo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/JugadorActivo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="442">
               <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
@@ -208,6 +207,9 @@
     <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -224,6 +226,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -232,110 +236,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algo3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algoformers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algo3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="RunManager" selected="Application.Aplicacion">
@@ -689,12 +591,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7658915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -703,13 +603,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7658915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -720,18 +622,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/vista/Aplicacion.java</url>
-          <line>67</line>
-          <properties class="vista.Aplicacion" method="start" />
+          <line>85</line>
+          <properties class="vista.Aplicacion" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/vista/Aplicacion.java</url>
-          <line>70</line>
+          <line>88</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/vista/Aplicacion.java</url>
-          <line>46</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -745,6 +647,64 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/EstadoHumanoide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Aplicacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2635">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Juego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/JugadorActivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -971,7 +931,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/EstadoHumanoide.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="1173">
           <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
           <folding />
         </state>
@@ -979,7 +939,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="867">
           <caret line="55" column="34" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="34" />
           <folding />
         </state>
@@ -987,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/JugadorActivo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="442">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
@@ -1001,35 +961,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Aplicacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
+        <state relative-caret-position="867">
           <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="782">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding />
         </state>
@@ -1046,8 +988,26 @@
     <entry file="file://$PROJECT_DIR$/src/modelo/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
-          <caret line="210" column="29" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
+          <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Aplicacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

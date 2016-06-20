@@ -20,6 +20,8 @@ import java.util.HashMap;
  */
 public class Aplicacion extends Application{
 
+    Stage stage;
+
     public class MiBotonEventHandler implements EventHandler<ActionEvent> {
 
         private Button miBoton;
@@ -31,13 +33,22 @@ public class Aplicacion extends Application{
         @Override
         public void handle(ActionEvent actionEvent) {
 
-            String textoClickeado = "ยก Me han clickeado !";
+            String textoClickeado = "Me han clickeado !";
 
             System.out.println(textoClickeado);
+
+            /*Casillero casillero = Juego.getInstance().obtenerCasillero(2,2);
+
+            Juego.getInstance().obtenerJugador1().obtenerAlgoformer1().moverA(casillero);
+
+            actualizar();*/
+
 
             //this.miBoton.setText(textoClickeado);
         }
     }
+
+
 
     private String obtenerImagen(Casillero casillero){
 
@@ -66,11 +77,14 @@ public class Aplicacion extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        this.stage = stage;
+
         stage.setTitle("ALGOFORMERS");
 
-        int dimensionX = 10;
+        int dimensionX = 20;
 
-        int dimensionY = 10;
+        int dimensionY = 20;
 
         Juego.getInstance().iniciarJuego(dimensionX,dimensionY, true);
 
@@ -80,9 +94,13 @@ public class Aplicacion extends Application{
         for(int i = 1; i <= dimensionX; i++) {
             for (int j = 1; j <= dimensionY; j++) {
 
-                Button button = new Button();
-                button.setPrefSize(100, 100);
-                button.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
+
+
+                StackPane stack = new StackPane();
+
+                Button botonSuperficie = new Button();
+                botonSuperficie.setPrefSize(100, 100);
+                botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
 
                 Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
 
@@ -90,14 +108,31 @@ public class Aplicacion extends Application{
 
                 Image imagen = new Image(pathImagen);
                 BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-                button.setBackground(new Background(imagenDeFondo));
+                botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                MiBotonEventHandler miBotonEventHandler = new MiBotonEventHandler(button);
-                button.setOnAction(miBotonEventHandler);
+                MiBotonEventHandler miBotonEventHandler = new MiBotonEventHandler(botonSuperficie);
+                botonSuperficie.setOnAction(miBotonEventHandler);
+
+
+                stack.getChildren().add(botonSuperficie);
+
+                if (!(casilleroActual.obtenerAlgoformer() == null)){
+
+
+                    String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
+                    Button botonAlgoFormer = new Button();
+                    botonAlgoFormer.setPrefSize(50,50);
+                    botonAlgoFormer.setText(nombre);
+                    botonAlgoFormer.setOnAction(miBotonEventHandler);
+
+                    stack.getChildren().add(botonAlgoFormer);
+
+
+                }
 
 
 
-                tablero.add(button, i, j);
+                tablero.add(stack, j, i);
 
 
             }
