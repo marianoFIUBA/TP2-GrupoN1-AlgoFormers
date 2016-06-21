@@ -7,19 +7,34 @@ public class EstadoAlterno implements EstadoAlgoFormer {
     private int velocidad;
     private int ataque;
     private int distanciaDeAtaque;
+    private boolean esTerrestre;
 
     private EstrategiaDeMovimiento movimiento;
 
-    public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+    public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento, boolean esTerrestre){
 
         this.velocidad = velocidad;
         this.ataque= ataque;
         this.movimiento = movimiento;
         this.distanciaDeAtaque = distanciaAtaque;
+        this.esTerrestre = esTerrestre;
     }
+
+    public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+
+        this.velocidad = velocidad;
+        this.ataque= ataque;
+        this.distanciaDeAtaque = distanciaAtaque;
+
+        if (this.esTerrestre){
+            this.movimiento = new MovimientoAlternoTerrestre(movimiento);
+        } else {
+            this.movimiento = new MovimientoAlternoAereo(movimiento);
+        }
+    }
+
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
-
         return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 

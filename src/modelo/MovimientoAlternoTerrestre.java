@@ -14,6 +14,12 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
         this.empantanado = false;
     }
 
+    public MovimientoAlternoTerrestre(EstrategiaDeMovimiento estrategiaAnterior){
+
+        this.calculo = new Calculos();
+        this.empantanado = false;
+    }
+
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
         if (!empantanado){

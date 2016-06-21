@@ -14,6 +14,12 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
         this.turnosPendientesAtrapado = 0;
     }
 
+    public MovimientoAlternoAereo(EstrategiaDeMovimiento estrategiaAnterior){
+
+        this.calculo = new Calculos();
+        this.turnosPendientesAtrapado = 0;
+    }
+
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
         if (this.turnosPendientesAtrapado == 0) {
