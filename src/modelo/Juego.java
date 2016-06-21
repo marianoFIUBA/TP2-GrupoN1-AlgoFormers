@@ -100,7 +100,7 @@ public class Juego {
 
             this.guardarCasilleros(casilleros);
             this.jugadorActual = this.jugador1;
-            this.jugadorActual.cambiarEstado();
+            this.jugadorActual.activar();
 
             this.iniciado = true;
         } else {
@@ -192,7 +192,7 @@ public class Juego {
 
     public void pasarTurno(){
 
-        this.jugadorActual.cambiarEstado();
+        this.jugadorActual.desactivar();
 
         if (this.jugadorActual.equals(this.jugador1)) {
 
@@ -201,7 +201,7 @@ public class Juego {
             this.jugadorActual = this.jugador1;
         }
 
-        this.jugadorActual.cambiarEstado();
+        this.jugadorActual.activar();
     }
 
     public Jugador obtenerJugador1(){
