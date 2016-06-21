@@ -10,8 +10,9 @@ public class Ratchet extends Autobot{
 
         super("RATCHET", casillero);
         this.puntosDeVida = 150;
-        this.estado = new EstadoAlterno(35,2,8, new MovimientoAlternoAereo());
+        this.estado = new EstadoAlterno(35,2,8, new MovimientoAlternoAereo(), false);
         this.modoPostPsionico = false;
+        this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno(){
