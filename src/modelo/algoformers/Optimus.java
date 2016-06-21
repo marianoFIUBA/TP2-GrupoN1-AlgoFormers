@@ -10,6 +10,7 @@ public class Optimus extends Autobot{
         super("OPTIMUS", casillero);
         this.puntosDeVida = 500;
         this.estado = new EstadoAlterno(15, 4, 5, new MovimientoAlternoTerrestre());
+        this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno(){

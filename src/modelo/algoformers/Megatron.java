@@ -13,7 +13,7 @@ public class Megatron extends Decepticon{
         this.puntosDeVida = 550;
         this.estado = new EstadoAlterno(55, 2, 8, new MovimientoAlternoAereo());
         this.modoPostPsionico = false;
-
+        this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno() {

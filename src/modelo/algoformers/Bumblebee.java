@@ -10,7 +10,7 @@ public class Bumblebee extends Autobot{
         super("BUMBLEBEE", casillero);
         this.puntosDeVida = 350;
         this.estado = new EstadoAlterno(20, 3, 5, new MovimientoAlternoTerrestre());
-
+        this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno(){
