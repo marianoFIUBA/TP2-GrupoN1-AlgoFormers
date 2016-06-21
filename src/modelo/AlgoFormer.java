@@ -95,6 +95,11 @@ public abstract class AlgoFormer {
         return this.estado.obtenerVelocidad();
     }
 
+    public int obtenerAtaque(){
+
+        return this.estado.obtenerAtaque();
+    }
+
     public void setCasillero(Casillero casillero){
 
         this.casillero = casillero;

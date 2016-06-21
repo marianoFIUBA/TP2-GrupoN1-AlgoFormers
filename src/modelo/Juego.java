@@ -222,9 +222,9 @@ public class Juego {
         this.guardarCasilleros(casilleros);
     }
 
-    public void modificarCasillero(Casillero casillero, int posicionX, int posicionY){
+    public void modificarCasillero(Casillero casillero){
 
-        String clave = String.valueOf(posicionX) + "." + String.valueOf(posicionY);
+        String clave = String.valueOf(casillero.obtenerPosicionX()) + "." + String.valueOf(casillero.obtenerPosicionY());
         try{
             this.casilleros.replace(clave, casillero);
         } catch (NullPointerException ex){

@@ -60,7 +60,9 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     }
 
     @Override
-    public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero) {
+    public void ocuparCasillero(AlgoFormer algoformer, Casillero casillero) {
+
+        this.movimiento.ocuparCasillero(algoformer, casillero);
 
     }
 
