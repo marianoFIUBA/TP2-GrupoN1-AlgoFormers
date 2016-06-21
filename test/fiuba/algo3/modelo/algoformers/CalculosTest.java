@@ -56,7 +56,22 @@ public class CalculosTest {
 
     }
 
+    @Test
+    public void movimientoNoEsValidoSiHayAlgofoemerEnElCaminoMasLejosTest(){
 
+        Juego.getInstance().generarTablero(20,20,false);
+
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroConAlgoformer = Juego.getInstance().obtenerCasillero(4,4);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(5,5);
+
+        Optimus optimus = new Optimus(casilleroConAlgoformer);
+
+        Calculos calculos = new Calculos();
+
+        Assert.assertFalse(calculos.movimientoValido(casilleroInicial, casilleroFinal, 5));
+
+    }
 
 
 }

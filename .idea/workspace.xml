@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24dd6bf8-f92a-4622-a5ff-3907258c20f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Calculos.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Calculos.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Casillero.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Juego.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Juego.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/JugadorActivo.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/JugadorActivo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Bonecrusher.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Bonecrusher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Bumblebee.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Bumblebee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Frenzy.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Frenzy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Megatron.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Megatron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Optimus.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Optimus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Ratchet.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Ratchet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion$MiBotonEventHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/vista/Aplicacion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Calculos.java" afterPath="$PROJECT_DIR$/src/modelo/Calculos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Casillero.java" afterPath="$PROJECT_DIR$/src/modelo/Casillero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Bonecrusher.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Bonecrusher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Bumblebee.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Bumblebee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Frenzy.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Frenzy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Optimus.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Optimus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java" afterPath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java" />
     </list>
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -129,8 +107,8 @@
       <file leaf-file-name="CalculosTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+            <state relative-caret-position="399">
+              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -720,9 +698,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculosTest - 2016.06.20 at 20h 44m 16s.xml">
-      <configuration name="CalculosTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculosTest - 2016.06.20 at 20h 55m 54s.xml">
       <configuration name="CalculosTest" configurationId="JUnit" />
     </history-entry>
@@ -748,6 +723,9 @@
       <configuration name="CalculosTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CalculosTest - 2016.06.20 at 23h 11m 02s.xml">
+      <configuration name="CalculosTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculosTest - 2016.06.20 at 23h 14m 13s.xml">
       <configuration name="CalculosTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1000,8 +978,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+        <state relative-caret-position="399">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
