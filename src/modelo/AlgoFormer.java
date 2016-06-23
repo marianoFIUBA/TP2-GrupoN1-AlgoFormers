@@ -5,6 +5,8 @@ public abstract class AlgoFormer {
     protected String nombre;
     protected EstadoAlgoFormer estado;
     protected Arma arma;
+    protected Armadura armadura;
+    protected Piernas piernas;
     protected Calculos calculo;
     protected Casillero casillero;
     protected int puntosDeVida;
@@ -16,6 +18,9 @@ public abstract class AlgoFormer {
         this.casillero = casillero;
         this.calculo = new Calculos();
         this.modoPostPsionico = false;
+        this.arma = new Arma();
+        this.armadura = new Armadura();
+        this.piernas = new Piernas();
     }
 
 
@@ -55,7 +60,7 @@ public abstract class AlgoFormer {
 
     public void atacarA(AlgoFormer algoformer) {
 
-        int puntosDeAtaque = this.estado.obtenerAtaque();
+        int puntosDeAtaque = this.arma.modificarAtaque(this.estado.obtenerAtaque());
 
         if (this.modoPostPsionico){
             puntosDeAtaque = (int) (puntosDeAtaque * 0.6);

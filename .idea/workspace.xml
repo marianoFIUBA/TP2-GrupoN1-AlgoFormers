@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6dec75d8-1a29-4dcd-b9c6-ce763f2bc7c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/AlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlgoFormer.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlgoFormer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoAlterno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstadoHumanoide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/EstrategiaDeMovimiento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Juego.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/Juego.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoAereo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoAlternoTerrestre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/MovimientoHumanoideTerrestre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Megatron.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Megatron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Ratchet.class" afterPath="$PROJECT_DIR$/out/production/TP2-GrupoN1-AlgoFormers/modelo/algoformers/Ratchet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/algoformerTest.class" afterPath="$PROJECT_DIR$/out/test/TP2-GrupoN1-AlgoFormers/fiuba/algo3/modelo/algoformers/algoformerTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modelo/Armadura.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modelo/Piernas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" afterPath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoAlgoFormer.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoAlgoFormer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" afterPath="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" afterPath="$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Juego.java" afterPath="$PROJECT_DIR$/src/modelo/Juego.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" afterPath="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java" afterPath="$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java" afterPath="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Arma.java" afterPath="$PROJECT_DIR$/src/modelo/Arma.java" />
     </list>
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,41 +28,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AlgoFormer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlgoFormer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modelo/AlgoFormer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+            <state relative-caret-position="197">
+              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Megatron.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/algoformers/Megatron.java">
+      <file leaf-file-name="Armadura.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/Armadura.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="85">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ratchet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java">
+      <file leaf-file-name="Piernas.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/Piernas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+            <state relative-caret-position="85">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlgoformerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Arma.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/Arma.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgoformerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="277" column="2" selection-start-line="277" selection-start-column="2" selection-end-line="277" selection-end-column="2" />
+            <state relative-caret-position="-15">
+              <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstrategiaDeMovimiento.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -91,8 +91,18 @@
       <file leaf-file-name="MovimientoAlternoTerrestre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovimientoAlternoAereo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,54 +111,31 @@
       <file leaf-file-name="MovimientoHumanoideTerrestre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EstadoHumanoide.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/EstadoHumanoide.java">
+      <file leaf-file-name="EstadoAlterno.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EstadoJugador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/EstadoJugador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Decepticon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/Decepticon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EstadoAlgoFormer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlgoFormer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="170">
+              <caret line="13" column="127" selection-start-line="13" selection-start-column="108" selection-end-line="13" selection-end-column="127" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -168,12 +155,14 @@
         <option value="$PROJECT_DIR$/src/modelo/EstadoAlterno.java" />
         <option value="$PROJECT_DIR$/src/modelo/EstadoAlgoFormer.java" />
         <option value="$PROJECT_DIR$/src/modelo/EstadoHumanoide.java" />
-        <option value="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
         <option value="$PROJECT_DIR$/src/modelo/algoformers/Megatron.java" />
         <option value="$PROJECT_DIR$/src/modelo/algoformers/Ratchet.java" />
         <option value="$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java" />
         <option value="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" />
         <option value="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java" />
+        <option value="$PROJECT_DIR$/src/modelo/Armadura.java" />
+        <option value="$PROJECT_DIR$/src/modelo/Arma.java" />
+        <option value="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
       </list>
     </option>
   </component>
@@ -190,7 +179,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -319,6 +308,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Excepciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP2-GrupoN1-AlgoFormers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="algoformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -344,6 +355,11 @@
         </subPane>
       </pane>
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="modelo" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.AlgoformerTest">
     <configuration default="false" name="CalculosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -681,7 +697,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -751,14 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Jugador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -771,30 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="100" column="54" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -831,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/AlgoFormer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/algoformers/Megatron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -855,26 +831,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
+    <entry file="file://$PROJECT_DIR$/src/modelo/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="277" column="2" selection-start-line="277" selection-start-column="2" selection-end-line="277" selection-end-column="2" />
+        <state relative-caret-position="-15">
+          <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoTerrestre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoAlternoAereo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/EstadoAlterno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="127" selection-start-line="13" selection-start-column="108" selection-end-line="13" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Armadura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Piernas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Arma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/AlgoFormer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding />
         </state>
       </provider>
