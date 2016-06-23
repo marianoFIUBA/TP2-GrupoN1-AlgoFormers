@@ -33,10 +33,12 @@ public abstract class AlgoFormer {
 
         Casillero casilleroActual = this.casillero;
 
-        if (calculo.movimientoValido(casilleroActual, destino, this.obtenerVelocidad())){
+        int puntosDeVelocidad = this.piernas.modificarVelocidad(this.obtenerVelocidad());
+
+        if (calculo.movimientoValido(casilleroActual, destino, puntosDeVelocidad)){
 
             int distancia = calculo.obtenerDistancia(casilleroActual, destino);
-            int movimientosDisponibles = this.estado.obtenerVelocidad();
+            int movimientosDisponibles = puntosDeVelocidad;
 
             while (distancia > 0 && movimientosDisponibles > 0){
 

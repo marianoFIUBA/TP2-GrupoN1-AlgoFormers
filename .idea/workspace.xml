@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6dec75d8-1a29-4dcd-b9c6-ce763f2bc7c0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modelo/Armadura.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modelo/Piernas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" afterPath="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Arma.java" afterPath="$PROJECT_DIR$/src/modelo/Arma.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Armadura.java" afterPath="$PROJECT_DIR$/src/modelo/Armadura.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/Piernas.java" afterPath="$PROJECT_DIR$/src/modelo/Piernas.java" />
     </list>
     <ignored path="TP2-GrupoN1-AlgoFormers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AlgoFormer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlgoFormer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/AlgoFormer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="102">
+              <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculosTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgoformerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -42,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/modelo/Armadura.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -51,8 +70,8 @@
       <file leaf-file-name="Piernas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/Piernas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="501">
+              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -61,28 +80,8 @@
       <file leaf-file-name="Arma.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/Arma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlgoformerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EstrategiaDeMovimiento.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -161,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/modelo/MovimientoHumanoideTerrestre.java" />
         <option value="$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java" />
         <option value="$PROJECT_DIR$/src/modelo/Armadura.java" />
+        <option value="$PROJECT_DIR$/src/modelo/Piernas.java" />
         <option value="$PROJECT_DIR$/src/modelo/Arma.java" />
         <option value="$PROJECT_DIR$/src/modelo/AlgoFormer.java" />
       </list>
@@ -361,7 +361,7 @@
       <recent name="modelo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AlgoformerTest">
+  <component name="RunManager" selected="JUnit.CalculosTest">
     <configuration default="false" name="CalculosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -654,8 +654,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AlgoformerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculosTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculosTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AlgoformerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -682,13 +682,19 @@
     <history-entry file="AlgoformerTest - 2016.06.22 at 21h 32m 14s.xml">
       <configuration name="AlgoformerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AlgoformerTest - 2016.06.23 at 17h 01m 16s.xml">
+      <configuration name="AlgoformerTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="CalculosTest - 2016.06.22 at 21h 04m 26s.xml">
+      <configuration name="CalculosTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculosTest - 2016.06.23 at 17h 01m 23s.xml">
       <configuration name="CalculosTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -697,7 +703,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -731,14 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -839,14 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/EstrategiaDeMovimiento.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -890,31 +880,47 @@
     <entry file="file://$PROJECT_DIR$/src/modelo/Armadura.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Piernas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Arma.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="306">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Piernas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/AlgoFormer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        <state relative-caret-position="102">
+          <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/AlgoformerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/modelo/algoformers/CalculosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

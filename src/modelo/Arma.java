@@ -16,7 +16,7 @@ public class Arma {
 
         if (this.turnosRestantesDobleCanion > 0) {
 
-            ataqueFinal = ataqueInicial * 3;
+            ataqueFinal = ataqueInicial * 2;
             turnosRestantesDobleCanion--;
 
         }
