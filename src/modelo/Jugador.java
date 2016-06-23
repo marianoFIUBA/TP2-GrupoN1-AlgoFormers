@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class Jugador {
 
     private EstadoJugador estado;
-
     private AlgoFormer algoformer1;
     private AlgoFormer algoformer2;
     private AlgoFormer algoformer3;
-
+    private boolean leTocaJugar;
+    private AlgoFormer algoformerSeleccionado;
 //    private EstadoTurno estado;
 
     public Jugador(ArrayList<AlgoFormer> algoformers){
@@ -20,11 +20,11 @@ public class Jugador {
         this.algoformer1 = algoformers.get(0);
         this.algoformer2 = algoformers.get(1);
         this.algoformer3 = algoformers.get(2);
-
-        this.estado = new JugadorInactivo(this);
+        this.leTocaJugar = false;
+        this.algoformerSeleccionado = null;
     }
 
-    public void finalizarTurno(){
+    private void finalizarTurno(){
 
         this.algoformer1.pasarTurno();
         this.algoformer2.pasarTurno();
@@ -35,13 +35,17 @@ public class Jugador {
 
     public void seleccionarAlgoformer(AlgoFormer algoformer){
 
-        this.estado.seleccionarAlgoFormer(algoformer);
+        this.algoformerSeleccionado = algoformer;
     }
 
-    public void cambiarEstado(){
+    public void activar(){
 
-        this.estado = this.estado.cambiarEstado();
+        this.leTocaJugar = true;
+    }
 
+    public void desactivar(){
+
+        this.leTocaJugar = false;
     }
 
     public AlgoFormer obtenerAlgoformer1(){
@@ -56,5 +60,22 @@ public class Jugador {
     public AlgoFormer obtenerAlgoformer3(){
 
         return this.algoformer3;
+    }
+
+    public void atacar(AlgoFormer algoformer){
+
+        this.algoformerSeleccionado.atacarA(algoformer);
+        this.finalizarTurno();
+    }
+
+    public void mover(Casillero casillero){
+
+        try{
+            this.algoformerSeleccionado.moverA(casillero);
+            this.finalizarTurno();
+        } catch (NullPointerException ex){
+            //lanzar exepcion de algoformer no seleccionado
+        }
+
     }
 }

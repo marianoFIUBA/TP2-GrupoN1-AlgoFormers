@@ -9,7 +9,7 @@ public class Frenzy extends Decepticon{
 
         super("FRENZY", casillero);
         this.puntosDeVida = 400;
-        this.estado = new EstadoAlterno(25, 2, 6, new MovimientoAlternoTerrestre());
+        this.estado = new EstadoAlterno(25, 2, 6, new MovimientoAlternoTerrestre(), true);
         this.estado.ocuparCasillero(this, casillero);
     }
 

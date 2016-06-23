@@ -7,7 +7,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     private int velocidad;
     private int ataque;
     private int distanciaDeAtaque;
-
+    private boolean esTerrestre;
     private EstrategiaDeMovimiento movimiento;
 
 /*    public EstadoHumanoide(int puntosDeVida, Casillero casillero, int velocidad, int ataque, EstrategiaDeMovimiento movimiento){
@@ -19,22 +19,31 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
         this.movimiento = movimiento;
     }*/
 
-    public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+    public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento, boolean esTerrestre){
 
         this.velocidad = velocidad;
         this.ataque= ataque;
         this.movimiento = movimiento;
         this.distanciaDeAtaque = distanciaAtaque;
+        this.esTerrestre = esTerrestre;
+    }
+
+    public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+
+        this.velocidad = velocidad;
+        this.ataque= ataque;
+        this.movimiento = new MovimientoHumanoideTerrestre(movimiento);
+        this.distanciaDeAtaque = distanciaAtaque;
     }
 
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
-
         return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 
     @Override
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
+
         return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
 
@@ -60,7 +69,9 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     }
 
     @Override
-    public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero) {
+    public void ocuparCasillero(AlgoFormer algoformer, Casillero casillero) {
+
+        this.movimiento.ocuparCasillero(algoformer, casillero);
 
     }
 

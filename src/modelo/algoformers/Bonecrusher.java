@@ -8,7 +8,7 @@ public class Bonecrusher extends Decepticon{
 
         super("BONECRUSHER", casillero);
         this.puntosDeVida = 200;
-        this.estado = new EstadoAlterno(30, 3, 8, new MovimientoAlternoTerrestre());
+        this.estado = new EstadoAlterno(30, 3, 8, new MovimientoAlternoTerrestre(), true);
         this.estado.ocuparCasillero(this, casillero);
     }
 
