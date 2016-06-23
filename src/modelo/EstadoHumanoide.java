@@ -106,11 +106,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
         this.movimiento.cambiarAModoEmpantanado();
     }
 
-    public void cambiarAModoPostPsionico(AlgoFormer algoFormer){
-
-        //lanzar excepcion
-    }
-
     public void cambiarAModoAtrapadoEnNebulosa(){
 
         this.movimiento.cambiarAModoAtrapadoEnNebulosa();

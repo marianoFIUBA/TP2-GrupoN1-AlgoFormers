@@ -52,11 +52,6 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
     }
 
     @Override
-    public void cambiarAModoPostPsionico(AlgoFormer algoformer){
-        //lanzar excepcion
-    }
-
-    @Override
     public void pasarTurno(){
 
         this.empantanado = false;

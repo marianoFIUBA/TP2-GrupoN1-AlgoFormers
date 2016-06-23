@@ -30,7 +30,7 @@ public class Megatron extends Decepticon{
     public void  cambiarAModoPostPsionico(){
 
         if (!this.modoPostPsionico){
-            this.estado.cambiarAModoPostPsionico(this);
+            this.modoPostPsionico = true;
         }
     }
 

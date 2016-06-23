@@ -94,11 +94,6 @@ public class EstadoAlterno implements EstadoAlgoFormer {
         this.movimiento.cambiarAModoEmpantanado();
     }
 
-    public void cambiarAModoPostPsionico(AlgoFormer algoFormer){
-
-        this.movimiento.cambiarAModoPostPsionico(algoFormer);
-    }
-
     public void cambiarAModoAtrapadoEnNebulosa(){
 
         this.movimiento.cambiarAModoAtrapadoEnNebulosa();

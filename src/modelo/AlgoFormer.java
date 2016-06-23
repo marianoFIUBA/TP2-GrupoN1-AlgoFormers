@@ -15,18 +15,14 @@ public abstract class AlgoFormer {
         this.nombre = nombre;
         this.casillero = casillero;
         this.calculo = new Calculos();
+        this.modoPostPsionico = false;
     }
-
-/*    public void moverA(Casillero casillero) {
-
-        this.estado.mover(casillero);
-    }*/
-
 
 
     public int getPuntosDeVida() {
         return puntosDeVida;
     }
+
 
     public void moverA( Casillero destino){
 
@@ -60,6 +56,10 @@ public abstract class AlgoFormer {
     public void atacarA(AlgoFormer algoformer) {
 
         int puntosDeAtaque = this.estado.obtenerAtaque();
+
+        if (this.modoPostPsionico){
+            puntosDeAtaque = (int) (puntosDeAtaque * 0.6);
+        }
 
         if (this.calculo.estaEnRango(this.obtenerCasillero(), algoformer.obtenerCasillero(), puntosDeAtaque)){
 
@@ -135,11 +135,6 @@ public abstract class AlgoFormer {
     public void setPuntosDeVida(int puntosDeVida){
 
         this.puntosDeVida = puntosDeVida;
-    }
-
-    public void activarModoPostPsionico(){
-
-        this.modoPostPsionico = true;
     }
 
     private void desocuparCasillero(){

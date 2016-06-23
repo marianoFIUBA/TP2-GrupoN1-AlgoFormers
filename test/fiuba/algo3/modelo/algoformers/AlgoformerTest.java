@@ -258,7 +258,7 @@ public class AlgoformerTest {
 
     }
 
-    @Test
+/*    @Test
     public void testAlgoFormerEnEstadoAereoPierdeCincoPorCientoDeVidaAlAtravesarUnaTormentaPsionica(){
 
 
@@ -275,7 +275,7 @@ public class AlgoformerTest {
 
 
     }
-
+*/
 }
 
 

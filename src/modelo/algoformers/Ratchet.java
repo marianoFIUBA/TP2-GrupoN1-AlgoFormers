@@ -29,7 +29,7 @@ public class Ratchet extends Autobot{
     public void  cambiarAModoPostPsionico(){
 
         if (!this.modoPostPsionico){
-            this.estado.cambiarAModoPostPsionico(this);
+            this.modoPostPsionico= true;
         }
     }
 }

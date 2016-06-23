@@ -29,8 +29,6 @@ public interface EstadoAlgoFormer {
 
     void cambiarAModoEmpantanado();
 
-    void cambiarAModoPostPsionico(AlgoFormer algoFormer);
-
     void cambiarAModoAtrapadoEnNebulosa();
 
 }

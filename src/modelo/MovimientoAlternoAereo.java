@@ -53,13 +53,6 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     }
 
     @Override
-    public void cambiarAModoPostPsionico(AlgoFormer algoformer){
-        int puntosDeVida = algoformer.getPuntosDeVida() - ((algoformer.getPuntosDeVida() * 40) /100);
-        algoformer.activarModoPostPsionico();
-        algoformer.setPuntosDeVida(puntosDeVida);
-    }
-
-    @Override
     public void pasarTurno(){
 
         if (this.turnosPendientesAtrapado > 0){

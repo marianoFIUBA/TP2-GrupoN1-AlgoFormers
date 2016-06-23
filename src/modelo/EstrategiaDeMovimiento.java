@@ -10,6 +10,5 @@ public interface EstrategiaDeMovimiento {
     Casillero obtenerSiguienteCasillero(Casillero actual, Casillero destino);
     void cambiarAModoAtrapadoEnNebulosa();
     void cambiarAModoEmpantanado();
-    void cambiarAModoPostPsionico(AlgoFormer algoformer);
     void pasarTurno();
 }
