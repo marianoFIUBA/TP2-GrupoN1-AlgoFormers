@@ -62,11 +62,11 @@ public abstract class AlgoFormer {
 
     public void atacarA(AlgoFormer algoformer) {
 
-        int puntosDeAtaque = this.arma.modificarAtaque(this.estado.obtenerAtaque());
+        int puntosDeAtaque = this.arma.modificarAtaque(this.obtenerAtaque());
 
-        if (this.modoPostPsionico){
+        /*if (this.modoPostPsionico){
             puntosDeAtaque = (int) (puntosDeAtaque * 0.6);
-        }
+        }*/
 
         if (this.calculo.estaEnRango(this.obtenerCasillero(), algoformer.obtenerCasillero(), puntosDeAtaque)){
 
@@ -104,7 +104,11 @@ public abstract class AlgoFormer {
 
     public int obtenerAtaque(){
 
-        return this.estado.obtenerAtaque();
+        int ataque = this.estado.obtenerAtaque();
+        if (this.modoPostPsionico){
+            ataque = (int) (ataque * 0.6);
+        }
+        return ataque;
     }
 
     public void setCasillero(Casillero casillero){

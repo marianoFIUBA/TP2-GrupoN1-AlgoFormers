@@ -5,7 +5,6 @@ import modelo.*;
 
 public class Megatron extends Decepticon{
 
-    private boolean modoPostPsionico;
 
     public Megatron(Casillero casillero) {
 

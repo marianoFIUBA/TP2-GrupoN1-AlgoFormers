@@ -323,24 +323,23 @@ public class AlgoformerTest {
 
     }
 
-/*    @Test
-    public void testAlgoFormerEnEstadoAereoPierdeCincoPorCientoDeVidaAlAtravesarUnaTormentaPsionica(){
+    @Test
+    public void testAlgoFormerEnEstadoAereoPierdeCincoPorCientoDeAtaqueAlAtravesarUnaTormentaPsionica(){
 
 
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 9);
-        Casillero casilleroConPantano = new Casillero(1, 3, "TORMENTA ", "ROCOSA");
-        Juego.getInstance().modificarCasillero(casilleroConPantano);                            //CORREGIR LOGICA DE TORMENTA PSIONICA, SE ESTA QUITANDO PUNTOS DE VIDA EN VEZ DE PUNTOS DE ATAQUE !!!
+        Casillero casilleroConTormenta = new Casillero(1, 3, "TORMENTA", "ROCOSA");
+        Juego.getInstance().modificarCasillero(casilleroConTormenta);
         Megatron megatron = new Megatron(casilleroInicial);
 
         megatron.moverA(casilleroFinal);
 
-        Assert.assertTrue(megatron.obtenerAtaque() == 22);
-
+        Assert.assertTrue(megatron.obtenerAtaque() == 33);
 
     }
-*/
+
 }
 
 
