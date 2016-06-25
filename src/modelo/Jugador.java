@@ -5,14 +5,16 @@ import java.util.ArrayList;
 /**
  * Created by Mariano on 12/06/2016.
  */
-public class Jugador {
+public abstract class Jugador {
 
-    private EstadoJugador estado;
-    private AlgoFormer algoformer1;
-    private AlgoFormer algoformer2;
-    private AlgoFormer algoformer3;
-    private boolean leTocaJugar;
-    private AlgoFormer algoformerSeleccionado;
+    protected EstadoJugador estado;
+    protected AlgoFormer algoformer1;
+    protected AlgoFormer algoformer2;
+    protected AlgoFormer algoformer3;
+    protected AlgoFormer combinado;
+    protected boolean leTocaJugar;
+    protected AlgoFormer algoformerSeleccionado;
+    protected Calculos calculos;
 //    private EstadoTurno estado;
 
     public Jugador(ArrayList<AlgoFormer> algoformers){
@@ -22,6 +24,7 @@ public class Jugador {
         this.algoformer3 = algoformers.get(2);
         this.leTocaJugar = false;
         this.algoformerSeleccionado = null;
+        this.combinado = null;
     }
 
     private void finalizarTurno(){
@@ -62,6 +65,11 @@ public class Jugador {
         return this.algoformer3;
     }
 
+    public AlgoFormer obtenercombinado(){
+
+        return this.combinado;
+    }
+
     public void atacar(AlgoFormer algoformer){
 
         this.algoformerSeleccionado.atacarA(algoformer);
@@ -76,6 +84,12 @@ public class Jugador {
         } catch (NullPointerException ex){
             //lanzar exepcion de algoformer no seleccionado
         }
-
     }
+
+    protected boolean validarCombinacion(){
+
+        return true;
+    }
+
+    public abstract void combinarAlgoformers();
 }

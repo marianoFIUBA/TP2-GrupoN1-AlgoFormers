@@ -96,8 +96,8 @@ public class Juego {
             decepticons.add(bonecrusher);
             decepticons.add(frenzy);
 
-            this.jugador1 = new Jugador(decepticons);
-            this.jugador2 = new Jugador(autobots);
+            this.jugador1 = new JugadorDecepticon(decepticons);
+            this.jugador2 = new JugadorAutobot(autobots);
 
             this.guardarCasilleros(casilleros);
             this.jugadorActual = this.jugador1;
