@@ -12,8 +12,16 @@ public class Armadura {
         this.turnosPendientes = 2;
     }
 
-    public int modificarDefensa(int puntosDeAtaque){
+    public int modificarDefensa(int ataqueInicial){
 
-        return 0;
+        int ataqueFinal = ataqueInicial;
+
+        if (this.turnosPendientes > 0){
+
+            ataqueFinal = 0;
+        }
+
+        return ataqueFinal;
+
     }
 }
