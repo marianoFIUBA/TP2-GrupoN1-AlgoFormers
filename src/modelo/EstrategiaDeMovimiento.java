@@ -11,4 +11,5 @@ public interface EstrategiaDeMovimiento {
     void cambiarAModoAtrapadoEnNebulosa();
     void cambiarAModoEmpantanado();
     void pasarTurno();
+    void cambiarAModoNoEmpantanado();
 }

@@ -129,7 +129,16 @@ public class AlgoformerTest {
         Assert.assertEquals(bumblebee.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(bumblebee.obtenerAtaque() == 20 && bumblebee.obtenerVelocidad() == 5 && bumblebee.getPuntosDeVida() == 350);
 
-        //Aca se transforma a humanoide y se prueba su movimiento y paso por zona rocosa
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
+
+        bumblebee.transformarseAModoHumanoide();
+
+        bumblebee.moverA(casilleroFinal);
+
+        Assert.assertEquals(bumblebee.obtenerCasillero(),casilleroFinal);
+        Assert.assertTrue(bumblebee.obtenerAtaque() == 40 && bumblebee.obtenerVelocidad() == 2 && bumblebee.getPuntosDeVida() == 350);
+
+
 
     }
 
@@ -146,7 +155,14 @@ public class AlgoformerTest {
         Assert.assertEquals(ratchet.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(ratchet.obtenerAtaque() == 35 && ratchet.obtenerVelocidad() == 8 && ratchet.getPuntosDeVida() == 150);
 
-        //Aca se transforma a humanoide y se prueba su movimiento y paso por zona rocosa
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
+
+        ratchet.transformarseAModoHumanoide();
+
+        ratchet.moverA(casilleroFinal);
+
+        Assert.assertEquals(ratchet.obtenerCasillero(),casilleroFinal);
+        Assert.assertTrue(ratchet.obtenerAtaque() == 5 && ratchet.obtenerVelocidad() == 1 && ratchet.getPuntosDeVida() == 150);
 
 
     }
@@ -164,7 +180,14 @@ public class AlgoformerTest {
         Assert.assertEquals(megatron.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(megatron.obtenerAtaque() == 55 && megatron.obtenerVelocidad() == 8 && megatron.getPuntosDeVida() == 550);
 
-        //Aca se transforma a humanoide y se prueba su movimiento y paso por zona rocosa
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
+
+        megatron.transformarseAModoHumanoide();
+
+        megatron.moverA(casilleroFinal);
+
+        Assert.assertEquals(megatron.obtenerCasillero(),casilleroFinal);
+        Assert.assertTrue(megatron.obtenerAtaque() == 10 && megatron.obtenerVelocidad() == 1 && megatron.getPuntosDeVida() == 550);
 
 
     }
@@ -182,7 +205,14 @@ public class AlgoformerTest {
         Assert.assertEquals(bonecrusher.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 8 && bonecrusher.getPuntosDeVida() == 200);
 
-        //Aca se transforma a humanoide y se prueba su movimiento y paso por zona rocosa
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
+
+        bonecrusher.transformarseAModoHumanoide();
+
+        bonecrusher.moverA(casilleroFinal);
+
+        Assert.assertEquals(bonecrusher.obtenerCasillero(),casilleroFinal);
+        Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 1 && bonecrusher.getPuntosDeVida() == 200);
 
     }
 
@@ -199,7 +229,14 @@ public class AlgoformerTest {
         Assert.assertEquals(frenzy.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(frenzy.obtenerAtaque() == 25 && frenzy.obtenerVelocidad() == 6 && frenzy.getPuntosDeVida() == 400);
 
-        //Aca se transforma a humanoide y se prueba su movimiento y paso por zona rocosa
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,9);
+
+        frenzy.transformarseAModoHumanoide();
+
+        frenzy.moverA(casilleroFinal);
+
+        Assert.assertEquals(frenzy.obtenerCasillero(),casilleroFinal);
+        Assert.assertTrue(frenzy.obtenerAtaque() == 10 && frenzy.obtenerVelocidad() == 2 && frenzy.getPuntosDeVida() == 400);
 
 
     }
@@ -210,18 +247,46 @@ public class AlgoformerTest {
 
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
-        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 6);
-        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 5);  //El algoformer en estado ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
-        Casillero casilleroConPantano = new Casillero(1, 3, "NUBE", "PANTANO");
-        Juego.getInstance().modificarCasillero(casilleroConPantano);          //Se modifica un casillero del tablero por un casillero con zona pantanosa.
-        Optimus optimus = new Optimus(casilleroInicial);   //Optimus se crea en estado ALTERNO TERRESTRE.
+        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 6);    //El algoformer en estado ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
+        Casillero casilleroConPantano = new Casillero(1, 5, "NUBE", "PANTANO");
+        Juego.getInstance().modificarCasillero(casilleroConPantano);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 5);  //Se modifica un casillero del tablero por un casillero con zona pantanosa.
+        Optimus optimus = new Optimus(casilleroInicial);    //Optimus se crea en estado ALTERNO TERRESTRE.
 
         optimus.moverA(casilleroDestino);
 
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
+        Assert.assertEquals(casilleroFinal.obtenerAlgoformer(), optimus);
 
 
     }
+
+    @Test
+    public void algoformerEnEstadoHumanoideNoPuedeAtravesarZonaPantanosa(){
+
+        Juego.getInstance().generarTablero(20, 20, false);
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
+        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1,3);
+        Casillero casilleroConPantano = new Casillero (1,2,"NUBE","PANTANO");
+        Juego.getInstance().modificarCasillero(casilleroConPantano);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1,2);
+        Optimus optimus = new Optimus(casilleroInicial);
+
+        optimus.transformarseAModoHumanoide();
+        optimus.moverA(casilleroDestino);
+
+        Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
+        Assert.assertEquals(casilleroFinal.obtenerAlgoformer(), optimus);
+
+        optimus.moverA(casilleroDestino);
+
+        Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
+        Assert.assertEquals(casilleroFinal.obtenerAlgoformer(), optimus);
+
+
+    }
+
+
 
     @Test
     public void testAlgoformerEnEstadoAlterneAereoAtraviesaSinProblemasPorZonaPantanosa() {

@@ -22,11 +22,7 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
 
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
-        if (!empantanado){
-            casillero.alojarAlternoPorTierra(algoFormer);
-        } else {
-            this.empantanado = false;
-        }
+        casillero.alojarAlternoPorTierra(algoFormer,empantanado);
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){
@@ -55,5 +51,12 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
     public void pasarTurno(){
 
         this.empantanado = false;
+    }
+
+    @Override
+    public void cambiarAModoNoEmpantanado() {
+
+        this.empantanado = false;
+
     }
 }

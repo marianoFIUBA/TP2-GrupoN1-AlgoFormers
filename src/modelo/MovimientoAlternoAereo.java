@@ -59,5 +59,10 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
             this.turnosPendientesAtrapado--;
         }
     }
+
+    @Override
+    public void cambiarAModoNoEmpantanado() {
+        
+    }
 }
 

@@ -31,11 +31,13 @@ public class Casillero {
         this.aplicarEfectoAire(algoFormer);
     }
 
-    public void alojarAlternoPorTierra(AlgoFormer algoFormer){
+    public void alojarAlternoPorTierra(AlgoFormer algoFormer, boolean estaEmpantanado){
 
         algoFormer.setCasillero(this);
         this.algoFormer = algoFormer;
-        this.aplicarEfectoAlternoPorTierra(algoFormer);
+        if (!estaEmpantanado) {
+            this.aplicarEfectoAlternoPorTierra(algoFormer);
+        } else { algoFormer.estado.obtenerMovimiento().cambiarAModoNoEmpantanado(); }
     }
 
     public void alojarHumanoidePorTierra(AlgoFormer algoFormer){
