@@ -88,7 +88,7 @@ public class AlgoformerTest {
     }
 
     @Test
-    public void testoptimusAtraviesaZonaRocosaSinProblemas() {
+    public void testOptimusAtraviesaZonaRocosaSinProblemas() {
 
         Juego.getInstance().generarTablero(20, 20, false);
 
@@ -103,14 +103,14 @@ public class AlgoformerTest {
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
         Assert.assertTrue(optimus.obtenerAtaque() == 15 && optimus.obtenerVelocidad() == 5 && optimus.getPuntosDeVida() == 500);
 
-        /*casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
 
         optimus.transformarseAModoHumanoide();
 
         optimus.moverA(casilleroFinal);
 
         Assert.assertEquals(optimus.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(optimus.obtenerAtaque() == 50 && optimus.obtenerVelocidad() == 2 && optimus.getPuntosDeVida() == 500);*/
+        Assert.assertTrue(optimus.obtenerAtaque() == 50 && optimus.obtenerVelocidad() == 2 && optimus.getPuntosDeVida() == 500);
 
 
     }

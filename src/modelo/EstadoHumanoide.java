@@ -76,7 +76,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     }
 
     public int obtenerVelocidad() {
-        return 0;
+        return this.velocidad;
     }
 
     @Override
