@@ -149,4 +149,19 @@ public abstract class AlgoFormer {
         this.casillero.desocupar();
     }
 
+    public void cambiarAModoFlash(){
+
+        this.piernas.cambiarAmodoFlash();
+    }
+
+    public void cambiarAModoDobleCanion(){
+
+        this.arma.cambiarAmodoDobleCanion();
+    }
+
+    public void cambiarAModoBurbujaInmaculada(){
+
+        this.armadura.cambiarAModoBurbujaInmaculada();
+    }
+
 }

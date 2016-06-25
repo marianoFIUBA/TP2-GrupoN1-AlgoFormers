@@ -24,6 +24,17 @@ public class Casillero {
         this.bonus = "";
         this.algoFormer = null;
     }
+
+    public Casillero(int posicionX, int posicionY, String aire, String tierra,String  bonus){
+
+        this.posicionX = posicionX;
+        this.posicionY = posicionY;
+        this.aire = aire;
+        this.tierra = tierra;
+        this.bonus = bonus;
+        this.algoFormer = null;
+    }
+
     public void alojarAlternoPorAire(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
@@ -105,8 +116,20 @@ public class Casillero {
         }
     }
 
-    private void aplicarBonus(){
+    private void aplicarBonus(AlgoFormer algoFormer){
 
+        switch (this.bonus){
+
+            case "CANION":
+                algoFormer.cambiarAModoDobleCanion();
+                break;
+            case "BURBUJA":
+                algoFormer.cambiarAModoBurbujaInmaculada();
+                break;
+            case "FLASH":
+                algoFormer.cambiarAModoFlash();
+                break;
+        }
 
     }
 
@@ -124,5 +147,6 @@ public class Casillero {
 
         return this.algoFormer;
     }
+
 
 }
