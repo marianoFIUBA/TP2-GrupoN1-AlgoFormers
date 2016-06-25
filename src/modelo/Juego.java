@@ -18,6 +18,7 @@ public class Juego {
     private boolean iniciado;
     private int[] superficiesTierra = {1,2,1,3,1,1};
     private int[] superficiesAire = {1,1,1,1,2,3};
+    private int [] bonus = {1,1,1,1,1,1,3,1,1,1,1,1,1,4,1,1,1,1,1,2};
     private Jugador jugador1;
     private Jugador jugador2;
     private Jugador jugadorActual;
@@ -117,16 +118,19 @@ public class Juego {
 
                 String tierra =  "ROCOSA";
                 String aire = "NUBE";
+                String bonus = "";
 
                 if (generarSuperficiesAleatorias && !esCasilleroInicialDeAlgoFormer(x,y,dimesionX,dimensionY)){
 
                     int superficieAletoriaTierra = (int)(Math.random()*this.superficiesTierra.length + 1);
                     int superficieAleatoriaAire = (int)(Math.random()*this.superficiesAire.length + 1);
+                    int bonusAleatorio = (int)(Math.random()*this.bonus.length + 1);
 
+                    bonus = this.obtenerBonus(bonusAleatorio);
                     tierra = this.obtenerSuperficieTierra(superficieAletoriaTierra);
                     aire = this.obtenerSuperficieAire(superficieAleatoriaAire);
                 }
-                nuevoCasillero = new Casillero(x,y,aire,tierra);
+                nuevoCasillero = new Casillero(x,y,aire,tierra, bonus);
                 casilleros.add(nuevoCasillero);
             }
         }
@@ -135,6 +139,25 @@ public class Juego {
         return casilleros;
     }
 
+    private String obtenerBonus(int tipoBonus){
+
+        String bonus = "";
+        switch(tipoBonus){
+
+            case 2:
+                bonus = "CANION";
+                break;
+            case 3:
+                bonus = "BURBUJA";
+                break;
+            case 4:
+                bonus = "FLASH";
+                break;
+        }
+        return bonus;
+
+
+    }
 
     private boolean esCasilleroInicialDeAlgoFormer (int posicionX, int posicionY,int dimensionX, int dimensionY){
 

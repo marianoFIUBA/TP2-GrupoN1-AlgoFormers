@@ -5,4 +5,15 @@ package modelo;
  */
 public class Armadura {
 
+    int turnosPendientes;
+
+    public void cambiarAModoBurbujaInmaculada(){
+
+        this.turnosPendientes = 2;
+    }
+
+    public int modificarDefensa(int puntosDeAtaque){
+
+        return 0;
+    }
 }
