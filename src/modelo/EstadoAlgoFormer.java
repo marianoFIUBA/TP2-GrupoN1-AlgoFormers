@@ -25,10 +25,11 @@ public interface EstadoAlgoFormer {
 
     EstrategiaDeMovimiento obtenerMovimiento();
 
-    void recibirDanioDeEspinas(AlgoFormer algoFormer);
-
     void cambiarAModoEmpantanado();
 
     void cambiarAModoAtrapadoEnNebulosa();
+
+    boolean esTerrestre();
+
 
 }

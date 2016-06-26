@@ -17,7 +17,7 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
     public MovimientoHumanoideTerrestre(EstrategiaDeMovimiento estrategiaAnterior){
 
         this.calculo = new Calculos();
-        this.empantanado = false;
+        this.empantanado = estrategiaAnterior.estaEmpantanado();
     }
 
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
@@ -60,4 +60,9 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
     }
 
     public boolean estaEmpantanado(){ return this.empantanado; }
+
+    @Override
+    public boolean recibeDaniosPorEspinas() {
+        return true;
+    }
 }

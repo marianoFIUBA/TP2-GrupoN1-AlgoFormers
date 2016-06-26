@@ -7,10 +7,11 @@ import modelo.*;
  */
 public class Superion extends Autobot {
 
-    public Superion(Casillero casillero, int puntosDevida){
+    public Superion(Casillero casillero, double puntosDevida){
 
         super("SUPERION", casillero);
         this.puntosDeVida = puntosDevida;
+        this.puntosDeVidaIniciales = puntosDevida;
         this.estado = new EstadoAlterno(100, 2, 3, new MovimientoAlternoTerrestre(), true);
         this.estado.ocuparCasillero(this, casillero);
     }

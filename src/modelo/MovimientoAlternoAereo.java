@@ -24,9 +24,9 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
 
         if (this.turnosPendientesAtrapado == 0) {
             casillero.alojarAlternoPorAire(algoFormer);
-        } else {
+        } /*else {
             this.turnosPendientesAtrapado--;
-        }
+        }*/
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){
@@ -44,7 +44,7 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     @Override
     public void cambiarAModoAtrapadoEnNebulosa(){
 
-        this.turnosPendientesAtrapado = 4;
+        this.turnosPendientesAtrapado = 3;
     }
 
     @Override
@@ -63,6 +63,16 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     @Override
     public void cambiarAModoNoEmpantanado() {
         
+    }
+
+    @Override
+    public boolean estaEmpantanado() {
+        return false;
+    }
+
+    @Override
+    public boolean recibeDaniosPorEspinas() {
+        return false;
     }
 }
 

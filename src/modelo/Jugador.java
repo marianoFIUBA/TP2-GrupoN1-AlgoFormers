@@ -27,6 +27,14 @@ public abstract class Jugador {
         this.combinado = null;
     }
 
+    public void setAlgoformer1(AlgoFormer algoFormer){
+
+        this.algoformer1 = algoFormer;
+
+    }
+
+
+
     private void finalizarTurno(){
 
         this.algoformer1.pasarTurno();

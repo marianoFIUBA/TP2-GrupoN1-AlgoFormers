@@ -7,10 +7,11 @@ import modelo.*;
  */
 public class Menasor extends Decepticon {
 
-    public Menasor(Casillero casillero, int puntosDevida){
+    public Menasor(Casillero casillero, double puntosDevida){
 
         super("MENASOR", casillero);
         this.puntosDeVida = puntosDevida;
+        this.puntosDeVidaIniciales = puntosDeVida;
         this.estado = new EstadoAlterno(105, 2, 2, new MovimientoAlternoTerrestre(), true);
         this.estado.ocuparCasillero(this, casillero);
     }
@@ -29,5 +30,6 @@ public class Menasor extends Decepticon {
     public  void  cambiarAModoPostPsionico(){
         //lanzar excepcion
     }
+
 
 }

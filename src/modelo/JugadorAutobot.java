@@ -19,7 +19,7 @@ public class JugadorAutobot extends Jugador {
         if (this.validarCombinacion()){
 
             Casillero casillero = this.algoformerSeleccionado.obtenerCasillero();
-            int puntosDeVida = this.algoformer1.getPuntosDeVida() + this.algoformer2.getPuntosDeVida() + this.algoformer3.getPuntosDeVida();
+            double puntosDeVida = this.algoformer1.getPuntosDeVida() + this.algoformer2.getPuntosDeVida() + this.algoformer3.getPuntosDeVida();
             this.combinado = new Superion(casillero, puntosDeVida);
             this.algoformerSeleccionado = this.combinado;
         }

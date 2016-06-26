@@ -15,12 +15,17 @@ public class EstadoAlterno implements EstadoAlgoFormer {
 
         this.velocidad = velocidad;
         this.ataque= ataque;
-        this.movimiento = movimiento;
         this.distanciaDeAtaque = distanciaAtaque;
         this.esTerrestre = esTerrestre;
+
+        if (this.esTerrestre){
+            this.movimiento = new MovimientoAlternoTerrestre(movimiento);
+        } else {
+            this.movimiento = new MovimientoAlternoAereo(movimiento);
+        }
     }
 
-    public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+    /*public EstadoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
         this.velocidad = velocidad;
         this.ataque= ataque;
@@ -31,7 +36,7 @@ public class EstadoAlterno implements EstadoAlgoFormer {
         } else {
             this.movimiento = new MovimientoAlternoAereo(movimiento);
         }
-    }
+    }*/
 
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
@@ -40,7 +45,7 @@ public class EstadoAlterno implements EstadoAlgoFormer {
 
     @Override
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
-        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento);
+        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
     }
 
 @Override
@@ -84,10 +89,11 @@ public class EstadoAlterno implements EstadoAlgoFormer {
     }
 
 
-    public void recibirDanioDeEspinas(AlgoFormer algoFormer){
+    public boolean esTerrestre(){
 
-        //lanzar excepcion
+        return this.esTerrestre;
     }
+
 
     public void cambiarAModoEmpantanado(){
 

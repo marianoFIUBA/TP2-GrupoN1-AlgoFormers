@@ -12,4 +12,8 @@ public interface EstrategiaDeMovimiento {
     void cambiarAModoEmpantanado();
     void pasarTurno();
     void cambiarAModoNoEmpantanado();
+
+    boolean estaEmpantanado();
+
+    boolean recibeDaniosPorEspinas();
 }

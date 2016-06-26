@@ -9,7 +9,8 @@ public abstract class AlgoFormer {
     protected Piernas piernas;
     protected Calculos calculo;
     protected Casillero casillero;
-    protected int puntosDeVida;
+    protected double puntosDeVida;
+    protected double puntosDeVidaIniciales;
     protected boolean modoPostPsionico;
 
     protected AlgoFormer(String nombre, Casillero casillero) {
@@ -24,7 +25,7 @@ public abstract class AlgoFormer {
     }
 
 
-    public int getPuntosDeVida() {
+    public double getPuntosDeVida() {
         return puntosDeVida;
     }
 
@@ -126,9 +127,13 @@ public abstract class AlgoFormer {
     public abstract void transformarseAModoHumanoide();
 
 
-    public void  recibirDanioDeEspinas(){
+    public void recibirDanioDeEspinas(){
 
-        this.estado.recibirDanioDeEspinas(this);
+        if (this.estado.obtenerMovimiento().recibeDaniosPorEspinas()){
+
+            this.reducirPuntosDeVidaPorEspinas();
+
+        }
     }
 
     public void cambiarAModoEmpantanado (){
@@ -166,6 +171,13 @@ public abstract class AlgoFormer {
     public void cambiarAModoBurbujaInmaculada(){
 
         this.armadura.cambiarAModoBurbujaInmaculada();
+    }
+
+    public void reducirPuntosDeVidaPorEspinas(){
+
+        this.puntosDeVida = this.puntosDeVida - ( this.puntosDeVidaIniciales * 0.05);
+
+
     }
 
 }

@@ -44,7 +44,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     @Override
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
 
-        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento);
+        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
     }
 
 /*    public EstadoHumanoide (EstadoAlgoFormer estadoAnterior) {
@@ -95,11 +95,14 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
 
         return this.movimiento;
     }
-    public void recibirDanioDeEspinas(AlgoFormer algoFormer){
 
-        int puntosDeVida =(algoFormer.getPuntosDeVida() - (algoFormer.getPuntosDeVida() * 5) / 100);
-        algoFormer.setPuntosDeVida(puntosDeVida);
+    @Override
+    public boolean esTerrestre() {
+
+        return this.esTerrestre;
+
     }
+
 
     public void cambiarAModoEmpantanado(){
 
