@@ -564,15 +564,8 @@ public class AlgoformerTest {
 
         Assert.assertTrue(optimus.getPuntosDeVida() == 115);
 
-        
+
     }
-
-
-
-
-
-
-
 
 
 
