@@ -153,7 +153,7 @@ public abstract class AlgoFormer {
         this.puntosDeVida = puntosDeVida;
     }
 
-    private void desocuparCasillero(){
+    public void desocuparCasillero(){
 
         this.casillero.desocupar();
     }
@@ -176,8 +176,14 @@ public abstract class AlgoFormer {
     public void reducirPuntosDeVidaPorEspinas(){
 
         this.puntosDeVida = this.puntosDeVida - ( this.puntosDeVidaIniciales * 0.05);
+    }
 
+    public void verificarSiSigueConVida(){
 
+        if (this.puntosDeVida <= 0){
+            this.desocuparCasillero();
+            this.casillero = null;
+        }
     }
 
 }

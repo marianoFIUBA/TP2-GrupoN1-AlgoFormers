@@ -104,4 +104,5 @@ public abstract class Jugador {
     }
 
     public abstract void combinarAlgoformers();
+
 }

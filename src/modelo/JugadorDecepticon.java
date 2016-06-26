@@ -22,6 +22,10 @@ public class JugadorDecepticon extends Jugador {
             double puntosDeVida = this.algoformer1.getPuntosDeVida() + this.algoformer2.getPuntosDeVida() + this.algoformer3.getPuntosDeVida();
             this.combinado = new Menasor(casillero, puntosDeVida);
             this.algoformerSeleccionado = this.combinado;
+
+            this.algoformer1.desocuparCasillero();
+            this.algoformer2.desocuparCasillero();
+            this.algoformer3.desocuparCasillero();
         }
     }
 }
