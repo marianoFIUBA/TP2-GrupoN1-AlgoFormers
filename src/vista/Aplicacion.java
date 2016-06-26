@@ -165,7 +165,7 @@ public class Aplicacion extends Application{
 
         stage.setTitle("ALGOFORMERS");
 
-        int dimensionX = 20;
+/*        int dimensionX = 20;
 
         int dimensionY = 20;
 
@@ -183,7 +183,7 @@ public class Aplicacion extends Application{
 
                 Button botonSuperficie = new Button();
                 botonSuperficie.setPrefSize(100, 100);
-                botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
+                //botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
 
                 Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
 
@@ -233,11 +233,85 @@ public class Aplicacion extends Application{
         border.setCenter(tablero);
         border.setLeft(vbox);
 
-        Scene scene = new Scene(border, 800, 600);
-
+        Scene scene = new Scene(border, 800, 600);*/
+        Scene scene = this.getScene();
         stage.setScene(scene);
 
         stage.show();
+    }
+
+    private Scene getScene(){
+
+        int dimensionX = 20;
+
+        int dimensionY = 20;
+
+        Juego.getInstance().iniciarJuego(dimensionX,dimensionY, true);
+
+
+        GridPane tablero = new GridPane();
+
+        for(int i = 1; i <= dimensionX; i++) {
+            for (int j = 1; j <= dimensionY; j++) {
+
+
+
+                StackPane stack = new StackPane();
+
+                Button botonSuperficie = new Button();
+                botonSuperficie.setPrefSize(100, 100);
+                //botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
+
+                Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
+
+                String pathImagen = this.obtenerImagen(casilleroActual);
+
+                Image imagen = new Image(pathImagen);
+                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+                botonSuperficie.setBackground(new Background(imagenDeFondo));
+
+                MiBotonEventHandler miBotonEventHandler = new MiBotonEventHandler(botonSuperficie);
+                botonSuperficie.setOnAction(miBotonEventHandler);
+
+
+                stack.getChildren().add(botonSuperficie);
+
+                if (!(casilleroActual.obtenerAlgoformer() == null)){
+
+
+                    String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
+                    Button botonAlgoFormer = new Button();
+                    botonAlgoFormer.setPrefSize(50,50);
+                    botonAlgoFormer.setText(nombre);
+                    botonAlgoFormer.setOnAction(miBotonEventHandler);
+
+                    stack.getChildren().add(botonAlgoFormer);
+
+
+                }
+
+
+
+                tablero.add(stack, j, i);
+
+
+            }
+        }
+
+
+        VBox vbox = new VBox();
+        vbox.setPadding(new Insets(10));
+        vbox.setSpacing(8);
+
+
+
+
+        BorderPane border = new BorderPane();
+        border.setCenter(tablero);
+        border.setLeft(vbox);
+
+        return new Scene(border, 800, 600);
+
     }
 
 
