@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.algoformers.Optimus;
 import modelo.algoformers.Superion;
 
 import java.util.ArrayList;
@@ -22,6 +23,11 @@ public class JugadorAutobot extends Jugador {
             double puntosDeVida = this.algoformer1.getPuntosDeVida() + this.algoformer2.getPuntosDeVida() + this.algoformer3.getPuntosDeVida();
             this.combinado = new Superion(casillero, puntosDeVida);
             this.algoformerSeleccionado = this.combinado;
+
+            this.algoformer1.desocuparCasillero();
+            this.algoformer2.desocuparCasillero();
+            this.algoformer3.desocuparCasillero();
         }
     }
+
 }

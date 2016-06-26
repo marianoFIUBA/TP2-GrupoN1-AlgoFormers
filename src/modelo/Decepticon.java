@@ -15,6 +15,7 @@ public abstract class Decepticon extends AlgoFormer {
     public void recibirAtaqueDeAutobot(int ataque){
 
         this.puntosDeVida-= this.armadura.modificarDefensa(ataque);
+        this.verificarSiSigueConVida();
     }
 
     public void recibirAtaqueDeDecepticon(int ataque){

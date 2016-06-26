@@ -122,6 +122,11 @@ public abstract class AlgoFormer {
         return this.estado.obtenerEstado();
     }
 
+    public EstadoAlgoFormer obtenerObjetoEstado(){
+
+        return this.estado;
+    }
+
     public abstract void transformarseAModoAlterno();
 
     public abstract void transformarseAModoHumanoide();
@@ -148,12 +153,12 @@ public abstract class AlgoFormer {
         this.estado.cambiarAModoAtrapadoEnNebulosa();
     }
 
-    public void setPuntosDeVida(int puntosDeVida){
+    public void setPuntosDeVida(double puntosDeVida){
 
         this.puntosDeVida = puntosDeVida;
     }
 
-    private void desocuparCasillero(){
+    public void desocuparCasillero(){
 
         this.casillero.desocupar();
     }
@@ -176,8 +181,19 @@ public abstract class AlgoFormer {
     public void reducirPuntosDeVidaPorEspinas(){
 
         this.puntosDeVida = this.puntosDeVida - ( this.puntosDeVidaIniciales * 0.05);
+    }
 
+    public void verificarSiSigueConVida(){
 
+        if (this.puntosDeVida <= 0){
+            this.desocuparCasillero();
+            this.casillero = null;
+        }
+    }
+
+    public void capturarChispa(){
+
+        Juego.getInstance().asignarChispaAAlgoformer(this);
     }
 
 }

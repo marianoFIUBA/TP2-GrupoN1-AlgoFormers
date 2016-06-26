@@ -104,4 +104,39 @@ public abstract class Jugador {
     }
 
     public abstract void combinarAlgoformers();
+
+    public void descombinarAlgoformers(){
+
+        Casillero casilleroActual = this.combinado.obtenerCasillero();
+        ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
+
+        double puntosDevida = this.combinado.getPuntosDeVida() / 3;
+
+        this.algoformer1.estado.ocuparCasillero(algoformer1, casilleros.get(0));
+        this.algoformer1.setPuntosDeVida(puntosDevida);
+
+        this.algoformer2.estado.ocuparCasillero(algoformer1, casilleros.get(1));
+        this.algoformer2.setPuntosDeVida(puntosDevida);
+
+        this.algoformer3.estado.ocuparCasillero(algoformer1, casilleros.get(2));
+        this.algoformer3.setPuntosDeVida(puntosDevida);
+
+        this.combinado.desocuparCasillero();
+    }
+
+    protected ArrayList<Casillero> obtenerCasillerosParaDescombinacion(Casillero casillero){
+
+        ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
+
+        Casillero casillero1 = calculos.obtenerPrimerCasilleroDisponible(casillero);
+        Casillero casillero2 = calculos.obtenerPrimerCasilleroDisponible(casillero1);
+        Casillero casillero3 = calculos.obtenerPrimerCasilleroDisponible(casillero2);
+
+        casilleros.add(casillero1);
+        casilleros.add(casillero2);
+        casilleros.add(casillero3);
+
+        return casilleros;
+    }
+
 }
