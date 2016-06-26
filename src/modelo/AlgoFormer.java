@@ -122,6 +122,11 @@ public abstract class AlgoFormer {
         return this.estado.obtenerEstado();
     }
 
+    public EstadoAlgoFormer obtenerObjetoEstado(){
+
+        return this.estado;
+    }
+
     public abstract void transformarseAModoAlterno();
 
     public abstract void transformarseAModoHumanoide();
@@ -148,7 +153,7 @@ public abstract class AlgoFormer {
         this.estado.cambiarAModoAtrapadoEnNebulosa();
     }
 
-    public void setPuntosDeVida(int puntosDeVida){
+    public void setPuntosDeVida(double puntosDeVida){
 
         this.puntosDeVida = puntosDeVida;
     }

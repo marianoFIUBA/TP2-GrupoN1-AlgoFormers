@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.algoformers.Optimus;
 import modelo.algoformers.Superion;
 
 import java.util.ArrayList;
@@ -28,4 +29,5 @@ public class JugadorAutobot extends Jugador {
             this.algoformer3.desocuparCasillero();
         }
     }
+
 }

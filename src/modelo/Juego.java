@@ -22,6 +22,8 @@ public class Juego {
     private Jugador jugador1;
     private Jugador jugador2;
     private Jugador jugadorActual;
+    private int dimensionTableroX;
+    private int dimensionTableroY;
 
     private Juego() {
 
@@ -109,6 +111,9 @@ public class Juego {
     }
 
     private ArrayList<Casillero> generarCasilleros(int dimesionX, int dimensionY, boolean generarSuperficiesAleatorias){
+
+        this.dimensionTableroX = dimesionX;
+        this.dimensionTableroY = dimensionY;
 
         ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
         Casillero nuevoCasillero;
@@ -258,6 +263,14 @@ public class Juego {
     public HashMap<String, Casillero> obtenerCasilleros(){
 
         return this.casilleros;
+    }
+
+    public Casillero obtenerCasilleroAleatorio(){
+
+        int posicionX = (int)(Math.random()*this.dimensionTableroX);
+        int posicionY = (int)(Math.random()*this.dimensionTableroY);
+
+        return this.obtenerCasillero(posicionX, posicionY);
     }
 }
 

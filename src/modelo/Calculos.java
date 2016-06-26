@@ -22,7 +22,7 @@ public class Calculos {
                 } else {
                     posicionY--;
                 }
-            } else {
+            } else if(origen.obtenerPosicionY() != destino.obtenerPosicionY()) {
                 posicionX--;
                 if (origen.obtenerPosicionY() < destino.obtenerPosicionY()) {
                     posicionY++;
@@ -85,5 +85,18 @@ public class Calculos {
         }
 
         return esValido;
+    }
+
+    public Casillero obtenerPrimerCasilleroDisponible(Casillero casillero){
+
+        Casillero casilleroActual = casillero;
+
+        while (casilleroActual.obtenerAlgoformer() != null){
+
+            Casillero casilleroDestinoAleatorio = Juego.getInstance().obtenerCasilleroAleatorio();
+            casilleroActual = obtenerSiguienteCasillero(casilleroActual, casilleroDestinoAleatorio);
+        }
+
+        return casilleroActual;
     }
 }
