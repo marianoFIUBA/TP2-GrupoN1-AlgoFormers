@@ -170,6 +170,36 @@ public class AlgoformerTest {
     }
 
     @Test
+    public void superionAtarviesaZonaRocosaSinProblemas(){
+
+        Juego.getInstance().generarTablero(20, 20, false);
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1,4);
+        Superion superion = new Superion(casilleroInicial, 100);
+
+        superion.moverA(casilleroFinal);
+
+        Assert.assertEquals(superion.obtenerCasillero(), casilleroFinal);
+        Assert.assertTrue(superion.obtenerAtaque() == 100 && superion.obtenerVelocidad() == 3 && superion.getPuntosDeVida() == 100);
+
+    }
+
+    @Test
+    public void menasorAtarviesaZonaRocosaSinProblemas(){
+
+        Juego.getInstance().generarTablero(20, 20, false);
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1,3);
+        Menasor menasor = new Menasor(casilleroInicial, 100);
+
+        menasor.moverA(casilleroFinal);
+
+        Assert.assertEquals(menasor.obtenerCasillero(), casilleroFinal);
+        Assert.assertTrue(menasor.obtenerAtaque() == 115 && menasor.obtenerVelocidad() == 2 && menasor.getPuntosDeVida() == 100);
+
+    }
+
+    @Test
     public void testMegatronAtraviesaZonaRocosaSinProblemas() {
 
         Juego.getInstance().generarTablero(20, 20, false);
@@ -190,7 +220,6 @@ public class AlgoformerTest {
 
         Assert.assertEquals(megatron.obtenerCasillero(),casilleroFinal);
         Assert.assertTrue(megatron.obtenerAtaque() == 10 && megatron.obtenerVelocidad() == 1 && megatron.getPuntosDeVida() == 550);
-
 
     }
 
@@ -291,7 +320,7 @@ public class AlgoformerTest {
 
 
     @Test
-    public void testAlgoformerEnEstadoAlterneAereoAtraviesaSinProblemasPorZonaPantanosa() {
+    public void testAlgoformerEnEstadoAlternoAereoAtraviesaSinProblemasPorZonaPantanosa() {
 
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
@@ -383,6 +412,32 @@ public class AlgoformerTest {
 
     }
 
+    @Test
+    public void bonecrusherPierdeUnCincoPorCientoDeVidaAlAtravesarZonaDeEspinas(){
+
+        Juego.getInstance().generarTablero(20,20,false);
+        Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1,1);
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1,9);
+        Casillero casilleroConEspinas = new Casillero(1,2,"NUBE","ESPINAS");
+        Juego.getInstance().modificarCasillero(casilleroConEspinas);
+        Bonecrusher bonecrusher= new Bonecrusher(casilleroInicial);
+
+        bonecrusher.moverA(casilleroFinal);
+
+        Assert.assertTrue(bonecrusher.getPuntosDeVida() == 190);
+
+        casilleroConEspinas = new Casillero(1,10,"NUBE","ESPINAS");
+        Juego.getInstance().modificarCasillero(casilleroConEspinas);
+        casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
+
+        bonecrusher.transformarseAModoHumanoide();
+        bonecrusher.moverA(casilleroFinal);
+
+        Assert.assertTrue(bonecrusher.getPuntosDeVida() == 180);
+
+
+    }
+
 
     @Test
     public void testAlgoformerEnEstadoAlternoAereoAtraviesaSinProblemasPorZonaDeEspinas() {
@@ -468,6 +523,55 @@ public class AlgoformerTest {
         Assert.assertEquals(megatron.obtenerCasillero(), casilleroFinalMegatron);
 
     }
+
+    @Test
+    public void bonusDobleCanionFuncionaCorrectamente(){
+
+        Juego.getInstance().generarTablero(10,10,false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialOptimus = Juego.getInstance().obtenerCasillero(1,5);
+        Optimus optimus = new Optimus(casilleroInicialOptimus);
+
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,3);
+        Casillero casilleroConBonusDobleCanion = new Casillero(1,2,"NUBE","ROCOSA","CANION");
+        Juego.getInstance().modificarCasillero(casilleroConBonusDobleCanion);
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(null);
+        decepticons.add(null);
+
+        Jugador jugador = new JugadorDecepticon(decepticons);
+
+        jugador.seleccionarAlgoformer(megatron);
+        jugador.mover(casilleroDestinoMegatron);
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 390);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 280);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 170);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 115);
+
+        
+    }
+
+
+
+
+
+
 
 
 

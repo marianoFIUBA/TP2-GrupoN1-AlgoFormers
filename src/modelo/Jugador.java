@@ -78,10 +78,14 @@ public abstract class Jugador {
         return this.combinado;
     }
 
-    public void atacar(AlgoFormer algoformer){
+    public void atacar(AlgoFormer algoformer) {
 
-        this.algoformerSeleccionado.atacarA(algoformer);
-        this.finalizarTurno();
+        try {
+            this.algoformerSeleccionado.atacarA(algoformer);
+            this.finalizarTurno();
+        } catch (NullPointerException ex) {
+            //Una excepcion
+        }
     }
 
     public void mover(Casillero casillero){

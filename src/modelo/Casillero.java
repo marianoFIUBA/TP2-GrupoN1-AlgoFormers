@@ -40,6 +40,7 @@ public class Casillero {
         algoFormer.setCasillero(this);
         this.algoFormer = algoFormer;
         this.aplicarEfectoAire(algoFormer);
+        this.aplicarBonus(algoFormer);
     }
 
     public void alojarAlternoPorTierra(AlgoFormer algoFormer, boolean estaEmpantanado){
@@ -49,6 +50,7 @@ public class Casillero {
         if (!estaEmpantanado) {
             this.aplicarEfectoAlternoPorTierra(algoFormer);
         } else { algoFormer.estado.obtenerMovimiento().cambiarAModoNoEmpantanado(); }
+        this.aplicarBonus(algoFormer);
     }
 
     public void alojarHumanoidePorTierra(AlgoFormer algoFormer){
@@ -56,6 +58,7 @@ public class Casillero {
         algoFormer.setCasillero(this);
         this.algoFormer = algoFormer;
         this.aplicarEfectoHumanoidePorTierra(algoFormer);
+        this.aplicarBonus(algoFormer);
     }
 
     public int obtenerPosicionX(){
