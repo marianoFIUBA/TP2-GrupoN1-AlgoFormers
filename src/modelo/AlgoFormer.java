@@ -191,9 +191,9 @@ public abstract class AlgoFormer {
         }
     }
 
-    public void capturarChispa(){
+/*    public void capturarChispa(){
 
         Juego.getInstance().asignarChispaAAlgoformer(this);
-    }
+    }*/
 
 }

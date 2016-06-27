@@ -139,4 +139,8 @@ public abstract class Jugador {
         return casilleros;
     }
 
+    public AlgoFormer obtenerAlgoformerSeleccionado(){
+
+        return this.algoformerSeleccionado;
+    }
 }

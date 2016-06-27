@@ -282,5 +282,10 @@ public class Juego {
             //lanzar excepcion
         }
     }
+
+    public Jugador obtenerJugadorActual(){
+
+        return this.jugadorActual;
+    }
 }
 
