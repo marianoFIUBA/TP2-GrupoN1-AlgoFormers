@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.Excepciones.MovimientoInvalidoException;
+
 import java.util.ArrayList;
 
 /**
@@ -93,9 +95,30 @@ public abstract class Jugador {
         try{
             this.algoformerSeleccionado.moverA(casillero);
             this.finalizarTurno();
-        } catch (NullPointerException ex){
+        } catch (NullPointerException | MovimientoInvalidoException ex){
             //lanzar exepcion de algoformer no seleccionado
         }
+    }
+
+    public void transformar(){
+
+        try{
+            if (this.algoformerSeleccionado.obtenerEstado() == "ALTERNO"){
+
+                this.algoformerSeleccionado.transformarseAModoHumanoide();
+
+            } else if ( this.algoformerSeleccionado.obtenerEstado() == "HUMANOIDE"){
+
+                this.algoformerSeleccionado.transformarseAModoAlterno();
+            }
+            this.finalizarTurno();
+        } catch (NullPointerException ex){
+            //lanzar exepcion de algoformer no transformado
+        }
+
+
+
+
     }
 
     protected boolean validarCombinacion(){

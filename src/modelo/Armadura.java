@@ -9,7 +9,7 @@ public class Armadura {
 
     public void cambiarAModoBurbujaInmaculada(){
 
-        this.turnosPendientes = 2;
+        this.turnosPendientes = 3;  //En cuanto se obtiene el bonus, se disminuye un turno.
     }
 
     public int modificarDefensa(int ataqueInicial){
@@ -19,9 +19,19 @@ public class Armadura {
         if (this.turnosPendientes > 0){
 
             ataqueFinal = 0;
+
         }
 
         return ataqueFinal;
+
+    }
+
+    public void pasarTurno(){
+
+        if (this.turnosPendientes > 0){
+
+            this.turnosPendientes--;
+        }
 
     }
 }

@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.Excepciones.MovimientoInvalidoException;
+
 public abstract class AlgoFormer {
 
     protected String nombre;
@@ -56,9 +58,7 @@ public abstract class AlgoFormer {
 //                casilleroActual.alojarAlternoPorTierra(algoformer);
             }
 
-        } else {
-            //lanzar excepcion
-        }
+        } else { throw new MovimientoInvalidoException(); }
     }
 
     public void atacarA(AlgoFormer algoformer) {
@@ -87,6 +87,10 @@ public abstract class AlgoFormer {
     public void pasarTurno() {
 
         this.estado.pasarTurno();
+        this.arma.pasarTurno();
+        this.armadura.pasarTurno();
+        this.piernas.pasarTurno();
+
     }
 
     public abstract void recibirAtaqueDeDecepticon(int puntosDeAtaque);

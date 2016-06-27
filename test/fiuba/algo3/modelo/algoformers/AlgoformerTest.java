@@ -567,6 +567,259 @@ public class AlgoformerTest {
 
     }
 
+    @Test
+    public void bonusDobleCanionFuncionaCorrectamenteEnModoHumanoide() {
+
+        Juego.getInstance().generarTablero(10, 10, false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1, 1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialOptimus = Juego.getInstance().obtenerCasillero(1, 4);
+        Optimus optimus = new Optimus(casilleroInicialOptimus);
+
+        Casillero casilleroConBonusDobleCanion = new Casillero(1, 2, "NUBE", "ROCOSA", "CANION");
+        Juego.getInstance().modificarCasillero(casilleroConBonusDobleCanion);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1, 2);
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(null);
+        decepticons.add(null);
+
+        Jugador jugador = new JugadorDecepticon(decepticons);
+
+        jugador.seleccionarAlgoformer(megatron);
+        jugador.transformar();
+        jugador.mover(casilleroDestinoMegatron);
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 480);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 460);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 440);
+
+        jugador.atacar(optimus);
+
+        Assert.assertTrue(optimus.getPuntosDeVida() == 430);
+
+
+    }
+
+    @Test
+    public void bonusBurbujaInmaculadaFuncionaCorrectamente(){
+
+        Juego.getInstance().generarTablero(10,10,false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialOptimus = Juego.getInstance().obtenerCasillero(1,5);
+        Optimus optimus = new Optimus(casilleroInicialOptimus);
+
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,3);
+        Casillero casilleroConBonusDobleCanion = new Casillero(1,2,"NUBE","ROCOSA","BURBUJA");
+        Juego.getInstance().modificarCasillero(casilleroConBonusDobleCanion);
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(null);
+        decepticons.add(null);
+
+
+        Jugador jugadorDecepticon = new JugadorDecepticon(decepticons);
+
+        jugadorDecepticon.seleccionarAlgoformer(megatron);
+        jugadorDecepticon.mover(casilleroDestinoMegatron);
+
+        optimus.atacarA(megatron);
+        jugadorDecepticon.transformar();
+
+        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+
+        optimus.atacarA(megatron);
+        jugadorDecepticon.transformar();
+
+        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+
+        optimus.atacarA(megatron);
+
+        Assert.assertTrue(megatron.getPuntosDeVida() == 535);
+
+    }
+
+    @Test
+    public void bonusFlashFuncionaCorrectamente(){
+
+        Juego.getInstance().generarTablero(50,50,false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialBonecrusher = Juego.getInstance().obtenerCasillero(50,50);
+        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicialBonecrusher);
+
+
+        Casillero casilleroConBonusFlash = new Casillero(1,2,"NUBE","ROCOSA","FLASH");
+        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,2);
+
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(bonecrusher);
+        decepticons.add(null);
+
+        Jugador jugador = new JugadorDecepticon(decepticons);
+
+        jugador.seleccionarAlgoformer(megatron);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,23);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador.seleccionarAlgoformer(bonecrusher);
+        Casillero casilleroDestinoBonecrusher = Juego.getInstance().obtenerCasillero(50,45);
+        jugador.mover(casilleroDestinoBonecrusher);
+
+        jugador.seleccionarAlgoformer(megatron);
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,44);
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,34);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+    }
+
+    @Test
+    public void bonusFlashFuncionaCorrectamenteEnModoHumanoide(){
+
+        Juego.getInstance().generarTablero(50,50,false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialBonecrusher = Juego.getInstance().obtenerCasillero(50,50);
+        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicialBonecrusher);
+
+
+        Casillero casilleroConBonusFlash = new Casillero(1,2,"NUBE","ROCOSA","FLASH");
+        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,2);
+
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(bonecrusher);
+        decepticons.add(null);
+
+        Jugador jugador = new JugadorDecepticon(decepticons);
+
+        jugador.seleccionarAlgoformer(megatron);
+
+        jugador.transformar();
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,5);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador.seleccionarAlgoformer(bonecrusher);
+        Casillero casilleroDestinoBonecrusher = Juego.getInstance().obtenerCasillero(50,45);
+        jugador.mover(casilleroDestinoBonecrusher);
+
+        jugador.seleccionarAlgoformer(megatron);
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,8);
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,10);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+
+    }
+
+    @Test
+    public void bonusFlashFuncionaCorrectamenteAlternandoEstados(){
+
+        Juego.getInstance().generarTablero(50,50,false);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        Casillero casilleroInicialBonecrusher = Juego.getInstance().obtenerCasillero(50,50);
+        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicialBonecrusher);
+
+
+        Casillero casilleroConBonusFlash = new Casillero(1,2,"NUBE","ROCOSA","FLASH");
+        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,2);
+
+
+        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
+        decepticons.add(megatron);
+        decepticons.add(bonecrusher);
+        decepticons.add(null);
+
+        Jugador jugador = new JugadorDecepticon(decepticons);
+
+        jugador.seleccionarAlgoformer(megatron);
+
+        jugador.transformar();
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,5);
+
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador.transformar();
+
+        casilleroConBonusFlash = new Casillero(1,26,"NUBE","ROCOSA","FLASH");
+        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,26);
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,30);
+        jugador.mover(casilleroDestinoMegatron);
+
+        Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+        
+    }
+
+
+
+
+
+
 
 
 }

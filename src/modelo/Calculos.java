@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Calculos {
 
 
-    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+    /*public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
 
             int posicionX = origen.obtenerPosicionX();
             int posicionY = origen.obtenerPosicionY();
@@ -31,7 +31,52 @@ public class Calculos {
                 }
         }
         return Juego.getInstance().obtenerCasillero(posicionX, posicionY);
+    }*/
+
+
+    public Casillero obtenerSiguienteCasillero(Casillero origen, Casillero destino){
+
+        int posicionX = origen.obtenerPosicionX();
+        int posicionY = origen.obtenerPosicionY();
+
+        if(origen.obtenerPosicionX() == destino.obtenerPosicionX()){
+            //posicionY++;
+            if (origen.obtenerPosicionY() < destino.obtenerPosicionY()) {
+                posicionY++;
+            } else if (origen.obtenerPosicionY() > destino.obtenerPosicionY()){
+                posicionY--;
+            }
+
+        } else {
+
+            if (origen.obtenerPosicionY() == destino.obtenerPosicionY()) {
+                if (origen.obtenerPosicionX() > destino.obtenerPosicionX()){
+                    posicionX--;
+                } else if (origen.obtenerPosicionX() < destino.obtenerPosicionX()){
+
+                    posicionX++;
+
+                }
+            } else {
+                if (origen.obtenerPosicionY() < destino.obtenerPosicionY()) {
+                    posicionY++;
+                } else if (origen.obtenerPosicionY() > destino.obtenerPosicionY()){
+                    posicionY--;
+                }
+                if (origen.obtenerPosicionX() > destino.obtenerPosicionX()){
+                    posicionX--;
+                } else if (origen.obtenerPosicionX() < destino.obtenerPosicionX()){
+
+                    posicionX++;
+
+                }
+
+            }
+        }
+
+        return Juego.getInstance().obtenerCasillero(posicionX, posicionY);
     }
+
 
     public boolean estaEnRango(Casillero origen, Casillero destino, int velocidad){
 

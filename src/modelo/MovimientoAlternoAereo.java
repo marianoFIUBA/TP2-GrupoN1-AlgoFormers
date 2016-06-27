@@ -44,7 +44,7 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     @Override
     public void cambiarAModoAtrapadoEnNebulosa(){
 
-        this.turnosPendientesAtrapado = 3;
+        this.turnosPendientesAtrapado = 4;
     }
 
     @Override
