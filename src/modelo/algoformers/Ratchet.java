@@ -11,12 +11,12 @@ public class Ratchet extends Autobot{
         super("RATCHET", casillero);
         this.puntosDeVida = 150;
         this.puntosDeVidaIniciales = 150;
-        this.estado = new EstadoAlterno(35,2,8, new MovimientoAlternoAereo(), false);
+        this.estado = new EstadoAlterno(35,2,8, new MovimientoAlternoAereo());
         this.modoPostPsionico = false;
         this.estado.ocuparCasillero(this, casillero);
     }
 
-    public void transformarseAModoAlterno(){
+/*    public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(35, 2, 8);
     }
@@ -24,6 +24,16 @@ public class Ratchet extends Autobot{
     public void transformarseAModoHumanoide(){
 
         this.estado = this.estado.transformarseAModoHumanoide(5, 5, 1);
+    }*/
+
+    public void transformarseAModoAlterno(){
+
+        this.estado = this.estado.transformarseAModoAlterno(35, 2, 8, new MovimientoAlternoAereo(this.estado.obtenerMovimiento()));
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(5, 5, 1, new MovimientoHumanoideTerrestre(this.estado.obtenerMovimiento()));
     }
 
     @Override

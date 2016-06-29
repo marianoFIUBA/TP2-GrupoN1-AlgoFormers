@@ -29,7 +29,7 @@ public class AlgoformerTest {
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
     }
 
-    @Test
+/*    @Test
     public void algoformerSeTransformaEnAmbasDirecciones() {
 
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
@@ -42,7 +42,7 @@ public class AlgoformerTest {
 
         optimus.transformarseAModoAlterno();
         Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
-    }
+    }*/
 
     @Test
     public void algoFormerAtacaSiEstaEnRango() {
