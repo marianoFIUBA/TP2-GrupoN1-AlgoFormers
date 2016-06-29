@@ -812,7 +812,7 @@ public class AlgoformerTest {
         jugador.mover(casilleroDestinoMegatron);
 
         Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
-        
+
     }
 
 
