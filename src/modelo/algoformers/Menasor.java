@@ -1,6 +1,7 @@
 package modelo.algoformers;
 
 import modelo.*;
+import modelo.Excepciones.UnidadCombinadaNoPuedeTransformarseException;
 
 /**
  * Created by Mariano on 25/06/2016.
@@ -12,18 +13,16 @@ public class Menasor extends Decepticon {
         super("MENASOR", casillero);
         this.puntosDeVida = puntosDevida;
         this.puntosDeVidaIniciales = puntosDeVida;
-        this.estado = new EstadoAlterno(115, 2, 2, new MovimientoAlternoTerrestre(), true);
+        this.estado = new EstadoAlterno(115, 2, 2, new MovimientoAlternoTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno(){
-
-        //this.estado = this.estado.transformarseAModoAlterno(30, 3, 8);
+        throw new UnidadCombinadaNoPuedeTransformarseException();
     }
 
     public void transformarseAModoHumanoide(){
-
-        //this.estado = this.estado.transformarseAModoHumanoide(30, 3, 1);
+        throw new UnidadCombinadaNoPuedeTransformarseException();
     }
 
     @Override

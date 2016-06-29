@@ -51,7 +51,6 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
 
     public void pasarTurno(){
 
-        this.empantanado = false;
     }
 
     @Override

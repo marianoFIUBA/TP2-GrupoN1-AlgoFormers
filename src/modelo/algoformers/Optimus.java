@@ -10,11 +10,11 @@ public class Optimus extends Autobot{
         super("OPTIMUS", casillero);
         this.puntosDeVida = 500;
         this.puntosDeVidaIniciales = 500;
-        this.estado = new EstadoAlterno(15, 4, 5, new MovimientoAlternoTerrestre(), true);
+        this.estado = new EstadoAlterno(15, 4, 5, new MovimientoAlternoTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
 
-    public void transformarseAModoAlterno(){
+ /*   public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(15, 4, 5);
     }
@@ -22,6 +22,16 @@ public class Optimus extends Autobot{
     public void transformarseAModoHumanoide(){
 
         this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2);
+    }*/
+
+    public void transformarseAModoAlterno(){
+
+        this.estado = this.estado.transformarseAModoAlterno(15, 4, 5, new MovimientoAlternoTerrestre(this.estado.obtenerMovimiento()));
+    }
+
+    public void transformarseAModoHumanoide(){
+
+        this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2, new MovimientoHumanoideTerrestre(this.estado.obtenerMovimiento()));
     }
 
     @Override

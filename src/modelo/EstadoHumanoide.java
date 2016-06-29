@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.Excepciones.NoPuedeTransformarseAModoHumaoideException;
+
 /**
  * Created by Franco on 15/6/2016.
  */
@@ -30,13 +32,13 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
 
     public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
+        this.ataque = ataque;
+        this.distanciaDeAtaque = ataque;
         this.velocidad = velocidad;
-        this.ataque= ataque;
-        this.movimiento = new MovimientoHumanoideTerrestre(movimiento);
-        this.distanciaDeAtaque = distanciaAtaque;
+        this.movimiento = movimiento;
     }
 
-    @Override
+   /* @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
         return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, this.movimiento);
     }
@@ -45,6 +47,16 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
 
         return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
+    }*/
+
+    @Override
+    public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+        throw new NoPuedeTransformarseAModoHumaoideException();
+    }
+
+    @Override
+    public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
+        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, movimiento);
     }
 
 /*    public EstadoHumanoide (EstadoAlgoFormer estadoAnterior) {

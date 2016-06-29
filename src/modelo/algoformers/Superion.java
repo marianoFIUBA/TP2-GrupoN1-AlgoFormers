@@ -1,6 +1,7 @@
 package modelo.algoformers;
 
 import modelo.*;
+import modelo.Excepciones.UnidadCombinadaNoPuedeTransformarseException;
 
 /**
  * Created by Mariano on 25/06/2016.
@@ -12,18 +13,16 @@ public class Superion extends Autobot {
         super("SUPERION", casillero);
         this.puntosDeVida = puntosDevida;
         this.puntosDeVidaIniciales = puntosDevida;
-        this.estado = new EstadoAlterno(100, 2, 3, new MovimientoAlternoTerrestre(), true);
+        this.estado = new EstadoAlterno(100, 2, 3, new MovimientoAlternoTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
 
     public void transformarseAModoAlterno(){
-
-        //this.estado = this.estado.transformarseAModoAlterno(15, 4, 5);
+        throw new UnidadCombinadaNoPuedeTransformarseException();
     }
 
     public void transformarseAModoHumanoide(){
-
-        //this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2);
+        throw new UnidadCombinadaNoPuedeTransformarseException();
     }
 
     @Override

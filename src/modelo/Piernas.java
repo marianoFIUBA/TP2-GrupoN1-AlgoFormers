@@ -20,7 +20,6 @@ public class Piernas {
         if (this.turnosRestantesFlash > 0) {
 
             velocidadFinal = velocidadInicial * 3;
-            turnosRestantesFlash--;
 
         }
 
@@ -29,7 +28,16 @@ public class Piernas {
 
     public void cambiarAmodoFlash(){
 
-        this.turnosRestantesFlash = 3;
+        this.turnosRestantesFlash = 4;
+
+    }
+
+    public void pasarTurno(){
+
+        if (this.turnosRestantesFlash > 0){
+
+            this.turnosRestantesFlash--;
+        }
 
     }
 

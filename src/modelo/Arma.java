@@ -17,7 +17,6 @@ public class Arma {
         if (this.turnosRestantesDobleCanion > 0) {
 
             ataqueFinal = ataqueInicial * 2;
-            turnosRestantesDobleCanion--;
 
         }
 
@@ -26,7 +25,18 @@ public class Arma {
 
     public void cambiarAmodoDobleCanion(){
 
-        this.turnosRestantesDobleCanion = 3;
+        this.turnosRestantesDobleCanion = 4;
+
+    }
+
+
+    public void pasarTurno(){
+
+        if (this.turnosRestantesDobleCanion > 0) {
+
+            turnosRestantesDobleCanion--;
+
+        }
 
     }
 

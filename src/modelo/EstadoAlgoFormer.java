@@ -7,9 +7,13 @@ public interface EstadoAlgoFormer {
 
     //void atacar(AlgoFormer algoFormer);
 
-    EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad);
+/*    EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad);
 
-    EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad);
+    EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad);*/
+
+    EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento);
+
+    EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento);
 
     int obtenerAtaque();
 
