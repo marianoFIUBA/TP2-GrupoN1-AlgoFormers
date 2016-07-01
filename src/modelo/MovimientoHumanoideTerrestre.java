@@ -3,7 +3,7 @@ package modelo;
 /**
  * Created by Franco on 15/6/2016.
  */
-public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
+public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento{
 
     private Calculos calculo;
     private boolean empantanado;
@@ -32,7 +32,7 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
 
         if (!this.empantanado){
 
-            siguienteCasillero = this.calculo.obtenerSiguienteCasillero(actual, destino);
+            siguienteCasillero = this.calcularSiguienteCasillero(actual, destino);
         }
 
         return siguienteCasillero;

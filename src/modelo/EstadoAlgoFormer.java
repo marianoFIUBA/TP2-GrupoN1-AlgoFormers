@@ -36,4 +36,7 @@ public interface EstadoAlgoFormer {
     boolean esTerrestre();
 
 
+    void moverA(Casillero casillero, AlgoFormer algoFormer);
+
+    int obtenerDistanciaDeAtaque();
 }
