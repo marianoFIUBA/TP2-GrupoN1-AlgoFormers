@@ -23,7 +23,7 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
         if (this.turnosPendientesAtrapado == 0) {
-            casillero.alojarAlternoPorAire(algoFormer);
+            casillero.alojarPorAire(algoFormer);
         } /*else {
             this.turnosPendientesAtrapado--;
         }*/

@@ -141,6 +141,7 @@ public class Aplicacion extends Application{
     private String obtenerImagenTierra(Casillero casillero){
 
         String path = "";
+/*
         switch (casillero.obtenerTierra()){
 
             case "ROCOSA":
@@ -153,6 +154,7 @@ public class Aplicacion extends Application{
                 path = "file:src/vista/imagenes/Espinas.png";
                 break;
         }
+*/
 
         return path;
     }

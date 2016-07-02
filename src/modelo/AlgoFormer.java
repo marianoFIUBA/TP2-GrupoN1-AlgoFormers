@@ -32,7 +32,7 @@ public abstract class AlgoFormer {
     }
 
 
-    public void moverA( Casillero destino){
+    public void moverA(Casillero destino){
 
         Casillero casilleroActual = this.casillero;
 

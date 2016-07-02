@@ -2,6 +2,10 @@ package modelo;
 
 import modelo.Excepciones.CasilleroNoPerteneceAlTableroException;
 import modelo.algoformers.*;
+import modelo.bonus.BurbujaInmaculada;
+import modelo.bonus.DobleCanion;
+import modelo.bonus.Flash;
+import modelo.zonas.*;
 
 
 import java.util.ArrayList;
@@ -122,9 +126,9 @@ public class Juego {
         for (int x = 1; x <= dimesionX; x++){
             for (int y = 1; y <= dimensionY; y++){
 
-                String tierra =  "ROCOSA";
-                String aire = "NUBE";
-                String bonus = "";
+                Zona superficie =  new Roca();
+                Zona aire = new Nube();
+                Bonus bonus = null;
 
                 if (generarSuperficiesAleatorias && !esCasilleroInicialDeAlgoFormer(x,y,dimesionX,dimensionY)){
 
@@ -133,10 +137,10 @@ public class Juego {
                     int bonusAleatorio = (int)(Math.random()*this.bonus.length + 1);
 
                     bonus = this.obtenerBonus(bonusAleatorio);
-                    tierra = this.obtenerSuperficieTierra(superficieAletoriaTierra);
+                    superficie = this.obtenerSuperficieTierra(superficieAletoriaTierra);
                     aire = this.obtenerSuperficieAire(superficieAleatoriaAire);
                 }
-                nuevoCasillero = new Casillero(x,y,aire,tierra, bonus);
+                nuevoCasillero = new Casillero(x,y,aire,superficie, bonus);
                 casilleros.add(nuevoCasillero);
             }
         }
@@ -145,22 +149,22 @@ public class Juego {
         return casilleros;
     }
 
-    private String obtenerBonus(int tipoBonus){
+    private Bonus obtenerBonus(int tipoBonus){
 
-        String bonus = "";
+        Bonus bonus = null;
         switch(tipoBonus){
 
             case 2:
-                bonus = "CANION";
+                bonus = new DobleCanion();
                 break;
             case 3:
-                bonus = "BURBUJA";
+                bonus = new BurbujaInmaculada();
                 break;
             case 4:
-                bonus = "FLASH";
+                bonus = new Flash();
                 break;
         }
-        return bonus;
+        return null;
 
 
     }
@@ -180,42 +184,35 @@ public class Juego {
     }
 
 
-    private String obtenerSuperficieTierra(int tipo){
+    private Zona obtenerSuperficieTierra(int tipo){
 
-        String superficieTierra = "ROCOSA";
+        Zona superficieTierra = new Roca();
 
         switch(tipo){
 
-            case 1:
-                superficieTierra = "ROCOSA";
-                break;
             case 2:
-                superficieTierra = "PANTANO";
+                superficieTierra = new Pantano();
                 break;
             case 3:
-                superficieTierra = "ESPINAS";
+                superficieTierra = new Espinas();
                 break;
         }
         return superficieTierra;
     }
 
-    private String obtenerSuperficieAire(int tipo){
+    private Zona obtenerSuperficieAire(int tipo){
 
-        String superficieAire = "NUBE";
+        Zona zonaAerea = new Nube();
 
         switch(tipo){
-
-            case 1:
-                superficieAire = "NUBE";
-                break;
             case 2:
-                superficieAire = "NEBULOSA";
+                zonaAerea = new NebulosaDeAndromeda();
                 break;
             case 3:
-                superficieAire = "TORMENTA";
+                zonaAerea = new TormentaPsionica();
                 break;
         }
-        return superficieAire;
+        return zonaAerea;
     }
 
     public void pasarTurno(){

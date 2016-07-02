@@ -22,7 +22,7 @@ public class MovimientoAlternoTerrestre implements EstrategiaDeMovimiento {
 
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
-        casillero.alojarAlternoPorTierra(algoFormer,empantanado);
+        casillero.alojarPorTierra(algoFormer);
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){

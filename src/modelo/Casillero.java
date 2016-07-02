@@ -1,8 +1,6 @@
 package modelo;
 
 
-import modelo.algoformers.Optimus;
-
 /**
  * Created by Mariano on 10/06/2016.
  */
@@ -10,58 +8,39 @@ public class Casillero {
 
     private int posicionX;
     private int posicionY;
-    private String bonus;
-    private String aire ;
-    private String tierra;
     private AlgoFormer algoFormer;
+    private Zona aire;
+    private Zona superficie;
+    private Bonus bonus;
 
-    public Casillero(int posicionX, int posicionY, String aire, String tierra){
-
-        this.posicionX = posicionX;
-        this.posicionY = posicionY;
-        this.aire = aire;
-        this.tierra = tierra;
-        this.bonus = "";
-        this.algoFormer = null;
-    }
-
-    public Casillero(int posicionX, int posicionY, String aire, String tierra,String  bonus){
+    public Casillero (int posicionX, int posicionY, Zona aire, Zona superficie, Bonus bonus){
 
         this.posicionX = posicionX;
         this.posicionY = posicionY;
         this.aire = aire;
-        this.tierra = tierra;
+        this.superficie = superficie;
         this.bonus = bonus;
         this.algoFormer = null;
-    }
 
-    public void alojarAlternoPorAire(AlgoFormer algoFormer){
+    }
+    public void alojarPorAire(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
         this.algoFormer = algoFormer;
-        this.aplicarEfectoAire(algoFormer);
+        this.aire.interactuarCon(algoFormer);
         this.aplicarBonus(algoFormer);
+        //algoFormer.verificarSiSigueConVida();
     }
 
-    public void alojarAlternoPorTierra(AlgoFormer algoFormer, boolean estaEmpantanado){
+    public void alojarPorTierra(AlgoFormer algoFormer){
 
         algoFormer.setCasillero(this);
         this.algoFormer = algoFormer;
-        if (!estaEmpantanado) {
-            this.aplicarEfectoAlternoPorTierra(algoFormer);
-        } else { algoFormer.estado.obtenerMovimiento().cambiarAModoNoEmpantanado(); }
+        this.superficie.interactuarCon(algoFormer);
         this.aplicarBonus(algoFormer);
-        algoFormer.verificarSiSigueConVida();
+        //algoFormer.verificarSiSigueConVida();
     }
 
-    public void alojarHumanoidePorTierra(AlgoFormer algoFormer){
-
-        algoFormer.setCasillero(this);
-        this.algoFormer = algoFormer;
-        this.aplicarEfectoHumanoidePorTierra(algoFormer);
-        this.aplicarBonus(algoFormer);
-        algoFormer.verificarSiSigueConVida();
-    }
 
     public int obtenerPosicionX(){
 
@@ -73,74 +52,14 @@ public class Casillero {
     }
 
 
-    private void aplicarEfectoHumanoidePorTierra(AlgoFormer algoFormer){
+    public String obtenerSuperficie(){
 
-        switch (this.tierra){
-
-            case "ROCOSA":
-
-                break;
-            case "PANTANO":
-                algoFormer.cambiarAModoEmpantanado();
-                break;
-            case "ESPINAS":
-                algoFormer.recibirDanioDeEspinas();
-                break;
-        }
+        return "";
     }
 
-    private void aplicarEfectoAlternoPorTierra (AlgoFormer algoFormer){
+    public String obtenerZonaAerea(){
 
-        switch (this.tierra){
-
-            case "ROCOSA":
-
-                break;
-            case "PANTANO":
-                algoFormer.cambiarAModoEmpantanado();
-                break;
-            case "ESPINAS":
-                algoFormer.recibirDanioDeEspinas();
-                break;
-        }
-    }
-
-    private void aplicarEfectoAire(AlgoFormer algoFormer){
-
-        switch (this.aire){
-
-            case "NUBE":
-
-                break;
-            case "NEBULOSA":
-                algoFormer.cambiarAModoAtrapadoEnNebulosa();
-                break;
-            case "TORMENTA":
-                algoFormer.cambiarAModoPostPsionico();
-                break;
-        }
-    }
-
-    private void aplicarBonus(AlgoFormer algoFormer){
-
-        switch (this.bonus){
-
-            case "CANION":
-                algoFormer.cambiarAModoDobleCanion();
-                break;
-            case "BURBUJA":
-                algoFormer.cambiarAModoBurbujaInmaculada();
-                break;
-            case "FLASH":
-                algoFormer.cambiarAModoFlash();
-                break;
-        }
-
-    }
-
-    public String obtenerTierra(){
-
-        return this.tierra;
+        return "";
     }
 
     public void desocupar(){
@@ -153,5 +72,12 @@ public class Casillero {
         return this.algoFormer;
     }
 
+    private void aplicarBonus(AlgoFormer algoFormer){
+
+        if (this.bonus != null){
+
+            this.bonus.aplicarA(algoFormer);
+        }
+    }
 
 }

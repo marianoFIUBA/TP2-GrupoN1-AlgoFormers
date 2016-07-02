@@ -22,7 +22,7 @@ public class MovimientoHumanoideTerrestre implements EstrategiaDeMovimiento{
 
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
-        casillero.alojarHumanoidePorTierra(algoFormer);
+        casillero.alojarPorTierra(algoFormer);
 
     }
 

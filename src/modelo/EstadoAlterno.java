@@ -55,12 +55,13 @@ public class EstadoAlterno implements EstadoAlgoFormer {
 
     @Override
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
-        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
+        return new EstadoAlterno(ataque,
+         distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
     }*/
 
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
-        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, movimiento);
+        return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, movimiento);
     }
 
     @Override
