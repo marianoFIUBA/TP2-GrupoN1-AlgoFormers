@@ -33,7 +33,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
         this.ataque = ataque;
-        this.distanciaDeAtaque = ataque;
+        this.distanciaDeAtaque = ataque;  //Ataque ???
         this.velocidad = velocidad;
         this.movimiento = movimiento;
     }
@@ -113,6 +113,18 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
 
         return this.esTerrestre;
 
+    }
+
+    @Override
+    public void moverA(Casillero casillero, AlgoFormer algoFormer) {
+
+        this.movimiento.mover(casillero,algoFormer);
+
+    }
+
+    @Override
+    public int obtenerDistanciaDeAtaque() {
+        return this.distanciaDeAtaque;
     }
 
 

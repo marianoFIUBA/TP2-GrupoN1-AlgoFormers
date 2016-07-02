@@ -21,7 +21,7 @@ public abstract class AlgoFormer {
         this.casillero = casillero;
         this.calculo = new Calculos();
         this.modoPostPsionico = false;
-        this.arma = new Arma();
+        //this.arma = new Arma()
         this.armadura = new Armadura();
         this.piernas = new Piernas();
     }
@@ -32,7 +32,7 @@ public abstract class AlgoFormer {
     }
 
 
-    public void moverA(Casillero destino){
+    /*public void moverA( Casillero destino){
 
         Casillero casilleroActual = this.casillero;
 
@@ -59,22 +59,36 @@ public abstract class AlgoFormer {
             }
 
         } else { throw new MovimientoInvalidoException(); }
-    }
+    }*/
 
-    public void atacarA(AlgoFormer algoformer) {
+    /*public void atacarA(AlgoFormer algoformer) {
 
         int puntosDeAtaque = this.arma.modificarAtaque(this.obtenerAtaque());
 
-        /*if (this.modoPostPsionico){
+        *//*if (this.modoPostPsionico){
             puntosDeAtaque = (int) (puntosDeAtaque * 0.6);
-        }*/
+        }*//*
 
         if (this.calculo.estaEnRango(this.obtenerCasillero(), algoformer.obtenerCasillero(), puntosDeAtaque)){
 
             this.atacar(algoformer, puntosDeAtaque);
         }
 
+    }*/
+
+
+    public void atacarA(AlgoFormer algoFormer){
+
+        this.arma.atacar(algoFormer,this.obtenerAtaque(),this.obtenerDistanciaDeAtaque(),this.obtenerCasillero());
+
     }
+
+    public int obtenerDistanciaDeAtaque() {
+
+        return this.estado.obtenerDistanciaDeAtaque();
+
+    }
+
 
     public abstract void atacar(AlgoFormer algoformer, int puntosDeAtaque);
 
@@ -194,6 +208,15 @@ public abstract class AlgoFormer {
             this.casillero = null;
         }
     }
+
+    public void moverA(Casillero casillero,AlgoFormer algoFormer){
+
+        this.estado.moverA(casillero,this);
+
+
+    }
+
+
 
 /*    public void capturarChispa(){
 

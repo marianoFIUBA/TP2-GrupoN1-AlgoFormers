@@ -1,16 +1,19 @@
 package modelo;
 
+import modelo.Excepciones.DecepticonNoPuedeAtacarAOtroDecepticon;
+
 public abstract class Decepticon extends AlgoFormer {
 
     protected Decepticon(String nombre, Casillero casillero){
 
         super(nombre, casillero);
+        this.arma = new ArmaDecepticon();
     }
 
-    public void atacar(AlgoFormer objetivo) {
+   /* public void atacar(AlgoFormer objetivo) {
 
        objetivo.recibirAtaqueDeDecepticon(this.estado.obtenerAtaque());
-    }
+    }*/
 
     public void recibirAtaqueDeAutobot(int ataque){
 
@@ -20,7 +23,7 @@ public abstract class Decepticon extends AlgoFormer {
 
     public void recibirAtaqueDeDecepticon(int ataque){
 
-        //lanzar excepcion
+        throw new DecepticonNoPuedeAtacarAOtroDecepticon();
     }
 
     public void atacar(AlgoFormer algoformer, int puntosDeAtaque){

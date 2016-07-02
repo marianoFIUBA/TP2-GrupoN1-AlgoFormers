@@ -3,7 +3,7 @@ package modelo;
 /**
  * Created by Franco on 15/6/2016.
  */
-public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
+public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
     private Calculos calculo;
     private int turnosPendientesAtrapado;
@@ -35,7 +35,7 @@ public class MovimientoAlternoAereo implements EstrategiaDeMovimiento {
 
         if (this.turnosPendientesAtrapado == 0){
 
-            siguienteCasillero = this.calculo.obtenerSiguienteCasillero(actual, destino);
+            siguienteCasillero = this.calcularSiguienteCasillero(actual, destino);
         }
 
         return siguienteCasillero;

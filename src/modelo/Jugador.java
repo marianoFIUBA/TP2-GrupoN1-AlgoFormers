@@ -93,7 +93,7 @@ public abstract class Jugador {
     public void mover(Casillero casillero){
 
         try{
-            this.algoformerSeleccionado.moverA(casillero);
+            this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
             this.finalizarTurno();
         } catch (NullPointerException | MovimientoInvalidoException ex){
             //lanzar exepcion de algoformer no seleccionado
