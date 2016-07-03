@@ -133,7 +133,7 @@ public abstract class Jugador {
         Casillero casilleroActual = this.combinado.obtenerCasillero();
         ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
 
-        double puntosDevida = this.combinado.getPuntosDeVida() / 3;
+        double puntosDevida = this.combinado.obtenerPuntosDeVida() / 3;
 
         this.algoformer1.estado.ocuparCasillero(algoformer1, casilleros.get(0));
         this.algoformer1.setPuntosDeVida(puntosDevida);

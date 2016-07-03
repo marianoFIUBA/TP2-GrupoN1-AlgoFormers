@@ -27,7 +27,7 @@ public abstract class AlgoFormer {
     }
 
 
-    public double getPuntosDeVida() {
+    public double obtenerPuntosDeVida() {
         return puntosDeVida;
     }
 
@@ -213,6 +213,12 @@ public abstract class AlgoFormer {
 
         this.estado.moverA(casillero,this);
 
+
+    }
+
+    public boolean estaVivo() {
+
+        return this.puntosDeVida > 0;
 
     }
 

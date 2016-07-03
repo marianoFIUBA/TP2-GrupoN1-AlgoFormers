@@ -10,5 +10,6 @@ public class Espinas implements Zona {
 
     public void interactuarCon(AlgoFormer algoformer){
         algoformer.recibirDanioDeEspinas();
+        algoformer.verificarSiSigueConVida();
     }
 }
