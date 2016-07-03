@@ -40,6 +40,7 @@ public class Aplicacion extends Application{
         BotonVistaTierraHandler handlerBotonTierra = new BotonVistaTierraHandler(contenedorPrincipal);
         contenedorPrincipal.obtenerBotonTierra().setOnAction(handlerBotonTierra);
 
+
         Scene scene = new Scene(contenedorPrincipal, 1200, 600);
         stage.setScene(scene);
 
@@ -56,7 +57,7 @@ public class Aplicacion extends Application{
         stage.show();*/
     }
 
-    private Scene getScene(){
+/*    private Scene getScene(){
 
         Juego.getInstance().iniciarJuego();
 
@@ -73,7 +74,7 @@ public class Aplicacion extends Application{
 
         return new Scene(border, 800, 600);
 
-    }
+    }*/
 
     public Pane generarTitulo(){
 
@@ -91,7 +92,7 @@ public class Aplicacion extends Application{
 
     }
 
-    public GridPane generarTablero(int dimensionX, int dimensionY){
+   /* public GridPane generarTablero(int dimensionX, int dimensionY){
 
         GridPane tablero = new GridPane();
 
@@ -136,7 +137,7 @@ public class Aplicacion extends Application{
         }
 
         return tablero;
-    }
+    }*/
 
     public VBox generarPanelDeAciones(){
 

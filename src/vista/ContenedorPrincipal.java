@@ -28,6 +28,7 @@ public class ContenedorPrincipal extends BorderPane {
     private BuscadorDeImagenes buscador;
     private Button btnTierra;
     private Button btnAire;
+    private String vistaActual;
 
     public ContenedorPrincipal() {
         //this.setMenu(stage);
@@ -43,6 +44,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 /*        int dimensionX = Juego.getInstance().obtenerDimensionTableroX();
         int dimensionY = Juego.getInstance().obtenerDimensionTableroY();*/
+        this.vistaActual = tipoZonaTablero;
 
         int dimensionX = 10;
         int dimensionY = 10;
@@ -72,7 +74,7 @@ public class ContenedorPrincipal extends BorderPane {
                 BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual);
+                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.lblImagen_2, this.vistaActual);
                 botonSuperficie.setOnAction(handlerCasillero);
 
                 stack.getChildren().add(botonSuperficie);
@@ -189,14 +191,6 @@ public class ContenedorPrincipal extends BorderPane {
         BackgroundImage fontoAlgo = new BackgroundImage(imagenAlgoformer, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         lblAlgo.setBackground(new Background(fontoAlgo));
 
-        /*if (algoformerActual != null){
-            String nombreAlgoformerActual = algoformerActual.obtenerNombre();
-            String estado = algoformerActual.obtenerEstado();
-            imagenAlgoformer = this.obtenerImagenAlgoformer(nombreAlgoformerActual, estado);
-        } else {
-            imagenAlgoformer = new Image("file:src/vista/imagenes/SinSeleccion.png");
-        }
-*/
 
         javafx.scene.image.Image imagenCasillero = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblCasillero = new Label();
@@ -328,6 +322,11 @@ public class ContenedorPrincipal extends BorderPane {
     public Button obtenerBotonAire(){
 
         return this.btnAire;
+    }
+
+    public String obtenerVistaActual(){
+
+        return this.vistaActual;
     }
 
 }
