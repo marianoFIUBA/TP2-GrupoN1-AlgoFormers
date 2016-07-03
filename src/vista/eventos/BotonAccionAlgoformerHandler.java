@@ -79,6 +79,17 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             this.estadisticasCasillero.setVisible(false);
             this.estadisticas_2.setVisible(true);
 
+
+            Label ataque = (Label)  this.estadisticas_2.getChildren().get(0);
+            Label distancia = (Label)  this.estadisticas_2.getChildren().get(1);
+            Label velocidad = (Label)  this.estadisticas_2.getChildren().get(2);
+            Label vida = (Label)  this.estadisticas_2.getChildren().get(3);
+
+            ataque.setText("ATAQUE: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerAtaque());
+            distancia.setText("DISTANCIA DE ATAQUE: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerDistanciaDeAtaque());
+            velocidad.setText("VELOCIDAD: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerVelocidad());
+            vida.setText("PUNTOS DE VIDA: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerPuntosDeVida());
+
             if(Juego.getInstance().obtenerAlgoformerObjetivo() != null){
                 if (!Juego.getInstance().obtenerAlgoformerObjetivo().equals(this.algoformer)){
                     Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);
