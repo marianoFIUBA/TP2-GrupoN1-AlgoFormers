@@ -13,6 +13,8 @@ import modelo.Casillero;
 import modelo.Juego;
 import vista.eventos.BotonAccionAlgoformerHandler;
 import vista.eventos.BotonAccionCasilleroHandler;
+import vista.eventos.BotonVistaAireHandler;
+import vista.eventos.BotonVistaTierraHandler;
 
 /**
  * Created by Mariano on 20/06/2016.
@@ -30,8 +32,15 @@ public class Aplicacion extends Application{
 
         stage.setTitle("ALGOFORMERS");
 
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal();
 
-        Scene scene = new Scene(new ContenedorPrincipal(), 1200, 600);
+        BotonVistaAireHandler handlerBotonVista = new BotonVistaAireHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonAire().setOnAction(handlerBotonVista);
+
+        BotonVistaTierraHandler handlerBotonTierra = new BotonVistaTierraHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonTierra().setOnAction(handlerBotonTierra);
+
+        Scene scene = new Scene(contenedorPrincipal, 1200, 600);
         stage.setScene(scene);
 
         stage.show();

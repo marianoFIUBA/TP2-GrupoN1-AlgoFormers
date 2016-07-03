@@ -337,5 +337,20 @@ public class Juego {
 
         return this.dimensionTableroY;
     }
+
+    public Casillero obtenerCasilleroSeleccionado(){
+
+        return this.casilleroSeleccionado;
+    }
+
+    public AlgoFormer obtenerAlgoformerObjetivo(){
+
+        return this.algoformerObjetivo;
+    }
+
+    public boolean chispaSeleccionada(){
+
+        return false;
+    }
 }
 

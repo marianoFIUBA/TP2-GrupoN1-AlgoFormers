@@ -23,7 +23,7 @@ public class BuscadorDeImagenes {
     }
 
 
-    private String obtenerPathImagenTierra(Casillero casillero){
+    public String obtenerPathImagenTierra(Casillero casillero){
 
         String path = "";
         switch (casillero.obtenerTierra()){
@@ -41,6 +41,26 @@ public class BuscadorDeImagenes {
 
         return path;
     }
+
+    public String obtenerPathImagenAire(Casillero casillero){
+
+        String path = "";
+        switch (casillero.obtenerAire()){
+
+            case "NUBE":
+                path = "file:src/vista/imagenes/Nube.png";
+                break;
+            case "TORMENTA":
+                path = "file:src/vista/imagenes/Tormenta.png";
+                break;
+            case "NEBULOSA":
+                path = "file:src/vista/imagenes/Nebulosa.png";
+                break;
+        }
+
+        return path;
+    }
+
 
     private String obtenerPathImagenAlterno(AlgoFormer algoFormer){
 

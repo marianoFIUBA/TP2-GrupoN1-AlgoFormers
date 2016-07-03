@@ -25,16 +25,21 @@ public class ContenedorPrincipal extends BorderPane {
     private Label lblImagen_2;
     private Button btnAtacar;
     private Button btnMover;
+    private BuscadorDeImagenes buscador;
+    private Button btnTierra;
+    private Button btnAire;
 
     public ContenedorPrincipal() {
         //this.setMenu(stage);
 
+        this.buscador = new BuscadorDeImagenes();
         this.generarPanelAccion();
         this.generarPanelSeleccion();
-        this.generarTablero();
+        //VistaTablero vistaTablero = new VistaTablero(this);
+        this.generarTablero("TIERRA");
     }
 
-    public void generarTablero(){
+    public void generarTablero(String tipoZonaTablero){
 
 /*        int dimensionX = Juego.getInstance().obtenerDimensionTableroX();
         int dimensionY = Juego.getInstance().obtenerDimensionTableroY();*/
@@ -55,10 +60,16 @@ public class ContenedorPrincipal extends BorderPane {
 
                 Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
 
-                String pathImagen = this.obtenerPathImagenTierra(casilleroActual);
+                String pathImagen = "";
+                if (tipoZonaTablero == "TIERRA"){
+                    pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
+                } else {
+                   pathImagen = this.buscador.obtenerPathImagenAire(casilleroActual);
+                }
 
                 javafx.scene.image.Image imagen = new javafx.scene.image.Image(pathImagen);
-                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+                BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, true, true, false);
+                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
                 BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual);
@@ -69,7 +80,7 @@ public class ContenedorPrincipal extends BorderPane {
                 //Si hay un algoformer en el casillero
                 if (!(casilleroActual.obtenerAlgoformer() == null)){
 
-                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer(), this.lblImagen_1, this.panelAcciones);
+                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer(), this.lblImagen_1, this.lblImagen_2,  this.panelAcciones);
 
                     //String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
                     javafx.scene.control.Button botonAlgoFormer = new javafx.scene.control.Button();
@@ -135,12 +146,14 @@ public class ContenedorPrincipal extends BorderPane {
         lblVistas.setLineSpacing(200);
 
         javafx.scene.control.Button btnAire = new javafx.scene.control.Button();
-        btnAire.setText("Vista Terrestre");
+        btnAire.setText("Vista Aérea");
         btnAire.setPrefWidth(150);
+        this.btnAire = btnAire;
 
         javafx.scene.control.Button btnTierra = new javafx.scene.control.Button();
-        btnTierra.setText("Vista Aérea");
+        btnTierra.setText("Vista Terrestre");
         btnTierra.setPrefWidth(150);
+        this.btnTierra = btnTierra;
 
         panelAcciones.getChildren().add(lblAcciones);
         panelAcciones.getChildren().add(botonAtacar);
@@ -153,6 +166,7 @@ public class ContenedorPrincipal extends BorderPane {
         panelAcciones.getChildren().add(btnTierra);
         panelAcciones.getChildren().add(btnAire);
 
+        this.panelAcciones = panelAcciones;
         this.setLeft(panelAcciones);
     }
 
@@ -167,7 +181,7 @@ public class ContenedorPrincipal extends BorderPane {
         lblSeleccion.setLineSpacing(200);
 
         AlgoFormer algoformerActual = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformerSeleccionado();
-        javafx.scene.image.Image imagenAlgoformer = new javafx.scene.image.Image("file:src/vista/imagenes/Espinas.png");
+        javafx.scene.image.Image imagenAlgoformer = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblAlgo = new Label();
         this.lblImagen_1 = lblAlgo;
         lblAlgo.setPrefSize(200,200);
@@ -184,7 +198,7 @@ public class ContenedorPrincipal extends BorderPane {
         }
 */
 
-        javafx.scene.image.Image imagenCasillero = new javafx.scene.image.Image("file:src/vista/imagenes/Espinas.png");
+        javafx.scene.image.Image imagenCasillero = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblCasillero = new Label();
         this.lblImagen_2 = lblCasillero;
         lblCasillero.setPrefSize(200,200);
@@ -197,6 +211,16 @@ public class ContenedorPrincipal extends BorderPane {
 
         this.setRight(panelSeleccion);
 
+    }
+
+    public VBox obtenerPanelAcciones(){
+
+        return this.panelAcciones;
+    }
+
+    public Label obtenerLblImagen_1(){
+
+        return this.lblImagen_1;
     }
 
     public VBox obtenerPanelSeleccion(){
@@ -294,6 +318,16 @@ public class ContenedorPrincipal extends BorderPane {
         }
 
        return path;
+    }
+
+    public Button obtenerBotonTierra(){
+
+        return this.btnTierra;
+    }
+
+    public Button obtenerBotonAire(){
+
+        return this.btnAire;
     }
 
 }
