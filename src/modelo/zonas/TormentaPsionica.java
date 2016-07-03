@@ -8,7 +8,15 @@ import modelo.Zona;
  */
 public class TormentaPsionica implements Zona {
 
+    private String nombre= "TORMENTA";
+
+
     public void interactuarCon(AlgoFormer algoformer){
         algoformer.cambiarAModoPostPsionico();
+    }
+
+    public String obtenerNombre(){
+
+        return this.nombre;
     }
 }

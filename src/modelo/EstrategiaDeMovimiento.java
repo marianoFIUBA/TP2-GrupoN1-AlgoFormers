@@ -38,7 +38,7 @@ public abstract class EstrategiaDeMovimiento {
             int distancia = this.obtenerDistancia(casilleroActual, destino);
             int movimientosDisponibles = puntosDeVelocidad;
 
-            while (distancia > 0 && movimientosDisponibles > 0){
+            while (distancia > 0 && movimientosDisponibles > 0 && algoFormer.estaVivo() ){
 
                 Casillero casilleroAnterior = algoFormer.obtenerCasillero();
                 algoFormer.desocuparCasillero();

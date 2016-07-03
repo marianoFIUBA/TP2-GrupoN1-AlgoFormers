@@ -8,7 +8,15 @@ import modelo.Zona;
  */
 public class Pantano implements Zona {
 
+
+    private String nombre = "PANTANO";
+
     public void interactuarCon(AlgoFormer algoformer){
         algoformer.cambiarAModoEmpantanado();
+    }
+
+    public String obtenerNombre(){
+
+        return this.nombre;
     }
 }

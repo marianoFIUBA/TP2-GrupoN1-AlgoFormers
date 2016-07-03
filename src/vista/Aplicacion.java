@@ -1,9 +1,6 @@
 package vista;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -14,152 +11,13 @@ import javafx.application.Application;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
-import vista.eventos.BotonAccionAlgoformer;
-
-import java.util.HashMap;
+import vista.eventos.BotonAccionAlgoformerHandler;
+import vista.eventos.BotonAccionCasilleroHandler;
 
 /**
  * Created by Mariano on 20/06/2016.
  */
 public class Aplicacion extends Application{
-
-    Stage stage;
-    Casillero casilleroSeleccionado;
-    private Background imagenCasilleroSeleccionado;
-
-    public class MiBotonEventHandler implements EventHandler<ActionEvent> {
-
-        private Button miBoton;
-
-        public MiBotonEventHandler(Button miBoton) {
-            this.miBoton = miBoton;
-        }
-
-        @Override
-        public void handle(ActionEvent actionEvent) {
-
-            String textoClickeado = "Me han clickeado !";
-
-            System.out.println(textoClickeado);
-
-            //Casillero casillero = Juego.getInstance().obtenerCasillero(2,2);
-
-            //Juego.getInstance().obtenerJugador1().obtenerAlgoformer1().moverA(casillero);
-
-            //actualizar();
-
-
-            //this.miBoton.setText(textoClickeado);
-        }
-    }
-
-
-    /*public void actualizar(){
-
-        Stage stage = this.stage;
-
-        stage.setTitle("ALGOFORMERS");
-
-        int dimensionX = 20;
-
-        int dimensionY = 20;
-
-        Juego.getInstance().iniciarJuego(dimensionX,dimensionY, true);
-
-
-        GridPane tablero = new GridPane();
-
-        for(int i = 1; i <= dimensionX; i++) {
-            for (int j = 1; j <= dimensionY; j++) {
-
-
-
-                StackPane stack = new StackPane();
-
-                Button botonSuperficie = new Button();
-                botonSuperficie.setPrefSize(100, 100);
-                botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
-
-                Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
-
-                String pathImagen = this.obtenerImagen(casilleroActual);
-
-                Image imagen = new Image(pathImagen);
-                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-                botonSuperficie.setBackground(new Background(imagenDeFondo));
-
-                MiBotonEventHandler miBotonEventHandler = new MiBotonEventHandler(botonSuperficie);
-                botonSuperficie.setOnAction(miBotonEventHandler);
-
-
-                stack.getChildren().add(botonSuperficie);
-
-                if (!(casilleroActual.obtenerAlgoformer() == null)){
-
-
-                    String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
-                    Button botonAlgoFormer = new Button();
-                    botonAlgoFormer.setPrefSize(50,50);
-                    botonAlgoFormer.setText(nombre);
-                    botonAlgoFormer.setOnAction(miBotonEventHandler);
-
-                    stack.getChildren().add(botonAlgoFormer);
-
-
-                }
-
-
-
-                tablero.add(stack, j, i);
-
-
-            }
-        }
-
-
-        VBox vbox = new VBox();
-        vbox.setPadding(new Insets(10));
-        vbox.setSpacing(8);
-
-
-
-
-        BorderPane border = new BorderPane();
-        border.setCenter(tablero);
-        border.setLeft(vbox);
-
-        Scene scene = new Scene(border, 800, 600);
-
-        stage.setScene(scene);
-
-
-
-    }*/
-
-
-
-    private String obtenerImagenTierra(Casillero casillero){
-
-        String path = "";
-/*
-        switch (casillero.obtenerTierra()){
-
-            case "ROCOSA":
-                path = "file:src/vista/imagenes/Roca.png";
-                break;
-            case "PANTANO":
-                path = "file:src/vista/imagenes/Pantano.png";
-                break;
-            case "ESPINAS":
-                path = "file:src/vista/imagenes/Espinas.png";
-                break;
-        }
-*/
-
-        return path;
-    }
-
-
 
     public static void main(String[] args) {
         launch(args);
@@ -168,29 +26,33 @@ public class Aplicacion extends Application{
     @Override
     public void start(Stage stage) throws Exception {
 
-        this.stage = stage;
+        Juego.getInstance().iniciarJuego();
 
         stage.setTitle("ALGOFORMERS");
+
+
+        Scene scene = new Scene(new ContenedorPrincipal(), 800, 600);
+        stage.setScene(scene);
+
+        stage.show();
+
+
+
+
+   /*     stage.setTitle("ALGOFORMERS");
 
         Scene scene = this.getScene();
         stage.setScene(scene);
 
-        stage.show();
+        stage.show();*/
     }
 
     private Scene getScene(){
 
-        int dimensionX = 20;
-
-        int dimensionY = 20;
-
         Juego.getInstance().iniciarJuego();
 
-        GridPane tablero = this.generarTablero(dimensionX, dimensionY);
 
-/*        VBox vbox = new VBox();
-        vbox.setPadding(new Insets(10));
-        vbox.setSpacing(8);*/
+        GridPane tablero = this.generarTablero(10, 10);
 
         VBox vbox = this.generarPanelDeAciones();
 
@@ -198,9 +60,9 @@ public class Aplicacion extends Application{
         border.setCenter(tablero);
         border.setLeft(vbox);
         border.setRight(this.generarPanelSeleccion());
-        border.setTop(this.generarTitulo());
+        //border.setTop(this.generarTitulo());
 
-        return new Scene(border, 1366, 768);
+        return new Scene(border, 800, 600);
 
     }
 
@@ -241,19 +103,21 @@ public class Aplicacion extends Application{
                 BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                MiBotonEventHandler miBotonEventHandler = new MiBotonEventHandler(botonSuperficie);
-                botonSuperficie.setOnAction(miBotonEventHandler);
+                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler( casilleroActual);
+                botonSuperficie.setOnAction(handlerCasillero);
 
                 stack.getChildren().add(botonSuperficie);
 
+                //Si hay un algoformer en el casillero
                 if (!(casilleroActual.obtenerAlgoformer() == null)){
 
-                    BotonAccionAlgoformer eventoAccion = new BotonAccionAlgoformer();
+                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer());
+
                     String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
                     Button botonAlgoFormer = new Button();
                     botonAlgoFormer.setPrefSize(50,50);
                     botonAlgoFormer.setText(nombre);
-                    botonAlgoFormer.setOnAction(eventoAccion);
+                    botonAlgoFormer.setOnAction(handlerAlgoformer);
 
                     stack.getChildren().add(botonAlgoFormer);
                 }
@@ -431,4 +295,24 @@ public class Aplicacion extends Application{
 
         return imagen;
     }
+
+    private String obtenerImagenTierra(Casillero casillero){
+
+        String path = "";
+        switch (casillero.obtenerTierra()){
+
+            case "ROCA":
+                path = "file:src/vista/imagenes/Roca.png";
+                break;
+            case "PANTANO":
+                path = "file:src/vista/imagenes/Pantano.png";
+                break;
+            case "ESPINAS":
+                path = "file:src/vista/imagenes/Espinas.png";
+                break;
+        }
+
+        return path;
+    }
+
 }

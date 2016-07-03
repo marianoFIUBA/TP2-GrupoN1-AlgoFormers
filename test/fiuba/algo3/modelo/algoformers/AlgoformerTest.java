@@ -35,7 +35,7 @@ public class AlgoformerTest {
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
     }
 
-/*    @Test
+    @Test
     public void algoformerSeTransformaEnAmbasDirecciones() {
 
 
@@ -51,7 +51,7 @@ public class AlgoformerTest {
 
         optimus.transformarseAModoAlterno();
         Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
-    }*/
+    }
 
     @Test
     public void algoFormerAtacaSiEstaEnRango() {
@@ -65,7 +65,7 @@ public class AlgoformerTest {
         Megatron megatron = new Megatron(casilleroFinal);
         optimus.atacarA(megatron);
 
-        Assert.assertTrue(megatron.getPuntosDeVida() == 535);
+        Assert.assertTrue(megatron.obtenerPuntosDeVida() == 535);
     }
 
     @Test(expected= AlgoFormerFueraDeAlcanceException.class)
@@ -80,7 +80,7 @@ public class AlgoformerTest {
         Megatron megatron = new Megatron(casilleroFinal);
         optimus.atacarA(megatron);
 
-        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+        Assert.assertTrue(megatron.obtenerPuntosDeVida() == 550);
 
     }
 
@@ -96,7 +96,7 @@ public class AlgoformerTest {
         Bumblebee bumblebee = new Bumblebee(casilleroFinal);
         optimus.atacarA(bumblebee);
 
-        Assert.assertTrue(bumblebee.getPuntosDeVida() == 350);
+        Assert.assertTrue(bumblebee.obtenerPuntosDeVida() == 350);
     }
 
     @Test
@@ -113,7 +113,7 @@ public class AlgoformerTest {
         optimus.moverA(casilleroFinal,optimus);
 
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(optimus.obtenerAtaque() == 15 && optimus.obtenerVelocidad() == 5 && optimus.getPuntosDeVida() == 500);
+        Assert.assertTrue(optimus.obtenerAtaque() == 15 && optimus.obtenerVelocidad() == 5 && optimus.obtenerPuntosDeVida() == 500);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
 
@@ -122,7 +122,7 @@ public class AlgoformerTest {
         optimus.moverA(casilleroFinal,optimus);
 
         Assert.assertEquals(optimus.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(optimus.obtenerAtaque() == 50 && optimus.obtenerVelocidad() == 2 && optimus.getPuntosDeVida() == 500);
+        Assert.assertTrue(optimus.obtenerAtaque() == 50 && optimus.obtenerVelocidad() == 2 && optimus.obtenerPuntosDeVida() == 500);
 
 
     }
@@ -139,7 +139,7 @@ public class AlgoformerTest {
         bumblebee.moverA(casilleroFinal,bumblebee);
 
         Assert.assertEquals(bumblebee.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(bumblebee.obtenerAtaque() == 20 && bumblebee.obtenerVelocidad() == 5 && bumblebee.getPuntosDeVida() == 350);
+        Assert.assertTrue(bumblebee.obtenerAtaque() == 20 && bumblebee.obtenerVelocidad() == 5 && bumblebee.obtenerPuntosDeVida() == 350);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
 
@@ -148,7 +148,7 @@ public class AlgoformerTest {
         bumblebee.moverA(casilleroFinal,bumblebee);
 
         Assert.assertEquals(bumblebee.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(bumblebee.obtenerAtaque() == 40 && bumblebee.obtenerVelocidad() == 2 && bumblebee.getPuntosDeVida() == 350);
+        Assert.assertTrue(bumblebee.obtenerAtaque() == 40 && bumblebee.obtenerVelocidad() == 2 && bumblebee.obtenerPuntosDeVida() == 350);
 
 
 
@@ -165,7 +165,7 @@ public class AlgoformerTest {
         ratchet.moverA(casilleroFinal,ratchet);
 
         Assert.assertEquals(ratchet.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(ratchet.obtenerAtaque() == 35 && ratchet.obtenerVelocidad() == 8 && ratchet.getPuntosDeVida() == 150);
+        Assert.assertTrue(ratchet.obtenerAtaque() == 35 && ratchet.obtenerVelocidad() == 8 && ratchet.obtenerPuntosDeVida() == 150);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
 
@@ -174,7 +174,7 @@ public class AlgoformerTest {
         ratchet.moverA(casilleroFinal,ratchet);
 
         Assert.assertEquals(ratchet.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(ratchet.obtenerAtaque() == 5 && ratchet.obtenerVelocidad() == 1 && ratchet.getPuntosDeVida() == 150);
+        Assert.assertTrue(ratchet.obtenerAtaque() == 5 && ratchet.obtenerVelocidad() == 1 && ratchet.obtenerPuntosDeVida() == 150);
 
 
     }
@@ -190,7 +190,7 @@ public class AlgoformerTest {
         superion.moverA(casilleroFinal,superion);
 
         Assert.assertEquals(superion.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(superion.obtenerAtaque() == 100 && superion.obtenerVelocidad() == 3 && superion.getPuntosDeVida() == 100);
+        Assert.assertTrue(superion.obtenerAtaque() == 100 && superion.obtenerVelocidad() == 3 && superion.obtenerPuntosDeVida() == 100);
 
     }
 
@@ -205,7 +205,7 @@ public class AlgoformerTest {
         menasor.moverA(casilleroFinal,menasor);
 
         Assert.assertEquals(menasor.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(menasor.obtenerAtaque() == 115 && menasor.obtenerVelocidad() == 2 && menasor.getPuntosDeVida() == 100);
+        Assert.assertTrue(menasor.obtenerAtaque() == 115 && menasor.obtenerVelocidad() == 2 && menasor.obtenerPuntosDeVida() == 100);
 
     }
 
@@ -220,7 +220,7 @@ public class AlgoformerTest {
         megatron.moverA(casilleroFinal,megatron);
 
         Assert.assertEquals(megatron.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(megatron.obtenerAtaque() == 55 && megatron.obtenerVelocidad() == 8 && megatron.getPuntosDeVida() == 550);
+        Assert.assertTrue(megatron.obtenerAtaque() == 55 && megatron.obtenerVelocidad() == 8 && megatron.obtenerPuntosDeVida() == 550);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
 
@@ -229,7 +229,7 @@ public class AlgoformerTest {
         megatron.moverA(casilleroFinal,megatron);
 
         Assert.assertEquals(megatron.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(megatron.obtenerAtaque() == 10 && megatron.obtenerVelocidad() == 1 && megatron.getPuntosDeVida() == 550);
+        Assert.assertTrue(megatron.obtenerAtaque() == 10 && megatron.obtenerVelocidad() == 1 && megatron.obtenerPuntosDeVida() == 550);
 
     }
 
@@ -244,7 +244,7 @@ public class AlgoformerTest {
         bonecrusher.moverA(casilleroFinal,bonecrusher);
 
         Assert.assertEquals(bonecrusher.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 8 && bonecrusher.getPuntosDeVida() == 200);
+        Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 8 && bonecrusher.obtenerPuntosDeVida() == 200);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,10);
 
@@ -253,7 +253,7 @@ public class AlgoformerTest {
         bonecrusher.moverA(casilleroFinal,bonecrusher);
 
         Assert.assertEquals(bonecrusher.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 1 && bonecrusher.getPuntosDeVida() == 200);
+        Assert.assertTrue(bonecrusher.obtenerAtaque() == 30 && bonecrusher.obtenerVelocidad() == 1 && bonecrusher.obtenerPuntosDeVida() == 200);
 
     }
 
@@ -268,7 +268,7 @@ public class AlgoformerTest {
         frenzy.moverA(casilleroFinal,frenzy);
 
         Assert.assertEquals(frenzy.obtenerCasillero(), casilleroFinal);
-        Assert.assertTrue(frenzy.obtenerAtaque() == 25 && frenzy.obtenerVelocidad() == 6 && frenzy.getPuntosDeVida() == 400);
+        Assert.assertTrue(frenzy.obtenerAtaque() == 25 && frenzy.obtenerVelocidad() == 6 && frenzy.obtenerPuntosDeVida() == 400);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,9);
 
@@ -277,7 +277,7 @@ public class AlgoformerTest {
         frenzy.moverA(casilleroFinal,frenzy);
 
         Assert.assertEquals(frenzy.obtenerCasillero(),casilleroFinal);
-        Assert.assertTrue(frenzy.obtenerAtaque() == 10 && frenzy.obtenerVelocidad() == 2 && frenzy.getPuntosDeVida() == 400);
+        Assert.assertTrue(frenzy.obtenerAtaque() == 10 && frenzy.obtenerVelocidad() == 2 && frenzy.obtenerPuntosDeVida() == 400);
 
 
     }
@@ -358,7 +358,7 @@ public class AlgoformerTest {
 
         optimus.moverA(casilleroFinal,optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 475);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 475);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
         casilleroConEspinas = new Casillero(1,7,new Nube(), new Espinas(), null);
@@ -367,7 +367,7 @@ public class AlgoformerTest {
         optimus.transformarseAModoHumanoide();
         optimus.moverA(casilleroFinal,optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 450);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 450);
 
     }
 
@@ -383,7 +383,7 @@ public class AlgoformerTest {
 
         bumblebee.moverA(casilleroFinal,bumblebee);
 
-        Assert.assertTrue(bumblebee.getPuntosDeVida() == 332.5);
+        Assert.assertTrue(bumblebee.obtenerPuntosDeVida() == 332.5);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,8);
         casilleroConEspinas = new Casillero(1,7, new Nube(), new Espinas(), null);
@@ -392,7 +392,7 @@ public class AlgoformerTest {
         bumblebee.transformarseAModoHumanoide();
         bumblebee.moverA(casilleroFinal,bumblebee);
 
-        Assert.assertTrue(bumblebee.getPuntosDeVida() == 315);
+        Assert.assertTrue(bumblebee.obtenerPuntosDeVida() == 315);
 
 
     }
@@ -409,7 +409,7 @@ public class AlgoformerTest {
 
         frenzy.moverA(casilleroFinal,frenzy);
 
-        Assert.assertTrue(frenzy.getPuntosDeVida() == 380);
+        Assert.assertTrue(frenzy.obtenerPuntosDeVida() == 380);
 
         casilleroFinal = Juego.getInstance().obtenerCasillero(1,9);
         casilleroConEspinas = new Casillero(1,8, new Nube(), new Espinas(), null);
@@ -418,7 +418,7 @@ public class AlgoformerTest {
         frenzy.transformarseAModoHumanoide();
         frenzy.moverA(casilleroFinal,frenzy);
 
-        Assert.assertTrue(frenzy.getPuntosDeVida() == 360);
+        Assert.assertTrue(frenzy.obtenerPuntosDeVida() == 360);
 
     }
 
@@ -434,7 +434,7 @@ public class AlgoformerTest {
 
         bonecrusher.moverA(casilleroFinal,bonecrusher);
 
-        Assert.assertTrue(bonecrusher.getPuntosDeVida() == 190);
+        Assert.assertTrue(bonecrusher.obtenerPuntosDeVida() == 190);
 
         casilleroConEspinas = new Casillero(1,10, new Nube(), new Espinas(), null);
         Juego.getInstance().modificarCasillero(casilleroConEspinas);
@@ -443,7 +443,7 @@ public class AlgoformerTest {
         bonecrusher.transformarseAModoHumanoide();
         bonecrusher.moverA(casilleroFinal,bonecrusher);
 
-        Assert.assertTrue(bonecrusher.getPuntosDeVida() == 180);
+        Assert.assertTrue(bonecrusher.obtenerPuntosDeVida() == 180);
 
 
     }
@@ -560,19 +560,19 @@ public class AlgoformerTest {
         jugador.mover(casilleroDestinoMegatron);
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 390);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 390);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 280);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 280);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 170);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 170);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 115);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 115);
 
 
     }
@@ -604,19 +604,19 @@ public class AlgoformerTest {
         jugador.mover(casilleroDestinoMegatron);
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 480);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 480);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 460);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 460);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 440);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 440);
 
         jugador.atacar(optimus);
 
-        Assert.assertTrue(optimus.getPuntosDeVida() == 430);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 430);
 
 
     }
@@ -650,16 +650,16 @@ public class AlgoformerTest {
         optimus.atacarA(megatron);
         jugadorDecepticon.transformar();
 
-        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+        Assert.assertTrue(megatron.obtenerPuntosDeVida() == 550);
 
         optimus.atacarA(megatron);
         jugadorDecepticon.transformar();
 
-        Assert.assertTrue(megatron.getPuntosDeVida() == 550);
+        Assert.assertTrue(megatron.obtenerPuntosDeVida() == 550);
 
         optimus.atacarA(megatron);
 
-        Assert.assertTrue(megatron.getPuntosDeVida() == 535);
+        Assert.assertTrue(megatron.obtenerPuntosDeVida() == 535);
 
     }
 
@@ -825,20 +825,56 @@ public class AlgoformerTest {
 
     }
 
+
     @Test
-    public void generarCasillerosDesdeJSONGeneraCasillero(){
+    public void sePierdeReferenciaDobleEntreElCasilleroYElAlgoformerAlMorirUnAlgoformerPorRecibirDaniosPorEspinas(){
 
-        Juego.getInstance().iniciarJuego();
+        Juego.getInstance().generarTablero(20,20,false);
 
-        int numero;
+        Casillero casilleroInicialOptimus = Juego.getInstance().obtenerCasillero(2,1);
+        Optimus optimus = new Optimus(casilleroInicialOptimus);
 
-        numero = 3;
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
 
+        while (optimus.obtenerPuntosDeVida() > 25){
 
+            megatron.atacarA(optimus);
 
+        }
 
+        Casillero casilleroConEspinas1 = new Casillero(2,2,new Nube(),new Espinas(),null);
+        Juego.getInstance().modificarCasillero(casilleroConEspinas1);
+
+        Casillero casilleroFinalOptimus = Juego.getInstance().obtenerCasillero(2,6);
+        optimus.moverA(casilleroFinalOptimus,optimus);
+
+        Assert.assertTrue(optimus.obtenerCasillero() == null && casilleroFinalOptimus.obtenerAlgoformer() == null);
 
     }
+
+    @Test
+    public void sePierdeReferenciaDobleEntreElCasilleroYElAlgoformerAlMorirUnAlgoformerPorRecibirElAtaqueDeOtro(){
+
+        Juego.getInstance().generarTablero(20,20,false);
+
+        Casillero casilleroInicialOptimus = Juego.getInstance().obtenerCasillero(2,1);
+        Optimus optimus = new Optimus(casilleroInicialOptimus);
+
+        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
+        Megatron megatron = new Megatron(casilleroInicialMegatron);
+
+        while (optimus.obtenerPuntosDeVida() > 0){
+
+            megatron.atacarA(optimus);
+
+        }
+
+        Assert.assertTrue(optimus.obtenerCasillero() == null && casilleroInicialOptimus.obtenerAlgoformer() == null);
+
+    }
+
+
 
 
 

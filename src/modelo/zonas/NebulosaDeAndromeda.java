@@ -8,7 +8,15 @@ import modelo.Zona;
  */
 public class NebulosaDeAndromeda implements Zona {
 
+
+    private String nombre = "NEBULOSA";
+
     public void interactuarCon(AlgoFormer algoformer){
         algoformer.cambiarAModoAtrapadoEnNebulosa();
+    }
+
+    public String obtenerNombre(){
+
+        return this.nombre;
     }
 }

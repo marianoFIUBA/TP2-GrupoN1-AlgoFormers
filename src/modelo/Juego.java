@@ -35,6 +35,10 @@ public class Juego {
     private int dimensionTableroY;
     private ChispaSuprema chispa;
 
+    private Casillero casilleroSeleccionado;
+    private AlgoFormer algoformerObjetivo;
+
+
     private Juego() {
 
         this.iniciado = false;
@@ -295,7 +299,7 @@ public class Juego {
 
         try {
             org.json.simple.parser.JSONParser parser = new org.json.simple.parser.JSONParser();
-            JSONObject tableroJSON = (JSONObject) parser.parse(new FileReader("tableroAlgoformers.json"));
+            JSONObject tableroJSON = (JSONObject) parser.parse(new FileReader("tableroAlgoformers_validado.json"));
 
             Tablero objTablero = new Tablero(tableroJSON);
 
@@ -307,6 +311,31 @@ public class Juego {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean algoformerPerteneceAJugadorActual(AlgoFormer algoformer){
+
+        return this.jugadorActual.poseeAlgoformer(algoformer);
+    }
+
+    public void establecerAlgoformerObjetivo(AlgoFormer algoFormer){
+
+        this.algoformerObjetivo = algoFormer;
+    }
+
+    public void establecerCasilleroSeleccionado(Casillero casillero){
+
+        this.casilleroSeleccionado = casillero;
+    }
+
+    public int obtenerDimensionTableroX(){
+
+        return this.dimensionTableroX;
+    }
+
+    public int obtenerDimensionTableroY(){
+
+        return this.dimensionTableroY;
     }
 }
 

@@ -80,4 +80,14 @@ public class Casillero {
         }
     }
 
+    public String obtenerTierra(){
+
+        return this.superficie.obtenerNombre();
+    }
+
+    public String obtenerAire(){
+
+        return this.aire.obtenerNombre();
+    }
+
 }

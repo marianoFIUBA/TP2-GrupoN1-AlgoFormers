@@ -23,7 +23,7 @@ public class Tablero {
     public Tablero(JSONObject json){
 
         this.dimensionX = Integer.valueOf(json.get("dimensionX").toString());
-        this.dimensionY = Integer.valueOf(json.get("dimensionX").toString());
+        this.dimensionY = Integer.valueOf(json.get("dimensionY").toString());
 
         this.casilleros = new ArrayList<Casillero>();
         JSONArray casillerosJSON = (JSONArray)json.get("Casilleros");
@@ -37,7 +37,7 @@ public class Tablero {
     private Casillero generarCasilleroAPartirdeJson(JSONObject json){
 
         int posicionX = Integer.valueOf(json.get("posicionX").toString()) ;
-        int posicionY = Integer.valueOf(json.get("posicionX").toString()) ;
+        int posicionY = Integer.valueOf(json.get("posicionY").toString()) ;
         Zona aire = this.obtenerAire(json.get("aire").toString());
         Zona tierra = this.obtenerTierra(json.get("tierra").toString());
         Bonus bonus = this.obtenerBonus(json.get("bonus"));

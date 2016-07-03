@@ -133,7 +133,7 @@ public abstract class Jugador {
         Casillero casilleroActual = this.combinado.obtenerCasillero();
         ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
 
-        double puntosDevida = this.combinado.getPuntosDeVida() / 3;
+        double puntosDevida = this.combinado.obtenerPuntosDeVida() / 3;
 
         this.algoformer1.estado.ocuparCasillero(algoformer1, casilleros.get(0));
         this.algoformer1.setPuntosDeVida(puntosDevida);
@@ -165,5 +165,14 @@ public abstract class Jugador {
     public AlgoFormer obtenerAlgoformerSeleccionado(){
 
         return this.algoformerSeleccionado;
+    }
+
+    public boolean poseeAlgoformer(AlgoFormer algoformer){
+
+        boolean condicion1 = algoformer1.obtenerNombre() == algoformer.obtenerNombre();
+        boolean condicion2 = algoformer2.obtenerNombre() == algoformer.obtenerNombre();
+        boolean condicion3 = algoformer3.obtenerNombre() == algoformer.obtenerNombre();
+
+        return condicion1 || condicion2 || condicion3;
     }
 }

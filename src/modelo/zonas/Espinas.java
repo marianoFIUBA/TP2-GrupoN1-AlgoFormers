@@ -8,7 +8,15 @@ import modelo.Zona;
  */
 public class Espinas implements Zona {
 
+    private String nombre= "ESPINAS";
+
     public void interactuarCon(AlgoFormer algoformer){
         algoformer.recibirDanioDeEspinas();
+        algoformer.verificarSiSigueConVida();
+    }
+
+    public String obtenerNombre(){
+
+        return this.nombre;
     }
 }

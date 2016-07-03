@@ -8,7 +8,16 @@ import modelo.Zona;
  */
 public class Nube implements Zona {
 
+
+    private String nombre = "NUBE" ;
+
+
     public void interactuarCon(AlgoFormer algoformer){
 
+    }
+
+    public String obtenerNombre(){
+
+        return this.nombre;
     }
 }
