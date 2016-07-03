@@ -9,6 +9,8 @@ import modelo.AlgoFormer;
 import modelo.Juego;
 import vista.BuscadorDeImagenes;
 
+import java.util.Stack;
+
 /**
  * Created by Mariano on 26/06/2016.
  */
@@ -18,15 +20,26 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
         private AlgoFormer algoformer;
         private Label lblImagen_1;
         private Label lblImagen_2;
+        private VBox estadisticas_1;
+        private VBox estadisticas_2;
+        private VBox estadisticasCasillero;
         private VBox panelAcciones;
+        private VBox panelSeleccion;
 
-    public BotonAccionAlgoformerHandler(AlgoFormer algoformer, Label lblImagen_1, Label lblImagen_2, VBox panelAcciones) {
+    public BotonAccionAlgoformerHandler(AlgoFormer algoformer, VBox panelAcciones, VBox panelSeleccion) {
 
         this.algoformer = algoformer;
         this.buscador = new BuscadorDeImagenes();
-        this.lblImagen_1 = lblImagen_1;
-        this.lblImagen_2 = lblImagen_2;
+        this.lblImagen_1 = (Label) panelSeleccion.getChildren().get(1);
+        this.estadisticas_1 = (VBox) panelSeleccion.getChildren().get(2);
+        this.lblImagen_2 = (Label) panelSeleccion.getChildren().get(3);
+
+        StackPane stack = (StackPane) panelSeleccion.getChildren().get(4);
+        this.estadisticas_2 = (VBox) stack.getChildren().get(0);
+        this.estadisticasCasillero = (VBox) stack.getChildren().get(1);
+
         this.panelAcciones = panelAcciones;
+        this.panelSeleccion = panelSeleccion;
     }
 
     @Override
@@ -44,6 +57,17 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(this.algoformer);
            this.lblImagen_1.setBackground(new Background(imagenAlgoFondo));
 
+            this.estadisticas_1.setVisible(true);
+            Label ataque = (Label)  this.estadisticas_1.getChildren().get(0);
+            Label distancia = (Label)  this.estadisticas_1.getChildren().get(1);
+            Label velocidad = (Label)  this.estadisticas_1.getChildren().get(2);
+            Label vida = (Label)  this.estadisticas_1.getChildren().get(3);
+
+            ataque.setText("ATAQUE: " + this.algoformer.obtenerAtaque());
+            distancia.setText("DISTANCIA DE ATAQUE: " + this.algoformer.obtenerDistanciaDeAtaque());
+            velocidad.setText("VELOCIDAD: " + this.algoformer.obtenerVelocidad());
+            vida.setText("PUNTOS DE VIDA: " + this.algoformer.obtenerPuntosDeVida());
+
             //Visibilidad de botones
             this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
             this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
@@ -52,6 +76,8 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().chispaSeleccionada());
 
         } else {
+            this.estadisticasCasillero.setVisible(false);
+            this.estadisticas_2.setVisible(true);
 
             if(Juego.getInstance().obtenerAlgoformerObjetivo() != null){
                 if (!Juego.getInstance().obtenerAlgoformerObjetivo().equals(this.algoformer)){

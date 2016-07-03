@@ -88,7 +88,7 @@ public class BuscadorDeImagenes {
             case "FRENZY":
                 path =  "file:src/vista/imagenes/FrenzyAlterno.png";
                 break;
-            case "BONECHUSHER":
+            case "BONECRUSHER":
                 path =  "file:src/vista/imagenes/BonecrusherAlterno.png";
                 break;
             case "MENASOR":

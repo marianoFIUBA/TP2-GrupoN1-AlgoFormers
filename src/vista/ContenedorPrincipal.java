@@ -74,7 +74,7 @@ public class ContenedorPrincipal extends BorderPane {
                 BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.lblImagen_2, this.vistaActual);
+                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.lblImagen_2, this.vistaActual, this.panelAcciones);
                 botonSuperficie.setOnAction(handlerCasillero);
 
                 stack.getChildren().add(botonSuperficie);
@@ -82,7 +82,7 @@ public class ContenedorPrincipal extends BorderPane {
                 //Si hay un algoformer en el casillero
                 if (!(casilleroActual.obtenerAlgoformer() == null)){
 
-                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer(), this.lblImagen_1, this.lblImagen_2,  this.panelAcciones);
+                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer(),  this.panelAcciones, this.panelSeleccion);
 
                     //String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
                     javafx.scene.control.Button botonAlgoFormer = new javafx.scene.control.Button();
@@ -91,7 +91,7 @@ public class ContenedorPrincipal extends BorderPane {
                     botonAlgoFormer.setOnAction(handlerAlgoformer);
 
                     //Se agrega imagen de algoformer al boton
-                    String pathImagenAlgo = this.obtenerPathImagenAlterno(casilleroActual.obtenerAlgoformer());
+                    String pathImagenAlgo = buscador.obtenerPathImagenAlgoformer(casilleroActual.obtenerAlgoformer());
                     try{
 
 
@@ -201,13 +201,83 @@ public class ContenedorPrincipal extends BorderPane {
 
         panelSeleccion.getChildren().add(lblSeleccion);
         panelSeleccion.getChildren().add(lblAlgo);
+        panelSeleccion.getChildren().add(this.generarVBoxEstadisticasAlgoformer());
         panelSeleccion.getChildren().add(lblCasillero);
 
+        StackPane estadisticas = new StackPane();
+        estadisticas.getChildren().addAll(this.generarVBoxEstadisticasAlgoformer(), this.generarVBoxEstadisticasCasillero());
+
+        panelSeleccion.getChildren().add(estadisticas);
+
+
+        this.panelSeleccion = panelSeleccion;
         this.setRight(panelSeleccion);
 
     }
 
-    public VBox obtenerPanelAcciones(){
+    public VBox generarVBoxEstadisticasAlgoformer(){
+
+        VBox estadisticas = new VBox();
+
+        estadisticas.setPadding(new javafx.geometry.Insets(10));
+        estadisticas.setSpacing(8);
+
+        Label lblAtaque = new Label();
+        lblAtaque.setLineSpacing(200);
+
+        Label lblDistanciaAtaque = new Label();
+        lblDistanciaAtaque.setLineSpacing(200);
+
+        Label lblVelocidad = new Label();
+        lblVelocidad.setLineSpacing(200);
+
+        Label lblVida = new Label();
+        lblVida.setLineSpacing(200);
+
+        estadisticas.getChildren().add(lblAtaque);
+        estadisticas.getChildren().add(lblDistanciaAtaque);
+        estadisticas.getChildren().add(lblVelocidad);
+        estadisticas.getChildren().add(lblVida);
+
+        return estadisticas;
+    }
+
+    public VBox generarVBoxEstadisticasCasillero(){
+
+        VBox estadisticas = new VBox();
+
+        estadisticas.setPadding(new javafx.geometry.Insets(10));
+        estadisticas.setSpacing(8);
+
+        Label PosicionX = new Label();
+        PosicionX.setLineSpacing(200);
+
+        Label PosicionY = new Label();
+        PosicionY.setLineSpacing(200);
+
+        Label lblAereo = new Label();
+        lblAereo.setLineSpacing(200);
+
+        Label lblTerrestre = new Label();
+        lblTerrestre.setLineSpacing(200);
+
+        estadisticas.getChildren().add(PosicionX);
+        estadisticas.getChildren().add(PosicionY);
+        estadisticas.getChildren().add(lblAereo);
+        estadisticas.getChildren().add(lblTerrestre);
+
+        return estadisticas;
+    }
+
+    /*public VBox generarVBoxEstadisticasAlgoformerObjetivo(){
+
+    }
+
+    public VBox generarVBoxEstadisticasCasillero(){
+
+    }
+*/
+/*    public VBox obtenerPanelAcciones(){
 
         return this.panelAcciones;
     }
@@ -220,99 +290,7 @@ public class ContenedorPrincipal extends BorderPane {
     public VBox obtenerPanelSeleccion(){
 
         return this.panelSeleccion;
-    }
-
-    private String obtenerPathImagenTierra(Casillero casillero){
-
-        String path = "";
-        switch (casillero.obtenerTierra()){
-
-            case "ROCA":
-                path = "file:src/vista/imagenes/Roca.png";
-                break;
-            case "PANTANO":
-                path = "file:src/vista/imagenes/Pantano.png";
-                break;
-            case "ESPINAS":
-                path = "file:src/vista/imagenes/Espinas.png";
-                break;
-        }
-
-        return path;
-    }
-
-    private String obtenerPathImagenAlterno(AlgoFormer algoFormer){
-
-        String nombre = algoFormer.obtenerNombre();
-
-        String path = "";
-
-        switch(nombre){
-
-            case "OPTIMUS":
-                path = "file:src/vista/imagenes/OptimusAlterno.png";
-                break;
-            case "BUMBLEBEE":
-                path =  "file:src/vista/imagenes/BumblebeeAlterno.png";
-                break;
-            case "RATCHET":
-                path =  "file:src/vista/imagenes/RatchetAlterno.png";
-                break;
-            case "SUPERION":
-                path =  "file:src/vista/imagenes/Superion.png";
-                break;
-            case "MEGATRON":
-                path =  "file:src/vista/imagenes/MegatronAlterno.png";
-                break;
-            case "FRENZY":
-                path =  "file:src/vista/imagenes/FrenzyAlterno.png";
-                break;
-            case "BONECHUSHER":
-                path =  "file:src/vista/imagenes/BonecrusherAlterno.png";
-                break;
-            case "MENASOR":
-                path =  "file:src/vista/imagenes/Menasor.png";
-                break;
-        }
-
-        return path;
-    }
-
-    private String obtenerPathImagenHumanoide(AlgoFormer algoFormer){
-
-        String path = "";
-
-        String nombre = algoFormer.obtenerNombre();
-        switch(nombre){
-
-            case "OPTIMUS":
-                path = "file:src/vista/imagenes/OptimusHumanoide.png";
-                break;
-            case "BUMBLEBEE":
-                path =  "file:src/vista/imagenes/BumblebeeHumanoide.png";
-                break;
-            case "RATCHET":
-                path =  "file:src/vista/imagenes/RatchetHumanoide.png";
-                break;
-            case "SUPERION":
-                path =  "file:src/vista/imagenes/Superion.png";
-                break;
-            case "MEGATRON":
-                path =  "file:src/vista/imagenes/MegatronHumanoide.png";
-                break;
-            case "FRENZY":
-                path =  "file:src/vista/imagenes/FrenzyHumanoide.png";
-                break;
-            case "BONECHUSHER":
-                path =  "file:src/vista/imagenes/BonecrusherHumanoide.png";
-                break;
-            case "MENASOR":
-                path =  "file:src/vista/imagenes/Menasor.png";
-                break;
-        }
-
-       return path;
-    }
+    }*/
 
     public Button obtenerBotonTierra(){
 
@@ -324,9 +302,9 @@ public class ContenedorPrincipal extends BorderPane {
         return this.btnAire;
     }
 
-    public String obtenerVistaActual(){
+/*    public String obtenerVistaActual(){
 
         return this.vistaActual;
-    }
+    }*/
 
 }

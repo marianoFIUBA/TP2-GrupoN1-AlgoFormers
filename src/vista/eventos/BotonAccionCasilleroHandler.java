@@ -2,9 +2,7 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import modelo.Casillero;
 import modelo.Juego;
@@ -19,12 +17,14 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
     private Casillero casillero;
     private Label lblImagen_2;
     private String vistaActual;
+    private VBox panelAcciones;
 
-    public BotonAccionCasilleroHandler(Casillero casillero, Label lblImagen_2, String vistaActual) {
+    public BotonAccionCasilleroHandler(Casillero casillero, Label lblImagen_2, String vistaActual, VBox panelAcciones) {
 
         this.casillero = casillero;
         this.lblImagen_2 = lblImagen_2;
         this.vistaActual = vistaActual;
+        this.panelAcciones = panelAcciones;
         buscador = new BuscadorDeImagenes();
     }
 
@@ -33,6 +33,13 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
 
         Juego.getInstance().establecerAlgoformerObjetivo(null);
         Juego.getInstance().establecerCasilleroSeleccionado(casillero);
+
+        //Visibilidad de botones
+        this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
+        this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
+        //this.panelAcciones.getChildren().get(3).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
+        //this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
+        this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().chispaSeleccionada());
 
         String pathImagenAlgo = "";
         if (this.vistaActual == "TIERRA"){
@@ -47,7 +54,7 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
 
         this.lblImagen_2.setBackground(new Background(imagenCasilleroFondo));
 
-        
+
         //deshabilitar boton de atacar
 
        /* Image imagenAlgoformer = new Image("file:src/vista/imagenes/Roca.png");
