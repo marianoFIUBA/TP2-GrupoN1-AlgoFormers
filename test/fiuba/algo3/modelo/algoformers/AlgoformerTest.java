@@ -825,6 +825,21 @@ public class AlgoformerTest {
 
     }
 
+    @Test
+    public void generarCasillerosDesdeJSONGeneraCasillero(){
+
+        Juego.getInstance().iniciarJuego();
+
+        int numero;
+
+        numero = 3;
+
+
+
+
+
+    }
+
 
 
 

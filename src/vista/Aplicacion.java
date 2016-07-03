@@ -184,7 +184,7 @@ public class Aplicacion extends Application{
 
         int dimensionY = 20;
 
-        Juego.getInstance().iniciarJuego(dimensionX,dimensionY, true);
+        Juego.getInstance().iniciarJuego();
 
         GridPane tablero = this.generarTablero(dimensionX, dimensionY);
 
