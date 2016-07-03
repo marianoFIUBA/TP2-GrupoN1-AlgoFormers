@@ -31,7 +31,7 @@ public class Aplicacion extends Application{
         stage.setTitle("ALGOFORMERS");
 
 
-        Scene scene = new Scene(new ContenedorPrincipal(), 800, 600);
+        Scene scene = new Scene(new ContenedorPrincipal(), 1200, 600);
         stage.setScene(scene);
 
         stage.show();
@@ -111,13 +111,13 @@ public class Aplicacion extends Application{
                 //Si hay un algoformer en el casillero
                 if (!(casilleroActual.obtenerAlgoformer() == null)){
 
-                    BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer());
+                    //BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer());
 
                     String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
                     Button botonAlgoFormer = new Button();
                     botonAlgoFormer.setPrefSize(50,50);
                     botonAlgoFormer.setText(nombre);
-                    botonAlgoFormer.setOnAction(handlerAlgoformer);
+                    //botonAlgoFormer.setOnAction(handlerAlgoformer);
 
                     stack.getChildren().add(botonAlgoFormer);
                 }

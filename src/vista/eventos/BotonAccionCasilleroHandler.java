@@ -8,18 +8,20 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import modelo.Casillero;
 import modelo.Juego;
+import vista.BuscadorDeImagenes;
 
 /**
  * Created by Mariano on 26/06/2016.
  */
 public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
 
-
+    private BuscadorDeImagenes buscador;
     private Casillero casillero;
 
     public BotonAccionCasilleroHandler(Casillero casillero) {
 
         this.casillero = casillero;
+        buscador = new BuscadorDeImagenes();
     }
 
     @Override
@@ -27,6 +29,7 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
 
         Juego.getInstance().establecerAlgoformerObjetivo(null);
         Juego.getInstance().establecerCasilleroSeleccionado(casillero);
+
 
 
         //deshabilitar boton de atacar
