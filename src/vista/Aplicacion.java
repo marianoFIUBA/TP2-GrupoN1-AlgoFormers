@@ -11,10 +11,7 @@ import javafx.application.Application;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
-import vista.eventos.BotonAccionAlgoformerHandler;
-import vista.eventos.BotonAccionCasilleroHandler;
-import vista.eventos.BotonVistaAireHandler;
-import vista.eventos.BotonVistaTierraHandler;
+import vista.eventos.*;
 
 /**
  * Created by Mariano on 20/06/2016.
@@ -39,6 +36,12 @@ public class Aplicacion extends Application{
 
         BotonVistaTierraHandler handlerBotonTierra = new BotonVistaTierraHandler(contenedorPrincipal);
         contenedorPrincipal.obtenerBotonTierra().setOnAction(handlerBotonTierra);
+
+        BotonAtacarHandler handlerAtacar = new BotonAtacarHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonAtacar().setOnAction(handlerAtacar);
+
+        BotonMoverHandler handlerMover = new BotonMoverHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonMover().setOnAction(handlerMover);
 
 
         Scene scene = new Scene(contenedorPrincipal, 1200, 600);

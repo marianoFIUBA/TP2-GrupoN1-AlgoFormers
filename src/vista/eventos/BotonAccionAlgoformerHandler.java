@@ -76,8 +76,15 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().chispaSeleccionada());
 
         } else {
+            Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);
+            Juego.getInstance().establecerCasilleroSeleccionado(null);
+
+
             this.estadisticasCasillero.setVisible(false);
             this.estadisticas_2.setVisible(true);
+
+            this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
+            this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
 
 
             Label ataque = (Label)  this.estadisticas_2.getChildren().get(0);
@@ -90,12 +97,12 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             velocidad.setText("VELOCIDAD: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerVelocidad());
             vida.setText("PUNTOS DE VIDA: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerPuntosDeVida());
 
-            if(Juego.getInstance().obtenerAlgoformerObjetivo() != null){
-                if (!Juego.getInstance().obtenerAlgoformerObjetivo().equals(this.algoformer)){
-                    Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);
-                    Juego.getInstance().establecerCasilleroSeleccionado(null);
-                }
+
+            if (!Juego.getInstance().obtenerAlgoformerObjetivo().equals(this.algoformer)){
+                Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);
+                Juego.getInstance().establecerCasilleroSeleccionado(null);
             }
+
             this.lblImagen_2.setBackground(new Background(imagenAlgoFondo));
         }
     }

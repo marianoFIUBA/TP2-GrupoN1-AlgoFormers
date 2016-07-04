@@ -29,6 +29,9 @@ public class ContenedorPrincipal extends BorderPane {
     private Button btnTierra;
     private Button btnAire;
     private String vistaActual;
+    private Button botonAtacar;
+    private Button botonMover;
+    private Button botonTransformar;
 
     public ContenedorPrincipal() {
         //this.setMenu(stage);
@@ -74,7 +77,7 @@ public class ContenedorPrincipal extends BorderPane {
                 BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.lblImagen_2, this.vistaActual, this.panelAcciones);
+                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.vistaActual, this.panelAcciones, this.panelSeleccion);
                 botonSuperficie.setOnAction(handlerCasillero);
 
                 stack.getChildren().add(botonSuperficie);
@@ -126,14 +129,17 @@ public class ContenedorPrincipal extends BorderPane {
         javafx.scene.control.Button botonMover = new javafx.scene.control.Button();
         botonMover.setText("Mover");
         botonMover.setPrefWidth(150);
+        this.botonMover = botonMover;
 
         javafx.scene.control.Button botonAtacar = new javafx.scene.control.Button();
         botonAtacar.setText("Atacar");
         botonAtacar.setPrefWidth(150);
+        this.botonAtacar = botonAtacar;
 
         javafx.scene.control.Button botonTransformar = new javafx.scene.control.Button();
         botonTransformar.setText("Transformase");
         botonTransformar.setPrefWidth(150);
+        this.botonTransformar = botonTransformar;
 
         javafx.scene.control.Button botonCombinar = new javafx.scene.control.Button();
         botonCombinar.setText("Combinar Algoformers");
@@ -302,9 +308,19 @@ public class ContenedorPrincipal extends BorderPane {
         return this.btnAire;
     }
 
-/*    public String obtenerVistaActual(){
+    public Button obtenerBotonAtacar() {
+        
+        return this.botonAtacar;
+    }
+
+
+    public String obtenerVistaActual(){
 
         return this.vistaActual;
-    }*/
+    }
 
+    public Button obtenerBotonMover() {
+
+        return this.botonMover;
+    }
 }

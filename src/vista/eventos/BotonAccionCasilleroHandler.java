@@ -18,14 +18,20 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
     private Label lblImagen_2;
     private String vistaActual;
     private VBox panelAcciones;
+    private VBox estadisticas_2;
+    private VBox estadisticasCasillero;
 
-    public BotonAccionCasilleroHandler(Casillero casillero, Label lblImagen_2, String vistaActual, VBox panelAcciones) {
+    public BotonAccionCasilleroHandler(Casillero casillero, String vistaActual, VBox panelAcciones, VBox panelSeleccion) {
 
         this.casillero = casillero;
-        this.lblImagen_2 = lblImagen_2;
+        this.lblImagen_2 = (Label) panelSeleccion.getChildren().get(3);
         this.vistaActual = vistaActual;
         this.panelAcciones = panelAcciones;
         buscador = new BuscadorDeImagenes();
+
+        StackPane stack = (StackPane) panelSeleccion.getChildren().get(4);
+        this.estadisticas_2 = (VBox) stack.getChildren().get(0);
+        this.estadisticasCasillero = (VBox) stack.getChildren().get(1);
     }
 
     @Override
@@ -52,7 +58,25 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage imagenCasilleroFondo = new BackgroundImage(imagenCasillero, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
 
+
+
         this.lblImagen_2.setBackground(new Background(imagenCasilleroFondo));
+
+        Label posicionX = (Label)  this.estadisticasCasillero.getChildren().get(0);
+        Label posicionY = (Label)  this.estadisticasCasillero.getChildren().get(1);
+        Label lblAereo = (Label)  this.estadisticasCasillero.getChildren().get(2);
+        Label lblTerrestre = (Label)  this.estadisticasCasillero.getChildren().get(3);
+
+        posicionX.setText("POSICION X: " + this.casillero.obtenerPosicionX());
+        posicionY.setText("POSICION Y: " + this.casillero.obtenerPosicionY());
+        lblAereo.setText("ZONA AEREA: " + this.casillero.obtenerAire());
+        lblTerrestre.setText("ZONA TERRESTRE: " + this.casillero.obtenerTierra());
+
+        this.estadisticasCasillero.setVisible(true);
+        this.estadisticas_2.setVisible(false);
+
+
+
 
 
         //deshabilitar boton de atacar
