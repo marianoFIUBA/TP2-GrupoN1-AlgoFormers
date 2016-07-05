@@ -10,9 +10,11 @@ import java.util.ArrayList;
  */
 public class JugadorAutobot extends Jugador {
 
+
     public JugadorAutobot(ArrayList<AlgoFormer> algoformers){
 
         super(algoformers);
+        this.nombreDeEquipo = "EQUIPO AUTOBOT";
     }
 
     public void combinarAlgoformers(){
@@ -33,5 +35,4 @@ public class JugadorAutobot extends Jugador {
             this.finalizarTurno();
         }
     }
-
 }

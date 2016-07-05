@@ -33,6 +33,7 @@ public class BotonCombinarHandler implements EventHandler<ActionEvent>{
                 //Jugador combina los algoformers
                 jugadorActual.combinarAlgoformers();
                 this.contenedorPrincipal.generarPanelSeleccion();
+                this.contenedorPrincipal.generarPanelJugador();
                 this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
 
             } catch  (UnidadCombinadaNoPuedeTransformarseException ex){}

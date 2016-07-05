@@ -10,7 +10,7 @@ import modelo.Juego;
 import vista.eventos.BotonAccionAlgoformerHandler;
 import vista.eventos.BotonAccionCasilleroHandler;
 
-
+import java.util.Stack;
 
 
 /**
@@ -40,7 +40,8 @@ public class ContenedorPrincipal extends BorderPane {
         this.buscador = new BuscadorDeImagenes();
         this.generarPanelAccion();
         this.generarPanelSeleccion();
-        //VistaTablero vistaTablero = new VistaTablero(this);
+
+        this.generarPanelJugador();
         this.generarTablero("TIERRA");
     }
 
@@ -152,7 +153,7 @@ public class ContenedorPrincipal extends BorderPane {
         botonCapturarChispa.setPrefWidth(150);
 
         Label lblVistas = new Label();
-        lblVistas.setText("VISTTAS DEL TABLERO");
+        lblVistas.setText("VISTAS DEL TABLERO");
         lblVistas.setLineSpacing(200);
 
         javafx.scene.control.Button btnAire = new javafx.scene.control.Button();
@@ -192,6 +193,8 @@ public class ContenedorPrincipal extends BorderPane {
         panelSeleccion.setPadding(new Insets(10));
         panelSeleccion.setSpacing(8);
 
+        BackgroundSize backkSize = new BackgroundSize(100, 100, true, false, false, true);
+
         Label lblSeleccion = new Label();
         lblSeleccion.setText("ALGOFORMER SELECCIONADO");
         lblSeleccion.setLineSpacing(200);
@@ -202,16 +205,14 @@ public class ContenedorPrincipal extends BorderPane {
         this.lblImagen_1 = lblAlgo;
         lblAlgo.setPrefSize(200,200);
 
-        BackgroundImage fontoAlgo = new BackgroundImage(imagenAlgoformer, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        BackgroundImage fontoAlgo = new BackgroundImage(imagenAlgoformer, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backkSize);
         lblAlgo.setBackground(new Background(fontoAlgo));
-
 
         javafx.scene.image.Image imagenCasillero = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblCasillero = new Label();
         this.lblImagen_2 = lblCasillero;
         lblCasillero.setPrefSize(200,200);
-        BackgroundImage fondoCas = new BackgroundImage(imagenCasillero, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        lblCasillero.setBackground(new Background(fondoCas));
+        BackgroundImage fondoCas = new BackgroundImage(imagenCasillero, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backkSize);
 
         panelSeleccion.getChildren().add(lblSeleccion);
         panelSeleccion.getChildren().add(lblAlgo);
@@ -281,6 +282,23 @@ public class ContenedorPrincipal extends BorderPane {
         estadisticas.getChildren().add(lblTerrestre);
 
         return estadisticas;
+    }
+
+
+    public void generarPanelJugador(){
+
+        StackPane stack = new StackPane();
+        stack.setPadding(new Insets(10,10,10,10));
+
+        Label lblNombreEquipo = new Label();
+
+        lblNombreEquipo.setLineSpacing(600);
+        lblNombreEquipo.setText("EQUIPO DEL JUGADOR ACTUAL: " + Juego.getInstance().obtenerJugadorActual().obtenerNombreDeEquipo());
+
+        stack.getChildren().add(lblNombreEquipo);
+
+        this.setTop(stack);
+
     }
 
     /*public VBox generarVBoxEstadisticasAlgoformerObjetivo(){

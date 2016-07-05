@@ -37,6 +37,9 @@ public class BuscadorDeImagenes {
             case "ESPINAS":
                 path = "file:src/vista/imagenes/Espinas.png";
                 break;
+            case "CHISPA":
+                path = "file:src/vista/imagenes/Chispa.png";
+                break;
         }
 
         return path;
@@ -55,6 +58,9 @@ public class BuscadorDeImagenes {
                 break;
             case "NEBULOSA":
                 path = "file:src/vista/imagenes/Nebulosa.png";
+                break;
+            case "CHISPA":
+                path = "file:src/vista/imagenes/Chispa.png";
                 break;
         }
 
