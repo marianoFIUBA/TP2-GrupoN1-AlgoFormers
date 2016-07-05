@@ -32,51 +32,6 @@ public abstract class AlgoFormer {
     }
 
 
-    /*public void moverA( Casillero destino){
-
-        Casillero casilleroActual = this.casillero;
-
-        int puntosDeVelocidad = this.piernas.modificarVelocidad(this.obtenerVelocidad());
-
-        if (calculo.movimientoValido(casilleroActual, destino, puntosDeVelocidad)){
-
-            int distancia = calculo.obtenerDistancia(casilleroActual, destino);
-            int movimientosDisponibles = puntosDeVelocidad;
-
-            while (distancia > 0 && movimientosDisponibles > 0){
-
-                Casillero casilleroAnterior = this.obtenerCasillero();
-                this.desocuparCasillero();
-                casilleroActual = this.estado.obtenerSiguienteCasillero(casilleroActual, destino);
-                this.estado.ocuparCasillero(this, casilleroActual);
-                movimientosDisponibles--;
-
-                if (!casilleroAnterior.equals(this.obtenerCasillero())){
-
-                    distancia--;
-                }
-//                casilleroActual.alojarAlternoPorTierra(algoformer);
-            }
-
-        } else { throw new MovimientoInvalidoException(); }
-    }*/
-
-    /*public void atacarA(AlgoFormer algoformer) {
-
-        int puntosDeAtaque = this.arma.modificarAtaque(this.obtenerAtaque());
-
-        *//*if (this.modoPostPsionico){
-            puntosDeAtaque = (int) (puntosDeAtaque * 0.6);
-        }*//*
-
-        if (this.calculo.estaEnRango(this.obtenerCasillero(), algoformer.obtenerCasillero(), puntosDeAtaque)){
-
-            this.atacar(algoformer, puntosDeAtaque);
-        }
-
-    }*/
-
-
     public void atacarA(AlgoFormer algoFormer){
 
         this.arma.atacar(algoFormer,this.obtenerAtaque(),this.obtenerDistanciaDeAtaque(),this.obtenerCasillero());
@@ -95,7 +50,6 @@ public abstract class AlgoFormer {
     public Casillero obtenerCasillero() {
 
         return this.casillero;
-        //return this.estado.obtenerCasillero();
     }
 
     public void pasarTurno() {
@@ -178,7 +132,9 @@ public abstract class AlgoFormer {
 
     public void desocuparCasillero(){
 
-        this.casillero.desocupar();
+        if (!this.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()) {
+            this.casillero.desocupar();
+        }
     }
 
     public void cambiarAModoFlash(){
@@ -221,7 +177,6 @@ public abstract class AlgoFormer {
         return this.puntosDeVida > 0;
 
     }
-
 
 
 /*    public void capturarChispa(){

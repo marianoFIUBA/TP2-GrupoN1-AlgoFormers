@@ -140,6 +140,8 @@ public class Calculos {
 
             Casillero casilleroDestinoAleatorio = Juego.getInstance().obtenerCasilleroAleatorio();
             casilleroActual = obtenerSiguienteCasillero(casilleroActual, casilleroDestinoAleatorio);
+
+            //casilleroActual = Juego.getInstance().obtenerCasilleroAleatorio();
         }
 
         return casilleroActual;

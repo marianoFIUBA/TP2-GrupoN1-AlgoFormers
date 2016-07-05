@@ -5,18 +5,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import javafx.application.Application;
+import javafx.util.Duration;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
 import vista.eventos.*;
 
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.File;
+
+
+
 /**
  * Created by Mariano on 20/06/2016.
  */
 public class Aplicacion extends Application{
+
+    MediaPlayer mediaPlayer;
 
     public static void main(String[] args) {
         launch(args);
@@ -26,6 +39,14 @@ public class Aplicacion extends Application{
     public void start(Stage stage) throws Exception {
 
         Juego.getInstance().iniciarJuego();
+
+        String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
+        Media musicaDeFondo = new Media(pathMusicaDeFondo);
+        mediaPlayer = new MediaPlayer(musicaDeFondo);
+
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setStartTime(Duration.seconds(120));
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         stage.setTitle("ALGOFORMERS");
 
@@ -42,6 +63,13 @@ public class Aplicacion extends Application{
 
         BotonMoverHandler handlerMover = new BotonMoverHandler(contenedorPrincipal);
         contenedorPrincipal.obtenerBotonMover().setOnAction(handlerMover);
+
+        BotonTransformarHandler handlerTransformar= new BotonTransformarHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonTransformar().setOnAction(handlerTransformar);
+
+        BotonCombinarHandler handlerCombinar = new BotonCombinarHandler(contenedorPrincipal);
+        contenedorPrincipal.obtenerBotonCombinar().setOnAction(handlerCombinar);
+
 
 
         Scene scene = new Scene(contenedorPrincipal, 1200, 600);

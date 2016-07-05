@@ -71,9 +71,9 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             //Visibilidad de botones
             this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
             this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
-            //this.panelAcciones.getChildren().get(3).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
-            //this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
-            this.panelAcciones.getChildren().get(4).setDisable(Juego.getInstance().chispaSeleccionada());
+            this.panelAcciones.getChildren().get(3).setDisable((Juego.getInstance().obtenerJugadorActual().obtenerAlgoformerSeleccionado()) == null);
+            this.panelAcciones.getChildren().get(4).setDisable((Juego.getInstance().obtenerJugadorActual().obtenerAlgoformerSeleccionado()) == null);
+            this.panelAcciones.getChildren().get(5).setDisable(!Juego.getInstance().chispaSeleccionada());
 
         } else {
             Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);

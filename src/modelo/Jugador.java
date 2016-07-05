@@ -1,6 +1,6 @@
 package modelo;
 
-import modelo.Excepciones.MovimientoInvalidoException;
+import modelo.Excepciones.*;
 
 import java.util.ArrayList;
 
@@ -14,6 +14,7 @@ public abstract class Jugador {
     protected AlgoFormer algoformer2;
     protected AlgoFormer algoformer3;
     protected AlgoFormer combinado;
+    protected int turnosConAlgoformerCombinado;
     protected boolean leTocaJugar;
     protected AlgoFormer algoformerSeleccionado;
     protected Calculos calculos;
@@ -27,6 +28,8 @@ public abstract class Jugador {
         this.leTocaJugar = false;
         this.algoformerSeleccionado = null;
         this.combinado = null;
+        this.turnosConAlgoformerCombinado = 2;
+        this.calculos = new Calculos();
     }
 
     public void setAlgoformer1(AlgoFormer algoFormer){
@@ -37,11 +40,23 @@ public abstract class Jugador {
 
 
 
-    private void finalizarTurno(){
+    protected void finalizarTurno(){
 
         this.algoformer1.pasarTurno();
         this.algoformer2.pasarTurno();
         this.algoformer3.pasarTurno();
+
+        if (this.combinado != null) {
+
+            this.turnosConAlgoformerCombinado--;
+
+            if (this.turnosConAlgoformerCombinado == 0) {
+
+                this.descombinarAlgoformers();
+                this.turnosConAlgoformerCombinado = 2;
+
+            }
+        }
 
         Juego.getInstance().pasarTurno();
     }
@@ -75,7 +90,7 @@ public abstract class Jugador {
         return this.algoformer3;
     }
 
-    public AlgoFormer obtenercombinado(){
+    public AlgoFormer obtenerCombinado(){
 
         return this.combinado;
     }
@@ -85,18 +100,24 @@ public abstract class Jugador {
         try {
             this.algoformerSeleccionado.atacarA(algoformer);
             this.finalizarTurno();
-        } catch (NullPointerException ex) {
+        } catch (NullPointerException | AlgoFormerFueraDeAlcanceException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticon ex) {
             //Una excepcion
         }
     }
 
     public void mover(Casillero casillero){
 
-        try{
-            this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
-            this.finalizarTurno();
-        } catch (NullPointerException | MovimientoInvalidoException ex){
+        if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
+
+            throw new AlgoFormerInhabilitadoPorEsteTurno();
+
+
+        } else {try{
+                    this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
+                    this.finalizarTurno();
+                } catch (NullPointerException | MovimientoInvalidoException ex) {
             //lanzar exepcion de algoformer no seleccionado
+            }
         }
     }
 
@@ -131,36 +152,48 @@ public abstract class Jugador {
     public void descombinarAlgoformers(){
 
         Casillero casilleroActual = this.combinado.obtenerCasillero();
-        ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
+        this.combinado.desocuparCasillero();
+        //ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
 
         double puntosDevida = this.combinado.obtenerPuntosDeVida() / 3;
 
-        this.algoformer1.estado.ocuparCasillero(algoformer1, casilleros.get(0));
+        Casillero casillero1 = this.obtenerAlgoformerSeleccionado().estado.obtenerMovimiento().obtenerPrimerCasilleroDisponible(casilleroActual);
+
+        this.algoformer1.estado.ocuparCasillero(algoformer1, casillero1);
         this.algoformer1.setPuntosDeVida(puntosDevida);
 
-        this.algoformer2.estado.ocuparCasillero(algoformer1, casilleros.get(1));
+        Casillero casillero2 = this.obtenerAlgoformer1().estado.obtenerMovimiento().obtenerPrimerCasilleroDisponible(casillero1);
+
+        this.algoformer2.estado.ocuparCasillero(algoformer2, casillero2);
         this.algoformer2.setPuntosDeVida(puntosDevida);
 
-        this.algoformer3.estado.ocuparCasillero(algoformer1, casilleros.get(2));
+        Casillero casillero3 = this.obtenerAlgoformer1().estado.obtenerMovimiento().obtenerPrimerCasilleroDisponible(casillero2);
+
+        this.algoformer3.estado.ocuparCasillero(algoformer3, casillero3);
         this.algoformer3.setPuntosDeVida(puntosDevida);
 
-        this.combinado.desocuparCasillero();
+
+        this.combinado = null;
     }
 
-    protected ArrayList<Casillero> obtenerCasillerosParaDescombinacion(Casillero casillero){
+   /* protected ArrayList<Casillero> obtenerCasillerosParaDescombinacion(Casillero casillero){
 
         ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
 
-        Casillero casillero1 = calculos.obtenerPrimerCasilleroDisponible(casillero);
-        Casillero casillero2 = calculos.obtenerPrimerCasilleroDisponible(casillero1);
-        Casillero casillero3 = calculos.obtenerPrimerCasilleroDisponible(casillero2);
+        Casillero casillero1 = casillero;
+        Casillero casillero2;
+        Casillero casillero3;
+
+        casillero1 = calculos.obtenerPrimerCasilleroDisponible(casillero1,casillero2,casillero3);
+        Casillero casillero2 = calculos.obtenerPrimerCasilleroDisponible(casillero);
+        Casillero casillero3 = calculos.obtenerPrimerCasilleroDisponible(casillero);
 
         casilleros.add(casillero1);
         casilleros.add(casillero2);
         casilleros.add(casillero3);
 
         return casilleros;
-    }
+    }*/
 
     public AlgoFormer obtenerAlgoformerSeleccionado(){
 
@@ -172,6 +205,11 @@ public abstract class Jugador {
         boolean condicion1 = algoformer1.obtenerNombre() == algoformer.obtenerNombre();
         boolean condicion2 = algoformer2.obtenerNombre() == algoformer.obtenerNombre();
         boolean condicion3 = algoformer3.obtenerNombre() == algoformer.obtenerNombre();
+        if (this.combinado != null){
+
+            condicion1 = condicion1 || this.combinado.obtenerNombre() == algoformer.obtenerNombre();
+
+        }
 
         return condicion1 || condicion2 || condicion3;
     }

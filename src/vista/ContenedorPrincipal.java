@@ -32,6 +32,7 @@ public class ContenedorPrincipal extends BorderPane {
     private Button botonAtacar;
     private Button botonMover;
     private Button botonTransformar;
+    private Button botonCombinar;
 
     public ContenedorPrincipal() {
         //this.setMenu(stage);
@@ -45,12 +46,12 @@ public class ContenedorPrincipal extends BorderPane {
 
     public void generarTablero(String tipoZonaTablero){
 
-/*        int dimensionX = Juego.getInstance().obtenerDimensionTableroX();
-        int dimensionY = Juego.getInstance().obtenerDimensionTableroY();*/
+        int dimensionX = Juego.getInstance().obtenerDimensionTableroX();
+        int dimensionY = Juego.getInstance().obtenerDimensionTableroY();
         this.vistaActual = tipoZonaTablero;
 
-        int dimensionX = 10;
-        int dimensionY = 10;
+        /*int dimensionX = 20;
+        int dimensionY = 20;*/
 
         GridPane tablero = new GridPane();
 
@@ -73,8 +74,8 @@ public class ContenedorPrincipal extends BorderPane {
                 }
 
                 javafx.scene.image.Image imagen = new javafx.scene.image.Image(pathImagen);
-                BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, true, true, false);
-                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+                BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, false, false, true);
+                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundSizeCasillero);
                 botonSuperficie.setBackground(new Background(imagenDeFondo));
 
                 BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.vistaActual, this.panelAcciones, this.panelSeleccion);
@@ -144,6 +145,7 @@ public class ContenedorPrincipal extends BorderPane {
         javafx.scene.control.Button botonCombinar = new javafx.scene.control.Button();
         botonCombinar.setText("Combinar Algoformers");
         botonCombinar.setPrefWidth(150);
+        this.botonCombinar = botonCombinar;
 
         javafx.scene.control.Button botonCapturarChispa = new javafx.scene.control.Button();
         botonCapturarChispa.setText("Capturar Chispa");
@@ -170,6 +172,12 @@ public class ContenedorPrincipal extends BorderPane {
         panelAcciones.getChildren().add(botonCombinar);
         panelAcciones.getChildren().add(botonCapturarChispa);
 
+        botonAtacar.setDisable(true);
+        botonMover.setDisable(true);
+        botonTransformar.setDisable(true);
+        botonCombinar.setDisable(true);
+        botonCapturarChispa.setDisable(true);
+
         panelAcciones.getChildren().add(lblVistas);
         panelAcciones.getChildren().add(btnTierra);
         panelAcciones.getChildren().add(btnAire);
@@ -178,7 +186,7 @@ public class ContenedorPrincipal extends BorderPane {
         this.setLeft(panelAcciones);
     }
 
-    private void generarPanelSeleccion(){
+    public void generarPanelSeleccion(){
 
         VBox panelSeleccion = new VBox();
         panelSeleccion.setPadding(new Insets(10));
@@ -322,5 +330,15 @@ public class ContenedorPrincipal extends BorderPane {
     public Button obtenerBotonMover() {
 
         return this.botonMover;
+    }
+
+    public Button obtenerBotonTransformar() {
+
+        return this.botonTransformar;
+    }
+
+    public Button obtenerBotonCombinar() {
+
+        return this.botonCombinar;
     }
 }

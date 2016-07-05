@@ -33,7 +33,9 @@ public class BotonAtacarHandler implements EventHandler<ActionEvent> {
                 if (Juego.getInstance().obtenerAlgoformerObjetivo() != null) {
                     //Jugador ataca con el algoformer seleccionado
                     jugadorActual.atacar(Juego.getInstance().obtenerAlgoformerObjetivo());
+                    this.contenedorPrincipal.generarPanelSeleccion();
                     this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
+
                 }
             } catch  (AlgoFormerFueraDeAlcanceException exception) {
 

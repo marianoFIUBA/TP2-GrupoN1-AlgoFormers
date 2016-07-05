@@ -303,6 +303,9 @@ public class Juego {
 
             Tablero objTablero = new Tablero(tableroJSON);
 
+            this.dimensionTableroX = objTablero.obtenerDimensionX();
+            this.dimensionTableroY= objTablero.obtenerDimensionY();
+
             return objTablero.obtenerCasilleros();
         } catch (IOException e) {
             // TODO Auto-generated catch block

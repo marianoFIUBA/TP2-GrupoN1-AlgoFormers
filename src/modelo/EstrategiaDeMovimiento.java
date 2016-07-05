@@ -167,4 +167,6 @@ public abstract class EstrategiaDeMovimiento {
 
         return casilleroActual;
     }
+
+    public abstract boolean estaAtrapadoEnNebulosa();
 }

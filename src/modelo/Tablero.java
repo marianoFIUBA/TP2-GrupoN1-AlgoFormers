@@ -118,4 +118,16 @@ public class Tablero {
         return zona;
     }
 
+    public int obtenerDimensionX(){
+
+        return this.dimensionX;
+
+    }
+
+    public int obtenerDimensionY(){
+
+        return this.dimensionY;
+
+    }
+
 }

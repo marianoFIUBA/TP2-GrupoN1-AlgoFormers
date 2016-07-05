@@ -74,5 +74,10 @@ public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
     public boolean recibeDaniosPorEspinas() {
         return false;
     }
+
+    @Override
+    public boolean estaAtrapadoEnNebulosa() {
+        return (this.turnosPendientesAtrapado > 0);
+    }
 }
 

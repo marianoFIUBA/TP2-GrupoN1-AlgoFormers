@@ -33,6 +33,7 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
                 if (Juego.getInstance().obtenerCasilleroSeleccionado() != null) {
                     //Jugador mueve al algoformer seleccionado
                     jugadorActual.mover(Juego.getInstance().obtenerCasilleroSeleccionado());
+                    this.contenedorPrincipal.generarPanelSeleccion();
                     this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
                 }
             } catch (CasilleroFueraDeRangoException exception) {

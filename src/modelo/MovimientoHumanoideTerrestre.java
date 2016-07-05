@@ -64,4 +64,9 @@ public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento{
     public boolean recibeDaniosPorEspinas() {
         return true;
     }
+
+    @Override
+    public boolean estaAtrapadoEnNebulosa() {
+        return false;
+    }
 }

@@ -68,4 +68,9 @@ public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
     public boolean recibeDaniosPorEspinas() {
         return true;
     }
+
+    @Override
+    public boolean estaAtrapadoEnNebulosa() {
+        return false;
+    }
 }
