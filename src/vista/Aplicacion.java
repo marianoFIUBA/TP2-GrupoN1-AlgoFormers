@@ -40,13 +40,13 @@ public class Aplicacion extends Application{
 
         Juego.getInstance().iniciarJuego();
 
-        String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
+   /*     String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
         Media musicaDeFondo = new Media(pathMusicaDeFondo);
         mediaPlayer = new MediaPlayer(musicaDeFondo);
 
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setStartTime(Duration.seconds(120));
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);*/
 
         stage.setTitle("ALGOFORMERS");
 

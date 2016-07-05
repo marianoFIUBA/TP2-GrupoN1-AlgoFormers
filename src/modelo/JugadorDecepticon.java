@@ -12,6 +12,7 @@ public class JugadorDecepticon extends Jugador {
     public JugadorDecepticon(ArrayList<AlgoFormer> algoformers){
 
         super(algoformers);
+        this.nombreDeEquipo = "EQUIPO DECEPTICON";
     }
 
     public void combinarAlgoformers(){

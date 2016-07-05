@@ -35,6 +35,7 @@ public class BotonTransformarHandler implements EventHandler<ActionEvent> {
                 //Jugador transformar al algoformer seleccionado
                 jugadorActual.transformar();
                 this.contenedorPrincipal.generarPanelSeleccion();
+                this.contenedorPrincipal.generarPanelJugador();
                 this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
 
             } catch  (NoPuedeTransformarseAModoAlternoException | NoPuedeTransformarseAModoHumaoideException ex1 ){}

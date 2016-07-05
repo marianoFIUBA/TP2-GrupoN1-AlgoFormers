@@ -18,6 +18,7 @@ public abstract class Jugador {
     protected boolean leTocaJugar;
     protected AlgoFormer algoformerSeleccionado;
     protected Calculos calculos;
+    protected String nombreDeEquipo;
 //    private EstadoTurno estado;
 
     public Jugador(ArrayList<AlgoFormer> algoformers){
@@ -212,5 +213,10 @@ public abstract class Jugador {
         }
 
         return condicion1 || condicion2 || condicion3;
+    }
+
+    public String obtenerNombreDeEquipo(){
+
+        return this.nombreDeEquipo;
     }
 }

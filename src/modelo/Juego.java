@@ -118,6 +118,9 @@ public class Juego {
             this.guardarCasilleros(casilleros);
             this.jugadorActual = this.jugador1;
 
+            CasilleroChispa casilleroChispa = new CasilleroChispa(this.generarPosicionXChispa(), this.generarPosicionYChispa());
+            this.modificarCasillero(casilleroChispa);
+
             this.iniciado = true;
         } else {
             //lanzar excepcion de juego ya iniciado
@@ -354,6 +357,28 @@ public class Juego {
     public boolean chispaSeleccionada(){
 
         return false;
+    }
+
+    private int generarPosicionXChispa(){
+
+        int valorMinimo = (int) ((this.dimensionTableroX) / 2);
+        valorMinimo -= 2;
+
+       return  (int)(Math.random() * 2) + valorMinimo ;
+    }
+
+    private int generarPosicionYChispa(){
+
+        int valorMinimo = (int) ((this.dimensionTableroY) / 2);
+        valorMinimo -= 2;
+
+        return  (int) (Math.random() * 2) + valorMinimo;
+
+    }
+
+    public void finalizarJuego(AlgoFormer algoFormer){
+
+
     }
 }
 
