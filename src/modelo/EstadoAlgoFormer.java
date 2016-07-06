@@ -39,4 +39,5 @@ public interface EstadoAlgoFormer {
     void moverA(Casillero casillero, AlgoFormer algoFormer);
 
     int obtenerDistanciaDeAtaque();
+
 }

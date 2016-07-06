@@ -14,6 +14,7 @@ public abstract class AlgoFormer {
     protected double puntosDeVida;
     protected double puntosDeVidaIniciales;
     protected boolean modoPostPsionico;
+    protected boolean destruido;
 
     protected AlgoFormer(String nombre, Casillero casillero) {
 
@@ -24,6 +25,7 @@ public abstract class AlgoFormer {
         //this.arma = new Arma()
         this.armadura = new Armadura();
         this.piernas = new Piernas();
+        this.destruido = false;
     }
 
 
@@ -162,6 +164,7 @@ public abstract class AlgoFormer {
         if (this.puntosDeVida <= 0){
             this.desocuparCasillero();
             this.casillero = null;
+            this.destruido = true;
         }
     }
 
@@ -195,10 +198,20 @@ public abstract class AlgoFormer {
 
     }
 
+    public boolean fueDestruido(){
+
+        return this.destruido;
+    }
 
 /*    public void capturarChispa(){
 
         Juego.getInstance().asignarChispaAAlgoformer(this);
     }*/
+
+    public void informarFinDeJuego(){
+
+        String nombreDeEquipo = Juego.getInstance().obtenerJugadorActual().obtenerNombreDeEquipo();
+        Juego.getInstance().finalizarJuego(nombreDeEquipo);
+    }
 
 }

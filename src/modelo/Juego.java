@@ -37,7 +37,8 @@ public class Juego {
 
     private Casillero casilleroSeleccionado;
     private AlgoFormer algoformerObjetivo;
-
+    private String equipoGanador;
+    private boolean finalizado;
 
     private Juego() {
 
@@ -79,6 +80,7 @@ public class Juego {
 
     public void iniciarJuego() {
 
+        this.finalizado = false;
         if (!this.iniciado) {
 
             //ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
@@ -376,9 +378,20 @@ public class Juego {
 
     }
 
-    public void finalizarJuego(AlgoFormer algoFormer){
+    public void finalizarJuego(String nombreDeEquipoPerdedor){
 
+        this.equipoGanador = "EQUIPO AUTOBOT";
 
+        if (nombreDeEquipoPerdedor ==  "EQUIPO AUTOBOT"){
+            this.equipoGanador = "EQUIPO DECEPTICON";
+        }
+
+        this.finalizado = true;
+    }
+
+    public boolean juegoFinalizado(){
+
+        return this.finalizado;
     }
 }
 

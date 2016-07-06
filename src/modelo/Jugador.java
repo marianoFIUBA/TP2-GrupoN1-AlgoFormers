@@ -43,23 +43,29 @@ public abstract class Jugador {
 
     protected void finalizarTurno(){
 
-        this.algoformer1.pasarTurno();
-        this.algoformer2.pasarTurno();
-        this.algoformer3.pasarTurno();
+        if (this.quedanAlgoformers()) {
 
-        if (this.combinado != null) {
 
-            this.turnosConAlgoformerCombinado--;
+            this.algoformer1.pasarTurno();
+            this.algoformer2.pasarTurno();
+            this.algoformer3.pasarTurno();
 
-            if (this.turnosConAlgoformerCombinado == 0) {
+            if (this.combinado != null) {
 
-                this.descombinarAlgoformers();
-                this.turnosConAlgoformerCombinado = 2;
+                this.turnosConAlgoformerCombinado--;
 
+                if (this.turnosConAlgoformerCombinado == 0) {
+
+                    this.descombinarAlgoformers();
+                    this.turnosConAlgoformerCombinado = 2;
+
+                }
             }
-        }
 
-        Juego.getInstance().pasarTurno();
+            Juego.getInstance().pasarTurno();
+        } else {
+            Juego.getInstance().finalizarJuego(this.obtenerNombreDeEquipo());
+        }
     }
 
     public void seleccionarAlgoformer(AlgoFormer algoformer){
@@ -218,4 +224,19 @@ public abstract class Jugador {
 
         return this.nombreDeEquipo;
     }
+
+    protected boolean quedanAlgoformers(){
+
+        boolean algoformer1Vive = !this.algoformer1.destruido;
+        boolean algoformer2Vive = !this.algoformer2.destruido;
+        boolean algoformer3Vive = !this.algoformer3.destruido;
+        boolean combinadoVive = false ;
+
+        if (this.combinado != null){
+            combinadoVive = !this.combinado.destruido;
+        }
+
+        return algoformer1Vive || algoformer2Vive || algoformer3Vive || combinadoVive;
+    }
+
 }
