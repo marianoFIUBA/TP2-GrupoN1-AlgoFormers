@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.algoformers;
 
 import modelo.*;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
+import modelo.Excepciones.AlgoFormerInhabilitadoPorEsteTurno;
 import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
 import modelo.algoformers.*;
 import modelo.bonus.BurbujaInmaculada;
@@ -483,7 +484,7 @@ public class AlgoformerTest {
 
     }
 
-    @Test
+    @Test(expected= AlgoFormerInhabilitadoPorEsteTurno.class)
     public void algoFormerEnEstadoAlternoAereoQuedaAtrapadoEnNebulosaDeAndromedaPorTresTurnos(){
 
         Juego.getInstance().generarTablero(20,20,false);

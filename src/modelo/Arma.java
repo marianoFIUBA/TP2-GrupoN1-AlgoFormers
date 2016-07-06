@@ -52,4 +52,9 @@ public abstract class Arma {
 
     }
 
+    public boolean tieneBonusDobleCanion(){
+
+        return this.turnosRestantesDobleCanion > 0;
+
+    }
 }

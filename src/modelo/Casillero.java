@@ -76,8 +76,18 @@ public class Casillero {
 
         if (this.bonus != null){
 
-            this.bonus.aplicarA(algoFormer);
+            this.bonus.aplicarA(algoFormer,this);
         }
+    }
+
+    public void borrarBonus() {
+
+        this.bonus = null;
+    }
+
+    public boolean tieneBonus(){
+
+        return this.bonus != null;
     }
 
     public String obtenerTierra(){
@@ -90,4 +100,9 @@ public class Casillero {
         return this.aire.obtenerNombre();
     }
 
+    public Bonus obtenerBonus() {
+
+        return this.bonus;
+
+    }
 }

@@ -5,7 +5,7 @@ package modelo;
  */
 public class Armadura {
 
-    int turnosPendientes;
+    private int turnosPendientes;
 
     public void cambiarAModoBurbujaInmaculada(){
 
@@ -32,6 +32,12 @@ public class Armadura {
 
             this.turnosPendientes--;
         }
+
+    }
+
+    public boolean tieneBonusBurbuja(){
+
+        return this.turnosPendientes > 0;
 
     }
 }

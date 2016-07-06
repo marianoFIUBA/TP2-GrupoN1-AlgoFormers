@@ -40,13 +40,14 @@ public class Aplicacion extends Application{
 
         Juego.getInstance().iniciarJuego();
 
-   /*     String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
+        String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
         Media musicaDeFondo = new Media(pathMusicaDeFondo);
         mediaPlayer = new MediaPlayer(musicaDeFondo);
 
         mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(120));
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);*/
+        mediaPlayer.setStartTime(Duration.seconds(126));
+        mediaPlayer.setStopTime(Duration.seconds(290));
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         stage.setTitle("ALGOFORMERS");
 
@@ -236,7 +237,6 @@ public class Aplicacion extends Application{
             imagenAlgoformer = new Image("file:src/vista/imagenes/SinSeleccion.png");
         }
 */
-
         Image imagenCasillero = new Image("file:src/vista/imagenes/Espinas.png");
         Label lblCasillero = new Label();
         lblCasillero.setPrefSize(200,200);

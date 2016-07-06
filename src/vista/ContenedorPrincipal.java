@@ -1,8 +1,14 @@
 package vista;
 
+import com.sun.javafx.property.adapter.PropertyDescriptor;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.SepiaTone;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import modelo.AlgoFormer;
 import modelo.Casillero;
@@ -10,6 +16,9 @@ import modelo.Juego;
 import vista.eventos.BotonAccionAlgoformerHandler;
 import vista.eventos.BotonAccionCasilleroHandler;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.EventListener;
 import java.util.Stack;
 
 
@@ -33,6 +42,7 @@ public class ContenedorPrincipal extends BorderPane {
     private Button botonMover;
     private Button botonTransformar;
     private Button botonCombinar;
+    private Button botonDeCasilleroSeleccionadoAnterior;
 
     public ContenedorPrincipal() {
         //this.setMenu(stage);
@@ -40,7 +50,6 @@ public class ContenedorPrincipal extends BorderPane {
         this.buscador = new BuscadorDeImagenes();
         this.generarPanelAccion();
         this.generarPanelSeleccion();
-
         this.generarPanelJugador();
         this.generarTablero("TIERRA");
     }
@@ -56,41 +65,71 @@ public class ContenedorPrincipal extends BorderPane {
 
         GridPane tablero = new GridPane();
 
+        ToggleGroup grupo = new ToggleGroup();
+
         for(int i = 1; i <= dimensionX; i++) {
             for (int j = 1; j <= dimensionY; j++) {
 
                 StackPane stack = new StackPane();
 
-                javafx.scene.control.Button botonSuperficie = new javafx.scene.control.Button();
+                ToggleButton botonSuperficie = new ToggleButton();
                 botonSuperficie.setPrefSize(100, 100);
+                botonSuperficie.setToggleGroup(grupo);
                 //botonSuperficie.setText("Boton_" + String.valueOf(i) + "_" + String.valueOf(j));
 
                 Casillero casilleroActual = Juego.getInstance().obtenerCasillero(i,j);
 
                 String pathImagen = "";
+                String colorDeFondoBotonSuperficie= "";
                 if (tipoZonaTablero == "TIERRA"){
-                    pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
+                    //pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
+                    colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoTierra(casilleroActual);
+
                 } else {
-                   pathImagen = this.buscador.obtenerPathImagenAire(casilleroActual);
+                   //pathImagen = this.buscador.obtenerPathImagenAire(casilleroActual);
+                    colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoAire(casilleroActual);
                 }
 
-                javafx.scene.image.Image imagen = new javafx.scene.image.Image(pathImagen);
-                BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, false, false, true);
-                BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundSizeCasillero);
-                botonSuperficie.setBackground(new Background(imagenDeFondo));
+                //Image imagen = new Image(pathImagen);
+                //BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, false, false, true);
+                //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundSizeCasillero);
+                //botonSuperficie.setBackground(new Background(imagenDeFondo));
 
-                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.vistaActual, this.panelAcciones, this.panelSeleccion);
+                BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.vistaActual, this.panelAcciones, this.panelSeleccion,botonSuperficie);
                 botonSuperficie.setOnAction(handlerCasillero);
+                botonSuperficie.setStyle(colorDeFondoBotonSuperficie);
 
-                stack.getChildren().add(botonSuperficie);
+                stack.getChildren().add(0,botonSuperficie);
+
+                if((casilleroActual.tieneBonus())){
+
+
+                    Button botonBonus = new Button();
+                    botonBonus.setPrefSize(50,50);
+                    botonBonus.setOnAction(handlerCasillero);
+
+                    Label lblImagenBonus = new Label();
+
+                    lblImagenBonus.setPrefSize(50,50);
+
+                    String pathImagenBonus = buscador.obtenerPathImagenBonus(casilleroActual.obtenerBonus());
+
+                    Image imagenBonus = new Image(pathImagenBonus);
+
+                    BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+                    BackgroundImage imagenBonusFondo = new BackgroundImage(imagenBonus, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+                    botonBonus.setBackground(new Background(imagenBonusFondo));
+
+                    stack.getChildren().add(1,botonBonus);
+                }
 
                 //Si hay un algoformer en el casillero
-                if (!(casilleroActual.obtenerAlgoformer() == null)){
+                if ((casilleroActual.obtenerAlgoformer() != null)){
 
                     BotonAccionAlgoformerHandler handlerAlgoformer = new BotonAccionAlgoformerHandler(casilleroActual.obtenerAlgoformer(),  this.panelAcciones, this.panelSeleccion);
 
                     //String nombre = casilleroActual.obtenerAlgoformer().obtenerNombre();
-                    javafx.scene.control.Button botonAlgoFormer = new javafx.scene.control.Button();
+                    Button botonAlgoFormer = new Button();
                     botonAlgoFormer.setPrefSize(50,50);
                     //botonAlgoFormer.setText(nombre);
                     botonAlgoFormer.setOnAction(handlerAlgoformer);
@@ -99,8 +138,7 @@ public class ContenedorPrincipal extends BorderPane {
                     String pathImagenAlgo = buscador.obtenerPathImagenAlgoformer(casilleroActual.obtenerAlgoformer());
                     try{
 
-
-                    javafx.scene.image.Image imagenAlgo = new javafx.scene.image.Image(pathImagenAlgo);
+                    Image imagenAlgo = new Image(pathImagenAlgo);
 
                     BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
                     BackgroundImage imagenAlgoFondo = new BackgroundImage(imagenAlgo, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
@@ -108,8 +146,17 @@ public class ContenedorPrincipal extends BorderPane {
                     } catch (RuntimeException e){
 
                     }
-                    stack.getChildren().add(botonAlgoFormer);
+
+                    if (stack.getChildren().size() > 1){
+
+                        stack.getChildren().add(2,botonAlgoFormer);
+
+                    } else{
+
+                        stack.getChildren().add(1,botonAlgoFormer);}
                 }
+
+
 
                 tablero.add(stack, j, i);
             }
@@ -128,27 +175,27 @@ public class ContenedorPrincipal extends BorderPane {
         lblAcciones.setText("ACCIONES");
         lblAcciones.setLineSpacing(200);
 
-        javafx.scene.control.Button botonMover = new javafx.scene.control.Button();
+        Button botonMover = new Button();
         botonMover.setText("Mover");
         botonMover.setPrefWidth(150);
         this.botonMover = botonMover;
 
-        javafx.scene.control.Button botonAtacar = new javafx.scene.control.Button();
+        Button botonAtacar = new Button();
         botonAtacar.setText("Atacar");
         botonAtacar.setPrefWidth(150);
         this.botonAtacar = botonAtacar;
 
-        javafx.scene.control.Button botonTransformar = new javafx.scene.control.Button();
+        Button botonTransformar = new Button();
         botonTransformar.setText("Transformase");
         botonTransformar.setPrefWidth(150);
         this.botonTransformar = botonTransformar;
 
-        javafx.scene.control.Button botonCombinar = new javafx.scene.control.Button();
+        Button botonCombinar = new Button();
         botonCombinar.setText("Combinar Algoformers");
         botonCombinar.setPrefWidth(150);
         this.botonCombinar = botonCombinar;
 
-        javafx.scene.control.Button botonCapturarChispa = new javafx.scene.control.Button();
+        Button botonCapturarChispa = new Button();
         botonCapturarChispa.setText("Capturar Chispa");
         botonCapturarChispa.setPrefWidth(150);
 
@@ -156,12 +203,12 @@ public class ContenedorPrincipal extends BorderPane {
         lblVistas.setText("VISTAS DEL TABLERO");
         lblVistas.setLineSpacing(200);
 
-        javafx.scene.control.Button btnAire = new javafx.scene.control.Button();
+        Button btnAire = new Button();
         btnAire.setText("Vista Aérea");
         btnAire.setPrefWidth(150);
         this.btnAire = btnAire;
 
-        javafx.scene.control.Button btnTierra = new javafx.scene.control.Button();
+        Button btnTierra = new Button();
         btnTierra.setText("Vista Terrestre");
         btnTierra.setPrefWidth(150);
         this.btnTierra = btnTierra;
@@ -200,7 +247,7 @@ public class ContenedorPrincipal extends BorderPane {
         lblSeleccion.setLineSpacing(200);
 
         AlgoFormer algoformerActual = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformerSeleccionado();
-        javafx.scene.image.Image imagenAlgoformer = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
+        Image imagenAlgoformer = new Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblAlgo = new Label();
         this.lblImagen_1 = lblAlgo;
         lblAlgo.setPrefSize(200,200);
@@ -208,7 +255,7 @@ public class ContenedorPrincipal extends BorderPane {
         BackgroundImage fontoAlgo = new BackgroundImage(imagenAlgoformer, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backkSize);
         lblAlgo.setBackground(new Background(fontoAlgo));
 
-        javafx.scene.image.Image imagenCasillero = new javafx.scene.image.Image("file:src/vista/imagenes/SinSeleccion.png");
+        Image imagenCasillero = new Image("file:src/vista/imagenes/SinSeleccion.png");
         Label lblCasillero = new Label();
         this.lblImagen_2 = lblCasillero;
         lblCasillero.setPrefSize(200,200);
@@ -249,6 +296,9 @@ public class ContenedorPrincipal extends BorderPane {
         Label lblVida = new Label();
         lblVida.setLineSpacing(200);
 
+        Label lblBonus = new Label();
+        lblBonus.setLineSpacing(200);
+
         estadisticas.getChildren().add(lblAtaque);
         estadisticas.getChildren().add(lblDistanciaAtaque);
         estadisticas.getChildren().add(lblVelocidad);
@@ -276,10 +326,14 @@ public class ContenedorPrincipal extends BorderPane {
         Label lblTerrestre = new Label();
         lblTerrestre.setLineSpacing(200);
 
+        Label lblBonus = new Label();
+        lblBonus.setLineSpacing(200);
+
         estadisticas.getChildren().add(PosicionX);
         estadisticas.getChildren().add(PosicionY);
         estadisticas.getChildren().add(lblAereo);
         estadisticas.getChildren().add(lblTerrestre);
+        estadisticas.getChildren().add(lblBonus);
 
         return estadisticas;
     }

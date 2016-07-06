@@ -1,6 +1,7 @@
 package vista;
 
 import modelo.AlgoFormer;
+import modelo.Bonus;
 import modelo.Casillero;
 
 /**
@@ -141,4 +142,73 @@ public class BuscadorDeImagenes {
         return path;
     }
 
+    public String obtenerPathImagenBonus(Bonus bonus) {
+
+
+        String path = "";
+
+        String nombre = bonus.obtenerNombre();
+
+        switch (nombre){
+
+            case "FLASH":
+                path ="file:src/vista/imagenes/Flash.png";
+                break;
+            case "BURBUJA":
+                path = "file:src/vista/imagenes/Burbuja.png";
+                break;
+            case "DOBLECANION":
+                path = "file:src/vista/imagenes/DobleCanion.png";
+                break;
+        }
+
+        return path;
+
+    }
+
+    public String obtenerColorDeFondoTierra(Casillero casillero){
+
+        String path = "";
+        switch (casillero.obtenerTierra()){
+
+            case "ROCA":
+                path = "-fx-base: #C0C0C0;";
+                break;
+            case "PANTANO":
+                path = "-fx-base:#4C9900";
+                break;
+            case "ESPINAS":
+                path = "-fx-base:#994C00";
+                break;
+            case "CHISPA":
+                path = "-fx-base: white";
+                break;
+        }
+
+
+
+        return path;
+    }
+
+    public String obtenerColorDeFondoAire(Casillero casillero){
+
+        String path = "";
+        switch (casillero.obtenerAire()){
+
+            case "NUBE":
+                path = "-fx-base: #FFFFFF";
+                break;
+            case "TORMENTA":
+                path = "-fx-base: #3333FF";
+                break;
+            case "NEBULOSA":
+                path = "-fx-base: #990099";
+                break;
+            case "CHISPA":
+                path = "-fx-base: white";
+                break;
+        }
+
+        return path;
+    }
 }

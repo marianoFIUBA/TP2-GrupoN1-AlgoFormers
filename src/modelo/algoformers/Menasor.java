@@ -13,7 +13,7 @@ public class Menasor extends Decepticon {
         super("MENASOR", casillero);
         this.puntosDeVida = puntosDevida;
         this.puntosDeVidaIniciales = puntosDeVida;
-        this.estado = new EstadoAlterno(115, 2, 2, new MovimientoAlternoTerrestre());
+        this.estado = new EstadoHumanoide(115, 2, 2, new MovimientoHumanoideTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
 

@@ -2,6 +2,9 @@ package modelo.bonus;
 
 import modelo.AlgoFormer;
 import modelo.Bonus;
+import modelo.Casillero;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusFlash;
 
 /**
  * Created by Mariano on 02/07/2016.
@@ -15,8 +18,16 @@ public class Flash implements Bonus{
         this.nombre = "FLASH";
     }
 
-    public void aplicarA(AlgoFormer algoFormer){
+    public void aplicarA(AlgoFormer algoFormer, Casillero casillero) {
 
-        algoFormer.cambiarAModoFlash();
+        if (!algoFormer.tieneBonusFlash()) {
+            algoFormer.cambiarAModoFlash();
+            casillero.borrarBonus();
+        } else {//throw new AlgoFormerYaPoseeBonusFlash();
+            }
+    }
+    @Override
+    public String obtenerNombre() {
+        return nombre;
     }
 }

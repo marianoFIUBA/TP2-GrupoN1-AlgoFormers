@@ -101,8 +101,7 @@ public abstract class Jugador {
         try {
             this.algoformerSeleccionado.atacarA(algoformer);
             this.finalizarTurno();
-        } catch (NullPointerException | AlgoFormerFueraDeAlcanceException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticon ex) {
-            //Una excepcion
+        } catch (NullPointerException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticon ex) {     //| AlgoFormerFueraDeAlcanceException
         }
     }
 

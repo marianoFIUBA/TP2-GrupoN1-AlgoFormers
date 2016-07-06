@@ -178,6 +178,23 @@ public abstract class AlgoFormer {
 
     }
 
+    public boolean tieneBonusBurbuja() {
+
+        return this.armadura.tieneBonusBurbuja();
+    }
+
+    public boolean tieneBonusFlash(){
+
+        return this.piernas.tieneBonusFlash();
+
+    }
+
+    public boolean tieneDobleCanion(){
+
+        return this.arma.tieneBonusDobleCanion();
+
+    }
+
 
 /*    public void capturarChispa(){
 

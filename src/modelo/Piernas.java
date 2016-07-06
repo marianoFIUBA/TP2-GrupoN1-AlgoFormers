@@ -41,4 +41,9 @@ public class Piernas {
 
     }
 
+    public boolean tieneBonusFlash() {
+
+        return this.turnosRestantesFlash > 0;
+
+    }
 }
