@@ -230,6 +230,7 @@ public class ContenedorPrincipal extends BorderPane {
         panelAcciones.getChildren().add(btnTierra);
         panelAcciones.getChildren().add(btnAire);
 
+        panelAcciones.getChildren().add(this.generarPanelReferencias());
         this.panelAcciones = panelAcciones;
         this.setLeft(panelAcciones);
     }
@@ -338,6 +339,40 @@ public class ContenedorPrincipal extends BorderPane {
         return estadisticas;
     }
 
+    private VBox generarPanelReferencias(){
+
+        VBox referencias = new VBox();
+
+        Label lblTitulo = new Label("REFERENCIAS DE ZONAS");
+
+
+        referencias.getChildren().add(lblTitulo);
+        referencias.getChildren().add(this.generarReferencia("Roca", "#C0C0C0"));
+        referencias.getChildren().add(this.generarReferencia("Pantano", "#4C9900"));
+        referencias.getChildren().add(this.generarReferencia("Espinas", "#994C00"));
+        referencias.getChildren().add(this.generarReferencia("Nube", "#FFFFFF"));
+        referencias.getChildren().add(this.generarReferencia("Nebulosa", "#990099"));
+        referencias.getChildren().add(this.generarReferencia("Tormenta", "#3333FF"));
+
+
+        return referencias;
+    }
+
+    private HBox generarReferencia(String nombre, String color){
+
+        HBox referencia = new HBox();
+
+        Label lblreferencia = new Label(nombre);
+        Label lblColreferencia = new Label();
+
+        lblColreferencia.setPrefSize(30,10);
+        String propiedadBackground = "-fx-background-color:" + color + ";-fx-border-color:black; -fx-margin:10;";
+        lblColreferencia.setStyle(propiedadBackground);
+
+        referencia.getChildren().addAll(lblColreferencia, lblreferencia);
+
+        return referencia;
+    }
 
     public void generarPanelJugador(){
 
