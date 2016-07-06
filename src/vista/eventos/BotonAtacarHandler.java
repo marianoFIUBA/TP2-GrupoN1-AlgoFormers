@@ -45,7 +45,7 @@ public class BotonAtacarHandler implements EventHandler<ActionEvent> {
 
                 Alert alertaAlgoformeFueraDeAlcance = new Alert(Alert.AlertType.WARNING);
                 alertaAlgoformeFueraDeAlcance.setTitle("CUIDADO!");
-                alertaAlgoformeFueraDeAlcance.setHeaderText("El AlfoFormer que querés atacar se encuentra fuera del alcance. Probá con otro!");
+                alertaAlgoformeFueraDeAlcance.setHeaderText("El AlgoFormer que querés atacar se encuentra fuera del alcance. ¡Probá con otro!");
                 alertaAlgoformeFueraDeAlcance.show();
 
             }
