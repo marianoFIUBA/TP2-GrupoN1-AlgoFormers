@@ -289,16 +289,16 @@ public class AlgoformerTest {
 
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
-        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 6);    //El algoformer en estado ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
+        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 9);    //El algoformer en estado ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
         Casillero casilleroConPantano = new Casillero(1, 5, new Nube(), new Pantano(), null);
         Juego.getInstance().modificarCasillero(casilleroConPantano);
-        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 5);  //Se modifica un casillero del tablero por un casillero con zona pantanosa.
-        Optimus optimus = new Optimus(casilleroInicial);    //Optimus se crea en estado ALTERNO TERRESTRE.
+        Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 8);  //Se modifica un casillero del tablero por un casillero con zona pantanosa.
+        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicial);    //Optimus se crea en estado ALTERNO TERRESTRE.
 
-        optimus.moverA(casilleroDestino,optimus);
+        bonecrusher.moverA(casilleroDestino,bonecrusher);
 
-        Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
-        Assert.assertEquals(casilleroFinal.obtenerAlgoformer(), optimus);
+        Assert.assertEquals(bonecrusher.obtenerCasillero(), casilleroFinal);
+        Assert.assertEquals(casilleroFinal.obtenerAlgoformer(), bonecrusher);
 
 
     }

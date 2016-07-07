@@ -11,8 +11,15 @@ public class Pantano implements Zona {
 
     private String nombre = "PANTANO";
 
-    public void interactuarCon(AlgoFormer algoformer){
-        algoformer.cambiarAModoEmpantanado();
+    public void interactuarCon(AlgoFormer algoformer) {
+
+        if (!algoformer.estaEmpantanado()) {
+
+            algoformer.cambiarAModoEmpantanado();
+        } else if (algoformer.obtenerEstado() == "ALTERNO"){
+
+            algoformer.cambiarAModoNoEmpantanado();
+        }
     }
 
     public String obtenerNombre(){

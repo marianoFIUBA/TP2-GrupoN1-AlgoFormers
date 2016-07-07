@@ -40,7 +40,7 @@ public class Aplicacion extends Application{
 
         Juego.getInstance().iniciarJuego();
 
-       /* String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
+        /*String pathMusicaDeFondo = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionDeFondo3.mp3";
         Media musicaDeFondo = new Media(pathMusicaDeFondo);
         mediaPlayer = new MediaPlayer(musicaDeFondo);
 
@@ -51,7 +51,10 @@ public class Aplicacion extends Application{
 
         stage.setTitle("ALGOFORMERS");
 
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal();
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
+
+        ContenedorTitulo contenedorTitulo = new ContenedorTitulo(stage,contenedorPrincipal);
+        Scene escenaTitulo = new Scene(contenedorTitulo,1200,600);
 
         BotonVistaAireHandler handlerBotonVista = new BotonVistaAireHandler(contenedorPrincipal);
         contenedorPrincipal.obtenerBotonAire().setOnAction(handlerBotonVista);
@@ -59,10 +62,10 @@ public class Aplicacion extends Application{
         BotonVistaTierraHandler handlerBotonTierra = new BotonVistaTierraHandler(contenedorPrincipal);
         contenedorPrincipal.obtenerBotonTierra().setOnAction(handlerBotonTierra);
 
-        BotonAtacarHandler handlerAtacar = new BotonAtacarHandler(contenedorPrincipal);
+        BotonAtacarHandler handlerAtacar = new BotonAtacarHandler(stage,contenedorPrincipal);
         contenedorPrincipal.obtenerBotonAtacar().setOnAction(handlerAtacar);
 
-        BotonMoverHandler handlerMover = new BotonMoverHandler(contenedorPrincipal);
+        BotonMoverHandler handlerMover = new BotonMoverHandler(stage,contenedorPrincipal);
         contenedorPrincipal.obtenerBotonMover().setOnAction(handlerMover);
 
         BotonTransformarHandler handlerTransformar= new BotonTransformarHandler(contenedorPrincipal);
@@ -72,10 +75,8 @@ public class Aplicacion extends Application{
         contenedorPrincipal.obtenerBotonCombinar().setOnAction(handlerCombinar);
 
 
-
-        Scene scene = new Scene(contenedorPrincipal, 1200, 600);
-        stage.setScene(scene);
-
+        stage.setScene(escenaTitulo);
+        stage.setFullScreen(true);
         stage.show();
 
 

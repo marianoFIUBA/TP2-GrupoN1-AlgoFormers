@@ -154,10 +154,10 @@ public class BuscadorDeImagenes {
             case "FLASH":
                 path ="file:src/vista/imagenes/Flash.png";
                 break;
-            case "BURBUJA":
+            case "BURBUJA INMACULADA":
                 path = "file:src/vista/imagenes/Burbuja.png";
                 break;
-            case "DOBLECANION":
+            case "DOBLE CANION":
                 path = "file:src/vista/imagenes/DobleCanion.png";
                 break;
         }

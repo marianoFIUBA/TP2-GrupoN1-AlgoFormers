@@ -10,6 +10,10 @@ import javafx.scene.effect.SepiaTone;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
@@ -18,6 +22,8 @@ import vista.eventos.BotonAccionCasilleroHandler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.EventListener;
 import java.util.Stack;
 
@@ -43,15 +49,33 @@ public class ContenedorPrincipal extends BorderPane {
     private Button botonTransformar;
     private Button botonCombinar;
     private Button botonDeCasilleroSeleccionadoAnterior;
+    private Stage stage;
+    private BarraDeMenuPrincipal barraDeMenuPrincipal;
+    private MediaPlayer mediaPlayer;
 
-    public ContenedorPrincipal() {
+    public ContenedorPrincipal(Stage stage) {
+
         //this.setMenu(stage);
-
+        this.stage = stage;
+        this.generarBarraDeMenuPrincipal();
         this.buscador = new BuscadorDeImagenes();
         this.generarPanelAccion();
         this.generarPanelSeleccion();
         this.generarPanelJugador();
         this.generarTablero("TIERRA");
+    }
+
+    public void reproducirMusicaDeFondo() {
+
+        String pathCancionJuego1 = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionJuego1.mp3";
+        Media cancionJuego1 = new Media(pathCancionJuego1);
+        /*String pathCancionJuego2 = Paths.get("").toAbsolutePath().toUri() + "src/sonidos/cancionJuego2.mp3";
+        Media cancionJuego2 = new Media(pathCancionJuego2);*/
+
+        mediaPlayer = new MediaPlayer(cancionJuego1);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
     }
 
     public void generarTablero(String tipoZonaTablero){
@@ -304,6 +328,7 @@ public class ContenedorPrincipal extends BorderPane {
         estadisticas.getChildren().add(lblDistanciaAtaque);
         estadisticas.getChildren().add(lblVelocidad);
         estadisticas.getChildren().add(lblVida);
+        estadisticas.getChildren().add(lblBonus);
 
         return estadisticas;
     }
@@ -347,12 +372,12 @@ public class ContenedorPrincipal extends BorderPane {
 
 
         referencias.getChildren().add(lblTitulo);
-        referencias.getChildren().add(this.generarReferencia("Roca", "#C0C0C0"));
-        referencias.getChildren().add(this.generarReferencia("Pantano", "#4C9900"));
-        referencias.getChildren().add(this.generarReferencia("Espinas", "#994C00"));
-        referencias.getChildren().add(this.generarReferencia("Nube", "#FFFFFF"));
-        referencias.getChildren().add(this.generarReferencia("Nebulosa", "#990099"));
-        referencias.getChildren().add(this.generarReferencia("Tormenta", "#3333FF"));
+        referencias.getChildren().add(this.generarReferencia("  Roca", "#C0C0C0"));
+        referencias.getChildren().add(this.generarReferencia("  Pantano", "#4C9900"));
+        referencias.getChildren().add(this.generarReferencia("  Espinas", "#994C00"));
+        referencias.getChildren().add(this.generarReferencia("  Nube", "#FFFFFF"));
+        referencias.getChildren().add(this.generarReferencia("  Nebulosa", "#990099"));
+        referencias.getChildren().add(this.generarReferencia("  Tormenta", "#3333FF"));
 
 
         return referencias;
@@ -386,8 +411,14 @@ public class ContenedorPrincipal extends BorderPane {
 
         stack.getChildren().add(lblNombreEquipo);
 
-        this.setTop(stack);
+        this.setBottom(stack);
 
+    }
+
+    private void generarBarraDeMenuPrincipal(){
+
+        this.barraDeMenuPrincipal = new BarraDeMenuPrincipal(this.stage);
+        this.setTop(this.barraDeMenuPrincipal);
     }
 
     /*public VBox generarVBoxEstadisticasAlgoformerObjetivo(){
@@ -447,5 +478,9 @@ public class ContenedorPrincipal extends BorderPane {
     public Button obtenerBotonCombinar() {
 
         return this.botonCombinar;
+    }
+
+    public BarraDeMenuPrincipal getBarraDeMenu() {
+        return barraDeMenuPrincipal;
     }
 }

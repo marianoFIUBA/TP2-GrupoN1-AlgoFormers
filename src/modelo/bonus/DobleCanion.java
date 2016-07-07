@@ -14,7 +14,7 @@ public class DobleCanion implements Bonus {
 
     public DobleCanion(){
 
-        this.nombre = "DOBLECANION";
+        this.nombre = "DOBLE CANION";
     }
 
     public void aplicarA(AlgoFormer algoFormer, Casillero casillero) {

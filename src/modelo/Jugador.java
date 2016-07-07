@@ -121,7 +121,7 @@ public abstract class Jugador {
         } else {try{
                     this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
                     this.finalizarTurno();
-                } catch (NullPointerException | MovimientoInvalidoException ex) {
+                } catch (NullPointerException ex) { // | MovimientoInvalidoException
             //lanzar exepcion de algoformer no seleccionado
             }
         }
@@ -139,7 +139,7 @@ public abstract class Jugador {
                 this.algoformerSeleccionado.transformarseAModoAlterno();
             }
             this.finalizarTurno();
-        } catch (NullPointerException ex){
+        } catch (NullPointerException | UnidadCombinadaNoPuedeTransformarseException | NoPuedeTransformarseAModoHumaoideException | NoPuedeTransformarseAModoAlternoException ex){
             //lanzar exepcion de algoformer no transformado
         }
 
