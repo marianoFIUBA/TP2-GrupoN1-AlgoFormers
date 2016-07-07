@@ -21,7 +21,6 @@ public class BarraDeMenuPrincipal extends MenuBar {
 
         Menu menuArchivo = new Menu("Archivo");
         Menu menuOpciones = new Menu("Opciones");
-        Menu menuAyuda = new Menu("Ayuda");
 
         MenuItem opcionSalir = new MenuItem("Salir");
         MenuItem opcionInstrucciones = new MenuItem("Instrucciones");
@@ -29,19 +28,13 @@ public class BarraDeMenuPrincipal extends MenuBar {
         OpcionSalirEventHandler opcionSalirHandler = new OpcionSalirEventHandler();
         opcionSalir.setOnAction(opcionSalirHandler);
 
-        OpcionInstruccionesEventHandler opcionInstruccionesHandler = new OpcionInstruccionesEventHandler();
-        opcionInstrucciones.setOnAction(opcionInstruccionesHandler);
-
         OpcionPantallaCompletaEventHandler opcionPantallaCompletaHandler = new OpcionPantallaCompletaEventHandler(stage, opcionPantallaCompleta);
         opcionPantallaCompleta.setOnAction(opcionPantallaCompletaHandler);
 
-        //opcionPantallaCompleta.setDisable(true);
-
         menuArchivo.getItems().addAll(opcionSalir);
-        menuAyuda.getItems().addAll(opcionInstrucciones);
         menuOpciones.getItems().addAll(opcionPantallaCompleta);
 
-        this.getMenus().addAll(menuArchivo, menuOpciones, menuAyuda);
+        this.getMenus().addAll(menuArchivo, menuOpciones);
     }
 
 
