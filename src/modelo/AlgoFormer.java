@@ -192,8 +192,8 @@ public abstract class AlgoFormer {
     public boolean tieneDobleCanion(){
 
         return this.arma.tieneBonusDobleCanion();
-
     }
+
 
     public boolean estaEmpantanado() {
 

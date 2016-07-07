@@ -62,11 +62,26 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             Label distancia = (Label)  this.estadisticas_1.getChildren().get(1);
             Label velocidad = (Label)  this.estadisticas_1.getChildren().get(2);
             Label vida = (Label)  this.estadisticas_1.getChildren().get(3);
+            Label bonus = (Label) this.estadisticas_1.getChildren().get(4);
 
             ataque.setText("ATAQUE: " + this.algoformer.obtenerAtaque());
             distancia.setText("DISTANCIA DE ATAQUE: " + this.algoformer.obtenerDistanciaDeAtaque());
             velocidad.setText("VELOCIDAD: " + this.algoformer.obtenerVelocidad());
             vida.setText("PUNTOS DE VIDA: " + this.algoformer.obtenerPuntosDeVida());
+
+            if(this.algoformer.tieneBonusFlash()){
+
+                bonus.setText("BONUS CAPTURADO: FLASH");
+
+            } else if (this.algoformer.tieneDobleCanion()){
+
+                bonus.setText("BONUS CAPTURADO: DOBLE CANION");
+
+            } else if (this.algoformer.tieneBonusBurbuja()){
+
+                bonus.setText("BONUS CAPTURADO: BURBUJA INMACULADA");
+
+            } else {bonus.setText("BONUS CAPTURADO: NINGUNO");}
 
             //Visibilidad de botones
             this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
@@ -79,11 +94,14 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             Juego.getInstance().establecerAlgoformerObjetivo(this.algoformer);
             Juego.getInstance().establecerCasilleroSeleccionado(null);
 
+            AlgoFormer algoFormerObjetivo = Juego.getInstance().obtenerAlgoformerObjetivo();
+
+
 
             this.estadisticasCasillero.setVisible(false);
             this.estadisticas_2.setVisible(true);
 
-            this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
+            this.panelAcciones.getChildren().get(1).setDisable(algoFormerObjetivo == null);
             this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);
 
 
@@ -91,11 +109,26 @@ public class BotonAccionAlgoformerHandler implements EventHandler<ActionEvent> {
             Label distancia = (Label)  this.estadisticas_2.getChildren().get(1);
             Label velocidad = (Label)  this.estadisticas_2.getChildren().get(2);
             Label vida = (Label)  this.estadisticas_2.getChildren().get(3);
+            Label bonus = (Label) this.estadisticas_2.getChildren().get(4);
 
-            ataque.setText("ATAQUE: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerAtaque());
-            distancia.setText("DISTANCIA DE ATAQUE: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerDistanciaDeAtaque());
-            velocidad.setText("VELOCIDAD: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerVelocidad());
-            vida.setText("PUNTOS DE VIDA: " + Juego.getInstance().obtenerAlgoformerObjetivo().obtenerPuntosDeVida());
+            ataque.setText("ATAQUE: " + algoFormerObjetivo.obtenerAtaque());
+            distancia.setText("DISTANCIA DE ATAQUE: " + algoFormerObjetivo.obtenerDistanciaDeAtaque());
+            velocidad.setText("VELOCIDAD: " + algoFormerObjetivo.obtenerVelocidad());
+            vida.setText("PUNTOS DE VIDA: " + algoFormerObjetivo.obtenerPuntosDeVida());
+
+            if(algoFormerObjetivo.tieneBonusFlash()){
+
+                bonus.setText("BONUS CAPTURADO: FLASH");
+
+            } else if (algoFormerObjetivo.tieneDobleCanion()){
+
+                bonus.setText("BONUS CAPTURADO: DOBLE CANION");
+
+            } else if (algoFormerObjetivo.tieneBonusBurbuja()){
+
+                bonus.setText("BONUS CAPTURADO: BURBUJA INMACULADA");
+
+            } else {bonus.setText("BONUS CAPTURADO: NINGUNO");}
 
 
             if (!Juego.getInstance().obtenerAlgoformerObjetivo().equals(this.algoformer)){

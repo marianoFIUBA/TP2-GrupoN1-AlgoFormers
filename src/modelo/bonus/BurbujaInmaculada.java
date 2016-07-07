@@ -14,7 +14,7 @@ public class BurbujaInmaculada implements Bonus {
 
     public BurbujaInmaculada(){
 
-        this.nombre = "BURBUJA";
+        this.nombre = "BURBUJA INMACULADA";
     }
 
     public void aplicarA(AlgoFormer algoFormer, Casillero casillero) {

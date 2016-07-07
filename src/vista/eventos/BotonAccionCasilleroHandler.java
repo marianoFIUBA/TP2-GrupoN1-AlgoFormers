@@ -56,24 +56,6 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
         Juego.getInstance().establecerAlgoformerObjetivo(null);
         Juego.getInstance().establecerCasilleroSeleccionado(casillero);
 
-
-        SepiaTone sepia = new SepiaTone();
-        botonSuperficie.setEffect(sepia);
-
-        if(botonSuperficie.isSelected()) {
-            botonSuperficie.addEventHandler(MouseEvent.MOUSE_EXITED,
-                    new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent e) {
-                            botonSuperficie.setEffect(null);
-                        }
-
-                    });
-        }
-
-
-
-
         //Visibilidad de botones
         this.panelAcciones.getChildren().get(1).setDisable(Juego.getInstance().obtenerAlgoformerObjetivo() == null);
         this.panelAcciones.getChildren().get(2).setDisable(Juego.getInstance().obtenerCasilleroSeleccionado() == null);

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Excepciones.CasilleroFueraDeRangoException;
 import modelo.Excepciones.MovimientoInvalidoException;
@@ -17,9 +18,11 @@ import vista.ContenedorPrincipal;
 public class BotonMoverHandler implements EventHandler<ActionEvent> {
 
     private ContenedorPrincipal contenedorPrincipal;
-    public BotonMoverHandler(ContenedorPrincipal contenedorPrincipal) {
+    private Stage stage;
+    public BotonMoverHandler(Stage stage, ContenedorPrincipal contenedorPrincipal) {
 
         this.contenedorPrincipal = contenedorPrincipal;
+        this.stage = stage;
 
     }
 
@@ -42,6 +45,7 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
             } catch (MovimientoInvalidoException exception) {
 
                 Alert alertaCasilleroFueraDeAlcance = new Alert(Alert.AlertType.WARNING);
+                alertaCasilleroFueraDeAlcance.initOwner(stage);
                 alertaCasilleroFueraDeAlcance.setTitle("CUIDADO!");
                 alertaCasilleroFueraDeAlcance.setHeaderText("El casillero al cual te que querés mover se encuentra fuera del alcance de tu Algoformer. ¡Probá con otro!");
                 alertaCasilleroFueraDeAlcance.show();

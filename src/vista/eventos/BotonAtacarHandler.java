@@ -3,6 +3,7 @@ package vista.eventos;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 import modelo.AlgoFormer;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Juego;
@@ -16,9 +17,12 @@ public class BotonAtacarHandler implements EventHandler<ActionEvent> {
 
 
     private ContenedorPrincipal contenedorPrincipal;
-    public BotonAtacarHandler(ContenedorPrincipal contenedorPrincipal) {
+    private Stage stage;
+
+    public BotonAtacarHandler(Stage stage, ContenedorPrincipal contenedorPrincipal) {
 
         this.contenedorPrincipal = contenedorPrincipal;
+        this.stage = stage;
 
     }
 
@@ -44,6 +48,7 @@ public class BotonAtacarHandler implements EventHandler<ActionEvent> {
                 System.out.print("Hola");
 
                 Alert alertaAlgoformeFueraDeAlcance = new Alert(Alert.AlertType.WARNING);
+                alertaAlgoformeFueraDeAlcance.initOwner(stage);
                 alertaAlgoformeFueraDeAlcance.setTitle("CUIDADO!");
                 alertaAlgoformeFueraDeAlcance.setHeaderText("El AlgoFormer que querés atacar se encuentra fuera del alcance. ¡Probá con otro!");
                 alertaAlgoformeFueraDeAlcance.show();
