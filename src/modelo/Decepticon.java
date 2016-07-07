@@ -11,11 +11,6 @@ public abstract class Decepticon extends AlgoFormer {
         this.nombreDeEquipo = "EQUIPO DECEPTICON";
     }
 
-   /* public void atacar(AlgoFormer objetivo) {
-
-       objetivo.recibirAtaqueDeDecepticon(this.estado.obtenerAtaque());
-    }*/
-
     public void recibirAtaqueDeAutobot(int ataque){
 
         this.puntosDeVida-= this.armadura.modificarDefensa(ataque);

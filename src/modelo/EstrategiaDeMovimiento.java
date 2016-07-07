@@ -4,12 +4,8 @@ import modelo.Excepciones.MovimientoInvalidoException;
 
 import java.util.ArrayList;
 
-/**
- * Created by Franco on 15/6/2016.
- */
 public abstract class EstrategiaDeMovimiento {
 
-    //void mover(AlgoFormer algoFormer, Casillero destino);
 
     public abstract void ocuparCasillero(AlgoFormer algoformer, Casillero casillero);
 

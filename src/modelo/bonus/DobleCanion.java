@@ -5,9 +5,6 @@ import modelo.Bonus;
 import modelo.Casillero;
 import modelo.Excepciones.AlgoFormerYaPoseeBonusDobleCanionException;
 
-/**
- * Created by Mariano on 02/07/2016.
- */
 public class DobleCanion implements Bonus {
 
     private String nombre;

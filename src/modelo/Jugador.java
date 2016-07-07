@@ -4,9 +4,7 @@ import modelo.Excepciones.*;
 
 import java.util.ArrayList;
 
-/**
- * Created by Mariano on 12/06/2016.
- */
+
 public abstract class Jugador {
 
     private static final String ESTADO_ALTERNO = "ALTERNO";
@@ -23,9 +21,7 @@ public abstract class Jugador {
     protected int turnosConAlgoformerCombinado;
     protected boolean leTocaJugar;
     protected AlgoFormer algoformerSeleccionado;
-    protected Calculos calculos;
     protected String nombreDeEquipo;
-//    private EstadoTurno estado;
 
     public Jugador(ArrayList<AlgoFormer> algoformers){
 
@@ -36,7 +32,6 @@ public abstract class Jugador {
         this.algoformerSeleccionado = null;
         this.combinado = null;
         this.turnosConAlgoformerCombinado = 2;
-        this.calculos = new Calculos();
     }
 
     public void setAlgoformer1(AlgoFormer algoFormer){
@@ -182,7 +177,6 @@ public abstract class Jugador {
 
         Casillero casilleroActual = this.combinado.obtenerCasillero();
         this.combinado.desocuparCasillero();
-        //ArrayList<Casillero> casilleros = this.obtenerCasillerosParaDescombinacion(casilleroActual);
 
         double puntosDevida = this.combinado.obtenerPuntosDeVida() / 3;
 
@@ -204,25 +198,6 @@ public abstract class Jugador {
 
         this.combinado = null;
     }
-
-   /* protected ArrayList<Casillero> obtenerCasillerosParaDescombinacion(Casillero casillero){
-
-        ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
-
-        Casillero casillero1 = casillero;
-        Casillero casillero2;
-        Casillero casillero3;
-
-        casillero1 = calculos.obtenerPrimerCasilleroDisponible(casillero1,casillero2,casillero3);
-        Casillero casillero2 = calculos.obtenerPrimerCasilleroDisponible(casillero);
-        Casillero casillero3 = calculos.obtenerPrimerCasilleroDisponible(casillero);
-
-        casilleros.add(casillero1);
-        casilleros.add(casillero2);
-        casilleros.add(casillero3);
-
-        return casilleros;
-    }*/
 
     public AlgoFormer obtenerAlgoformerSeleccionado(){
 

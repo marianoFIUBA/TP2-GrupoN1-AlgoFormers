@@ -1,22 +1,16 @@
 package modelo;
 
-/**
- * Created by Franco on 15/6/2016.
- */
 public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento{
 
-    private Calculos calculo;
     private boolean empantanado;
 
     public MovimientoHumanoideTerrestre(){
 
-        this.calculo = new Calculos();
         this.empantanado = false;
     }
 
     public MovimientoHumanoideTerrestre(EstrategiaDeMovimiento estrategiaAnterior){
 
-        this.calculo = new Calculos();
         this.empantanado = estrategiaAnterior.estaEmpantanado();
     }
 

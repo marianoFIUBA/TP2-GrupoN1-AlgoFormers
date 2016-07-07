@@ -8,9 +8,6 @@ import vista.eventos.OpcionInstruccionesEventHandler;
 import vista.eventos.OpcionPantallaCompletaEventHandler;
 import vista.eventos.OpcionSalirEventHandler;
 
-/**
- * Created by fedek on 6/7/2016.
- */
 public class BarraDeMenuPrincipal extends MenuBar {
 
     private MenuItem opcionPantallaCompleta = new MenuItem("Pantalla completa");

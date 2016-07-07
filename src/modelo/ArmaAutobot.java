@@ -2,9 +2,6 @@ package modelo;
 
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 
-/**
- * Created by fedek on 30/6/2016.
- */
 public class ArmaAutobot extends Arma {
 
 

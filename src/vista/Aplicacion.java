@@ -24,9 +24,7 @@ import java.io.File;
 
 
 
-/**
- * Created by Mariano on 20/06/2016.
- */
+
 public class Aplicacion extends Application{
 
     MediaPlayer mediaPlayer;

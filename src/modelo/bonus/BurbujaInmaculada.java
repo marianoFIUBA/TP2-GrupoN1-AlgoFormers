@@ -5,9 +5,6 @@ import modelo.Bonus;
 import modelo.Casillero;
 import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
 
-/**
- * Created by Mariano on 02/07/2016.
- */
 public class BurbujaInmaculada implements Bonus {
 
     private String nombre;

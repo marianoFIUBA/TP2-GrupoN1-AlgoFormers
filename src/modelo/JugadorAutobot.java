@@ -5,9 +5,6 @@ import modelo.algoformers.Superion;
 
 import java.util.ArrayList;
 
-/**
- * Created by Mariano on 25/06/2016.
- */
 public class JugadorAutobot extends Jugador {
 
 

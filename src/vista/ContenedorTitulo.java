@@ -17,9 +17,6 @@ import vista.eventos.BotonComenzarJuegoEventHandler;
 
 import java.nio.file.Paths;
 
-/**
- * Created by fedek on 6/7/2016.
- */
 public class ContenedorTitulo extends BorderPane {
 
 

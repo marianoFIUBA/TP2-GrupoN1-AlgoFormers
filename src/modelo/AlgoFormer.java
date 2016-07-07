@@ -9,7 +9,6 @@ public abstract class AlgoFormer {
     protected Arma arma;
     protected Armadura armadura;
     protected Piernas piernas;
-    protected Calculos calculo;
     protected Casillero casillero;
     protected double puntosDeVida;
     protected double puntosDeVidaIniciales;
@@ -20,10 +19,8 @@ public abstract class AlgoFormer {
     protected AlgoFormer(String nombre, Casillero casillero) {
 
         this.nombre = nombre;
-        this.casillero = casillero;
-        this.calculo = new Calculos();
+        this.casillero = casillero;;
         this.modoPostPsionico = false;
-        //this.arma = new Arma()
         this.armadura = new Armadura();
         this.piernas = new Piernas();
         this.destruido = false;
@@ -215,16 +212,6 @@ public abstract class AlgoFormer {
         return this.destruido;
     }
 
-/*    public void capturarChispa(){
-
-        Juego.getInstance().asignarChispaAAlgoformer(this);
-    }*/
-
-  /*  public void informarFinDeJuego(){
-
-        String nombreDeEquipo = Juego.getInstance().obtenerJugadorActual().obtenerNombreDeEquipo();
-        Juego.getInstance().finalizarJuego(nombreDeEquipo);
-    }*/
 
     public String obtenerNombreDeEquipo(){
         return this.nombreDeEquipo;

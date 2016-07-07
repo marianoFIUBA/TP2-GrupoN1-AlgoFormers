@@ -6,9 +6,6 @@ import modelo.Casillero;
 import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
 import modelo.Excepciones.AlgoFormerYaPoseeBonusFlash;
 
-/**
- * Created by Mariano on 02/07/2016.
- */
 public class Flash implements Bonus{
 
     private String nombre;

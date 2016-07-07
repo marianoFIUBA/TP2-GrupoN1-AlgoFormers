@@ -1,22 +1,17 @@
 package modelo;
 
-/**
- * Created by Franco on 15/6/2016.
- */
+
 public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
-    private Calculos calculo;
     private int turnosPendientesAtrapado;
 
     public MovimientoAlternoAereo(){
 
-        this.calculo = new Calculos();
         this.turnosPendientesAtrapado = 0;
     }
 
     public MovimientoAlternoAereo(EstrategiaDeMovimiento estrategiaAnterior){
 
-        this.calculo = new Calculos();
         this.turnosPendientesAtrapado = 0;
     }
 
@@ -24,9 +19,7 @@ public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
         if (this.turnosPendientesAtrapado == 0) {
             casillero.alojarPorAire(algoFormer);
-        } /*else {
-            this.turnosPendientesAtrapado--;
-        }*/
+        }
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){

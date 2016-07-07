@@ -4,9 +4,6 @@ import modelo.algoformers.Menasor;
 
 import java.util.ArrayList;
 
-/**
- * Created by Mariano on 25/06/2016.
- */
 public class JugadorDecepticon extends Jugador {
 
     public JugadorDecepticon(ArrayList<AlgoFormer> algoformers){

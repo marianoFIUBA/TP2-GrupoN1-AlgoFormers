@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ListIterator;
 
-/**
- * Created by Mariano on 11/06/2016.
- */
 public class Juego {
 
     private static Juego juego;
@@ -85,7 +82,6 @@ public class Juego {
 
             if (true) {
 
-            //ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
             ArrayList<Casillero> casilleros = this.generarCasillerosDesdeJSON();
             Optimus optimus = new Optimus(casilleros.get(0));
             optimus.estado.ocuparCasillero(optimus, casilleros.get(0));
@@ -301,7 +297,6 @@ public class Juego {
         return this.jugadorActual;
     }
 
-    //public ArrayList<Casillero> generarCasillerosDesdeJSON(){
     public ArrayList<Casillero> generarCasillerosDesdeJSON(){
 
         try {

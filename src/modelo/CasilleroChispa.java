@@ -5,9 +5,6 @@ import modelo.zonas.Roca;
 
 import java.security.AllPermission;
 
-/**
- * Created by Mariano on 04/07/2016.
- */
 public class CasilleroChispa extends Casillero{
 
     public CasilleroChispa(int posicionX, int posicionY){

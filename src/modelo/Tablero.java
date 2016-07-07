@@ -10,9 +10,6 @@ import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by Mariano on 02/07/2016.
- */
 public class Tablero {
 
     private int dimensionX;

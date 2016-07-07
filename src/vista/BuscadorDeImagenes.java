@@ -4,9 +4,6 @@ import modelo.AlgoFormer;
 import modelo.Bonus;
 import modelo.Casillero;
 
-/**
- * Created by Mariano on 03/07/2016.
- */
 public class BuscadorDeImagenes {
 
 

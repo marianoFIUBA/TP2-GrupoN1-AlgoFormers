@@ -27,10 +27,6 @@ import java.util.ArrayList;
 import java.util.EventListener;
 import java.util.Stack;
 
-
-/**
- * Created by Mariano on 03/07/2016.
- */
 public class ContenedorPrincipal extends BorderPane {
 
     private VBox panelSeleccion;

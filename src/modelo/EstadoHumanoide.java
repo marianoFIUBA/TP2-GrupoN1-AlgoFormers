@@ -2,9 +2,6 @@ package modelo;
 
 import modelo.Excepciones.NoPuedeTransformarseAModoHumaoideException;
 
-/**
- * Created by Franco on 15/6/2016.
- */
 public class EstadoHumanoide implements EstadoAlgoFormer {
     private int velocidad;
     private int ataque;
@@ -12,14 +9,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     private boolean esTerrestre;
     private EstrategiaDeMovimiento movimiento;
 
-/*    public EstadoHumanoide(int puntosDeVida, Casillero casillero, int velocidad, int ataque, EstrategiaDeMovimiento movimiento){
-
-        this.velocidad = velocidad;
-        this.puntosDeVida = puntosDeVida;
-        this.ataque = ataque;
-        this.casillero = casillero;
-        this.movimiento = movimiento;
-    }*/
 
     public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento, boolean esTerrestre){
 
@@ -38,17 +27,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
         this.movimiento = movimiento;
     }
 
-   /* @Override
-    public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad){
-        return new EstadoHumanoide(ataque, distanciaAtaque, velocidad, this.movimiento);
-    }
-
-    @Override
-    public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad){
-
-        return new EstadoAlterno(ataque, distanciaAtaque, velocidad, this.movimiento,this.esTerrestre);
-    }*/
-
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
         throw new NoPuedeTransformarseAModoHumaoideException();
@@ -58,11 +36,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
         return new EstadoAlterno(ataque, distanciaAtaque, velocidad, movimiento);
     }
-
-/*    public EstadoHumanoide (EstadoAlgoFormer estadoAnterior) {
-        this.puntosDeVida = estadoAnterior.obtenerPuntosDeVida();
-        this.casillero = estadoAnterior.obtenerCasillero();
-    }*/
 
     public void atacar(AlgoFormer algoFormer) {
 
