@@ -11,6 +11,7 @@ public abstract class Autobot extends AlgoFormer {
 
         super(nombre, casillero);
         this.arma= new ArmaAutobot();
+        this.nombreDeEquipo = "EQUIPO AUTOBOT";
     }
     
     public void recibirAtaqueDeAutobot(int ataque){

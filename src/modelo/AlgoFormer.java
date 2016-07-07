@@ -15,6 +15,7 @@ public abstract class AlgoFormer {
     protected double puntosDeVidaIniciales;
     protected boolean modoPostPsionico;
     protected boolean destruido;
+    protected String nombreDeEquipo;
 
     protected AlgoFormer(String nombre, Casillero casillero) {
 
@@ -219,10 +220,14 @@ public abstract class AlgoFormer {
         Juego.getInstance().asignarChispaAAlgoformer(this);
     }*/
 
-    public void informarFinDeJuego(){
+  /*  public void informarFinDeJuego(){
 
         String nombreDeEquipo = Juego.getInstance().obtenerJugadorActual().obtenerNombreDeEquipo();
         Juego.getInstance().finalizarJuego(nombreDeEquipo);
+    }*/
+
+    public String obtenerNombreDeEquipo(){
+        return this.nombreDeEquipo;
     }
 
 }

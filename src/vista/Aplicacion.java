@@ -68,7 +68,7 @@ public class Aplicacion extends Application{
         BotonMoverHandler handlerMover = new BotonMoverHandler(stage,contenedorPrincipal);
         contenedorPrincipal.obtenerBotonMover().setOnAction(handlerMover);
 
-        BotonTransformarHandler handlerTransformar= new BotonTransformarHandler(contenedorPrincipal);
+        BotonTransformarHandler handlerTransformar= new BotonTransformarHandler(stage, contenedorPrincipal);
         contenedorPrincipal.obtenerBotonTransformar().setOnAction(handlerTransformar);
 
         BotonCombinarHandler handlerCombinar = new BotonCombinarHandler(contenedorPrincipal);

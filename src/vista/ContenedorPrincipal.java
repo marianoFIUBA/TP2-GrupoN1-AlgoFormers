@@ -105,19 +105,30 @@ public class ContenedorPrincipal extends BorderPane {
 
                 String pathImagen = "";
                 String colorDeFondoBotonSuperficie= "";
-                if (tipoZonaTablero == "TIERRA"){
-                    //pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
-                    colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoTierra(casilleroActual);
+
+                if (casilleroActual.obtenerAire() == "CHISPA"){
+
+                    pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
+                    Image imagen = new Image(pathImagen);
+                    BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, false, false, true);
+                    BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundSizeCasillero);
+                    botonSuperficie.setBackground(new Background(imagenDeFondo));
 
                 } else {
-                   //pathImagen = this.buscador.obtenerPathImagenAire(casilleroActual);
-                    colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoAire(casilleroActual);
+
+
+                    if (tipoZonaTablero == "TIERRA"){
+                        //pathImagen = this.buscador.obtenerPathImagenTierra(casilleroActual);
+                        colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoTierra(casilleroActual);
+
+                    } else {
+                       //pathImagen = this.buscador.obtenerPathImagenAire(casilleroActual);
+                        colorDeFondoBotonSuperficie = this.buscador.obtenerColorDeFondoAire(casilleroActual);
+                    }
                 }
 
-                //Image imagen = new Image(pathImagen);
-                //BackgroundSize backgroundSizeCasillero = new BackgroundSize(100, 100, true, false, false, true);
-                //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundSizeCasillero);
-                //botonSuperficie.setBackground(new Background(imagenDeFondo));
+
+
 
                 BotonAccionCasilleroHandler handlerCasillero = new BotonAccionCasilleroHandler(casilleroActual, this.vistaActual, this.panelAcciones, this.panelSeleccion,botonSuperficie);
                 botonSuperficie.setOnAction(handlerCasillero);

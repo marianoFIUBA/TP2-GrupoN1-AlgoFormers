@@ -81,7 +81,9 @@ public class Juego {
     public void iniciarJuego() {
 
         this.finalizado = false;
-        if (!this.iniciado) {
+        //if (!this.iniciado) {
+
+            if (true) {
 
             //ArrayList<Casillero> casilleros = this.generarCasilleros(dimensionX, dimensionY, generarSuperficiesAleatorias);
             ArrayList<Casillero> casilleros = this.generarCasillerosDesdeJSON();
@@ -378,20 +380,20 @@ public class Juego {
 
     }
 
-    public void finalizarJuego(String nombreDeEquipoPerdedor){
+    public void finalizarJuego(String nombreDeEquipoGanador){
 
-        this.equipoGanador = "EQUIPO AUTOBOT";
-
-        if (nombreDeEquipoPerdedor ==  "EQUIPO AUTOBOT"){
-            this.equipoGanador = "EQUIPO DECEPTICON";
-        }
-
+       this.equipoGanador = nombreDeEquipoGanador;
         this.finalizado = true;
     }
 
     public boolean juegoFinalizado(){
 
         return this.finalizado;
+    }
+
+    public String obtenerNomreEquipoGanador(){
+
+        return this.equipoGanador;
     }
 }
 

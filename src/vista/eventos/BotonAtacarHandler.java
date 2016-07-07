@@ -55,5 +55,15 @@ public class BotonAtacarHandler implements EventHandler<ActionEvent> {
 
             }
         }
+
+        if (Juego.getInstance().juegoFinalizado()){
+
+            Alert alertaCasilleroFueraDeAlcance = new Alert(Alert.AlertType.WARNING);
+            alertaCasilleroFueraDeAlcance.initOwner(stage);
+            alertaCasilleroFueraDeAlcance.setTitle("Fin de Juego!");
+            String equipoGanador = Juego.getInstance().obtenerNomreEquipoGanador();
+            alertaCasilleroFueraDeAlcance.setHeaderText(equipoGanador + " ha ganado el Juego");
+            alertaCasilleroFueraDeAlcance.show();
+        }
     }
 }

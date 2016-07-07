@@ -205,7 +205,7 @@ public class BuscadorDeImagenes {
                 path = "-fx-base: #990099";
                 break;
             case "CHISPA":
-                path = "-fx-base: white";
+                path = "-fx-background-color: white";
                 break;
         }
 

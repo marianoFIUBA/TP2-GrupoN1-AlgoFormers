@@ -8,6 +8,7 @@ public abstract class Decepticon extends AlgoFormer {
 
         super(nombre, casillero);
         this.arma = new ArmaDecepticon();
+        this.nombreDeEquipo = "EQUIPO DECEPTICON";
     }
 
    /* public void atacar(AlgoFormer objetivo) {

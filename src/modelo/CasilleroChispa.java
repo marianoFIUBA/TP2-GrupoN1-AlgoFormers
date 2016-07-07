@@ -18,13 +18,11 @@ public class CasilleroChispa extends Casillero{
     @Override
     public void alojarPorTierra(AlgoFormer algoFormer){
 
-        algoFormer.informarFinDeJuego();
-    }
-
-    @Override
-    public void alojarPorAire(AlgoFormer algoFormer){
-
-       algoFormer.informarFinDeJuego();
+        if (algoFormer.obtenerEstado() == "HUMANOIDE"){
+            Juego.getInstance().finalizarJuego(algoFormer.obtenerNombreDeEquipo());
+        } else {
+            super.alojarPorTierra(algoFormer);
+        }
     }
 
     @Override

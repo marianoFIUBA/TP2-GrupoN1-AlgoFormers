@@ -9,6 +9,12 @@ import java.util.ArrayList;
  */
 public abstract class Jugador {
 
+    private static final String ESTADO_ALTERNO = "ALTERNO";
+    private static final String ESTADO_HUMANOIDE = "HUMANOIDE";
+    private static final String EQUIPO_DECEPTION = "EQUIPO DECEPTICON";
+    private static final String EQUIPO_AUTOBOT = "EQUIPO AUTOBOT";
+
+
     protected EstadoJugador estado;
     protected AlgoFormer algoformer1;
     protected AlgoFormer algoformer2;
@@ -104,40 +110,57 @@ public abstract class Jugador {
 
     public void atacar(AlgoFormer algoformer) {
 
+        if(this.quedanAlgoformers()){
+
+
         try {
             this.algoformerSeleccionado.atacarA(algoformer);
             this.finalizarTurno();
         } catch (NullPointerException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticon ex) {     //| AlgoFormerFueraDeAlcanceException
         }
+
+        } else {
+
+            Juego.getInstance().finalizarJuego(this.nombreDeEquipo);
+        }
     }
 
     public void mover(Casillero casillero){
 
-        if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
-
-            throw new AlgoFormerInhabilitadoPorEsteTurno();
+        if (this.quedanAlgoformers()){
 
 
-        } else {try{
-                    this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
-                    this.finalizarTurno();
-                } catch (NullPointerException ex) { // | MovimientoInvalidoException
-            //lanzar exepcion de algoformer no seleccionado
+            if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
+
+                throw new AlgoFormerInhabilitadoPorEsteTurno();
+
+
+            } else {try{
+                        this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
+                        this.finalizarTurno();
+                    } catch (NullPointerException ex) { // | MovimientoInvalidoException
+                //lanzar exepcion de algoformer no seleccionado
+                }
             }
+        } else {
+            Juego.getInstance().finalizarJuego(this.obtenerNombreEquipoEnemigo());
         }
     }
 
     public void transformar(){
 
         try{
-            if (this.algoformerSeleccionado.obtenerEstado() == "ALTERNO"){
+            if (this.algoformerSeleccionado.obtenerEstado() == ESTADO_ALTERNO){
 
                 this.algoformerSeleccionado.transformarseAModoHumanoide();
 
-            } else if ( this.algoformerSeleccionado.obtenerEstado() == "HUMANOIDE"){
+            } else if ( this.algoformerSeleccionado.obtenerEstado() == ESTADO_HUMANOIDE){
 
                 this.algoformerSeleccionado.transformarseAModoAlterno();
             }
+
+            this.algoformerSeleccionado.obtenerObjetoEstado().ocuparCasillero(algoformerSeleccionado, algoformerSeleccionado.obtenerCasillero());
+
             this.finalizarTurno();
         } catch (NullPointerException | UnidadCombinadaNoPuedeTransformarseException | NoPuedeTransformarseAModoHumaoideException | NoPuedeTransformarseAModoAlternoException ex){
             //lanzar exepcion de algoformer no transformado
@@ -237,6 +260,15 @@ public abstract class Jugador {
         }
 
         return algoformer1Vive || algoformer2Vive || algoformer3Vive || combinadoVive;
+    }
+
+    private String obtenerNombreEquipoEnemigo(){
+
+        String nombreEnemigo = EQUIPO_DECEPTION;
+        if (this.obtenerNombreDeEquipo() == EQUIPO_DECEPTION){
+            nombreEnemigo = EQUIPO_AUTOBOT;
+        }
+        return nombreEnemigo;
     }
 
 }
