@@ -891,49 +891,6 @@ public class AlgoformerTest {
 
     }
 
-    @Test
-    public void algoFormerCombinadoSeDescombinaCorrectamente(){
-
-        Juego.getInstance().iniciarJuego();
-
-        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
-
-        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(megatron);
-        Juego.getInstance().obtenerJugadorActual().combinarAlgoformers();
-
-        AlgoFormer optimus = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
-        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(optimus);
-        Juego.getInstance().obtenerJugadorActual().transformar();
-
-        AlgoFormer menasor = Juego.getInstance().obtenerJugadorActual().obtenerCombinado();
-        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(menasor);
-        Casillero casilleroDestinoMenasor = Juego.getInstance().obtenerCasillero(10,9);
-        Juego.getInstance().obtenerJugadorActual().mover(casilleroDestinoMenasor); //1 TURNO PERDIDO
-
-
-        /*Casillero casilleroDestinoOptimus = Juego.getInstance().obtenerCasillero(2,1);
-        Juego.getInstance().obtenerJugadorActual().mover(casilleroDestinoOptimus);
-
-        casilleroDestinoMenasor = Juego.getInstance().obtenerCasillero(10,8);
-        Juego.getInstance().obtenerJugadorActual().mover(casilleroDestinoMenasor); //2 TURNO PERDIDOS
-
-        casilleroDestinoOptimus = Juego.getInstance().obtenerCasillero(3,1);
-        Juego.getInstance().obtenerJugadorActual().mover(casilleroDestinoOptimus);
-
-        casilleroDestinoMenasor = Juego.getInstance().obtenerCasillero(10,7);
-        Juego.getInstance().obtenerJugadorActual().mover(casilleroDestinoMenasor); //3 TURNO PERDIDOS
-*/
-        int numero = 9;
-
-
-    }
-
-
-
-
-
-
-
 
 
 }

@@ -83,7 +83,8 @@ public class ContenedorTitulo extends BorderPane {
         BotonComenzarJuegoEventHandler nuevoJuegoHandler = new BotonComenzarJuegoEventHandler(stage,this,contenedorPrincipal);
         botonComenzarJuego.setOnAction(nuevoJuegoHandler);
 
-        this.setLeft(botonComenzarJuego);
+
+        this.setCenter(botonComenzarJuego);
     }
 
     public void pararMusicaDeFondo() {
