@@ -4,6 +4,7 @@ import modelo.*;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Excepciones.AlgoFormerInhabilitadoPorEsteTurno;
 import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
+import modelo.Excepciones.MovimientoInvalidoException;
 import modelo.algoformers.*;
 import modelo.bonus.BurbujaInmaculada;
 import modelo.bonus.DobleCanion;
@@ -11,6 +12,7 @@ import modelo.bonus.Flash;
 import modelo.zonas.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.ArrayList;
 
@@ -664,109 +666,137 @@ public class AlgoformerTest {
 
     }
 
-    @Test
+
+    @Test(expected = MovimientoInvalidoException.class)
     public void bonusFlashFuncionaCorrectamente(){
 
-        Juego.getInstance().generarTablero(50,50,false);
+        Juego.getInstance().iniciarJuego();
 
-        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
-        Megatron megatron = new Megatron(casilleroInicialMegatron);
+        Juego.getInstance().normalizarTablero();
 
-        Casillero casilleroInicialBonecrusher = Juego.getInstance().obtenerCasillero(50,50);
-        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicialBonecrusher);
+        Jugador jugador1 = Juego.getInstance().obtenerJugadorActual();
 
+        Casillero casilleroMegatron = Juego.getInstance().obtenerCasillero(25,25);
 
-        Casillero casilleroConBonusFlash = new Casillero(1,2,new Nube(), new Roca(), new Flash());
-        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
-        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,2);
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
 
+        megatron.obtenerObjetoEstado().ocuparCasillero(megatron,casilleroMegatron);
 
-        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
-        decepticons.add(megatron);
-        decepticons.add(bonecrusher);
-        decepticons.add(null);
+        jugador1.seleccionarAlgoformer(megatron);
 
-        Jugador jugador = new JugadorDecepticon(decepticons);
+        Casillero casilleroConBonus = new Casillero(24,25,new Nube(),new Roca(),new Flash());
 
-        jugador.seleccionarAlgoformer(megatron);
+        Juego.getInstance().modificarCasillero(casilleroConBonus);
 
-        jugador.mover(casilleroDestinoMegatron);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(24,25);
 
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,23);
+        jugador1.mover(casilleroDestinoMegatron);
 
-        jugador.mover(casilleroDestinoMegatron);
+        Jugador jugador2 = Juego.getInstance().obtenerJugadorActual();
 
-        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+        AlgoFormer optimus = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
 
-        jugador.seleccionarAlgoformer(bonecrusher);
-        Casillero casilleroDestinoBonecrusher = Juego.getInstance().obtenerCasillero(50,45);
-        jugador.mover(casilleroDestinoBonecrusher);
+        jugador2.seleccionarAlgoformer(optimus);
 
-        jugador.seleccionarAlgoformer(megatron);
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,44);
-        jugador.mover(casilleroDestinoMegatron);
+        jugador2.transformar();
+
+        jugador1.seleccionarAlgoformer(megatron);
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(9,25);
+
+        jugador1.mover(casilleroDestinoMegatron);
 
         Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
 
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,34);
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
 
-        jugador.mover(casilleroDestinoMegatron);
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(25,25);
+        jugador1.mover(casilleroDestinoMegatron);
 
-        Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(10,25);
+        jugador1.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(20,25);
+        jugador1.mover(casilleroDestinoMegatron);
 
     }
 
-    @Test
+    @Test(expected = MovimientoInvalidoException.class)
     public void bonusFlashFuncionaCorrectamenteEnModoHumanoide(){
 
-        Juego.getInstance().generarTablero(50,50,false);
+        Juego.getInstance().iniciarJuego();
 
-        Casillero casilleroInicialMegatron = Juego.getInstance().obtenerCasillero(1,1);
-        Megatron megatron = new Megatron(casilleroInicialMegatron);
+        Juego.getInstance().normalizarTablero();
 
-        Casillero casilleroInicialBonecrusher = Juego.getInstance().obtenerCasillero(50,50);
-        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicialBonecrusher);
+        Jugador jugador1 = Juego.getInstance().obtenerJugadorActual();
 
+        Casillero casilleroMegatron = Juego.getInstance().obtenerCasillero(25,25);
 
-        Casillero casilleroConBonusFlash = new Casillero(1,2,new Nube(), new Roca(), new Flash());
-        Juego.getInstance().modificarCasillero(casilleroConBonusFlash);
-        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,2);
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
 
+        megatron.obtenerObjetoEstado().ocuparCasillero(megatron,casilleroMegatron);
 
-        ArrayList<AlgoFormer> decepticons = new ArrayList<AlgoFormer>();
-        decepticons.add(megatron);
-        decepticons.add(bonecrusher);
-        decepticons.add(null);
+        jugador1.seleccionarAlgoformer(megatron);
 
-        Jugador jugador = new JugadorDecepticon(decepticons);
+        jugador1.transformar();
 
-        jugador.seleccionarAlgoformer(megatron);
+        Jugador jugador2 = Juego.getInstance().obtenerJugadorActual();
 
-        jugador.transformar();
+        AlgoFormer optimus = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
 
-        jugador.mover(casilleroDestinoMegatron);
+        jugador2.seleccionarAlgoformer(optimus);
 
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,5);
+        jugador2.transformar();
 
-        jugador.mover(casilleroDestinoMegatron);
+        Casillero casilleroConBonus = new Casillero(24,25,new Nube(),new Roca(),new Flash());
 
-        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+        Juego.getInstance().modificarCasillero(casilleroConBonus);
 
-        jugador.seleccionarAlgoformer(bonecrusher);
-        Casillero casilleroDestinoBonecrusher = Juego.getInstance().obtenerCasillero(50,45);
-        jugador.mover(casilleroDestinoBonecrusher);
+        Casillero casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(24,25);
 
-        jugador.seleccionarAlgoformer(megatron);
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,8);
-        jugador.mover(casilleroDestinoMegatron);
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroDestinoMegatron);
+
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(22,25);
+        jugador1.mover(casilleroDestinoMegatron);
 
         Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
 
-        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(1,10);
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
 
-        jugador.mover(casilleroDestinoMegatron);
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(20,25);
+        jugador1.mover(casilleroDestinoMegatron);
 
-        Assert.assertNotEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(17,25);
+        jugador1.mover(casilleroDestinoMegatron);
+
+        Assert.assertEquals(megatron.obtenerCasillero(), casilleroDestinoMegatron);
+
+        jugador2.seleccionarAlgoformer(optimus);
+        jugador2.transformar();
+
+        casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(15,25);
+        jugador1.mover(casilleroDestinoMegatron);
 
 
     }

@@ -395,5 +395,18 @@ public class Juego {
 
         return this.equipoGanador;
     }
+
+    public void normalizarTablero(){
+
+        for (int i = 1 ; i <= dimensionTableroX ; i++){
+            for(int j = 1 ; j <= dimensionTableroY ; j ++){
+
+                Casillero casilleroNormal = new Casillero(i,j,new Nube(),new Roca(),null);
+
+                Juego.getInstance().modificarCasillero(casilleroNormal);
+
+            }
+        }
+            }
 }
 
