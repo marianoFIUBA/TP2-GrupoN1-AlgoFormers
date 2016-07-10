@@ -48,7 +48,7 @@ public class ContenedorTitulo extends BorderPane {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, backgroundSize);
         this.setBackground(new Background(imagenDeFondo));
 
-        Button botonComenzarJuego = new Button();
+        final Button botonComenzarJuego = new Button();
         botonComenzarJuego.setPrefSize(500,75);
 
         Image imagenComenzarJuego = new Image("file:src/vista/imagenes/ComenzarJuego.png");
@@ -56,7 +56,7 @@ public class ContenedorTitulo extends BorderPane {
         BackgroundImage imagenDeFondoComenzarJuego = new BackgroundImage(imagenComenzarJuego, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT,backgroundSizeComenzarJuego);
         botonComenzarJuego.setBackground(new Background(imagenDeFondoComenzarJuego));
 
-        MotionBlur blur = new MotionBlur();
+        final MotionBlur blur = new MotionBlur();
 
         botonComenzarJuego.addEventHandler(MouseEvent.MOUSE_ENTERED,
             new EventHandler<MouseEvent>() {
