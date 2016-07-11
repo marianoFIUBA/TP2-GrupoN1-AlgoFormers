@@ -64,7 +64,7 @@ public class CasilleroTests {
 
         casillero2.alojarPorTierra(optimus);
 
-        Assert.assertTrue(optimus.obtenerPuntosDeVida() < 500);
+        Assert.assertTrue(optimus.obtenerPuntosDeVida() == 475);
 
     }
 
@@ -79,7 +79,7 @@ public class CasilleroTests {
 
         casillero2.alojarPorAire(ratchet);
 
-        Assert.assertTrue(ratchet.obtenerAtaque() < 35);
+        Assert.assertTrue(ratchet.obtenerAtaque() == 21);
 
     }
 
@@ -88,7 +88,7 @@ public class CasilleroTests {
 
         Casillero casillero1 = new Casillero(4, 5, new Nube(), new Roca(), null);
 
-        Optimus optimus = new Optimus(casillero1);
+        Optimus optimus = new Optimus(casillero1); //Cuando se crea el algoformer ya ocupa al Casillero en el constructor
 
         casillero1.desocupar();
 
@@ -104,6 +104,5 @@ public class CasilleroTests {
         Assert.assertTrue(casillero.tieneBonus());
 
     }
-
 
 }
