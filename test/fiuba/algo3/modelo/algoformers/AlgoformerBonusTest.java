@@ -20,6 +20,10 @@ public class AlgoformerBonusTest {
 
     //En esta clase se busca probar con tests de integración, las distintas modificaciones que provoca la capturación de los diferentes bonus.
 
+
+    //-------------------------------------------BONUS DOBLE CANION---------------------------------------------------------
+
+
     @Test
     public void bonusDobleCanionFuncionaCorrectamenteEnAmbosEstados(){
 
@@ -90,6 +94,8 @@ public class AlgoformerBonusTest {
 
     }
 
+    //---------------------------------------------BONUS BURBUJA INMACULADA---------------------------------------------------
+
     @Test
     public void bonusBurbujaInmaculadaFuncionaCorrectamente(){
 
@@ -148,6 +154,10 @@ public class AlgoformerBonusTest {
 
 
     }
+
+
+    //----------------------------------------BONUS FLASH-----------------------------------------------------
+
 
     @Test(expected = MovimientoInvalidoException.class)
     public void bonusFlashFuncionaCorrectamente(){

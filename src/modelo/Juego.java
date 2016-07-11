@@ -280,10 +280,22 @@ public class Juego {
 
     public Casillero obtenerCasilleroAleatorio() {
 
-        int posicionX = (int) (Math.random() * this.dimensionTableroX);
-        int posicionY = (int) (Math.random() * this.dimensionTableroY);
+        boolean coordenadasValidas = false;
+        int posicionX = 1;
+        int posicionY = 1;
+        while(!coordenadasValidas){
+            posicionX = (int) (Math.random() * this.dimensionTableroX);
+            posicionY = (int) (Math.random() * this.dimensionTableroY);
+            coordenadasValidas = this.coordenadasValidas(posicionX, posicionY);
+        }
 
         return this.obtenerCasillero(posicionX, posicionY);
+    }
+
+    private boolean coordenadasValidas(int posicionX, int posicionY){
+
+        String clave = String.valueOf(posicionX) + "." + String.valueOf(posicionY);
+        return this.casilleros.containsKey(clave);
     }
 
     public void asignarChispaAAlgoformer(AlgoFormer algoFormer) {

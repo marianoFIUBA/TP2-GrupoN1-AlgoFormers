@@ -38,25 +38,9 @@ public class Casillero {
     }
 
 
-    public int obtenerPosicionX(){
+    public int obtenerPosicionX(){return posicionX;}
 
-        return posicionX;
-    }
-
-    public int obtenerPosicionY() {
-        return posicionY;
-    }
-
-
-    public String obtenerSuperficie(){
-
-        return "";
-    }
-
-    public String obtenerZonaAerea(){
-
-        return "";
-    }
+    public int obtenerPosicionY() {return posicionY;}
 
     public void desocupar(){
 

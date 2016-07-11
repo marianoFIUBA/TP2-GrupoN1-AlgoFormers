@@ -31,7 +31,4 @@ public class AlgoformerTransformacionTest {
         Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
     }
 
-
-
-
 }

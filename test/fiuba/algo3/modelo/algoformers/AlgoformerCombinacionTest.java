@@ -48,7 +48,39 @@ public class AlgoformerCombinacionTest {
     @Test
     public void algoformerCombinadoSeDescombinaCorrectamente(){
 
-        
+        Juego.getInstance().iniciarJuego();
+
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
+        AlgoFormer bonecrusher = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer2();
+        AlgoFormer frenzy = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer3();
+        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(megatron);
+        Juego.getInstance().obtenerJugadorActual().combinarAlgoformers();
+
+        AlgoFormer optimus = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
+        AlgoFormer bumblebee = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer2();
+        AlgoFormer ratchet = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer3();
+        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(optimus);
+        Juego.getInstance().obtenerJugadorActual().combinarAlgoformers();
+
+        AlgoFormer menasor = Juego.getInstance().obtenerJugadorActual().obtenerCombinado();
+        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(menasor);
+        Juego.getInstance().obtenerJugadorActual().descombinarAlgoformers();
+
+        Juego.getInstance().pasarTurno();
+
+        AlgoFormer superion = Juego.getInstance().obtenerJugadorActual().obtenerCombinado();
+        Juego.getInstance().obtenerJugadorActual().seleccionarAlgoformer(superion);
+        Juego.getInstance().obtenerJugadorActual().descombinarAlgoformers();
+
+        Juego.getInstance().pasarTurno();
+
+        menasor = Juego.getInstance().obtenerJugadorActual().obtenerCombinado();
+        Assert.assertTrue(megatron.obtenerCasillero() != null && bonecrusher.obtenerCasillero() != null && frenzy.obtenerCasillero() != null);
+        Assert.assertEquals(menasor,null);
+
+        superion = Juego.getInstance().obtenerJugadorActual().obtenerCombinado();
+        Assert.assertTrue(optimus.obtenerCasillero() != null && bumblebee.obtenerCasillero() != null && ratchet.obtenerCasillero() != null);
+        Assert.assertEquals(superion,null);
 
     }
 

@@ -195,7 +195,6 @@ public abstract class Jugador {
         this.algoformer3.estado.ocuparCasillero(algoformer3, casillero3);
         this.algoformer3.setPuntosDeVida(puntosDevida);
 
-
         this.combinado = null;
     }
 

@@ -23,13 +23,13 @@ import org.junit.Test;
 
 public class AlgoformerTest {
 
-    @Test
+    /*@Test
     public void algoformerSeMueveACasilleroEperado() {
 
-        /*  Se genera tablero de 5x5 casilleros. El tercer parámetro indica que no deben generarse
+        *//*  Se genera tablero de 5x5 casilleros. El tercer parámetro indica que no deben generarse
             terrenos de forma aleatoria. Ésto es, el atributo tierra es "ROCOSO" y el atributo aire
             es "NUBE" para todos los csilleros del tablero.
-        */
+        *//*
         Juego.getInstance().generarTablero(5, 5, false);
 
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
@@ -39,9 +39,9 @@ public class AlgoformerTest {
         optimus.moverA(casilleroFinal,optimus);
 
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void algoformerSeTransformaEnAmbasDirecciones() {
 
 
@@ -57,9 +57,9 @@ public class AlgoformerTest {
 
         optimus.transformarseAModoAlterno();
         Assert.assertTrue(optimus.obtenerEstado() == "ALTERNO");
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void algoFormerAtacaSiEstaEnRango() {
 
         Juego.getInstance().generarTablero(5, 5, false);
@@ -104,7 +104,7 @@ public class AlgoformerTest {
 
         Assert.assertTrue(bumblebee.obtenerPuntosDeVida() == 350);
     }
-
+*/
     /*@Test
     public void testOptimusAtraviesaZonaRocosaSinProblemas() {
 
@@ -607,7 +607,7 @@ public class AlgoformerTest {
     }*/
 
 
-    @Test
+    /*@Test
     public void bonusBurbujaInmaculadaFuncionaCorrectamente(){
 
         Juego.getInstance().iniciarJuego();
@@ -664,7 +664,7 @@ public class AlgoformerTest {
         Assert.assertFalse(megatron.obtenerPuntosDeVida() == 550);
 
 
-    }
+    }*/
 
 
     /*@Test(expected = MovimientoInvalidoException.class)
@@ -892,7 +892,7 @@ public class AlgoformerTest {
 
     }*/
 
-    @Test
+    /*@Test
     public void sePierdeReferenciaDobleEntreElCasilleroYElAlgoformerAlMorirUnAlgoformerPorRecibirElAtaqueDeOtro(){
 
         Juego.getInstance().generarTablero(20,20,false);
@@ -911,9 +911,9 @@ public class AlgoformerTest {
 
         Assert.assertTrue(optimus.obtenerCasillero() == null && casilleroInicialOptimus.obtenerAlgoformer() == null);
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void algoformersSeCombinanCorrectamente(){
 
         Juego.getInstance().iniciarJuego();
@@ -944,7 +944,7 @@ public class AlgoformerTest {
         Assert.assertTrue(optimus.obtenerCasillero() == null && bumblebee.obtenerCasillero() == null && ratchet.obtenerCasillero() == null);
 
     }
-
+*/
 
 
 }
