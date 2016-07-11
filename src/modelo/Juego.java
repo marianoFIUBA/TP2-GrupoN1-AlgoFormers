@@ -280,9 +280,10 @@ public class Juego {
 
     public Casillero obtenerCasilleroAleatorio() {
 
-    boolean coordenadasValidas = false;
-    int posicionX = 1;
-    int posicionY = 1;
+
+        boolean coordenadasValidas = false;
+        int posicionX = 1;
+        int posicionY = 1;
         while(!coordenadasValidas){
             posicionX = (int) (Math.random() * this.dimensionTableroX);
             posicionY = (int) (Math.random() * this.dimensionTableroY);
@@ -297,6 +298,7 @@ public class Juego {
         String clave = String.valueOf(posicionX) + "." + String.valueOf(posicionY);
         return this.casilleros.containsKey(clave);
     }
+
 
     public Jugador obtenerJugadorActual() {
 
