@@ -3,6 +3,7 @@ package modelo.movimiento;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.EstrategiaDeMovimiento;
+import modelo.Excepciones.NoPuedeCambiarAModoAtrapadoEnNebulosaException;
 
 public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento {
 
@@ -38,7 +39,7 @@ public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento {
 
     @Override
     public void cambiarAModoAtrapadoEnNebulosa(){
-        //lanzar excepcion
+        throw new NoPuedeCambiarAModoAtrapadoEnNebulosaException();
     }
 
     @Override
@@ -53,7 +54,7 @@ public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento {
 
     @Override
     public void cambiarAModoNoEmpantanado() {
-
+        //lanzarExcepcion
     }
 
     public boolean estaEmpantanado(){ return this.empantanado; }
