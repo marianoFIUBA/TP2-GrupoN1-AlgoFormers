@@ -127,9 +127,11 @@ public abstract class Jugador {
 
             if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
 
-                throw new AlgoFormerInhabilitadoPorEsteTurno();
-
-
+                if (this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
+                    throw new AlgoFormerInhabilitadoPorEsteTurno();
+                } else {
+                    throw new HumanoideNoPuedeMoverSiEstaEnPantanoException();
+                }
             } else {try{
                         this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
                         this.finalizarTurno();

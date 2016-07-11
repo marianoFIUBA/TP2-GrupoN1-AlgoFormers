@@ -4,6 +4,8 @@ package modelo.movimiento;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.EstrategiaDeMovimiento;
+import modelo.Excepciones.NoEstaEnModoEmpantanadoException;
+import modelo.Excepciones.NoPuedeCambiarAModoEmpantanadoException;
 
 public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
@@ -46,7 +48,7 @@ public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
     @Override
     public void cambiarAModoEmpantanado(){
-        //lanzarExcepcion
+        throw new NoPuedeCambiarAModoEmpantanadoException();
     }
 
     @Override
@@ -59,7 +61,7 @@ public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 
     @Override
     public void cambiarAModoNoEmpantanado() {
-        
+        throw new NoEstaEnModoEmpantanadoException();
     }
 
     @Override

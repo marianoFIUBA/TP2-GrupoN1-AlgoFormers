@@ -280,6 +280,7 @@ public class Juego {
 
     public Casillero obtenerCasilleroAleatorio() {
 
+
         boolean coordenadasValidas = false;
         int posicionX = 1;
         int posicionY = 1;
@@ -298,14 +299,6 @@ public class Juego {
         return this.casilleros.containsKey(clave);
     }
 
-    public void asignarChispaAAlgoformer(AlgoFormer algoFormer) {
-
-        if (this.chispa.getCasillero().equals(algoFormer.obtenerCasillero())) {
-            this.chispa.setAlgoformer(algoFormer);
-        } else {
-            //lanzar excepcion
-        }
-    }
 
     public Jugador obtenerJugadorActual() {
 

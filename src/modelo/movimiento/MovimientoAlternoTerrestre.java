@@ -4,6 +4,7 @@ package modelo.movimiento;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.EstrategiaDeMovimiento;
+import modelo.Excepciones.NoPuedeCambiarAModoAtrapadoEnNebulosaException;
 
 public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
 
@@ -37,7 +38,7 @@ public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
 
     @Override
     public void cambiarAModoAtrapadoEnNebulosa(){
-        //lanzar excepcion
+        throw new NoPuedeCambiarAModoAtrapadoEnNebulosaException();
     }
 
     @Override
