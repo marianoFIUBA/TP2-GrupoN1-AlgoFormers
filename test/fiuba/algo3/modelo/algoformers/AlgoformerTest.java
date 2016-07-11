@@ -5,16 +5,20 @@ import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Excepciones.AlgoFormerInhabilitadoPorEsteTurno;
 import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
 import modelo.Excepciones.MovimientoInvalidoException;
-import modelo.algoformers.*;
+import modelo.algoformers.autobots.Bumblebee;
+import modelo.algoformers.autobots.Optimus;
+import modelo.algoformers.autobots.Ratchet;
+import modelo.algoformers.autobots.Superion;
+import modelo.algoformers.decepticons.Bonecrusher;
+import modelo.algoformers.decepticons.Frenzy;
+import modelo.algoformers.decepticons.Megatron;
+import modelo.algoformers.decepticons.Menasor;
 import modelo.bonus.BurbujaInmaculada;
 import modelo.bonus.DobleCanion;
 import modelo.bonus.Flash;
 import modelo.zonas.*;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
-import java.util.ArrayList;
 
 
 public class AlgoformerTest {
@@ -111,7 +115,7 @@ public class AlgoformerTest {
 
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 6);
 
-        Optimus optimus = new Optimus(casilleroInicial); //Los algoformers se crean en estado ALTERNO.
+        Optimus optimus = new Optimus(casilleroInicial); //Los algoformers se crean en estados ALTERNO.
 
         optimus.moverA(casilleroFinal,optimus);
 
@@ -133,7 +137,6 @@ public class AlgoformerTest {
     @Test
     public void testBumblebeeAtraviesaZonaRocosaSinProblemas() {
 
-
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 6);
@@ -152,7 +155,6 @@ public class AlgoformerTest {
 
         Assert.assertEquals(bumblebee.obtenerCasillero(),casilleroFinal);
         Assert.assertTrue(bumblebee.obtenerAtaque() == 40 && bumblebee.obtenerVelocidad() == 2 && bumblebee.obtenerPuntosDeVida() == 350);
-
 
 
     }
@@ -178,7 +180,6 @@ public class AlgoformerTest {
 
         Assert.assertEquals(ratchet.obtenerCasillero(),casilleroFinal);
         Assert.assertTrue(ratchet.obtenerAtaque() == 5 && ratchet.obtenerVelocidad() == 1 && ratchet.obtenerPuntosDeVida() == 150);
-
 
     }
 
@@ -291,11 +292,11 @@ public class AlgoformerTest {
 
         Juego.getInstance().generarTablero(20, 20, false);
         Casillero casilleroInicial = Juego.getInstance().obtenerCasillero(1, 1);
-        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 9);    //El algoformer en estado ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
+        Casillero casilleroDestino = Juego.getInstance().obtenerCasillero(1, 9);    //El algoformer en estados ALTERNO TERRESTRE pierde 2 puntos de velocidad en la zona pantanosa, por eso no llega al destino deseado.
         Casillero casilleroConPantano = new Casillero(1, 5, new Nube(), new Pantano(), null);
         Juego.getInstance().modificarCasillero(casilleroConPantano);
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 8);  //Se modifica un casillero del tablero por un casillero con zona pantanosa.
-        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicial);    //Optimus se crea en estado ALTERNO TERRESTRE.
+        Bonecrusher bonecrusher = new Bonecrusher(casilleroInicial);    //Optimus se crea en estados ALTERNO TERRESTRE.
 
         bonecrusher.moverA(casilleroDestino,bonecrusher);
 

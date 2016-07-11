@@ -1,6 +1,6 @@
 package modelo;
 
-import modelo.algoformers.Menasor;
+import modelo.algoformers.decepticons.Menasor;
 
 import java.util.ArrayList;
 

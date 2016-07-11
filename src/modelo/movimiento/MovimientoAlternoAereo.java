@@ -1,5 +1,9 @@
-package modelo;
+package modelo.movimiento;
 
+
+import modelo.AlgoFormer;
+import modelo.Casillero;
+import modelo.EstrategiaDeMovimiento;
 
 public class MovimientoAlternoAereo extends EstrategiaDeMovimiento {
 

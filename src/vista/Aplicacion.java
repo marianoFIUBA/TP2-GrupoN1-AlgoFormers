@@ -232,8 +232,8 @@ public class Aplicacion extends Application{
 
         /*if (algoformerActual != null){
             String nombreAlgoformerActual = algoformerActual.obtenerNombre();
-            String estado = algoformerActual.obtenerEstado();
-            imagenAlgoformer = this.obtenerImagenAlgoformer(nombreAlgoformerActual, estado);
+            String estados = algoformerActual.obtenerEstado();
+            imagenAlgoformer = this.obtenerImagenAlgoformer(nombreAlgoformerActual, estados);
         } else {
             imagenAlgoformer = new Image("file:src/vista/imagenes/SinSeleccion.png");
         }

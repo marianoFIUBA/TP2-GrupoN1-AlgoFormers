@@ -1,8 +1,12 @@
 package modelo;
 
-import jdk.nashorn.internal.parser.JSONParser;
 import modelo.Excepciones.CasilleroNoPerteneceAlTableroException;
-import modelo.algoformers.*;
+import modelo.algoformers.autobots.Bumblebee;
+import modelo.algoformers.autobots.Optimus;
+import modelo.algoformers.autobots.Ratchet;
+import modelo.algoformers.decepticons.Bonecrusher;
+import modelo.algoformers.decepticons.Frenzy;
+import modelo.algoformers.decepticons.Megatron;
 import modelo.bonus.BurbujaInmaculada;
 import modelo.bonus.DobleCanion;
 import modelo.bonus.Flash;
@@ -12,7 +16,6 @@ import org.json.simple.JSONObject;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ListIterator;

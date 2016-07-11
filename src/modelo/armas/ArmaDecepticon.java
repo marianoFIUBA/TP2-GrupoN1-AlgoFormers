@@ -1,11 +1,14 @@
-package modelo;
+package modelo.armas;
 
+import modelo.AlgoFormer;
+import modelo.Arma;
+import modelo.Casillero;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 
 public class ArmaDecepticon extends Arma {
 
     @Override
-    public void atacar(AlgoFormer algoformer, int ataque,int distanciaDeAtque, Casillero casilleroOrigen) {
+    public void atacar(AlgoFormer algoformer, int ataque, int distanciaDeAtque, Casillero casilleroOrigen) {
 
         if (this.estaEnRango(casilleroOrigen,algoformer.obtenerCasillero(),distanciaDeAtque)){
 

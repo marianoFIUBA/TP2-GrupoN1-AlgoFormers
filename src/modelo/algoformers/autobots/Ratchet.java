@@ -1,7 +1,10 @@
-package modelo.algoformers;
+package modelo.algoformers.autobots;
 
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoAereo;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 
 public class Ratchet extends Autobot{
@@ -18,12 +21,12 @@ public class Ratchet extends Autobot{
 
 /*    public void transformarseAModoAlterno(){
 
-        this.estado = this.estado.transformarseAModoAlterno(35, 2, 8);
+        this.estados = this.estados.transformarseAModoAlterno(35, 2, 8);
     }
 
     public void transformarseAModoHumanoide(){
 
-        this.estado = this.estado.transformarseAModoHumanoide(5, 5, 1);
+        this.estados = this.estados.transformarseAModoHumanoide(5, 5, 1);
     }*/
 
     public void transformarseAModoAlterno(){

@@ -1,7 +1,6 @@
 package modelo;
 
-import modelo.algoformers.Optimus;
-import modelo.algoformers.Superion;
+import modelo.algoformers.autobots.Superion;
 
 import java.util.ArrayList;
 

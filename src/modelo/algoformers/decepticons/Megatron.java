@@ -1,7 +1,10 @@
-package modelo.algoformers;
+package modelo.algoformers.decepticons;
 
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoAereo;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 public class Megatron extends Decepticon{
 
@@ -18,12 +21,12 @@ public class Megatron extends Decepticon{
 
 /*    public void transformarseAModoAlterno() {
 
-        this.estado = this.estado.transformarseAModoAlterno(55, 2, 8);
+        this.estados = this.estados.transformarseAModoAlterno(55, 2, 8);
     }
 
     public void transformarseAModoHumanoide() {
 
-        this.estado = this.estado.transformarseAModoHumanoide(10, 3, 1);
+        this.estados = this.estados.transformarseAModoHumanoide(10, 3, 1);
     }*/
 
     public void transformarseAModoAlterno(){

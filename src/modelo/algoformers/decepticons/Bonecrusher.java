@@ -1,6 +1,9 @@
-package modelo.algoformers;
+package modelo.algoformers.decepticons;
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoTerrestre;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 public class Bonecrusher extends Decepticon{
 
@@ -17,12 +20,12 @@ public class Bonecrusher extends Decepticon{
 
 /*    public void transformarseAModoAlterno(){
 
-        this.estado = this.estado.transformarseAModoAlterno(30, 3, 8);
+        this.estados = this.estados.transformarseAModoAlterno(30, 3, 8);
     }
 
     public void transformarseAModoHumanoide(){
 
-        this.estado = this.estado.transformarseAModoHumanoide(30, 3, 1);
+        this.estados = this.estados.transformarseAModoHumanoide(30, 3, 1);
     }*/
 
     public void transformarseAModoAlterno(){

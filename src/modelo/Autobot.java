@@ -2,6 +2,7 @@ package modelo;
 
 
 import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
+import modelo.armas.ArmaAutobot;
 
 public abstract class Autobot extends AlgoFormer {
 

@@ -1,7 +1,10 @@
-package modelo.algoformers;
+package modelo.algoformers.decepticons;
 
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoTerrestre;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 public class Frenzy extends Decepticon{
 
@@ -16,12 +19,12 @@ public class Frenzy extends Decepticon{
 
 /*    public void transformarseAModoAlterno(){
 
-        this.estado = this.estado.transformarseAModoAlterno(25, 2, 6);
+        this.estados = this.estados.transformarseAModoAlterno(25, 2, 6);
     }
 
     public void transformarseAModoHumanoide(){
 
-        this.estado = this.estado.transformarseAModoHumanoide(10, 5, 2);
+        this.estados = this.estados.transformarseAModoHumanoide(10, 5, 2);
     }*/
 
     public void transformarseAModoAlterno(){

@@ -1,6 +1,9 @@
 package modelo;
 
+import modelo.AlgoFormer;
+import modelo.Casillero;
 import modelo.Excepciones.MovimientoInvalidoException;
+import modelo.Juego;
 
 import java.util.ArrayList;
 
@@ -23,7 +26,7 @@ public abstract class EstrategiaDeMovimiento {
 
     public abstract boolean recibeDaniosPorEspinas();
 
-    void mover(Casillero destino, AlgoFormer algoFormer) {
+    public void mover(Casillero destino, AlgoFormer algoFormer) {
 
         Casillero casilleroActual = algoFormer.obtenerCasillero();
 

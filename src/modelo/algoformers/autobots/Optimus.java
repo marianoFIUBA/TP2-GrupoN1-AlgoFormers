@@ -1,7 +1,10 @@
-package modelo.algoformers;
+package modelo.algoformers.autobots;
 
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoTerrestre;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 public class Optimus extends Autobot{
 
@@ -16,12 +19,12 @@ public class Optimus extends Autobot{
 
  /*   public void transformarseAModoAlterno(){
 
-        this.estado = this.estado.transformarseAModoAlterno(15, 4, 5);
+        this.estados = this.estados.transformarseAModoAlterno(15, 4, 5);
     }
 
     public void transformarseAModoHumanoide(){
 
-        this.estado = this.estado.transformarseAModoHumanoide(50, 2, 2);
+        this.estados = this.estados.transformarseAModoHumanoide(50, 2, 2);
     }*/
 
     public void transformarseAModoAlterno(){

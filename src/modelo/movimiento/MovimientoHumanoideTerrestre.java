@@ -1,16 +1,19 @@
-package modelo;
+package modelo.movimiento;
 
+import modelo.AlgoFormer;
+import modelo.Casillero;
+import modelo.EstrategiaDeMovimiento;
 
-public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
+public class MovimientoHumanoideTerrestre extends EstrategiaDeMovimiento {
 
     private boolean empantanado;
 
-    public MovimientoAlternoTerrestre(){
+    public MovimientoHumanoideTerrestre(){
 
         this.empantanado = false;
     }
 
-    public MovimientoAlternoTerrestre(EstrategiaDeMovimiento estrategiaAnterior){
+    public MovimientoHumanoideTerrestre(EstrategiaDeMovimiento estrategiaAnterior){
 
         this.empantanado = estrategiaAnterior.estaEmpantanado();
     }
@@ -18,6 +21,7 @@ public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
     public void ocuparCasillero(AlgoFormer algoFormer, Casillero casillero){
 
         casillero.alojarPorTierra(algoFormer);
+
     }
 
     public Casillero obtenerSiguienteCasillero(Casillero actual,Casillero destino){
@@ -26,7 +30,8 @@ public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
 
         if (!this.empantanado){
 
-            siguienteCasillero = this.calcularSiguienteCasillero(actual,destino);}
+            siguienteCasillero = this.calcularSiguienteCasillero(actual, destino);
+        }
 
         return siguienteCasillero;
     }
@@ -41,23 +46,17 @@ public class MovimientoAlternoTerrestre extends EstrategiaDeMovimiento {
         this.empantanado = true;
     }
 
-    @Override
+
     public void pasarTurno(){
 
-        this.empantanado = false;
     }
 
     @Override
     public void cambiarAModoNoEmpantanado() {
 
-        this.empantanado = false;
-
     }
 
-    @Override
-    public boolean estaEmpantanado() {
-        return this.empantanado;
-    }
+    public boolean estaEmpantanado(){ return this.empantanado; }
 
     @Override
     public boolean recibeDaniosPorEspinas() {

@@ -1,7 +1,5 @@
 package modelo;
 
-import modelo.Excepciones.MovimientoInvalidoException;
-
 public abstract class AlgoFormer {
 
     protected String nombre;

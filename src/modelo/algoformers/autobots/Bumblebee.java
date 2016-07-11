@@ -1,7 +1,10 @@
-package modelo.algoformers;
+package modelo.algoformers.autobots;
 
 
 import modelo.*;
+import modelo.estados.EstadoAlterno;
+import modelo.movimiento.MovimientoAlternoTerrestre;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 public class Bumblebee extends Autobot{
 
@@ -16,12 +19,12 @@ public class Bumblebee extends Autobot{
 
 /*    public void transformarseAModoAlterno(){
 
-        this.estado = this.estado.transformarseAModoAlterno(20, 3, 5);
+        this.estados = this.estados.transformarseAModoAlterno(20, 3, 5);
     }
 
     public void transformarseAModoHumanoide(){
 
-        this.estado = this.estado.transformarseAModoHumanoide(40, 1, 2);
+        this.estados = this.estados.transformarseAModoHumanoide(40, 1, 2);
     }*/
 
     public void transformarseAModoAlterno(){

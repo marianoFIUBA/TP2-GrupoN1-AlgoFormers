@@ -1,19 +1,21 @@
-package modelo.algoformers;
+package modelo.algoformers.autobots;
 
 import modelo.*;
 import modelo.Excepciones.UnidadCombinadaNoPuedeTransformarseException;
+import modelo.estados.EstadoHumanoide;
+import modelo.movimiento.MovimientoHumanoideTerrestre;
 
 /**
  * Created by Mariano on 25/06/2016.
  */
-public class Menasor extends Decepticon {
+public class Superion extends Autobot {
 
-    public Menasor(Casillero casillero, double puntosDevida){
+    public Superion(Casillero casillero, double puntosDevida){
 
-        super("MENASOR", casillero);
+        super("SUPERION", casillero);
         this.puntosDeVida = puntosDevida;
-        this.puntosDeVidaIniciales = puntosDeVida;
-        this.estado = new EstadoHumanoide(115, 2, 2, new MovimientoHumanoideTerrestre());
+        this.puntosDeVidaIniciales = puntosDevida;
+        this.estado = new EstadoHumanoide(100, 2, 3, new MovimientoHumanoideTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
 
@@ -29,6 +31,5 @@ public class Menasor extends Decepticon {
     public  void  cambiarAModoPostPsionico(){
         //lanzar excepcion
     }
-
 
 }
