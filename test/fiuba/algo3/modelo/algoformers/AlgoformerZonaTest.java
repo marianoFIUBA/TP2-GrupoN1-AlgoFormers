@@ -1,9 +1,8 @@
 package fiuba.algo3.modelo.algoformers;
 
-import javafx.scene.control.MenuBar;
 import modelo.AlgoFormer;
 import modelo.Casillero;
-import modelo.Excepciones.AlgoFormerInhabilitadoPorEsteTurno;
+import modelo.Excepciones.AlgoFormerAtrapadoEnNebulosaNoSePuedeMover;
 import modelo.Juego;
 import modelo.Jugador;
 import modelo.algoformers.autobots.Bumblebee;
@@ -522,7 +521,7 @@ public class AlgoformerZonaTest {
 
     //-------------------------------------ZONA CON NEBULOSA DE ANDROMEDA-----------------------------------------------
 
-    @Test(expected= AlgoFormerInhabilitadoPorEsteTurno.class)
+    @Test(expected= AlgoFormerAtrapadoEnNebulosaNoSePuedeMover.class)
     public void algoFormerEnEstadoAlternoAereoQuedaAtrapadoEnNebulosaDeAndromedaPorTresTurnos(){
 
         Juego.getInstance().iniciarJuego();

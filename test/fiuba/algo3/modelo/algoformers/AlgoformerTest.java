@@ -1,25 +1,5 @@
 package fiuba.algo3.modelo.algoformers;
 
-import modelo.*;
-import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
-import modelo.Excepciones.AlgoFormerInhabilitadoPorEsteTurno;
-import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
-import modelo.Excepciones.MovimientoInvalidoException;
-import modelo.algoformers.autobots.Bumblebee;
-import modelo.algoformers.autobots.Optimus;
-import modelo.algoformers.autobots.Ratchet;
-import modelo.algoformers.autobots.Superion;
-import modelo.algoformers.decepticons.Bonecrusher;
-import modelo.algoformers.decepticons.Frenzy;
-import modelo.algoformers.decepticons.Megatron;
-import modelo.algoformers.decepticons.Menasor;
-import modelo.bonus.BurbujaInmaculada;
-import modelo.bonus.DobleCanion;
-import modelo.bonus.Flash;
-import modelo.zonas.*;
-import org.junit.Assert;
-import org.junit.Test;
-
 
 public class AlgoformerTest {
 
@@ -484,7 +464,7 @@ public class AlgoformerTest {
 
     }*/
 
-    /*@Test(expected= AlgoFormerInhabilitadoPorEsteTurno.class)
+    /*@Test(expected= AlgoFormerAtrapadoEnNebulosaNoSePuedeMover.class)
     public void algoFormerEnEstadoAlternoAereoQuedaAtrapadoEnNebulosaDeAndromedaPorTresTurnos(){
 
         Juego.getInstance().iniciarJuego();

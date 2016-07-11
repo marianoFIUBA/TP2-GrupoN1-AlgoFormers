@@ -128,7 +128,7 @@ public abstract class Jugador {
             if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
 
                 if (this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
-                    throw new AlgoFormerInhabilitadoPorEsteTurno();
+                    throw new AlgoFormerAtrapadoEnNebulosaNoSePuedeMover();
                 } else {
                     throw new HumanoideNoPuedeMoverSiEstaEnPantanoException();
                 }

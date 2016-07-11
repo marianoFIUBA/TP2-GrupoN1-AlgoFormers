@@ -1,21 +1,17 @@
 package vista.eventos;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
-import modelo.Excepciones.CasilleroFueraDeRangoException;
+import modelo.Excepciones.AlgoFormerAtrapadoEnNebulosaNoSePuedeMover;
+import modelo.Excepciones.HumanoideNoPuedeMoverSiEstaEnPantanoException;
 import modelo.Excepciones.MovimientoInvalidoException;
 import modelo.Juego;
 import modelo.Jugador;
 import vista.ContenedorPrincipal;
 import javafx.scene.control.ButtonType;
 import java.util.*;
-
-import javax.xml.transform.Result;
 
 /**
  * Created by Mariano on 03/07/2016.
@@ -54,6 +50,22 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
                 alertaCasilleroFueraDeAlcance.setTitle("CUIDADO!");
                 alertaCasilleroFueraDeAlcance.setHeaderText("El casillero al cual te que querés mover se encuentra fuera del alcance de tu Algoformer. ¡Probá con otro!");
                 alertaCasilleroFueraDeAlcance.show();
+            } catch (AlgoFormerAtrapadoEnNebulosaNoSePuedeMover ex){
+
+                Alert alertaAlgoFormerAtrapadoEnNebulosa = new Alert(Alert.AlertType.WARNING);
+                alertaAlgoFormerAtrapadoEnNebulosa.initOwner(stage);
+                alertaAlgoFormerAtrapadoEnNebulosa.setTitle("CUIDADO!");
+                alertaAlgoFormerAtrapadoEnNebulosa.setHeaderText("El algoformer al cual querés mover se encuentra atrapado en una nebulosa. ¡Probá con otro!");
+                alertaAlgoFormerAtrapadoEnNebulosa.show();
+
+            } catch(HumanoideNoPuedeMoverSiEstaEnPantanoException ex){
+
+                Alert alertaAlgoFormerAtrapadoEnPantano = new Alert(Alert.AlertType.WARNING);
+                alertaAlgoFormerAtrapadoEnPantano.initOwner(stage);
+                alertaAlgoFormerAtrapadoEnPantano.setTitle("CUIDADO!");
+                alertaAlgoFormerAtrapadoEnPantano.setHeaderText("El algoformer al cual querés mover se encuentra atrapado en un pantano. Transformalo para poder moverlo.");
+                alertaAlgoFormerAtrapadoEnPantano.show();
+
             }
 
         }

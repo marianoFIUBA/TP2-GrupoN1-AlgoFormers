@@ -206,10 +206,14 @@
 	</target>
 
 	<target name="ejecutar.aplicacion" depends="empaquetar">
-		<java classname="fiuba.algo3.ejemplo1.Foo" fork="true">
+		<java classname="vista.Aplicacion" fork="true">
 			<classpath refid="classpath" />
-			<classpath location="${build}/dist/algo3.jar" />
+			<classpath location="${build}/vista/Aplicacion.jar" />
 		</java>
 	</target>
-
+	
+    <target name="ejecutar.juego">
+        <java jar="TP2-GrupoN1-AlgoFormers.jar" fork="true"/>
+    </target>
+	
 </project>

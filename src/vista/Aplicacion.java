@@ -29,7 +29,7 @@ public class Aplicacion extends Application{
 
     MediaPlayer mediaPlayer;
 
-    public static void main(String[] args) {
+    final static void main(String[] args) {
         launch(args);
     }
 
