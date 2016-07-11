@@ -132,6 +132,7 @@ public abstract class AlgoFormer {
 
         if (!this.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()) {
             this.casillero.desocupar();
+            this.casillero = null;
         }
     }
 
