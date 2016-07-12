@@ -2,8 +2,6 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import modelo.Excepciones.NoPuedeTransformarseAModoAlternoException;
-import modelo.Excepciones.NoPuedeTransformarseAModoHumaoideException;
 import modelo.Excepciones.UnidadCombinadaNoPuedeTransformarseException;
 import modelo.Juego;
 import modelo.Jugador;

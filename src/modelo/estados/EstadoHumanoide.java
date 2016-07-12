@@ -3,7 +3,7 @@ package modelo.estados;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.EstadoAlgoFormer;
-import modelo.Excepciones.NoPuedeTransformarseAModoHumaoideException;
+import modelo.Excepciones.NoPuedeTransformarseAModoHumanoideException;
 import modelo.EstrategiaDeMovimiento;
 
 public class EstadoHumanoide implements EstadoAlgoFormer {
@@ -26,14 +26,14 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
         this.ataque = ataque;
-        this.distanciaDeAtaque = ataque;  //Ataque ???
+        this.distanciaDeAtaque = ataque;
         this.velocidad = velocidad;
         this.movimiento = movimiento;
     }
 
     @Override
     public EstadoAlgoFormer transformarseAModoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
-        throw new NoPuedeTransformarseAModoHumaoideException();
+        throw new NoPuedeTransformarseAModoHumanoideException();
     }
 
     @Override

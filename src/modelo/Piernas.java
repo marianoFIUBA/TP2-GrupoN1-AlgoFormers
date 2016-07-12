@@ -43,4 +43,11 @@ public class Piernas {
         return this.turnosRestantesFlash > 0;
 
     }
+
+    public int obtenerTurnosRestantesFlash(){
+
+        return this.turnosRestantesFlash;
+
+    }
+
 }
