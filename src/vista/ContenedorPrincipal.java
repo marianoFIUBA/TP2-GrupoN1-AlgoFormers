@@ -17,6 +17,9 @@ import javafx.util.Duration;
 import modelo.AlgoFormer;
 import modelo.Casillero;
 import modelo.Juego;
+import modelo.bonus.BurbujaInmaculada;
+import modelo.bonus.DobleCanion;
+import modelo.bonus.Flash;
 import vista.eventos.BotonAccionAlgoformerHandler;
 import vista.eventos.BotonAccionCasilleroHandler;
 
@@ -376,7 +379,7 @@ public class ContenedorPrincipal extends BorderPane {
         VBox referencias = new VBox();
 
         Label lblTitulo = new Label("REFERENCIAS DE ZONAS");
-
+        Label lblTitulo2 = new Label("REFERENCIAS DE BONUS");
 
         referencias.getChildren().add(lblTitulo);
         referencias.getChildren().add(this.generarReferencia("  Roca", "#C0C0C0"));
@@ -385,6 +388,10 @@ public class ContenedorPrincipal extends BorderPane {
         referencias.getChildren().add(this.generarReferencia("  Nube", "#FFFFFF"));
         referencias.getChildren().add(this.generarReferencia("  Nebulosa", "#990099"));
         referencias.getChildren().add(this.generarReferencia("  Tormenta", "#3333FF"));
+        referencias.getChildren().add(lblTitulo2);
+        referencias.getChildren().add(this.generarReferenciaBonus("  Doble Cañon", this.buscador.obtenerPathImagenBonus(new DobleCanion())));
+        referencias.getChildren().add(this.generarReferenciaBonus("  Burbuja Imnaculada", this.buscador.obtenerPathImagenBonus(new BurbujaInmaculada())));
+        referencias.getChildren().add(this.generarReferenciaBonus("  Flash", this.buscador.obtenerPathImagenBonus(new Flash())));
 
 
         return referencias;
@@ -402,6 +409,28 @@ public class ContenedorPrincipal extends BorderPane {
         lblColreferencia.setStyle(propiedadBackground);
 
         referencia.getChildren().addAll(lblColreferencia, lblreferencia);
+
+        return referencia;
+    }
+
+    private HBox generarReferenciaBonus(String nombre, String pathImagen){
+
+        HBox referencia = new HBox();
+
+        Label lblreferencia = new Label(nombre);
+        Label lblImagenReferencia = new Label();
+        lblImagenReferencia.setPrefSize(30, 30);
+
+        Image imagen = new Image(pathImagen);
+        BackgroundSize backgroundLabel = new BackgroundSize(20, 20, true, false, false, true);
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, backgroundLabel);
+        lblImagenReferencia.setBackground(new Background(imagenDeFondo));
+
+
+        StackPane stack = new StackPane();
+
+        stack.getChildren().add(lblreferencia);
+        referencia.getChildren().addAll(lblImagenReferencia, stack);
 
         return referencia;
     }
