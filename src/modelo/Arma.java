@@ -57,4 +57,9 @@ public abstract class Arma {
         return this.turnosRestantesDobleCanion > 0;
 
     }
+
+    public int obtenerTurnosRestantes() {
+
+        return this.turnosRestantesDobleCanion;
+    }
 }

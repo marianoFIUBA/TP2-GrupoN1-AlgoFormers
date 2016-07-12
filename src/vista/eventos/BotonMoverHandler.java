@@ -4,9 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import modelo.Excepciones.AlgoFormerAtrapadoEnNebulosaNoSePuedeMover;
-import modelo.Excepciones.HumanoideNoPuedeMoverSiEstaEnPantanoException;
-import modelo.Excepciones.MovimientoInvalidoException;
+import modelo.Excepciones.*;
 import modelo.Juego;
 import modelo.Jugador;
 import vista.ContenedorPrincipal;
@@ -50,7 +48,7 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
                 alertaCasilleroFueraDeAlcance.setTitle("CUIDADO!");
                 alertaCasilleroFueraDeAlcance.setHeaderText("El casillero al cual te que querés mover se encuentra fuera del alcance de tu Algoformer. ¡Probá con otro!");
                 alertaCasilleroFueraDeAlcance.show();
-            } catch (AlgoFormerAtrapadoEnNebulosaNoSePuedeMover ex){
+            } catch (AlgoFormerAtrapadoEnNebulosaNoSePuedeMoverException ex){
 
                 Alert alertaAlgoFormerAtrapadoEnNebulosa = new Alert(Alert.AlertType.WARNING);
                 alertaAlgoFormerAtrapadoEnNebulosa.initOwner(stage);

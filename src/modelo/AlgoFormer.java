@@ -216,4 +216,21 @@ public abstract class AlgoFormer {
         return this.nombreDeEquipo;
     }
 
+    public Armadura obtenerArmadura() {
+
+        return this.armadura;
+
+    }
+
+    public Arma obtenerArma(){
+
+        return this.arma;
+
+    }
+
+    public Piernas obtenerPiernas(){
+
+        return this.piernas;
+
+    }
 }

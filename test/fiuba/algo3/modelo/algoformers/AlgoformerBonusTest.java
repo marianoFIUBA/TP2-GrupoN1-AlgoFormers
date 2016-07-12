@@ -2,6 +2,9 @@ package fiuba.algo3.modelo.algoformers;
 
 import modelo.AlgoFormer;
 import modelo.Casillero;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusDobleCanionException;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusFlashException;
 import modelo.Excepciones.MovimientoInvalidoException;
 import modelo.Juego;
 import modelo.Jugador;
@@ -94,6 +97,41 @@ public class AlgoformerBonusTest {
 
     }
 
+    @Test
+    public void algoformerNoPuedeCapturarBonusDobleCanionSiYaLoPosee(){
+
+        Juego.getInstance().iniciarJuego();
+
+        Juego.getInstance().normalizarTablero();
+
+        Jugador jugador1 = Juego.getInstance().obtenerJugadorActual();
+
+        Casillero casilleroConBonus1 = new Casillero(24, 25, new Nube(), new Roca(), new DobleCanion());
+        Juego.getInstance().modificarCasillero(casilleroConBonus1);
+
+        Casillero casilleroConBonus2 = new Casillero(23, 25, new Nube(), new Roca(), new DobleCanion());
+        Juego.getInstance().modificarCasillero(casilleroConBonus2);
+
+        Casillero casilleroMegatron = Juego.getInstance().obtenerCasillero(25, 25);
+
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
+        megatron.obtenerObjetoEstado().ocuparCasillero(megatron, casilleroMegatron);
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus1);
+
+        Juego.getInstance().pasarTurno();
+        Juego.getInstance().pasarTurno();
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus2);
+
+        Assert.assertTrue(megatron.obtenerArma().obtenerTurnosRestantes() == 2 );
+
+
+    }
+
+
     //---------------------------------------------BONUS BURBUJA INMACULADA---------------------------------------------------
 
     @Test
@@ -154,6 +192,42 @@ public class AlgoformerBonusTest {
 
 
     }
+
+    @Test
+    public void algoformerNoPuedeCapturarBonusBurbujaInmaculadaSiYaLoPosee() {
+
+        Juego.getInstance().iniciarJuego();
+
+        Juego.getInstance().normalizarTablero();
+
+        Jugador jugador1 = Juego.getInstance().obtenerJugadorActual();
+
+        Casillero casilleroConBonus1 = new Casillero(24, 25, new Nube(), new Roca(), new BurbujaInmaculada());
+        Juego.getInstance().modificarCasillero(casilleroConBonus1);
+
+        Casillero casilleroConBonus2 = new Casillero(23, 25, new Nube(), new Roca(), new BurbujaInmaculada());
+        Juego.getInstance().modificarCasillero(casilleroConBonus2);
+
+        Casillero casilleroMegatron = Juego.getInstance().obtenerCasillero(25, 25);
+
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
+        megatron.obtenerObjetoEstado().ocuparCasillero(megatron, casilleroMegatron);
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus1);
+
+        Juego.getInstance().pasarTurno();
+        Juego.getInstance().pasarTurno();
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus2);
+
+        Assert.assertTrue(megatron.obtenerArmadura().obtenerTurnosPendientes() == 1 );
+
+
+    }
+
+
 
 
     //----------------------------------------BONUS FLASH-----------------------------------------------------
@@ -353,6 +427,39 @@ public class AlgoformerBonusTest {
         casilleroDestinoMegatron = Juego.getInstance().obtenerCasillero(15,25);
         jugador1.seleccionarAlgoformer(megatron);
         jugador1.mover(casilleroDestinoMegatron);
+
+    }
+
+    @Test
+    public void algoformerNoPuedeCapturarBonusFlashSiYaLoPosee() {
+
+        Juego.getInstance().iniciarJuego();
+
+        Juego.getInstance().normalizarTablero();
+
+        Jugador jugador1 = Juego.getInstance().obtenerJugadorActual();
+
+        Casillero casilleroConBonus1 = new Casillero(24, 25, new Nube(), new Roca(), new Flash());
+        Juego.getInstance().modificarCasillero(casilleroConBonus1);
+
+        Casillero casilleroConBonus2 = new Casillero(23, 25, new Nube(), new Roca(), new Flash());
+        Juego.getInstance().modificarCasillero(casilleroConBonus2);
+
+        Casillero casilleroMegatron = Juego.getInstance().obtenerCasillero(25, 25);
+
+        AlgoFormer megatron = Juego.getInstance().obtenerJugadorActual().obtenerAlgoformer1();
+        megatron.obtenerObjetoEstado().ocuparCasillero(megatron, casilleroMegatron);
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus1);
+
+        Juego.getInstance().pasarTurno();
+        Juego.getInstance().pasarTurno();
+
+        jugador1.seleccionarAlgoformer(megatron);
+        jugador1.mover(casilleroConBonus2);
+
+        Assert.assertTrue(megatron.obtenerPiernas().obtenerTurnosRestantes() == 2 );
 
     }
 

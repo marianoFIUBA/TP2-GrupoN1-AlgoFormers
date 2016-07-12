@@ -2,7 +2,7 @@ package fiuba.algo3.modelo.algoformers;
 
 import modelo.AlgoFormer;
 import modelo.Casillero;
-import modelo.Excepciones.AlgoFormerAtrapadoEnNebulosaNoSePuedeMover;
+import modelo.Excepciones.AlgoFormerAtrapadoEnNebulosaNoSePuedeMoverException;
 import modelo.Juego;
 import modelo.Jugador;
 import modelo.algoformers.autobots.Bumblebee;
@@ -521,7 +521,7 @@ public class AlgoformerZonaTest {
 
     //-------------------------------------ZONA CON NEBULOSA DE ANDROMEDA-----------------------------------------------
 
-    @Test(expected= AlgoFormerAtrapadoEnNebulosaNoSePuedeMover.class)
+    @Test(expected= AlgoFormerAtrapadoEnNebulosaNoSePuedeMoverException.class)
     public void algoFormerEnEstadoAlternoAereoQuedaAtrapadoEnNebulosaDeAndromedaPorTresTurnos(){
 
         Juego.getInstance().iniciarJuego();

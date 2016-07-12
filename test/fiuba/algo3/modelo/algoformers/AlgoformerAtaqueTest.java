@@ -3,7 +3,7 @@ package fiuba.algo3.modelo.algoformers;
 import modelo.Casillero;
 import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Excepciones.AutobotNoPuedeAtacarAOtroAutobot;
-import modelo.Excepciones.DecepticonNoPuedeAtacarAOtroDecepticon;
+import modelo.Excepciones.DecepticonNoPuedeAtacarAOtroDecepticonException;
 import modelo.Juego;
 import modelo.algoformers.autobots.Bumblebee;
 import modelo.algoformers.autobots.Optimus;
@@ -64,7 +64,7 @@ public class AlgoformerAtaqueTest {
         Assert.assertTrue(bumblebee.obtenerPuntosDeVida() == 350);
     }
 
-    @Test(expected= DecepticonNoPuedeAtacarAOtroDecepticon.class)
+    @Test(expected= DecepticonNoPuedeAtacarAOtroDecepticonException.class)
     public void decepticonNoPuedeAtacarAOtroDecepticon(){
 
         Juego.getInstance().generarTablero(5, 5, false);

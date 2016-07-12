@@ -1,16 +1,13 @@
 package vista;
 
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.effect.MotionBlur;
-import javafx.scene.effect.SepiaTone;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import vista.eventos.BotonComenzarJuegoEventHandler;
@@ -51,10 +48,12 @@ public class ContenedorTitulo extends BorderPane {
         final Button botonComenzarJuego = new Button();
         botonComenzarJuego.setPrefSize(500,75);
 
+
         Image imagenComenzarJuego = new Image("file:src/vista/imagenes/ComenzarJuego.png");
         BackgroundSize backgroundSizeComenzarJuego = new BackgroundSize(100,100,true,true,true,false);
         BackgroundImage imagenDeFondoComenzarJuego = new BackgroundImage(imagenComenzarJuego, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT,backgroundSizeComenzarJuego);
         botonComenzarJuego.setBackground(new Background(imagenDeFondoComenzarJuego));
+
 
         final MotionBlur blur = new MotionBlur();
 
@@ -77,11 +76,14 @@ public class ContenedorTitulo extends BorderPane {
                 });
 
 
+
         BotonComenzarJuegoEventHandler nuevoJuegoHandler = new BotonComenzarJuegoEventHandler(stage,this,contenedorPrincipal);
         botonComenzarJuego.setOnAction(nuevoJuegoHandler);
 
 
         this.setCenter(botonComenzarJuego);
+
+
     }
 
     public void pararMusicaDeFondo() {

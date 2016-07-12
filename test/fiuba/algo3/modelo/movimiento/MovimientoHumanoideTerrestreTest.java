@@ -2,7 +2,7 @@ package fiuba.algo3.modelo.movimiento;
 
 import modelo.AlgoFormer;
 import modelo.Casillero;
-import modelo.Excepciones.HumanoideNoPuedeDesempantanarse;
+import modelo.Excepciones.HumanoideNoPuedeDesempantanarseException;
 import modelo.Excepciones.NoPuedeCambiarAModoAtrapadoEnNebulosaException;
 import modelo.Juego;
 import modelo.algoformers.autobots.Optimus;
@@ -77,7 +77,7 @@ public class MovimientoHumanoideTerrestreTest {
         Assert.assertTrue(movimiento.estaEmpantanado());
     }
 
-    @Test (expected = HumanoideNoPuedeDesempantanarse.class)
+    @Test (expected = HumanoideNoPuedeDesempantanarseException.class)
     public void cambiarAModoNoEmpantando(){
 
         MovimientoHumanoideTerrestre movimiento = new MovimientoHumanoideTerrestre();

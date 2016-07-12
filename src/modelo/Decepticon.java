@@ -1,6 +1,6 @@
 package modelo;
 
-import modelo.Excepciones.DecepticonNoPuedeAtacarAOtroDecepticon;
+import modelo.Excepciones.DecepticonNoPuedeAtacarAOtroDecepticonException;
 import modelo.armas.ArmaDecepticon;
 
 public abstract class Decepticon extends AlgoFormer {
@@ -20,7 +20,7 @@ public abstract class Decepticon extends AlgoFormer {
 
     public void recibirAtaqueDeDecepticon(int ataque){
 
-        throw new DecepticonNoPuedeAtacarAOtroDecepticon();
+        throw new DecepticonNoPuedeAtacarAOtroDecepticonException();
     }
 
     public void atacar(AlgoFormer algoformer, int puntosDeAtaque){

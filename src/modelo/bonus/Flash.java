@@ -3,8 +3,7 @@ package modelo.bonus;
 import modelo.AlgoFormer;
 import modelo.Bonus;
 import modelo.Casillero;
-import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
-import modelo.Excepciones.AlgoFormerYaPoseeBonusFlash;
+import modelo.Excepciones.AlgoFormerYaPoseeBonusFlashException;
 
 public class Flash implements Bonus{
 
@@ -20,8 +19,7 @@ public class Flash implements Bonus{
         if (!algoFormer.tieneBonusFlash()) {
             algoFormer.cambiarAModoFlash();
             casillero.borrarBonus();
-        } else {//throw new AlgoFormerYaPoseeBonusFlash();
-            }
+        }
     }
     @Override
     public String obtenerNombre() {

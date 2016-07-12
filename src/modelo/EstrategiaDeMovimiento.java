@@ -135,11 +135,8 @@ public abstract class EstrategiaDeMovimiento {
 
         Casillero casillero = origen;
 
-        //ArrayList<Casillero> trayectoria = new ArrayList<Casillero>();
-
         casillero = this.calcularSiguienteCasillero(origen, destino);
 
-        //trayectoria.add(casillero);
 
         while (!this.compararCasilleros(casillero, destino) && esValido){
 
@@ -147,7 +144,6 @@ public abstract class EstrategiaDeMovimiento {
 
             casillero = this.calcularSiguienteCasillero(casillero, destino);
 
-            //trayectoria.add(casillero);
 
         }
 

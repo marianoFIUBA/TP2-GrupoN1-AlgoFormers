@@ -111,7 +111,7 @@ public abstract class Jugador {
         try {
             this.algoformerSeleccionado.atacarA(algoformer);
             this.finalizarTurno();
-        } catch (NullPointerException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticon ex) {     //| AlgoFormerFueraDeAlcanceException
+        } catch (NullPointerException | AutobotNoPuedeAtacarAOtroAutobot | DecepticonNoPuedeAtacarAOtroDecepticonException ex) {     //| AlgoFormerFueraDeAlcanceException
         }
 
         } else {
@@ -128,7 +128,7 @@ public abstract class Jugador {
             if(this.algoformerSeleccionado.estado.obtenerMovimiento().estaEmpantanado() || this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
 
                 if (this.algoformerSeleccionado.estado.obtenerMovimiento().estaAtrapadoEnNebulosa()){
-                    throw new AlgoFormerAtrapadoEnNebulosaNoSePuedeMover();
+                    throw new AlgoFormerAtrapadoEnNebulosaNoSePuedeMoverException();
                 } else {
                     throw new HumanoideNoPuedeMoverSiEstaEnPantanoException();
                 }

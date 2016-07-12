@@ -19,7 +19,6 @@ public class DobleCanion implements Bonus {
         if (!algoFormer.tieneDobleCanion()) {
             algoFormer.cambiarAModoDobleCanion();
             casillero.borrarBonus();
-        } else {//throw new AlgoFormerYaPoseeBonusDobleCanionException();
         }
     }
 

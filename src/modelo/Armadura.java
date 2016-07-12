@@ -37,4 +37,10 @@ public class Armadura {
         return this.turnosPendientes > 0;
 
     }
+
+    public int obtenerTurnosPendientes(){
+
+        return this.turnosPendientes;
+
+    }
 }

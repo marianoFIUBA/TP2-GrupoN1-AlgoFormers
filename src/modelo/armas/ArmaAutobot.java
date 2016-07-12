@@ -7,7 +7,6 @@ import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 
 public class ArmaAutobot extends Arma {
 
-
     @Override
     public void atacar(AlgoFormer algoformer, int ataque, int distanciaDeAtque, Casillero casilleroOrigen) {
 

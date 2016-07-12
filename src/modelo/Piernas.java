@@ -50,4 +50,8 @@ public class Piernas {
 
     }
 
+    public int obtenerTurnosRestantes() {
+
+        return this.turnosRestantesFlash;
+    }
 }

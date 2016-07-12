@@ -19,8 +19,7 @@ public class BurbujaInmaculada implements Bonus {
         if (!algoFormer.tieneBonusBurbuja()) {
             algoFormer.cambiarAModoBurbujaInmaculada();
             casillero.borrarBonus();
-        } else{//throw new AlgoFormerYaPoseeBonusBurbujaInmaculadaException();
-             }
+        }
     }
 
     @Override
