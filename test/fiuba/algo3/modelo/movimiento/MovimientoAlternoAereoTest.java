@@ -16,7 +16,7 @@ import org.junit.Test;
 /**
  * Created by Mariano on 10/07/2016.
  */
-public class MovimientoAereoTest {
+public class MovimientoAlternoAereoTest {
 
     @Test
     public void ocuparCasilleroAgregaReferenciaAlAlgoformerEnElCasillero(){
