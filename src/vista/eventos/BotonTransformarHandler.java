@@ -5,9 +5,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-import modelo.Excepciones.AlgoFormerFueraDeAlcanceException;
 import modelo.Excepciones.NoPuedeTransformarseAModoAlternoException;
-import modelo.Excepciones.NoPuedeTransformarseAModoHumaoideException;
+import modelo.Excepciones.NoPuedeTransformarseAModoHumanoideException;
 import modelo.Juego;
 import modelo.Jugador;
 import vista.ContenedorPrincipal;
@@ -45,7 +44,7 @@ public class BotonTransformarHandler implements EventHandler<ActionEvent> {
                 this.contenedorPrincipal.generarPanelJugador();
                 this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
 
-            } catch  (NoPuedeTransformarseAModoAlternoException | NoPuedeTransformarseAModoHumaoideException ex1 ){}
+            } catch  (NoPuedeTransformarseAModoAlternoException | NoPuedeTransformarseAModoHumanoideException ex1 ){}
         }
 
         if (Juego.getInstance().juegoFinalizado()){

@@ -159,7 +159,7 @@ public abstract class Jugador {
             this.algoformerSeleccionado.obtenerObjetoEstado().ocuparCasillero(algoformerSeleccionado, algoformerSeleccionado.obtenerCasillero());
 
             this.finalizarTurno();
-        } catch (NullPointerException | UnidadCombinadaNoPuedeTransformarseException | NoPuedeTransformarseAModoHumaoideException | NoPuedeTransformarseAModoAlternoException ex){
+        } catch (NullPointerException | UnidadCombinadaNoPuedeTransformarseException | NoPuedeTransformarseAModoHumanoideException | NoPuedeTransformarseAModoAlternoException ex){
             //lanzar exepcion de algoformer no transformado
         }
 
