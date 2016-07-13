@@ -37,17 +37,18 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
                 if (Juego.getInstance().obtenerCasilleroSeleccionado() != null) {
                     //Jugador mueve al algoformer seleccionado
                     jugadorActual.mover(Juego.getInstance().obtenerCasilleroSeleccionado());
+                    this.contenedorPrincipal.generarPanelAccion();
                     this.contenedorPrincipal.generarPanelSeleccion();
                     this.contenedorPrincipal.generarPanelJugador();
                     this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
                 }
             } catch (MovimientoInvalidoException exception) {
 
-                Alert alertaCasilleroFueraDeAlcance = new Alert(Alert.AlertType.WARNING);
-                alertaCasilleroFueraDeAlcance.initOwner(stage);
-                alertaCasilleroFueraDeAlcance.setTitle("CUIDADO!");
-                alertaCasilleroFueraDeAlcance.setHeaderText("El casillero al cual te que querés mover se encuentra fuera del alcance de tu Algoformer. ¡Probá con otro!");
-                alertaCasilleroFueraDeAlcance.show();
+                Alert alertaMovimientoInvalido = new Alert(Alert.AlertType.WARNING);
+                alertaMovimientoInvalido.initOwner(stage);
+                alertaMovimientoInvalido.setTitle("CUIDADO!");
+                alertaMovimientoInvalido.setHeaderText("El casillero al cual te que querés mover se encuentra fuera del alcance de tu Algoformer y/o hay un Algoformer en el camino. ¡Probá con otro casillero!");
+                alertaMovimientoInvalido.show();
             } catch (AlgoFormerAtrapadoEnNebulosaNoSePuedeMoverException ex){
 
                 Alert alertaAlgoFormerAtrapadoEnNebulosa = new Alert(Alert.AlertType.WARNING);
@@ -70,17 +71,15 @@ public class BotonMoverHandler implements EventHandler<ActionEvent> {
 
         if (Juego.getInstance().juegoFinalizado()){
 
-            Alert alertaCasilleroFueraDeAlcance = new Alert(Alert.AlertType.CONFIRMATION );
+            Alert alertaJuegoFinalizado = new Alert(Alert.AlertType.CONFIRMATION );
 
-       /*     Button botonJuegoNuevo = new Button();
-            alertaCasilleroFueraDeAlcance.alertTypeProperty()*/
-            alertaCasilleroFueraDeAlcance.initOwner(stage);
-            alertaCasilleroFueraDeAlcance.setTitle("Fin de Juego!");
+
+            alertaJuegoFinalizado.initOwner(stage);
+            alertaJuegoFinalizado.setTitle("Fin de Juego!");
             String equipoGanador = Juego.getInstance().obtenerNomreEquipoGanador();
-            alertaCasilleroFueraDeAlcance.setHeaderText(equipoGanador + " ha ganado el Juego \n Desea reiniciar el juego?");
-            //alertaCasilleroFueraDeAlcance.show();
+            alertaJuegoFinalizado.setHeaderText(equipoGanador + " ha ganado el Juego \n Desea reiniciar el juego?");
 
-            Optional<ButtonType> result = alertaCasilleroFueraDeAlcance.showAndWait();
+            Optional<ButtonType> result = alertaJuegoFinalizado.showAndWait();
             if (result.get() == ButtonType.OK){
                 Juego.getInstance().iniciarJuego();
                 this.contenedorPrincipal.generarTablero("TIERRA");

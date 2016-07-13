@@ -19,16 +19,6 @@ public class Ratchet extends Autobot{
         this.estado.ocuparCasillero(this, casillero);
     }
 
-/*    public void transformarseAModoAlterno(){
-
-        this.estados = this.estados.transformarseAModoAlterno(35, 2, 8);
-    }
-
-    public void transformarseAModoHumanoide(){
-
-        this.estados = this.estados.transformarseAModoHumanoide(5, 5, 1);
-    }*/
-
     public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(35, 2, 8, new MovimientoAlternoAereo(this.estado.obtenerMovimiento()));

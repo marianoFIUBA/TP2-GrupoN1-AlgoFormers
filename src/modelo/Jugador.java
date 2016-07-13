@@ -132,12 +132,9 @@ public abstract class Jugador {
                 } else {
                     throw new HumanoideNoPuedeMoverSiEstaEnPantanoException();
                 }
-            } else {try{
-                        this.algoformerSeleccionado.moverA(casillero,algoformerSeleccionado);
-                        this.finalizarTurno();
-                    } catch (NullPointerException ex) { // | MovimientoInvalidoException
-                //lanzar exepcion de algoformer no seleccionado
-                }
+            } else{
+                this.algoformerSeleccionado.moverA(casillero);
+                this.finalizarTurno();
             }
         } else {
             Juego.getInstance().finalizarJuego(this.obtenerNombreEquipoEnemigo());
@@ -146,27 +143,20 @@ public abstract class Jugador {
 
     public void transformar(){
 
-        try{
-            if (this.algoformerSeleccionado.obtenerEstado() == ESTADO_ALTERNO){
+        if (this.algoformerSeleccionado.obtenerEstado() == ESTADO_ALTERNO){
 
-                this.algoformerSeleccionado.transformarseAModoHumanoide();
+            this.algoformerSeleccionado.transformarseAModoHumanoide();
 
-            } else if ( this.algoformerSeleccionado.obtenerEstado() == ESTADO_HUMANOIDE){
+        } else if ( this.algoformerSeleccionado.obtenerEstado() == ESTADO_HUMANOIDE){
 
-                this.algoformerSeleccionado.transformarseAModoAlterno();
-            }
-
-            this.algoformerSeleccionado.obtenerObjetoEstado().ocuparCasillero(algoformerSeleccionado, algoformerSeleccionado.obtenerCasillero());
-
-            this.finalizarTurno();
-        } catch (NullPointerException | UnidadCombinadaNoPuedeTransformarseException | NoPuedeTransformarseAModoHumanoideException | NoPuedeTransformarseAModoAlternoException ex){
-            //lanzar exepcion de algoformer no transformado
+            this.algoformerSeleccionado.transformarseAModoAlterno();
         }
 
+        this.algoformerSeleccionado.obtenerObjetoEstado().ocuparCasillero(algoformerSeleccionado, algoformerSeleccionado.obtenerCasillero());
 
-
-
+        this.finalizarTurno();
     }
+
 
     protected boolean validarCombinacion(){
 

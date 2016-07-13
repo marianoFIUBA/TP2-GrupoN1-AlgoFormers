@@ -20,8 +20,7 @@ import modelo.Juego;
 import modelo.bonus.BurbujaInmaculada;
 import modelo.bonus.DobleCanion;
 import modelo.bonus.Flash;
-import vista.eventos.BotonAccionAlgoformerHandler;
-import vista.eventos.BotonAccionCasilleroHandler;
+import vista.eventos.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -199,7 +198,7 @@ public class ContenedorPrincipal extends BorderPane {
         this.setCenter(tablero);
     }
 
-    private void generarPanelAccion(){
+    public void generarPanelAccion(){
 
         VBox panelAcciones = new VBox();
         panelAcciones.setPadding(new javafx.geometry.Insets(10));
@@ -229,10 +228,6 @@ public class ContenedorPrincipal extends BorderPane {
         botonCombinar.setPrefWidth(150);
         this.botonCombinar = botonCombinar;
 
-        Button botonCapturarChispa = new Button();
-        botonCapturarChispa.setText("Capturar Chispa");
-        botonCapturarChispa.setPrefWidth(150);
-
         Label lblVistas = new Label();
         lblVistas.setText("VISTAS DEL TABLERO");
         lblVistas.setLineSpacing(200);
@@ -247,18 +242,34 @@ public class ContenedorPrincipal extends BorderPane {
         btnTierra.setPrefWidth(150);
         this.btnTierra = btnTierra;
 
+        BotonVistaAireHandler handlerBotonVista = new BotonVistaAireHandler(this);
+        btnAire.setOnAction(handlerBotonVista);
+
+        BotonVistaTierraHandler handlerBotonTierra = new BotonVistaTierraHandler(this);
+        btnTierra.setOnAction(handlerBotonTierra);
+
+        BotonAtacarHandler handlerAtacar = new BotonAtacarHandler(stage,this);
+        botonAtacar.setOnAction(handlerAtacar);
+
+        BotonMoverHandler handlerMover = new BotonMoverHandler(stage,this);
+        botonMover.setOnAction(handlerMover);
+
+        BotonTransformarHandler handlerTransformar= new BotonTransformarHandler(stage, this);
+        botonTransformar.setOnAction(handlerTransformar);
+
+        BotonCombinarHandler handlerCombinar = new BotonCombinarHandler(this);
+        botonCombinar.setOnAction(handlerCombinar);
+
         panelAcciones.getChildren().add(lblAcciones);
         panelAcciones.getChildren().add(botonAtacar);
         panelAcciones.getChildren().add(botonMover);
         panelAcciones.getChildren().add(botonTransformar);
         panelAcciones.getChildren().add(botonCombinar);
-        panelAcciones.getChildren().add(botonCapturarChispa);
 
         botonAtacar.setDisable(true);
         botonMover.setDisable(true);
         botonTransformar.setDisable(true);
         botonCombinar.setDisable(true);
-        botonCapturarChispa.setDisable(true);
 
         panelAcciones.getChildren().add(lblVistas);
         panelAcciones.getChildren().add(btnTierra);
@@ -457,64 +468,13 @@ public class ContenedorPrincipal extends BorderPane {
         this.setTop(this.barraDeMenuPrincipal);
     }
 
-    /*public VBox generarVBoxEstadisticasAlgoformerObjetivo(){
-
-    }
-
-    public VBox generarVBoxEstadisticasCasillero(){
-
-    }
-*/
-/*    public VBox obtenerPanelAcciones(){
-
-        return this.panelAcciones;
-    }
-
-    public Label obtenerLblImagen_1(){
-
-        return this.lblImagen_1;
-    }
-
-    public VBox obtenerPanelSeleccion(){
-
-        return this.panelSeleccion;
-    }*/
-
-    public Button obtenerBotonTierra(){
-
-        return this.btnTierra;
-    }
-
-    public Button obtenerBotonAire(){
-
-        return this.btnAire;
-    }
-
-    public Button obtenerBotonAtacar() {
-        
-        return this.botonAtacar;
-    }
-
 
     public String obtenerVistaActual(){
 
         return this.vistaActual;
     }
 
-    public Button obtenerBotonMover() {
 
-        return this.botonMover;
-    }
-
-    public Button obtenerBotonTransformar() {
-
-        return this.botonTransformar;
-    }
-
-    public Button obtenerBotonCombinar() {
-
-        return this.botonCombinar;
-    }
 
     public BarraDeMenuPrincipal getBarraDeMenu() {
         return barraDeMenuPrincipal;

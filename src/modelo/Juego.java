@@ -81,7 +81,6 @@ public class Juego {
     public void iniciarJuego() {
 
         this.finalizado = false;
-        //if (!this.iniciado) {
 
             if (true) {
 
@@ -125,8 +124,6 @@ public class Juego {
             this.modificarCasillero(casilleroChispa);
 
             this.iniciado = true;
-        } else {
-            //lanzar excepcion de juego ya iniciado
         }
     }
 

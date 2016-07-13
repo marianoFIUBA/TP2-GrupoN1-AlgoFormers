@@ -4,7 +4,6 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
-import vista.eventos.OpcionInstruccionesEventHandler;
 import vista.eventos.OpcionPantallaCompletaEventHandler;
 import vista.eventos.OpcionSalirEventHandler;
 
@@ -20,7 +19,6 @@ public class BarraDeMenuPrincipal extends MenuBar {
         Menu menuOpciones = new Menu("Opciones");
 
         MenuItem opcionSalir = new MenuItem("Salir");
-        MenuItem opcionInstrucciones = new MenuItem("Instrucciones");
 
         OpcionSalirEventHandler opcionSalirHandler = new OpcionSalirEventHandler();
         opcionSalir.setOnAction(opcionSalirHandler);

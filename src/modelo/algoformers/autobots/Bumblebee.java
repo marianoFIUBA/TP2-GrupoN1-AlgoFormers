@@ -17,16 +17,6 @@ public class Bumblebee extends Autobot{
         this.estado.ocuparCasillero(this, casillero);
     }
 
-/*    public void transformarseAModoAlterno(){
-
-        this.estados = this.estados.transformarseAModoAlterno(20, 3, 5);
-    }
-
-    public void transformarseAModoHumanoide(){
-
-        this.estados = this.estados.transformarseAModoHumanoide(40, 1, 2);
-    }*/
-
     public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(20, 3, 5, new MovimientoAlternoTerrestre(this.estado.obtenerMovimiento()));

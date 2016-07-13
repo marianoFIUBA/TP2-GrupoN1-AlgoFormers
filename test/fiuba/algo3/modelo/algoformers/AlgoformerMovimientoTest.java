@@ -27,7 +27,7 @@ public class AlgoformerMovimientoTest {
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(4, 5);
 
         Optimus optimus = new Optimus(casilleroInicial);
-        optimus.moverA(casilleroFinal,optimus);
+        optimus.moverA(casilleroFinal);
 
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
     }
@@ -41,7 +41,7 @@ public class AlgoformerMovimientoTest {
         Casillero casilleroFinal = Juego.getInstance().obtenerCasillero(1, 10);
 
         Optimus optimus = new Optimus(casilleroInicial);
-        optimus.moverA(casilleroFinal,optimus);
+        optimus.moverA(casilleroFinal);
 
         Assert.assertEquals(optimus.obtenerCasillero(), casilleroFinal);
 

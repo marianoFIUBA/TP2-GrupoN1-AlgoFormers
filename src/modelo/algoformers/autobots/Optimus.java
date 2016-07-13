@@ -17,15 +17,6 @@ public class Optimus extends Autobot{
         this.estado.ocuparCasillero(this, casillero);
     }
 
- /*   public void transformarseAModoAlterno(){
-
-        this.estados = this.estados.transformarseAModoAlterno(15, 4, 5);
-    }
-
-    public void transformarseAModoHumanoide(){
-
-        this.estados = this.estados.transformarseAModoHumanoide(50, 2, 2);
-    }*/
 
     public void transformarseAModoAlterno(){
 

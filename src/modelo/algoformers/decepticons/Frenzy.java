@@ -16,17 +16,6 @@ public class Frenzy extends Decepticon{
         this.estado = new EstadoAlterno(25, 2, 6, new MovimientoAlternoTerrestre());
         this.estado.ocuparCasillero(this, casillero);
     }
-
-/*    public void transformarseAModoAlterno(){
-
-        this.estados = this.estados.transformarseAModoAlterno(25, 2, 6);
-    }
-
-    public void transformarseAModoHumanoide(){
-
-        this.estados = this.estados.transformarseAModoHumanoide(10, 5, 2);
-    }*/
-
     public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(25, 2, 6, new MovimientoAlternoTerrestre(this.estado.obtenerMovimiento()));

@@ -49,7 +49,6 @@ public abstract class EstrategiaDeMovimiento {
 
                     distancia--;
                 }
-//                casilleroActual.alojarAlternoPorTierra(algoformer);
             }
 
         } else { throw new MovimientoInvalidoException(); }

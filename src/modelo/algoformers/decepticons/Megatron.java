@@ -19,16 +19,6 @@ public class Megatron extends Decepticon{
         this.estado.ocuparCasillero(this, casillero);
     }
 
-/*    public void transformarseAModoAlterno() {
-
-        this.estados = this.estados.transformarseAModoAlterno(55, 2, 8);
-    }
-
-    public void transformarseAModoHumanoide() {
-
-        this.estados = this.estados.transformarseAModoHumanoide(10, 3, 1);
-    }*/
-
     public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(55, 2, 8, new MovimientoAlternoAereo(this.estado.obtenerMovimiento()));

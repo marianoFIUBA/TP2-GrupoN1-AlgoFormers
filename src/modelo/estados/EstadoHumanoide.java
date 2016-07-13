@@ -26,7 +26,7 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     public EstadoHumanoide(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
 
         this.ataque = ataque;
-        this.distanciaDeAtaque = ataque;
+        this.distanciaDeAtaque = distanciaAtaque;
         this.velocidad = velocidad;
         this.movimiento = movimiento;
     }
@@ -39,10 +39,6 @@ public class EstadoHumanoide implements EstadoAlgoFormer {
     @Override
     public EstadoAlgoFormer transformarseAModoAlterno(int ataque, int distanciaAtaque, int velocidad, EstrategiaDeMovimiento movimiento){
         return new EstadoAlterno(ataque, distanciaAtaque, velocidad, movimiento);
-    }
-
-    public void atacar(AlgoFormer algoFormer) {
-
     }
 
     @Override

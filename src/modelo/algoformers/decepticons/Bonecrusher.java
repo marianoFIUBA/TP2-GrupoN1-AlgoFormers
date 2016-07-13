@@ -16,18 +16,6 @@ public class Bonecrusher extends Decepticon{
         this.estado.ocuparCasillero(this, casillero);
     }
 
-
-
-/*    public void transformarseAModoAlterno(){
-
-        this.estados = this.estados.transformarseAModoAlterno(30, 3, 8);
-    }
-
-    public void transformarseAModoHumanoide(){
-
-        this.estados = this.estados.transformarseAModoHumanoide(30, 3, 1);
-    }*/
-
     public void transformarseAModoAlterno(){
 
         this.estado = this.estado.transformarseAModoAlterno(30, 3, 8, new MovimientoAlternoTerrestre(this.estado.obtenerMovimiento()));

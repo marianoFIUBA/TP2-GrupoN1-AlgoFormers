@@ -94,10 +94,5 @@ public class BotonAccionCasilleroHandler implements EventHandler<ActionEvent> {
         this.estadisticasCasillero.setVisible(true);
         this.estadisticas_2.setVisible(false);
 
-        //deshabilitar boton de atacar
-
-       /* Image imagenAlgoformer = new Image("file:src/vista/imagenes/Roca.png");
-        BackgroundImage fondo = new BackgroundImage(imagenAlgoformer, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        this.boton.setBackground(new Background(fondo));*/
     }
 }

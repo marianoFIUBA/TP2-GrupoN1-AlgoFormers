@@ -40,6 +40,7 @@ public class BotonTransformarHandler implements EventHandler<ActionEvent> {
             try {
                 //Jugador transformar al algoformer seleccionado
                 jugadorActual.transformar();
+                this.contenedorPrincipal.generarPanelAccion();
                 this.contenedorPrincipal.generarPanelSeleccion();
                 this.contenedorPrincipal.generarPanelJugador();
                 this.contenedorPrincipal.generarTablero(this.contenedorPrincipal.obtenerVistaActual());
@@ -49,17 +50,13 @@ public class BotonTransformarHandler implements EventHandler<ActionEvent> {
 
         if (Juego.getInstance().juegoFinalizado()){
 
-            Alert alertaCasilleroFueraDeAlcance = new Alert(Alert.AlertType.CONFIRMATION );
-
-       /*     Button botonJuegoNuevo = new Button();
-            alertaCasilleroFueraDeAlcance.alertTypeProperty()*/
-            alertaCasilleroFueraDeAlcance.initOwner(stage);
-            alertaCasilleroFueraDeAlcance.setTitle("Fin de Juego!");
+            Alert alertaJuegoFinalizado = new Alert(Alert.AlertType.CONFIRMATION );
+            alertaJuegoFinalizado.initOwner(stage);
+            alertaJuegoFinalizado.setTitle("Fin de Juego!");
             String equipoGanador = Juego.getInstance().obtenerNomreEquipoGanador();
-            alertaCasilleroFueraDeAlcance.setHeaderText(equipoGanador + " ha ganado el Juego \n Desea reiniciar el juego?");
-            //alertaCasilleroFueraDeAlcance.show();
+            alertaJuegoFinalizado.setHeaderText(equipoGanador + " ha ganado el Juego \n Desea reiniciar el juego?");
 
-            Optional<ButtonType> result = alertaCasilleroFueraDeAlcance.showAndWait();
+            Optional<ButtonType> result = alertaJuegoFinalizado.showAndWait();
             if (result.get() == ButtonType.OK){
                 Juego.getInstance().iniciarJuego();
                 this.contenedorPrincipal.generarTablero("TIERRA");

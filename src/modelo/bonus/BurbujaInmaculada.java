@@ -3,7 +3,6 @@ package modelo.bonus;
 import modelo.AlgoFormer;
 import modelo.Bonus;
 import modelo.Casillero;
-import modelo.Excepciones.AlgoFormerYaPoseeBonusBurbujaInmaculadaException;
 
 public class BurbujaInmaculada implements Bonus {
 

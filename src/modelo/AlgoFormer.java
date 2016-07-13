@@ -17,7 +17,7 @@ public abstract class AlgoFormer {
     protected AlgoFormer(String nombre, Casillero casillero) {
 
         this.nombre = nombre;
-        this.casillero = casillero;;
+        this.casillero = casillero;
         this.modoPostPsionico = false;
         this.armadura = new Armadura();
         this.piernas = new Piernas();
@@ -151,7 +151,7 @@ public abstract class AlgoFormer {
         this.armadura.cambiarAModoBurbujaInmaculada();
     }
 
-    public void reducirPuntosDeVidaPorEspinas(){
+    private void reducirPuntosDeVidaPorEspinas(){
 
         this.puntosDeVida = this.puntosDeVida - ( this.puntosDeVidaIniciales * 0.05);
     }
@@ -165,7 +165,7 @@ public abstract class AlgoFormer {
         }
     }
 
-    public void moverA(Casillero casillero,AlgoFormer algoFormer){
+    public void moverA(Casillero casillero){
 
         this.estado.moverA(casillero,this);
 
